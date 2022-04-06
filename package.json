@@ -1,0 +1,34 @@
+{
+	"name": "schoolvery-fe",
+	"version": "1.0.0",
+	"main": "index.js",
+	"repository": "git@github.com:team-e-techeer/schoolvery-fe.git",
+	"author": "ww8007 <wshmin@naver.com>",
+	"license": "MIT",
+	"scripts": {
+		"dev": "webpack",
+		"start": "webpack serve --progress --config webpack.config.js --mode development"
+	},
+	"dependencies": {
+		"@emotion/react": "^11.9.0",
+		"react": "^18.0.0",
+		"react-dom": "^18.0.0",
+		"react-query": "^3.34.19",
+		"recoil": "^0.7.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.17.8",
+		"@babel/plugin-transform-runtime": "^7.17.0",
+		"@babel/preset-env": "^7.16.11",
+		"@babel/preset-react": "^7.16.7",
+		"@babel/preset-typescript": "^7.16.7",
+		"@types/react": "^17.0.43",
+		"@types/react-dom": "^17.0.14",
+		"babel-loader": "^8.2.4",
+		"html-webpack-plugin": "^5.5.0",
+		"terser-webpack-plugin": "^5.3.1",
+		"webpack": "^5.71.0",
+		"webpack-cli": "^4.9.2",
+		"webpack-dev-server": "^4.8.1"
+	}
+}
