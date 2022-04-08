@@ -1,6 +1,9 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
-const htmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserJsPlugin = require('terser-webpack-plugin');
+
 module.exports = {
   entry: './index.tsx',
   output: {
@@ -29,7 +32,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new htmlWebpackPlugin({
+    new HtmlWebpackPlugin({
       template: './build/index.html',
       filename: 'index.html',
     }),
@@ -40,5 +43,8 @@ module.exports = {
         extractComments: false,
       }),
     ],
+  },
+  devServer: {
+    port: 3000,
   },
 };
