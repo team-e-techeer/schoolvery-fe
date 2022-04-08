@@ -14,7 +14,7 @@ module.exports = {
     useJSXTextNode: true,
   },
 
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended'],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'airbnb'],
   plugins: ['@typescript-eslint', 'import', 'prettier', 'react', 'react-hooks'],
   settings: { react: { version: 'detect' } },
 
@@ -25,7 +25,8 @@ module.exports = {
     'no-undef': 'off',
     indent: 'off',
     semi: 'off',
-
+    'react/jsx-filename-extension': [1, { extensions: ['.ts', '.tsx'] }],
+    'import/extensions': ['error', 'never', { svg: 'always' }],
     '@typescript-eslint/indent': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
