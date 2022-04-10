@@ -1,8 +1,7 @@
 import { createRoot, Root } from 'react-dom/client';
 import { RecoilRoot } from 'recoil';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { Global } from '@emotion/core';
-import reset from './reset';
+import GlobalStyle from './src/Reset';
 import App from './src/App';
 
 const container = document.getElementById('main');
@@ -12,8 +11,8 @@ const queryClient = new QueryClient();
 root &&
   root.render(
     <RecoilRoot>
-      <Global styles={reset} />
       <QueryClientProvider client={queryClient}>
+        <GlobalStyle />
         <App />
       </QueryClientProvider>
     </RecoilRoot>
