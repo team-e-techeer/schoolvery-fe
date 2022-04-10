@@ -10,7 +10,7 @@
     "build": "webpack",
     "serve": "http-server dist",
     "start": "webpack serve --progress --config webpack.config.js --mode development",
-    "storybook": "start-storybook -p 6006",
+    "story": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "jest"
   },
@@ -19,9 +19,11 @@
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "axios": "^0.26.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-icons": "^4.3.1",
     "react-query": "^3.34.19",
     "react-router-dom": "^6.3.0",
     "recoil": "^0.7.0"
@@ -44,9 +46,11 @@
     "@types/jest": "^27.4.1",
     "@types/react": "^17.0.43",
     "@types/react-dom": "^17.0.14",
+    "@types/react-icons": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^5.18.0",
     "@typescript-eslint/parser": "^5.18.0",
     "babel-loader": "^8.2.4",
+    "babel-preset-react-app": "^10.0.1",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-prettier": "^8.5.0",
