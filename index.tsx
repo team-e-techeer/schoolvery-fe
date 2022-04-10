@@ -1,7 +1,7 @@
 import { createRoot, Root } from 'react-dom/client';
 import { RecoilRoot } from 'recoil';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import GlobalStyle from './src/Reset';
+import GlobalStyle from './src/GlobalStyle';
 import App from './src/App';
 
 const container = document.getElementById('main');
