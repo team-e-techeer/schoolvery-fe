@@ -13,12 +13,7 @@ module.exports = {
     jsx: true,
     useJSXTextNode: true,
   },
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended',
-    'plugin:storybook/recommended',
-  ],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended'],
   plugins: ['@typescript-eslint', 'import', 'prettier', 'react', 'react-hooks'],
   settings: {
     react: {
