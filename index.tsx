@@ -1,15 +1,15 @@
-import { createRoot, Root } from 'react-dom/client';
-import { RecoilRoot } from 'recoil';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import GlobalStyle from './src/GlobalStyle';
 import App from './src/App';
+import { RecoilRoot } from 'recoil';
+const rootNode = document.getElementById('root');
 
-const container = document.getElementById('main');
-const root: Root | null = container && createRoot(container);
 const queryClient = new QueryClient();
 
-root &&
-  root.render(
+rootNode &&
+  ReactDOM.createRoot(rootNode).render(
     <RecoilRoot>
       <QueryClientProvider client={queryClient}>
         <GlobalStyle />
