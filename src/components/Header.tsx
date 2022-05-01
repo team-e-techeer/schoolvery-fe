@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import type { ReactNode } from 'react';
+import colors from '../constants/colors';
 export interface Props {
   title?: string;
   Left?: () => ReactNode;
@@ -16,7 +17,7 @@ export default function Header({ title, Left, Right, secondRight }: Props) {
           flex-direction: row;
           align-items: center;
           height: 5rem;
-          background-color: #fc775a;
+          background-color: ${colors.mainColor};
         `}
       >
         <div
