@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import colors from '../../../constants/colors';
+
 import { Link } from 'react-router-dom';
 
 export const IconWrapper = styled.div`
@@ -15,21 +16,25 @@ export const IconWrapper = styled.div`
   }
 `;
 
-export const Title = styled.h2`
-  margin-top: 8rem;
-  font-size: 2.5rem;
-  text-align: center;
-`;
-
-export const InputBlock = styled.form`
+export const JoinBlock = styled.form`
+  display: block;
   width: 80%;
   margin: auto;
+`;
+
+export const InputOverText = styled.span`
+  display: block;
+  margin-left: 0.1rem;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 500;
 `;
 
 export const Input = styled.input`
   display: flex;
   background-color: #e7f0fe;
-  margin: 3rem 0;
+  margin: 2rem 0;
   border-radius: 0.7rem;
   width: 100%;
   padding: 1.5rem;
