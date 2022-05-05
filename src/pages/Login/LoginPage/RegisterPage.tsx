@@ -1,52 +1,118 @@
 /* eslint-disable import/extensions */
 import Header from '../../../components/Header';
 import { AiOutlineLeft as LeftIcon } from 'react-icons/ai';
-import { IconWrapper, Input, InputOverText, JoinBlock } from './RegisterPage.style';
+import { AlertText, IconWrapper, Input, InputField, InputOverText, JoinBlock } from './RegisterPage.styles';
 import Button from '../../../components/Button';
 import { css } from '@emotion/react';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
+import { useRef } from 'react';
+import { Link } from 'react-router-dom';
+interface RegisterInfo {
+  id: string;
+  pw: string;
+  pwConfirm: string;
+  email: string;
+  school: string;
+  [prop: string]: string;
+}
 
 function RegisterPage() {
-  const [registerForm, setRegisterForm] = useState({
+  const spanRef = useRef() as React.MutableRefObject<HTMLFormElement>;
+  const [registerInfo, setRegisterInfo] = useState<RegisterInfo>({
     id: '',
     pw: '',
     pwConfirm: '',
     email: '',
     school: '',
   });
+
+  const { id, pw, pwConfirm, email, school } = registerInfo;
+
+  const onSubmit = useCallback(
+    (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      const submitItems = ['id', 'pw', 'pwConfirm', 'email', 'school'];
+      submitItems.forEach(item => {
+        if (!registerInfo[item].length) {
+          const select = spanRef.current?.querySelector<HTMLElement>(`#${item}`);
+          if (select && !registerInfo[item]) select.style.display = 'block';
+        }
+      });
+    },
+    [registerInfo]
+  );
+
+  const onChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const { value, name } = e.target;
+      setRegisterInfo({
+        ...registerInfo,
+        [name]: value,
+      });
+    },
+    [registerInfo]
+  );
+
+  const onCheckBlank = useCallback(
+    (e: React.FocusEvent<HTMLFormElement, Element>) => {
+      const select = spanRef.current?.querySelector<HTMLElement>(`#${e.target.name}`);
+      if (select) {
+        if (!registerInfo[e.target.name]) select.style.display = 'block';
+        else select.style.display = 'none';
+      }
+    },
+    [registerInfo, spanRef]
+  );
+
   return (
     <>
       <Header
         title="Sign Up"
         Left={() => (
           <IconWrapper>
-            <button onClick={() => console.log('hi')}>
+            <Link to="/login">
               <LeftIcon size={30} color="#fff" />
-            </button>
+            </Link>
           </IconWrapper>
         )}
       />
-      <JoinBlock>
-        <InputOverText>아이디</InputOverText>
-        <Input autoFocus={true} autoComplete="off"></Input>
-        <InputOverText>비밀번호</InputOverText>
-        <Input autoComplete="off" type={'password'}></Input>
-        <InputOverText>비밀번호 확인</InputOverText>
-        <Input type={'password'}></Input>
-        <InputOverText>이메일</InputOverText>
-        <Input type={'email'}></Input>
-        <InputOverText>학교</InputOverText>
-        <Input></Input>
+      <JoinBlock ref={spanRef} onBlur={onCheckBlank} onSubmit={onSubmit}>
+        <InputField>
+          <InputOverText>아이디</InputOverText>
+          <Input value={id} name="id" onChange={onChange} autoFocus={true} autoComplete="off" />
+          <AlertText id="id">입력란이 비어 있습니다</AlertText>
+        </InputField>
+        <InputField>
+          <InputOverText>비밀번호</InputOverText>
+          <Input value={pw} name="pw" onChange={onChange} autoComplete="off" type={'password'} />
+          <AlertText id="pw">입력란이 비어 있습니다</AlertText>
+        </InputField>
+        <InputField>
+          <InputOverText>비밀번호 확인</InputOverText>
+          <Input value={pwConfirm} name="pwConfirm" onChange={onChange} type={'password'} />
+          <AlertText id="pwConfirm">입력란이 비어 있습니다</AlertText>
+        </InputField>
+        <InputField>
+          <InputOverText>이메일</InputOverText>
+          <Input value={email} name="email" onChange={onChange} type={'email'} />
+          <AlertText id="email">입력란이 비어 있습니다</AlertText>
+        </InputField>
+        <InputField>
+          <InputOverText>학교</InputOverText>
+          <Input value={school} name="school" onChange={onChange} />
+          <AlertText id="school">입력란이 비어 있습니다</AlertText>
+        </InputField>
+        <Button
+          css={css`
+            margin-top: 3rem;
+          `}
+          buttonId="login-button"
+          type="submit"
+          name="registerBtn"
+        >
+          회원가입
+        </Button>
       </JoinBlock>
-      <Button
-        css={css`
-          margin-top: 3rem;
-        `}
-        width={80}
-        buttonId="login-button"
-      >
-        회원가입
-      </Button>
     </>
   );
 }

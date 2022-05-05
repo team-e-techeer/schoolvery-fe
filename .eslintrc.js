@@ -56,5 +56,6 @@ module.exports = {
     'react/prop-types': 'off',
     'react/display-name': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react/jsx-pascal-case': [1, { allowAllCaps: true }],
   },
 };
