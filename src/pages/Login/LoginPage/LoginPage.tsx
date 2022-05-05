@@ -2,7 +2,7 @@
 import Header from '../../../components/Header';
 
 import { AiOutlineLeft as LeftIcon } from 'react-icons/ai';
-import { IconWrapper, Input, Title, LinkText, InputBlock } from './LoginPage.style';
+import { IconWrapper, Input, Title, LinkText, InputBlock } from './LoginPage.styles';
 import { useRecoilValue } from 'recoil';
 import { loginState } from '../../../atoms/loginState';
 import { useCallback, useState } from 'react';
@@ -20,7 +20,7 @@ function LoginPage() {
 
   const { id, pw } = loginInfo;
 
-  const onChange = (e: any) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, name } = e.target;
     setLoginInfo({
       ...loginInfo,
@@ -40,7 +40,7 @@ function LoginPage() {
         )}
       />
       <Title>스쿨버리</Title>
-      <InputBlock>
+      <InputBlock onSubmit={e => e.preventDefault()}>
         <Input autoComplete="username" placeholder="아이디" onChange={onChange} id="input-id" name="id" value={id} />
         <Input
           autoComplete="current-password"
@@ -54,7 +54,7 @@ function LoginPage() {
         <Button buttonId="login-button">로그인</Button>
       </InputBlock>
       <LinkText to="">아이디/비밀번호 찾기</LinkText>
-      <LinkText to="register">아직 회원이 아니신가요? 회원가입 하기</LinkText>
+      <LinkText to="/register">아직 회원이 아니신가요? 회원가입 하기</LinkText>
     </>
   );
 }
