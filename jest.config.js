@@ -1,11 +1,11 @@
 module.exports = {
-  transform: {
-    '^.+\\.[jt]sx?$': ['babel-jest'],
-  },
+  testEnvironment: 'jsdom',
   moduleNameMapper: {
-    '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
-    '^(pages|containers|components|sections|constants|models|remotes|styles|sass|utils|hooks|stores)/(.*)':
-      '<rootDir>/src/$1/$2',
+    '\\.(png|pdf|svg|jpg|jpeg)$': '<rootDir>/__mocks__/fileMock.js',
+    '\\.(css|style|less|sass|scss|svg)$': 'identity-obj-proxy',
   },
-  testTimeout: 10000,
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  testMatch: ['<rootDir>/**/*.test.(js|jsx|ts|tsx)'],
+  transformIgnorePatterns: ['<rootDir>/node_modules/', 'dist', 'build'],
+  snapshotSerializers: ['@emotion/jest/serializer' /* if needed other snapshotSerializers should go here */],
 };
