@@ -79,27 +79,35 @@ function RegisterPage() {
       <JoinBlock ref={spanRef} onBlur={onCheckBlank} onSubmit={onSubmit}>
         <InputField>
           <InputOverText>아이디</InputOverText>
-          <Input value={id} name="id" onChange={onChange} autoFocus={true} autoComplete="off" />
-          <AlertText id="id">입력란이 비어 있습니다</AlertText>
+          <Input value={id} name="id" onChange={onChange} autoFocus={true} autoComplete="off" data-testid="id-input" />
+          <AlertText id="id" data-testid="id-alert">
+            입력란이 비어 있습니다
+          </AlertText>
         </InputField>
         <InputField>
           <InputOverText>비밀번호</InputOverText>
-          <Input value={pw} name="pw" onChange={onChange} autoComplete="off" type={'password'} />
+          <Input value={pw} name="pw" onChange={onChange} autoComplete="off" type={'password'} data-testid="pw-input" />
           <AlertText id="pw">입력란이 비어 있습니다</AlertText>
         </InputField>
         <InputField>
           <InputOverText>비밀번호 확인</InputOverText>
-          <Input value={pwConfirm} name="pwConfirm" onChange={onChange} type={'password'} />
+          <Input
+            value={pwConfirm}
+            name="pwConfirm"
+            onChange={onChange}
+            type={'password'}
+            data-testid="password-input"
+          />
           <AlertText id="pwConfirm">입력란이 비어 있습니다</AlertText>
         </InputField>
         <InputField>
           <InputOverText>이메일</InputOverText>
-          <Input value={email} name="email" onChange={onChange} type={'email'} />
+          <Input value={email} name="email" onChange={onChange} type={'email'} data-testid="email-input" />
           <AlertText id="email">입력란이 비어 있습니다</AlertText>
         </InputField>
         <InputField>
           <InputOverText>학교</InputOverText>
-          <Input value={school} name="school" onChange={onChange} />
+          <Input value={school} name="school" onChange={onChange} data-testid="school-input" />
           <AlertText id="school">입력란이 비어 있습니다</AlertText>
         </InputField>
         <Button
