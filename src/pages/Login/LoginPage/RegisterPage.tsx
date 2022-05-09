@@ -25,6 +25,7 @@ function RegisterPage() {
     email: '',
     school: '',
   });
+  const [submitOK, setSubmit] = useState(true);
 
   const { id, pw, pwConfirm, email, school } = registerInfo;
 
@@ -34,6 +35,7 @@ function RegisterPage() {
       const submitItems = ['id', 'pw', 'pwConfirm', 'email', 'school'];
       submitItems.forEach(item => {
         if (!registerInfo[item].length) {
+          setSubmit(false);
           const select = spanRef.current?.querySelector<HTMLElement>(`#${item}`);
           if (select && !registerInfo[item]) select.style.display = 'block';
         }
@@ -57,12 +59,25 @@ function RegisterPage() {
     (e: React.FocusEvent<HTMLFormElement, Element>) => {
       const select = spanRef.current?.querySelector<HTMLElement>(`#${e.target.name}`);
       if (select) {
-        if (!registerInfo[e.target.name]) select.style.display = 'block';
-        else select.style.display = 'none';
+        if (!registerInfo[e.target.name]) {
+          select.style.display = 'block';
+        } else {
+          select.style.display = 'none';
+        }
       }
+      onCheckHaveSamePw();
     },
     [registerInfo, spanRef]
   );
+
+  const onCheckHaveSamePw = useCallback(() => {
+    const select = spanRef.current?.querySelector<HTMLElement>('#pw-differ');
+    if (registerInfo.pw !== registerInfo.pwConfirm) {
+      if (select) select.style.display = 'block';
+    } else {
+      if (select) select.style.display = 'none';
+    }
+  }, [spanRef, registerInfo]);
 
   return (
     <>
@@ -91,14 +106,10 @@ function RegisterPage() {
         </InputField>
         <InputField>
           <InputOverText>비밀번호 확인</InputOverText>
-          <Input
-            value={pwConfirm}
-            name="pwConfirm"
-            onChange={onChange}
-            type={'password'}
-            data-testid="password-input"
-          />
-          <AlertText id="pwConfirm">입력란이 비어 있습니다</AlertText>
+          <Input value={pwConfirm} name="pwConfirm" onChange={onChange} type={'password'} data-testid="pw-inputCheck" />
+          <AlertText id="pw-differ" data-testid="pw-alert">
+            비밀번호가 일치하지 않습니다
+          </AlertText>
         </InputField>
         <InputField>
           <InputOverText>이메일</InputOverText>
