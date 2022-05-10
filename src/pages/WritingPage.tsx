@@ -1,5 +1,13 @@
+import BottomNavigation from '@/components/BottomNavigation';
+import Header from '@/components/Header';
+
 function WritingPage() {
-  return <></>;
+  return (
+    <>
+      <Header />
+      <BottomNavigation />
+    </>
+  );
 }
 
 export default WritingPage;
