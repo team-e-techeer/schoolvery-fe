@@ -7,7 +7,7 @@ import { css } from '@emotion/react';
 import { useCallback, useState } from 'react';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { useCheckBlank } from '@/hook/useCheckBlank';
+import { useCheckBlank } from '@/hooks/useCheckBlank';
 
 interface RegisterInfo {
   id: string;
