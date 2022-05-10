@@ -7,7 +7,7 @@ import { loginState } from '../../../atoms/loginState';
 import React, { useCallback, useRef, useState } from 'react';
 import Button from '../../../components/Button';
 import { useNavigate } from 'react-router-dom';
-import { useCheckBlank } from '@/hook/useCheckBlank';
+import { useCheckBlank } from '@/hooks/useCheckBlank';
 
 interface LoginInfo {
   id: string;
