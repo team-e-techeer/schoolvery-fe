@@ -1,7 +1,7 @@
 import BottomNavigation from '@/components/BottomNavigation';
 import Header from '@/components/Header';
 
-function WritingPage() {
+function PersonalPage() {
   return (
     <>
       <Header />
@@ -10,4 +10,4 @@ function WritingPage() {
   );
 }
 
-export default WritingPage;
+export default PersonalPage;
