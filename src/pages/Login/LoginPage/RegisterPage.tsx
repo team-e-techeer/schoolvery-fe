@@ -7,6 +7,8 @@ import { css } from '@emotion/react';
 import { useCallback, useState } from 'react';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useCheckBlank } from '@/hook/useCheckBlank';
+
 interface RegisterInfo {
   id: string;
   pw: string;
@@ -57,14 +59,7 @@ function RegisterPage() {
 
   const onCheckBlank = useCallback(
     (e: React.FocusEvent<HTMLFormElement, Element>) => {
-      const select = spanRef.current?.querySelector<HTMLElement>(`#${e.target.name}`);
-      if (select) {
-        if (!registerInfo[e.target.name]) {
-          select.style.display = 'block';
-        } else {
-          select.style.display = 'none';
-        }
-      }
+      useCheckBlank({ e, ref: spanRef, state: registerInfo });
       onCheckHaveSamePw();
     },
     [registerInfo, spanRef]
