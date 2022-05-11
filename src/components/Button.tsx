@@ -4,11 +4,12 @@ import { css } from '@emotion/react';
 import colors from '../constants/colors';
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   width?: number;
+  height?: number;
   buttonId: string;
 }
 
 export default function Button(props: Props) {
-  const { width = 100, children, buttonId, ...rest } = props;
+  const { width = 100, height = 5, children, buttonId, ...rest } = props;
 
   return (
     <button
@@ -17,9 +18,9 @@ export default function Button(props: Props) {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: ${width ? `${width}%` : '100%'};
-        margin: auto;
-        height: 56px;
+        width: ${width}%;
+        margin: 0 auto;
+        height: ${height}rem;
         border: 0 solid transparent;
         border-radius: 0.7rem;
         background-color: ${colors.mainColor};
