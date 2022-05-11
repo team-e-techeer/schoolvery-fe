@@ -13,7 +13,6 @@ const iconWrapper = css`
   align-items: center;
 `;
 
-const selectIconSize = 100;
 const iconSize = 30;
 
 export default function BottomNavigation() {
@@ -37,28 +36,24 @@ export default function BottomNavigation() {
     >
       <Link to="/" css={iconWrapper} data-testid="link-home">
         {pathname === '/' ? (
-          <AiTwotoneHome data-testid="icon-home" color={colors.mainColor} />
+          <AiTwotoneHome size={iconSize} data-testid="icon-home" color={colors.mainColor} />
         ) : (
           <AiOutlineHome size={iconSize} />
         )}
       </Link>
       <Link to="/chat" css={iconWrapper} data-testid="link-chat">
         {pathname === '/chat' ? (
-          <RiWechat2Fill size={selectIconSize} color={colors.mainColor} />
+          <RiWechat2Fill size={iconSize} color={colors.mainColor} />
         ) : (
           <RiWechat2Line size={iconSize} />
         )}
       </Link>
       <Link to="/writing" css={iconWrapper}>
-        {pathname === '/writing' ? (
-          <TiPlus size={selectIconSize} color={colors.mainColor} />
-        ) : (
-          <TiPlus size={iconSize} />
-        )}
+        {pathname === '/writing' ? <TiPlus size={iconSize} color={colors.mainColor} /> : <TiPlus size={iconSize} />}
       </Link>
       <Link to="/myInfo" css={iconWrapper}>
         {pathname === '/myInfo' ? (
-          <AiOutlineEllipsis size={selectIconSize} color={colors.mainColor} />
+          <AiOutlineEllipsis size={iconSize} color={colors.mainColor} />
         ) : (
           <AiOutlineEllipsis size={iconSize} />
         )}
