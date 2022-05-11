@@ -6,10 +6,11 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   width?: number;
   height?: number;
   buttonId: string;
+  fontSize?: number;
 }
 
 export default function Button(props: Props) {
-  const { width = 100, height = 5, children, buttonId, ...rest } = props;
+  const { width = 100, height = 5, fontSize = 1, children, buttonId, ...rest } = props;
 
   return (
     <button
@@ -25,7 +26,7 @@ export default function Button(props: Props) {
         border-radius: 0.7rem;
         background-color: ${colors.mainColor};
         color: ${colors.white};
-        font-size: 17px;
+        font-size: ${fontSize}rem;
         font-weight: 600;
         white-space: nowrap;
         user-select: none;
