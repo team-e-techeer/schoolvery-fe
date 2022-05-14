@@ -38,7 +38,7 @@ export default function JoinSummary({ title, people, time }: Props) {
       to={`${title}`}
       css={css`
         display: block;
-        width: 80%;
+        width: 90%;
         margin: 0 auto;
         cursor: pointer;
         padding: 1rem;
