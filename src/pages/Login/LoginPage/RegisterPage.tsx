@@ -66,13 +66,13 @@ function RegisterPage() {
   );
 
   const onCheckHaveSamePw = useCallback(() => {
-    const select = spanRef.current?.querySelector<HTMLElement>('#pw-differ');
-    if (registerInfo.pw !== registerInfo.pwConfirm) {
-      if (select) select.style.display = 'block';
-    } else {
-      if (select) select.style.display = 'none';
-    }
+    const select = spanRef.current?.querySelector<HTMLElement>('#pwConfirm') as HTMLElement;
+
+    if (isEqualPW(registerInfo.pw, registerInfo.pwConfirm)) return (select.style.display = 'none');
+    select.style.display = 'block';
   }, [spanRef, registerInfo]);
+
+  const isEqualPW = useCallback((pw: string, pwConfirm: string) => (pw === pwConfirm ? true : false), []);
 
   return (
     <>
@@ -101,8 +101,15 @@ function RegisterPage() {
         </InputField>
         <InputField>
           <InputOverText>비밀번호 확인</InputOverText>
-          <Input value={pwConfirm} name="pwConfirm" onChange={onChange} type={'password'} data-testid="pw-inputCheck" />
-          <AlertText id="pw-differ" data-testid="pw-alert">
+          <Input
+            value={pwConfirm}
+            name="pwConfirm"
+            autoComplete="off"
+            onChange={onChange}
+            type={'password'}
+            data-testid="pw-differ"
+          />
+          <AlertText id="pwConfirm" data-testid="pw-alert">
             비밀번호가 일치하지 않습니다
           </AlertText>
         </InputField>

@@ -16,7 +16,7 @@ export default function Header({ title, Left, Right, secondRight }: Props) {
           display: flex;
           flex-direction: row;
           align-items: center;
-          height: 5rem;
+          height: 6rem;
           background-color: ${colors.mainColor};
         `}
       >

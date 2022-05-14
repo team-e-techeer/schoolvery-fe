@@ -35,7 +35,7 @@ export default function BottomNavigation() {
       `}
     >
       <Link to="/" css={iconWrapper} data-testid="link-home">
-        {pathname === '/' ? (
+        {pathname === '/' || pathname === '' || pathname.includes('search') ? (
           <AiTwotoneHome size={iconSize} data-testid="icon-home" color={colors.mainColor} />
         ) : (
           <AiOutlineHome size={iconSize} />

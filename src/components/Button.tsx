@@ -10,7 +10,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export default function Button(props: Props) {
-  const { width = 100, height = 5, fontSize = 1, children, buttonId, ...rest } = props;
+  const { width = 100, height = 5, fontSize = 1.5, children, buttonId, ...rest } = props;
 
   return (
     <button

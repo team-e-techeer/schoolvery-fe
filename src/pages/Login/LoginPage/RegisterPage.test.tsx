@@ -42,9 +42,9 @@ describe('회원가입 페이지 테스트', () => {
     expect(idAlert).toHaveStyle('display: block');
   });
 
-  it('[Error] 비밀번호 일치 확인', () => {
-    const input: HTMLInputElement = screen.getByTestId('pw-input');
-    const secondInput: HTMLInputElement = screen.getByTestId('pw-inputCheck');
+  it('[Error] 비밀번호 일치 확인', async () => {
+    const input: HTMLInputElement = await screen.findByTestId('pw-input');
+    const secondInput: HTMLInputElement = await screen.findByTestId('pw-differ');
     fireEvent.change(input, { target: { value: '1234' } });
     fireEvent.change(secondInput, { target: { value: '1234' } });
     expect(input.value).toBe(secondInput.value);
@@ -52,7 +52,7 @@ describe('회원가입 페이지 테스트', () => {
 
   it('[Error] 비밀번호가 일치하지 않습니다', () => {
     const input: HTMLInputElement = screen.getByTestId('pw-input');
-    const secondInput: HTMLInputElement = screen.getByTestId('pw-inputCheck');
+    const secondInput: HTMLInputElement = screen.getByTestId('pw-differ');
     fireEvent.change(input, { target: { value: '1234' } });
     const pwDiffer = screen.getByTestId('pw-alert');
     secondInput.focus();
