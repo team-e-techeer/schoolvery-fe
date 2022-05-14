@@ -30,8 +30,8 @@ function LoginPage() {
     const submitItems = ['id', 'pw'];
     submitItems.forEach(item => {
       if (loginInfo[item].length) {
-        const select = loginRef.current?.querySelector<HTMLElement>(`#${item}`);
-        if (select) select.style.display = 'block';
+        const select = loginRef.current?.querySelector<HTMLElement>(`#${item}`) as HTMLElement;
+        select.style.display = 'block';
       }
     });
   }, []);
