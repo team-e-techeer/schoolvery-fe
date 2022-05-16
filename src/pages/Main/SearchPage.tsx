@@ -9,6 +9,7 @@ import { AiOutlineClose as CloseIcon, AiOutlineClockCircle as RecentIcon } from 
 import colors from '@/constants/colors';
 import { Link } from 'react-router-dom';
 import { css } from '@emotion/react';
+import JoinSummary from '@/components/JoinSummary';
 
 const SearchWrapper = styled.div`
   display: flex;
@@ -35,6 +36,14 @@ const InputUnderText = styled.span`
   font-size: 1.3rem;
   margin-top: 0.5rem;
   color: ${colors.grey600};
+`;
+const InputUnderTextRight = styled.span`
+  display: flex;
+  flex: 2.5;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  color: ${colors.grey600};
+  justify-content: flex-end;
 `;
 
 const InputUnderDelete = styled.button`
@@ -70,52 +79,75 @@ const SearchText = styled(Link)`
 
 function SearchPage() {
   const [inputValue, setInputValue] = useState('');
-  const [searchValues, setSearchItem] = useRecoilState(searchState);
+  const [recentSearchValue, setRecentSearchValue] = useRecoilState(searchState);
   const [isFocus, setFocus] = useState(false);
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const isExist = (value: string) => searchValues.find(item => item.searchValue === value);
+    const isExist = (value: string) => recentSearchValue.find(item => item.searchValue === value);
     if (!isExist(inputValue)) {
-      setSearchItem(prev => [...prev, { searchValue: inputValue }]);
+      setRecentSearchValue(prev => [...prev, { searchValue: inputValue }]);
     }
     setInputValue('');
+    // setFocus(false);
   };
   const onPressDeleteAll = useCallback(() => {
-    setSearchItem([]);
+    setRecentSearchValue([]);
   }, []);
 
   const onClickDeleteIcon = useCallback(e => {
-    setSearchItem(prev => prev.filter(item => item.searchValue !== e.target.id));
+    setRecentSearchValue(prev => prev.filter(item => item.searchValue !== e.target.id));
   }, []);
 
   return (
     <>
-      <>
-        <Input isLinking={false} inputValue={inputValue} setInputValue={setInputValue} onSubmit={onSubmit} />
-        <InputUnderBlock>
-          <InputUnderText>최근 검색어</InputUnderText>
-          <InputUnderDelete onClick={onPressDeleteAll}>
-            <span>전체 삭제</span>
-          </InputUnderDelete>
-        </InputUnderBlock>
-        {searchValues.map(search => (
-          <SearchWrapper key={search.searchValue}>
-            <SearchText to={`${search.searchValue}`}>
-              <RecentIcon
-                css={css`
-                  margin-right: 1rem;
-                `}
-                size={20}
-              />
-              {search.searchValue}
-            </SearchText>
-            <IconWrapper id={search.searchValue} onClick={onClickDeleteIcon}>
-              <CloseIcon id={search.searchValue} size={20} />
-            </IconWrapper>
-          </SearchWrapper>
-        ))}
-      </>
+      <Input
+        isLinking={false}
+        inputValue={inputValue}
+        setInputValue={setInputValue}
+        onSubmit={onSubmit}
+        setFocus={setFocus}
+        searchTestId="search-input"
+        formTestId="search-form"
+      />
+      {isFocus && (
+        <>
+          <InputUnderBlock>
+            <InputUnderText>최근 검색어</InputUnderText>
+            <InputUnderDelete onClick={onPressDeleteAll}>
+              <span>전체 삭제</span>
+            </InputUnderDelete>
+          </InputUnderBlock>
+          {recentSearchValue.map(search => (
+            <SearchWrapper key={search.searchValue}>
+              <SearchText to={`${search.searchValue}`}>
+                <RecentIcon
+                  css={css`
+                    margin-right: 1rem;
+                  `}
+                  size={20}
+                />
+                {search.searchValue}
+              </SearchText>
+              <IconWrapper id={search.searchValue} onClick={onClickDeleteIcon}>
+                <CloseIcon id={search.searchValue} size={20} />
+              </IconWrapper>
+            </SearchWrapper>
+          ))}
+        </>
+      )}
+      {!isFocus && (
+        <>
+          <InputUnderBlock>
+            <InputUnderText>검색 결과</InputUnderText>
+            <InputUnderTextRight>개수 : 30개</InputUnderTextRight>
+          </InputUnderBlock>
+          <JoinSummary title="hi" time={{ left: '1', post: '1' }} people={{ current: 1, total: 3 }} />
+          <JoinSummary title="hi" time={{ left: '1', post: '1' }} people={{ current: 1, total: 3 }} />
+          <JoinSummary title="hi" time={{ left: '1', post: '1' }} people={{ current: 1, total: 3 }} />
+          <JoinSummary title="hi" time={{ left: '1', post: '1' }} people={{ current: 1, total: 3 }} />
+        </>
+      )}
       <BottomNavigation />
     </>
   );
