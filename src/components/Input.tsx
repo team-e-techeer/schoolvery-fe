@@ -9,8 +9,8 @@ interface Props {
   inputValue?: string;
   setInputValue?: React.Dispatch<React.SetStateAction<string>>;
   setFocus?: React.Dispatch<React.SetStateAction<boolean>>;
-  searchTestId: string;
-  formTestId: string;
+  searchTestId?: string;
+  formTestId?: string;
 }
 
 const inputStyle = css`
