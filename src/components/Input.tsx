@@ -9,6 +9,8 @@ interface Props {
   inputValue?: string;
   setInputValue?: React.Dispatch<React.SetStateAction<string>>;
   setFocus?: React.Dispatch<React.SetStateAction<boolean>>;
+  searchTestId: string;
+  formTestId: string;
 }
 
 const inputStyle = css`
@@ -38,7 +40,15 @@ const inputWithoutPrev = css`
   align-items: center;
 `;
 
-export default function Input({ isLinking, onSubmit, inputValue, setInputValue, setFocus }: Props) {
+export default function Input({
+  isLinking,
+  onSubmit,
+  inputValue,
+  setInputValue,
+  setFocus,
+  searchTestId,
+  formTestId,
+}: Props) {
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target; // 우선 e.target 에서 name 과 value 를 추출
     setInputValue && setInputValue(value);
@@ -75,7 +85,7 @@ export default function Input({ isLinking, onSubmit, inputValue, setInputValue, 
       >
         <LeftIcon color={colors.grey800} size={30} />
       </Link>
-      <form css={inputStyle} onSubmit={onSubmit}>
+      <form css={inputStyle} onSubmit={onSubmit} data-testid={formTestId}>
         <SearchIcon size={25} color={colors.mainColor} />
         <input
           css={css`
@@ -87,11 +97,13 @@ export default function Input({ isLinking, onSubmit, inputValue, setInputValue, 
           type="text"
           value={inputValue}
           onChange={onChange}
-          name=""
-          id=""
+          data-testid={searchTestId}
           autoFocus={true}
           onFocus={() => {
             setFocus && setFocus(true);
+          }}
+          onBlur={() => {
+            setFocus && setFocus(false);
           }}
         />
       </form>
