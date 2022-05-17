@@ -78,7 +78,7 @@ export default function JoinSummary({ title, people, time }: Props) {
         </div>
         <div css={wrapFlex}>
           <Button height={2.5} buttonId="hi">
-            참여하기
+            목록으로 돌아가기
           </Button>
         </div>
       </div>
