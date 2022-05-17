@@ -64,8 +64,6 @@ export default function Input({
         `}
         placeholder="검색어를 입력해 주세요"
         type="text"
-        name=""
-        id=""
       />
     </Link>
   ) : (
@@ -80,7 +78,7 @@ export default function Input({
         to="/"
         css={css`
           cursor: pointer;
-          margin-left: 2rem;
+          margin-left: 5%;
         `}
       >
         <LeftIcon color={colors.grey800} size={30} />

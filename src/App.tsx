@@ -6,6 +6,7 @@ import MyInfoPage from './pages/MyInfoPage';
 import ChattingPage from './pages/ChattingPage';
 import WritingPage from './pages/WritingPage';
 import SearchPage from './pages/Main/SearchPage';
+import SearchDetailPage from './pages/Main/SearchDetailPage';
 
 export default function App() {
   return (
@@ -17,9 +18,8 @@ export default function App() {
         <Route path="/myInfo" element={<MyInfoPage />} />
         <Route path="/chat" element={<ChattingPage />} />
         <Route path="/writing" element={<WritingPage />} />
-        <Route path="/search/*" element={<SearchPage />}>
-          <Route path=":value" element={<SearchPage />} />
-        </Route>
+        <Route path="/search" element={<SearchPage />} />
+        <Route path="/search/*" element={<SearchDetailPage />} />
       </Routes>
     </BrowserRouter>
   );
