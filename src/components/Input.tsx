@@ -93,15 +93,13 @@ export default function Input({
           `}
           placeholder="검색어를 입력해 주세요"
           type="text"
+          id="search-input"
+          autoFocus={true}
           value={inputValue}
           onChange={onChange}
           data-testid={searchTestId}
-          autoFocus={true}
           onFocus={() => {
             setFocus && setFocus(true);
-          }}
-          onBlur={() => {
-            setFocus && setFocus(false);
           }}
         />
       </form>
