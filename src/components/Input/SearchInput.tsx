@@ -20,7 +20,6 @@ const inputStyle = css`
   align-items: center;
   margin-bottom: 1rem;
   background-color: ${colors.grey100};
-
   border-radius: 5px;
   height: 5rem;
   padding: 1rem;
@@ -49,11 +48,7 @@ export default function Input({
   searchTestId,
   formTestId,
 }: Props) {
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target; // 우선 e.target 에서 name 과 value 를 추출
-    setInputValue && setInputValue(value);
-  };
-
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => setInputValue && setInputValue(e.target.value);
   return isLinking ? (
     <Link css={inputWithoutPrev} to="/search">
       <SearchIcon size={25} color={colors.mainColor} />
