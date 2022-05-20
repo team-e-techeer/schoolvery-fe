@@ -2,7 +2,8 @@ const white = '#ffffff';
 const grey100 = '#f2f4f6';
 const inverseGrey50 = '#202027';
 const inverseGrey100 = '#2c2c35';
-const mainColor = '#fc775a';
+// const mainColor = '#fc775a';
+const mainColor = '#5B34AA';
 const colors = {
   grey50: '#f9fafb',
   grey100,
