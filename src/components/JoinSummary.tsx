@@ -44,7 +44,7 @@ export default function JoinSummary({ title, people, time }: Props) {
         padding: 1rem;
         border-bottom: 1px solid ${colors.mainColor};
         :hover {
-          background-color: ${colors.orange100};
+          background-color: ${colors.grey100};
         }
       `}
     >
