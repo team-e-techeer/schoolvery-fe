@@ -7,7 +7,6 @@ import { useRecoilState } from 'recoil';
 
 import { AiOutlineClose as CloseIcon, AiOutlineClockCircle as RecentIcon } from 'react-icons/ai';
 import colors from '@/constants/colors';
-import { Link } from 'react-router-dom';
 import { css } from '@emotion/react';
 import JoinSummary from '@/components/JoinSummary';
 
@@ -69,12 +68,13 @@ const IconWrapper = styled.button`
   height: 100%;
 `;
 
-const SearchText = styled(Link)`
+const SearchText = styled.button`
   display: flex;
   flex: 1;
   font-size: 1.5rem;
   padding: 1rem;
   align-items: center;
+  justify-content: flex-start;
 `;
 
 function SearchPage() {
@@ -85,11 +85,14 @@ function SearchPage() {
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const isExist = (value: string) => recentSearchValue.find(item => item.searchValue === value);
-    if (!isExist(inputValue)) {
+    if (!isExist(inputValue) && inputValue) {
       setRecentSearchValue(prev => [...prev, { searchValue: inputValue }]);
     }
     setInputValue('');
-    // setFocus(false);
+    setFocus(false);
+
+    const input = document.querySelector('#search-input') as HTMLInputElement;
+    input.blur();
   };
   const onPressDeleteAll = useCallback(() => {
     setRecentSearchValue([]);
@@ -97,6 +100,11 @@ function SearchPage() {
 
   const onClickDeleteIcon = useCallback(e => {
     setRecentSearchValue(prev => prev.filter(item => item.searchValue !== e.target.id));
+  }, []);
+
+  const onClickSearchHistory = useCallback(e => {
+    setInputValue(e.target.innerText);
+    onSubmit(e);
   }, []);
 
   return (
@@ -120,7 +128,7 @@ function SearchPage() {
           </InputUnderBlock>
           {recentSearchValue.map(search => (
             <SearchWrapper key={search.searchValue}>
-              <SearchText to={`${search.searchValue}`}>
+              <SearchText onClick={onClickSearchHistory}>
                 <RecentIcon
                   css={css`
                     margin-right: 1rem;
@@ -129,7 +137,7 @@ function SearchPage() {
                 />
                 {search.searchValue}
               </SearchText>
-              <IconWrapper id={search.searchValue} onClick={onClickDeleteIcon}>
+              <IconWrapper data-testid={search.searchValue} id={search.searchValue} onClick={onClickDeleteIcon}>
                 <CloseIcon id={search.searchValue} size={20} />
               </IconWrapper>
             </SearchWrapper>

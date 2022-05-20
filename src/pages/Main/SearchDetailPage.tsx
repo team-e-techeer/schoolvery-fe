@@ -34,6 +34,7 @@ export default function SearchDetailPage() {
             margin-left: 5%;
           `}
           buttonId="detail-button"
+          data-testid="detail-button"
         >
           목록으로 돌아가기
         </Button>

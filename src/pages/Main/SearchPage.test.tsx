@@ -1,8 +1,8 @@
 import { searchState } from '@/atoms/searchState';
 import { RecoilObserver } from '@/util/RecoilObserver';
-import { render, screen, fireEvent, waitFor, cleanup } from '@testing-library/react';
+import { render, screen, fireEvent, cleanup, renderHook } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import { RecoilRoot } from 'recoil';
+import { RecoilRoot, useRecoilValue } from 'recoil';
 import SearchPage from './SearchPage';
 
 describe('검색 페이지 테스트', () => {
@@ -26,8 +26,6 @@ describe('검색 페이지 테스트', () => {
     expect(screen.getByText('전체 삭제')).toBeInTheDocument();
     const input = screen.getByTestId('search-input');
     input.focus();
-    input.blur();
-    await waitFor(() => expect(screen.getByText('검색 결과')).toBeInTheDocument());
   });
 
   it('검색어 입력후 전송', async () => {
@@ -37,19 +35,28 @@ describe('검색 페이지 테스트', () => {
     fireEvent.submit(form);
     expect(onChange).toHaveBeenCalledWith([]);
     expect(onChange).toHaveBeenCalledWith([{ searchValue: '123' }]);
-    await waitFor(() => expect(screen.getByText('123')).toBeInTheDocument());
+    expect(screen.getByText('검색 결과')).toBeInTheDocument();
   });
 
   it('검색어 입력후 전송후 삭제', async () => {
     const input = screen.getByTestId('search-input');
     const form = screen.getByTestId('search-form');
-    fireEvent.change(input, { target: { value: '123' } });
+    fireEvent.change(input, { target: { value: '안뇽' } });
     fireEvent.submit(form);
 
+    const { result } = renderHook(() => useRecoilValue(searchState), {
+      wrapper: RecoilRoot,
+    });
+
+    expect(result.current).toEqual([]);
+
     expect(onChange).toHaveBeenCalledWith([]);
-    expect(onChange).toHaveBeenCalledWith([{ searchValue: '123' }]);
-    await waitFor(() => expect(screen.getByText('123')).toBeInTheDocument());
-    const button = screen.getAllByRole('button');
-    fireEvent.click(button[1]);
+    expect(onChange).toHaveBeenCalledWith([{ searchValue: '안뇽' }]);
+    fireEvent.focus(input);
+    const text = screen.getByText('안뇽');
+    expect(text).toBeInTheDocument();
+    const button = screen.getByTestId('안뇽');
+    fireEvent.click(button);
+    expect(text).not.toBeInTheDocument();
   });
 });

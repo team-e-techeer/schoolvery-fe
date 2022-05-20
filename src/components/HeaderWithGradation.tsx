@@ -13,10 +13,8 @@ export default function HeaderWithGradient({ schoolName, imgSrc, categoryName }:
       <header
         css={css`
           height: 17rem;
-          background: rgb(249, 231, 168);
-          background: linear-gradient(0deg, rgba(249, 231, 168, 1) 0%, rgba(255, 74, 74, 1) 100%);
-          border-bottom-left-radius: 20px;
-          border-bottom-right-radius: 20px;
+          background: rgb(249, 168, 168);
+          background: linear-gradient(0deg, rgba(249, 168, 168, 1) 0%, rgba(91, 52, 170, 1) 100%);
           padding-left: 5%;
         `}
       >
