@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`로그인 페이지 테스트 렌더링 테스트 1`] = `
+<div>
+  <a
+    css="You have tried to stringify object returned from \`css\` function. It isn't supposed to be used directly (e.g. as value of the \`className\` prop), but rather handed to emotion so it can handle it (e.g. as value of \`css\` prop)."
+    href="/search"
+  >
+    <svg
+      color="#5B34AA"
+      fill="currentColor"
+      height="25"
+      stroke="currentColor"
+      stroke-width="0"
+      style="color: rgb(91, 52, 170);"
+      viewBox="0 0 24 24"
+      width="25"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"
+      />
+    </svg>
+    <input
+      css="You have tried to stringify object returned from \`css\` function. It isn't supposed to be used directly (e.g. as value of the \`className\` prop), but rather handed to emotion so it can handle it (e.g. as value of \`css\` prop)."
+      placeholder="검색어를 입력해 주세요"
+      type="text"
+    />
+  </a>
+</div>
+`;
+
+exports[`로그인 페이지 테스트 입력 테스트 1`] = `
+<div>
+  <div
+    css="You have tried to stringify object returned from \`css\` function. It isn't supposed to be used directly (e.g. as value of the \`className\` prop), but rather handed to emotion so it can handle it (e.g. as value of \`css\` prop)."
+  >
+    <a
+      css="You have tried to stringify object returned from \`css\` function. It isn't supposed to be used directly (e.g. as value of the \`className\` prop), but rather handed to emotion so it can handle it (e.g. as value of \`css\` prop)."
+      href="/"
+    >
+      <svg
+        color="#333d4b"
+        fill="none"
+        height="30"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color: rgb(51, 61, 75);"
+        viewBox="0 0 24 24"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="19"
+          x2="5"
+          y1="12"
+          y2="12"
+        />
+        <polyline
+          points="12 19 5 12 12 5"
+        />
+      </svg>
+    </a>
+    <form
+      css="You have tried to stringify object returned from \`css\` function. It isn't supposed to be used directly (e.g. as value of the \`className\` prop), but rather handed to emotion so it can handle it (e.g. as value of \`css\` prop)."
+    >
+      <svg
+        color="#5B34AA"
+        fill="currentColor"
+        height="25"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: rgb(91, 52, 170);"
+        viewBox="0 0 24 24"
+        width="25"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"
+        />
+      </svg>
+      <input
+        css="You have tried to stringify object returned from \`css\` function. It isn't supposed to be used directly (e.g. as value of the \`className\` prop), but rather handed to emotion so it can handle it (e.g. as value of \`css\` prop)."
+        id="search-input"
+        placeholder="검색어를 입력해 주세요"
+        type="text"
+        value=""
+      />
+    </form>
+  </div>
+</div>
+`;
