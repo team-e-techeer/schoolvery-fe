@@ -1,6 +1,6 @@
 import { searchState } from '@/atoms/searchState';
 import BottomNavigation from '@/components/BottomNavigation';
-import Input from '@/components/Input';
+import SearchInput from '@/components/Input/SearchInput';
 import styled from '@emotion/styled';
 import { useCallback, useState } from 'react';
 import { useRecoilState } from 'recoil';
@@ -109,7 +109,7 @@ function SearchPage() {
 
   return (
     <>
-      <Input
+      <SearchInput
         isLinking={false}
         inputValue={inputValue}
         setInputValue={setInputValue}
