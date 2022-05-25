@@ -4,7 +4,13 @@ import { BiCategory as CategoryIcon } from 'react-icons/bi';
 import { IoPeopleCircle as People, IoTimeOutline as Time } from 'react-icons/io5';
 import { FaMoneyCheck as CardIcon } from 'react-icons/fa';
 import colors from '@/constants/colors';
-import Button from './Button';
+import Button from '../Button';
+import { useEffect, useState } from 'react';
+import dayjs from 'dayjs';
+import 'dayjs/locale/ko';
+
+dayjs.locale('ko');
+
 const spanStyle = css`
   display: flex;
   align-items: center;
@@ -42,13 +48,22 @@ interface Props {
     total: number;
   };
   time: {
-    post: string;
-    left: string;
+    post: number;
+    left: number;
   };
   payment: number;
 }
 
 export default function JoinDetail({ shopName, schoolName, categoryName, people, time, payment }: Props) {
+  const [currentTime] = useState(dayjs(time.post).format('a hh : mm'));
+  const [timeLeft, setTimeLeft] = useState(dayjs(time.left).format('a hh : mm'));
+
+  useEffect(() => {
+    setInterval(() => {
+      setTimeLeft(dayjs(time.left).subtract(1, 'm').format('a hh : mm'));
+    }, 1000 * 60);
+  }, []);
+
   return (
     <>
       <div
@@ -87,13 +102,13 @@ export default function JoinDetail({ shopName, schoolName, categoryName, people,
         </ul>
         <ul css={ulStyle}>
           <Time css={iconStyle} />
-          <span css={eachSpanStyle}>{time.post}</span>
-          <span css={eachSpanStyle}>{time.left} 남음</span>
+          <span css={eachSpanStyle}>{currentTime}</span>
+          <span css={eachSpanStyle}>{timeLeft} 남음</span>
         </ul>
         <ul css={ulStyle}>
           <CardIcon css={iconStyle} />
           <span css={eachSpanStyle}>총 {payment}원</span>
-          <span css={eachSpanStyle}>인당 {payment / people.total}원 예상</span>
+          <span css={eachSpanStyle}>인당 {Math.round(payment / people.total)}원 예상</span>
         </ul>
         <Button
           css={css`
