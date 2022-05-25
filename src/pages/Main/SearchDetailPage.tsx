@@ -1,6 +1,6 @@
 import Button from '@/components/Button';
 import HeaderWithGradient from '@/components/HeaderWithGradation';
-import JoinDetail from '@/components/JoinDetail';
+import JoinDetail from '@/components/Join/JoinDetail';
 import colors from '@/constants/colors';
 import { css } from '@emotion/react';
 import Logo from '../../assets/img/dog.png';
@@ -20,9 +20,9 @@ export default function SearchDetailPage() {
           shopName="BBQ 치킨"
           categoryName="치킨"
           schoolName="00 대학교"
-          time={{ left: '1', post: '1' }}
+          time={{ left: Date.now(), post: Date.now() }}
           payment={3000}
-          people={{ current: 3, total: 5 }}
+          people={{ current: 3, total: 7 }}
         />
 
         <Button
