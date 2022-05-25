@@ -2,7 +2,7 @@ import colors from '@/constants/colors';
 import { css } from '@emotion/react';
 import { IoPeopleCircle as People, IoTimeOutline as Time } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
-import Button from './Button';
+import Button from '../Button';
 interface Props {
   title: string;
   people: {
