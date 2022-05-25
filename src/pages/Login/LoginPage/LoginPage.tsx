@@ -1,5 +1,5 @@
 /* eslint-disable import/extensions */
-import Header from '../../../components/Header';
+import Header from '../../../components/Header/Header';
 import { AiOutlineLeft as LeftIcon } from 'react-icons/ai';
 import { IconWrapper, Input, Title, LinkText, InputBlock, AlertText } from './LoginPage.styles';
 import { useRecoilValue } from 'recoil';

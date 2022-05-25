@@ -1,5 +1,5 @@
 import Button from '@/components/Button';
-import HeaderWithGradient from '@/components/HeaderWithGradation';
+import HeaderWithGradient from '@/components/Header/HeaderWithGradation';
 import JoinDetail from '@/components/Join/JoinDetail';
 import colors from '@/constants/colors';
 import { css } from '@emotion/react';
