@@ -8,7 +8,7 @@ import { useRecoilState } from 'recoil';
 import { AiOutlineClose as CloseIcon, AiOutlineClockCircle as RecentIcon } from 'react-icons/ai';
 import colors from '@/constants/colors';
 import { css } from '@emotion/react';
-import JoinSummary from '@/components/JoinSummary';
+import JoinSummary from '@/components/Join/JoinSummary';
 
 const SearchWrapper = styled.div`
   display: flex;

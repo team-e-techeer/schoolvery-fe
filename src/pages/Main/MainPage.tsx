@@ -1,6 +1,6 @@
 import BottomNavigation from '@/components/BottomNavigation';
 import SearchInput from '@/components/Input/SearchInput';
-import JoinSummary from '@/components/JoinSummary';
+import JoinSummary from '@/components/Join/JoinSummary';
 import Header from '../../components/Header';
 
 function MainPage() {
