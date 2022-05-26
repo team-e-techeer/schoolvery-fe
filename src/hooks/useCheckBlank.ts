@@ -7,9 +7,10 @@ interface parameter {
 }
 
 export const useCheckBlank = ({ e, ref, state }: parameter) => {
+  if (!e.target.name) return;
   const isHaveTarget = () => Boolean(state[e.target.name]);
 
   const select = ref.current?.querySelector<HTMLElement>(`#${e.target.name}`) as HTMLElement;
   if (isHaveTarget()) return (select.style.display = 'none');
-  select.style.display = 'block';
+  if (select) select.style.display = 'block';
 };
