@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`로그인 페이지 테스트 렌더링 테스트 1`] = `
+.emotion-0 {
+  height: 17rem;
+  background: rgb(249, 168, 168);
+  background: linear-gradient(0deg, rgba(249, 168, 168, 1) 0%, rgba(91, 52, 170, 1) 100%);
+  padding-left: 5%;
+}
+
+.emotion-1 {
+  padding-top: 1rem;
+  color: #f2f4f6;
+  font-size: 2.5rem;
+}
+
+.emotion-2 {
+  color: #f2f4f6;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: #f2f4f6;
+  width: 6rem;
+  height: 7rem;
+  border-radius: 8px;
+}
+
+.emotion-4 {
+  width: 6rem;
+  height: 6rem;
+  object-fit: fill;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  bottom: 10%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+<div>
+  <header
+    class="emotion-0"
+  >
+    <h1
+      class="emotion-1"
+    >
+      스쿨버리
+    </h1>
+    <h2
+      class="emotion-2"
+    >
+      한국공과
+       대학교
+    </h2>
+    <div
+      class="emotion-3"
+    >
+      <img
+        alt="category-img"
+        class="emotion-4"
+        src="test-file-stub"
+      />
+      <span
+        class="emotion-5"
+      >
+        강아지
+      </span>
+    </div>
+  </header>
+</div>
+`;
