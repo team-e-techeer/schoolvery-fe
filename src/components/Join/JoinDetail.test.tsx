@@ -1,7 +1,8 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import JoinDetail from './JoinDetail';
 import React, { useState as useStateMock, useEffect as useEffectMock } from 'react';
+
 jest.mock('react', () => ({
   ...jest.requireActual('react'),
   useState: jest.fn(),
@@ -22,7 +23,7 @@ describe('로그인 페이지 테스트', () => {
   it('렌더링 테스트', () => {
     jest.useFakeTimers();
     jest.spyOn(global, 'setInterval');
-
+    Date.now = jest.fn(() => 1653480974069);
     const { container } = render(
       <JoinDetail
         shopName="BBQ"
