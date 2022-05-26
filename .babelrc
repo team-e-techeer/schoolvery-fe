@@ -7,11 +7,12 @@
         [
           "@babel/preset-react",
           {
-            "runtime": "automatic"
+            "runtime": "automatic",
+            "importSource": "@emotion/react"
           }
         ]
       ],
-      "plugins": ["@babel/plugin-transform-runtime"]
+      "plugins": ["@babel/plugin-transform-runtime", "@emotion/babel-plugin"]
     }
   }
 }
