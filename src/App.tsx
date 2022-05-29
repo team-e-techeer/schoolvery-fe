@@ -4,7 +4,7 @@ import LoginPage from './pages/Login/LoginPage/LoginPage';
 import RegisterPage from './pages/Login/LoginPage/RegisterPage';
 import MyInfoPage from './pages/MyInfoPage';
 import ChattingPage from './pages/ChattingPage';
-import WritingPage from './pages/WritingPage';
+import WritingPage from './pages/Writing/WritingPage';
 import SearchPage from './pages/Main/SearchPage';
 import SearchDetailPage from './pages/Main/SearchDetailPage';
 
