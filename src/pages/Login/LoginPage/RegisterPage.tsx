@@ -1,5 +1,5 @@
 /* eslint-disable import/extensions */
-import Header from '../../../components/Header';
+import Header from '../../../components/Header/Header';
 import { AiOutlineLeft as LeftIcon } from 'react-icons/ai';
 import { AlertText, IconWrapper, Input, InputField, InputOverText, JoinBlock } from './RegisterPage.styles';
 import Button from '../../../components/Button';

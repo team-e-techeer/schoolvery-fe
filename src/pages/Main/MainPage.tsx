@@ -1,7 +1,7 @@
 import BottomNavigation from '@/components/BottomNavigation';
 import SearchInput from '@/components/Input/SearchInput';
 import JoinSummary from '@/components/Join/JoinSummary';
-import Header from '../../components/Header';
+import Header from '../../components/Header/Header';
 
 function MainPage() {
   return (

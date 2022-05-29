@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import type { ReactNode } from 'react';
-import colors from '../constants/colors';
+import colors from '../../constants/colors';
 export interface Props {
   title?: string;
   Left?: () => ReactNode;
