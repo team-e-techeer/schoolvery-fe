@@ -7,6 +7,7 @@ import ChattingPage from './pages/ChattingPage';
 import WritingPage from './pages/WritingPage';
 import SearchPage from './pages/Main/SearchPage';
 import SearchDetailPage from './pages/Main/SearchDetailPage';
+import SearchWithCategory from './pages/Main/SearchWithCategoryPage';
 
 export default function App() {
   return (
@@ -18,8 +19,13 @@ export default function App() {
         <Route path="/myInfo" element={<MyInfoPage />} />
         <Route path="/chat" element={<ChattingPage />} />
         <Route path="/writing" element={<WritingPage />} />
-        <Route path="/search" element={<SearchPage />} />
-        <Route path="/search/*" element={<SearchDetailPage />} />
+        <Route path="/search" element={<SearchPage />}>
+          <Route path=":searchValue" element={<SearchDetailPage />} />
+        </Route>
+        <Route path="/category" element={<SearchWithCategory />}>
+          <Route path=":name" element={<SearchWithCategory />} />
+        </Route>
+        <Route path="/detail/*" element={<SearchDetailPage />} />
       </Routes>
     </BrowserRouter>
   );
