@@ -35,7 +35,7 @@ const spanStyle = css`
 export default function JoinSummary({ title, people, time }: Props) {
   return (
     <Link
-      to={`${title}`}
+      to={`/detail/${title}`}
       css={css`
         display: block;
         width: 90%;
