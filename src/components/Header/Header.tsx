@@ -36,6 +36,7 @@ export default function Header({ title, Left, Right, secondRight }: Props) {
           <h1
             css={css`
               color: #fff;
+              font-size: 2rem;
             `}
           >
             {title}
@@ -58,7 +59,7 @@ export default function Header({ title, Left, Right, secondRight }: Props) {
           {secondRight && secondRight()}
           <div
             css={css`
-              flex: 0.3;
+              flex: 1;
               background-color: 'transparent';
             `}
           />
