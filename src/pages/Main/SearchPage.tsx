@@ -2,13 +2,13 @@ import { searchState } from '@/atoms/searchState';
 import BottomNavigation from '@/components/BottomNavigation';
 import SearchInput from '@/components/Input/SearchInput';
 import styled from '@emotion/styled';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
-
 import { AiOutlineClose as CloseIcon, AiOutlineClockCircle as RecentIcon } from 'react-icons/ai';
 import colors from '@/constants/colors';
 import { css } from '@emotion/react';
 import JoinSummary from '@/components/Join/JoinSummary';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const SearchWrapper = styled.div`
   display: flex;
@@ -81,6 +81,17 @@ function SearchPage() {
   const [inputValue, setInputValue] = useState('');
   const [recentSearchValue, setRecentSearchValue] = useRecoilState(searchState);
   const [isFocus, setFocus] = useState(false);
+  const { searchValue } = useParams();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (searchValue) {
+      setFocus(false);
+      setInputValue(searchValue);
+      return;
+    }
+    setFocus(true);
+  }, [searchValue]);
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -88,7 +99,7 @@ function SearchPage() {
     if (!isExist(inputValue) && inputValue) {
       setRecentSearchValue(prev => [...prev, { searchValue: inputValue }]);
     }
-    setInputValue('');
+    inputValue ? navigate(`/search/${inputValue}`) : navigate(`/search/${searchValue}`);
     setFocus(false);
 
     const input = document.querySelector('#search-input') as HTMLInputElement;
@@ -102,9 +113,10 @@ function SearchPage() {
     setRecentSearchValue(prev => prev.filter(item => item.searchValue !== e.target.id));
   }, []);
 
-  const onClickSearchHistory = useCallback(e => {
-    setInputValue(e.target.innerText);
+  const onClickSearchHistory = useCallback((searchValue, e) => {
+    setInputValue(searchValue);
     onSubmit(e);
+    navigate(`/search/${searchValue}`);
   }, []);
 
   return (
@@ -128,7 +140,10 @@ function SearchPage() {
           </InputUnderBlock>
           {recentSearchValue.map(search => (
             <SearchWrapper key={search.searchValue}>
-              <SearchText onClick={onClickSearchHistory}>
+              <SearchText
+                onClick={e => onClickSearchHistory(search.searchValue, e)}
+                data-testid={`search-${search.searchValue}`}
+              >
                 <RecentIcon
                   css={css`
                     margin-right: 1rem;
