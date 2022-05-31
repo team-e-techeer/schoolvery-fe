@@ -89,7 +89,7 @@ export default function Input({
           placeholder="검색어를 입력해 주세요"
           type="text"
           id="search-input"
-          autoFocus={true}
+          autoFocus={false}
           value={inputValue}
           onChange={onChange}
           data-testid={searchTestId}

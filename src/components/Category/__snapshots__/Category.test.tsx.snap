@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`로그인 페이지 테스트 렌더링 테스트 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 90%;
+  margin: 2rem auto;
+  background-color: #f2f4f6;
+  border-radius: 8px;
+  padding: 2rem;
+  max-height: 30rem;
+  box-shadow: 1px 1px 1px 1px #d1d6db;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-basis: 20%;
+  -ms-flex-preferred-size: 20%;
+  flex-basis: 20%;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  max-height: 10rem;
+}
+
+.emotion-3 {
+  max-width: 100%;
+  max-height: 7rem;
+}
+
+<div>
+  <div
+    class="emotion-0"
+  >
+    <ul
+      class="emotion-1"
+    >
+      <a
+        class="emotion-2"
+        href="/category/korea"
+      >
+        <img
+          alt="category img for 한식"
+          class="emotion-3"
+          src="test-file-stub"
+        />
+        <span>
+          한식
+        </span>
+      </a>
+      <a
+        class="emotion-2"
+        href="/category/china"
+      >
+        <img
+          alt="category img for 중식"
+          class="emotion-3"
+          src="test-file-stub"
+        />
+        <span>
+          중식
+        </span>
+      </a>
+      <a
+        class="emotion-2"
+        href="/category/japan"
+      >
+        <img
+          alt="category img for 일식"
+          class="emotion-3"
+          src="test-file-stub"
+        />
+        <span>
+          일식
+        </span>
+      </a>
+      <a
+        class="emotion-2"
+        href="/category/chicken"
+      >
+        <img
+          alt="category img for 치킨"
+          class="emotion-3"
+          src="test-file-stub"
+        />
+        <span>
+          치킨
+        </span>
+      </a>
+    </ul>
+  </div>
+</div>
+`;
