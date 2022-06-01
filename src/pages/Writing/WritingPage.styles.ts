@@ -21,7 +21,7 @@ export const Title = styled.h2`
   text-align: center;
 `;
 
-export const Container = styled.div`
+export const Container = styled.form`
 margin-left: 10%;
 margin-right: 10%;
 `;
@@ -32,7 +32,7 @@ export const SecondSection = styled.div`
 display:flex;
 `;
 export const ThirdSection = styled.div`
-margin-top: 5%;
+margin-top: 3%;
 `;
 
 export const InputBlock = styled.div`
@@ -40,12 +40,12 @@ display:flex;
 `;
 
 export const IconCenterBlock = styled.div`
-margin-left:45%;
-margin-right:45%;
+margin-left:47%;
+margin-right:47%;
 `;
 
 export const IconBlock = styled.div`
-margin-top:3.4rem;
+margin-top:3.3rem;
 `;
 
 export const SecondDetailSection = styled.div`
@@ -91,7 +91,7 @@ export const NumInput = styled.input`
 
 export const Post = styled.button`
 display: flex;
-margin-top: 3rem;
+margin-top: 2rem;
 margin-bottom: 1.5rem;
 border-radius: 0.7rem;
 width: 100%;
