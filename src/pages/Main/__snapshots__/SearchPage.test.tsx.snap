@@ -1,0 +1,3397 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`검색 페이지 테스트 검색 쿼리문 테스트 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.emotion-1 {
+  cursor: pointer;
+  margin-left: 5%;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  background-color: #f2f4f6;
+  border-radius: 5px;
+  height: 5rem;
+  padding: 1rem;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+.emotion-3 {
+  margin-left: 1rem;
+  background-color: inherit;
+  width: 100%;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 2.5;
+  -ms-flex: 2.5;
+  flex: 2.5;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  color: #6b7684;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 2.5;
+  -ms-flex: 2.5;
+  flex: 2.5;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  color: #6b7684;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+.emotion-10 {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  cursor: pointer;
+  padding: 1rem;
+  border-bottom: 1px solid #fc775a;
+}
+
+.emotion-10:hover {
+  background-color: #f2f4f6;
+}
+
+.emotion-11 {
+  font-size: 1.5rem;
+}
+
+.emotion-12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  height: 100%;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-self: center;
+  text-align: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.emotion-17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  height: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-self: center;
+  text-align: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.emotion-20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  height: 2.5rem;
+  border: 0 solid transparent;
+  border-radius: 0.7rem;
+  background-color: #fc775a;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+}
+
+.emotion-20:focus {
+  outline: none;
+}
+
+.emotion-20:disabled {
+  opacity: 0.26;
+  cursor: not-allowed;
+}
+
+.emotion-20:active {
+  background-color: #7b1fa2;
+}
+
+.emotion-54 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 7rem;
+  z-index: 777;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: space-around;
+  -ms-flex-pack: space-around;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  background-color: #e5e8eb;
+}
+
+.emotion-55 {
+  cursor: pointer;
+  width: 3rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+<div>
+  <div
+    class="emotion-0"
+  >
+    <a
+      class="emotion-1"
+      href="/"
+    >
+      <svg
+        color="#333d4b"
+        fill="none"
+        height="30"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color: rgb(51, 61, 75);"
+        viewBox="0 0 24 24"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="19"
+          x2="5"
+          y1="12"
+          y2="12"
+        />
+        <polyline
+          points="12 19 5 12 12 5"
+        />
+      </svg>
+    </a>
+    <form
+      class="emotion-2"
+      data-testid="search-form"
+    >
+      <svg
+        color="#fc775a"
+        fill="currentColor"
+        height="25"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: rgb(252, 119, 90);"
+        viewBox="0 0 24 24"
+        width="25"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"
+        />
+      </svg>
+      <input
+        class="emotion-3"
+        data-testid="search-input"
+        id="search-input"
+        placeholder="검색어를 입력해 주세요"
+        type="text"
+        value="hi"
+      />
+    </form>
+  </div>
+  <div
+    class="emotion-4 emotion-5"
+  >
+    <span
+      class="emotion-6 emotion-7"
+    >
+      검색 결과
+    </span>
+    <span
+      class="emotion-8 emotion-9"
+    >
+      개수 : 30개
+    </span>
+  </div>
+  <a
+    class="emotion-10"
+    href="/detail/hi"
+  >
+    <span
+      class="emotion-11"
+    >
+      hi
+    </span>
+    <div
+      class="emotion-12"
+    >
+      <div
+        class="emotion-13"
+      >
+        <svg
+          color="#fc775a"
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(252, 119, 90);"
+          viewBox="0 0 512 512"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M258.9 48C141.92 46.42 46.42 141.92 48 258.9c1.56 112.19 92.91 203.54 205.1 205.1 117 1.6 212.48-93.9 210.88-210.88C462.44 140.91 371.09 49.56 258.9 48zm-3.68 152.11c.21-1.2.44-2.4.71-3.59a66.46 66.46 0 0116.29-31.21c12.89-13.73 31.16-21.31 51.45-21.31a74.05 74.05 0 0125.06 4.26 66.69 66.69 0 0126.27 17.2 68.15 68.15 0 0118 42.14 78.46 78.46 0 010 11.4 86.19 86.19 0 01-8.2 31q-.76 1.59-1.59 3.15c-1.11 2.07-2.3 4.1-3.58 6.06a79.47 79.47 0 01-8.63 11c-13.12 14-29.92 21.73-47.31 21.73a59.61 59.61 0 01-19.17-3.18 63.47 63.47 0 01-6.1-2.43 70.76 70.76 0 01-22.07-16.12 83.76 83.76 0 01-22-51.32q-.27-3.88-.18-7.68a75.62 75.62 0 011.05-11.08zm-149.73 24.34a59.87 59.87 0 015.2-20.64 56.76 56.76 0 012.78-5.3 54.49 54.49 0 017.19-9.56 55.62 55.62 0 0114-10.82 56.84 56.84 0 018.11-3.64 63.85 63.85 0 0133.35-2.39 57 57 0 0130.78 17 57.86 57.86 0 0115.41 38.62c.05 2.11 0 4.23-.15 6.38a71.58 71.58 0 01-6 23.84 69.49 69.49 0 01-5.73 10.42 65.39 65.39 0 01-15.76 16.57c-1.5 1.07-3.06 2.07-4.67 3.07a54.21 54.21 0 01-10 4.65 49.31 49.31 0 01-16.2 2.76c-.93 0-1.86 0-2.78-.08a47.6 47.6 0 01-5.48-.62 51.19 51.19 0 01-5.35-1.23 53.54 53.54 0 01-7.72-2.89c-.84-.39-1.66-.8-2.48-1.23-18-9.49-31.57-29.16-34.23-52.12-.12-1.05-.22-2.1-.29-3.16a66.59 66.59 0 01.02-9.63zm53.92 178.6a177.27 177.27 0 01-61.94-70.65 4 4 0 011.62-5.26C117.67 316.69 141.4 311 163.82 311c17 0 30.7 2 42.69 5.88a8 8 0 012.59 13.77c-23.35 19-38.4 42.54-45.47 70.75a2.77 2.77 0 01-4.22 1.65zM256 432a175.12 175.12 0 01-65.7-12.72 4 4 0 01-2.4-4.46c.4-2.05.84-3.92 1.23-5.48 7.12-28.43 24.76-52 51-68.18 23.29-14.35 53-22.25 83.52-22.25 31.16 0 60 7.58 83.48 21.91a2.72 2.72 0 01.91 3.67A176.1 176.1 0 01256 432z"
+          />
+          <path
+            d="M161 295.28a47.6 47.6 0 01-5.48-.62 47.6 47.6 0 005.48.62zm-26.36-117.15a55.62 55.62 0 00-14 10.82 54.49 54.49 0 00-7.19 9.56 54.49 54.49 0 017.19-9.56 55.62 55.62 0 0114-10.82zm81.53 79.76a71.58 71.58 0 006-23.84c.15-2.15.2-4.27.15-6.38q.08 3.15-.15 6.38a71.58 71.58 0 01-6 23.84zm-81.53-79.76a56.84 56.84 0 018.11-3.64 56.84 56.84 0 00-8.11 3.64zm15.57 115.3a53.54 53.54 0 01-7.72-2.89 53.54 53.54 0 007.72 2.89zm-44.43-56.24c2.66 23 16.26 42.63 34.23 52.12-18.01-9.49-31.57-29.16-34.23-52.12zM254.34 219a83.76 83.76 0 0022 51.32 70.76 70.76 0 0022.07 16.12 70.76 70.76 0 01-22.07-16.12 83.76 83.76 0 01-22-51.32q-.27-3.88-.18-7.68-.09 3.75.18 7.68zm50.16 69.82a63.47 63.47 0 01-6.1-2.43 63.47 63.47 0 006.1 2.43zm-48.57-92.28a66.46 66.46 0 0116.29-31.21 66.46 66.46 0 00-16.29 31.21zM375 165.46a68.15 68.15 0 0118 42.14 68.15 68.15 0 00-18-42.14 66.69 66.69 0 00-26.27-17.2 66.69 66.69 0 0126.27 17.2zM393 219a86.19 86.19 0 01-8.2 31 86.19 86.19 0 008.2-31zm-138.84-7.73a75.62 75.62 0 011.06-11.14 75.62 75.62 0 00-1.06 11.14zm129.03 41.89zm-176.31-64.11a57.86 57.86 0 0115.41 38.62 57.86 57.86 0 00-15.41-38.62 57 57 0 00-30.78-17 57 57 0 0130.78 17zM190 288a54.21 54.21 0 01-10 4.65 54.21 54.21 0 0010-4.65zm-84.51-63.55a59.87 59.87 0 015.2-20.64 59.87 59.87 0 00-5.2 20.64zm89.19 60.43C193.17 286 191.61 287 190 288c1.61-1 3.17-2 4.68-3.12zm21.49-26.99a69.49 69.49 0 01-5.73 10.42 69.49 69.49 0 005.73-10.42zm-105.48-54.08a56.76 56.76 0 012.78-5.3 56.76 56.76 0 00-2.78 5.3zm83.99 81.07a65.39 65.39 0 0015.76-16.57 65.39 65.39 0 01-15.76 16.57z"
+          />
+        </svg>
+        <span
+          class="emotion-14"
+        >
+          1
+           / 
+          3
+          명
+        </span>
+      </div>
+      <div
+        class="emotion-13"
+      >
+        <svg
+          color="#fc775a"
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(252, 119, 90);"
+          viewBox="0 0 512 512"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z"
+            fill="none"
+            stroke-miterlimit="10"
+            stroke-width="32"
+          />
+          <path
+            d="M256 128v144h96"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="32"
+          />
+        </svg>
+        <span
+          class="emotion-14"
+        >
+          1
+        </span>
+      </div>
+      <div
+        class="emotion-17"
+      >
+        <span
+          class="emotion-18"
+        >
+          1
+           남음
+        </span>
+      </div>
+      <div
+        class="emotion-13"
+      >
+        <button
+          class="emotion-20"
+          id="hi"
+        >
+          <span>
+            참여하기
+          </span>
+        </button>
+      </div>
+    </div>
+  </a>
+  <a
+    class="emotion-10"
+    href="/detail/hi"
+  >
+    <span
+      class="emotion-11"
+    >
+      hi
+    </span>
+    <div
+      class="emotion-12"
+    >
+      <div
+        class="emotion-13"
+      >
+        <svg
+          color="#fc775a"
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(252, 119, 90);"
+          viewBox="0 0 512 512"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M258.9 48C141.92 46.42 46.42 141.92 48 258.9c1.56 112.19 92.91 203.54 205.1 205.1 117 1.6 212.48-93.9 210.88-210.88C462.44 140.91 371.09 49.56 258.9 48zm-3.68 152.11c.21-1.2.44-2.4.71-3.59a66.46 66.46 0 0116.29-31.21c12.89-13.73 31.16-21.31 51.45-21.31a74.05 74.05 0 0125.06 4.26 66.69 66.69 0 0126.27 17.2 68.15 68.15 0 0118 42.14 78.46 78.46 0 010 11.4 86.19 86.19 0 01-8.2 31q-.76 1.59-1.59 3.15c-1.11 2.07-2.3 4.1-3.58 6.06a79.47 79.47 0 01-8.63 11c-13.12 14-29.92 21.73-47.31 21.73a59.61 59.61 0 01-19.17-3.18 63.47 63.47 0 01-6.1-2.43 70.76 70.76 0 01-22.07-16.12 83.76 83.76 0 01-22-51.32q-.27-3.88-.18-7.68a75.62 75.62 0 011.05-11.08zm-149.73 24.34a59.87 59.87 0 015.2-20.64 56.76 56.76 0 012.78-5.3 54.49 54.49 0 017.19-9.56 55.62 55.62 0 0114-10.82 56.84 56.84 0 018.11-3.64 63.85 63.85 0 0133.35-2.39 57 57 0 0130.78 17 57.86 57.86 0 0115.41 38.62c.05 2.11 0 4.23-.15 6.38a71.58 71.58 0 01-6 23.84 69.49 69.49 0 01-5.73 10.42 65.39 65.39 0 01-15.76 16.57c-1.5 1.07-3.06 2.07-4.67 3.07a54.21 54.21 0 01-10 4.65 49.31 49.31 0 01-16.2 2.76c-.93 0-1.86 0-2.78-.08a47.6 47.6 0 01-5.48-.62 51.19 51.19 0 01-5.35-1.23 53.54 53.54 0 01-7.72-2.89c-.84-.39-1.66-.8-2.48-1.23-18-9.49-31.57-29.16-34.23-52.12-.12-1.05-.22-2.1-.29-3.16a66.59 66.59 0 01.02-9.63zm53.92 178.6a177.27 177.27 0 01-61.94-70.65 4 4 0 011.62-5.26C117.67 316.69 141.4 311 163.82 311c17 0 30.7 2 42.69 5.88a8 8 0 012.59 13.77c-23.35 19-38.4 42.54-45.47 70.75a2.77 2.77 0 01-4.22 1.65zM256 432a175.12 175.12 0 01-65.7-12.72 4 4 0 01-2.4-4.46c.4-2.05.84-3.92 1.23-5.48 7.12-28.43 24.76-52 51-68.18 23.29-14.35 53-22.25 83.52-22.25 31.16 0 60 7.58 83.48 21.91a2.72 2.72 0 01.91 3.67A176.1 176.1 0 01256 432z"
+          />
+          <path
+            d="M161 295.28a47.6 47.6 0 01-5.48-.62 47.6 47.6 0 005.48.62zm-26.36-117.15a55.62 55.62 0 00-14 10.82 54.49 54.49 0 00-7.19 9.56 54.49 54.49 0 017.19-9.56 55.62 55.62 0 0114-10.82zm81.53 79.76a71.58 71.58 0 006-23.84c.15-2.15.2-4.27.15-6.38q.08 3.15-.15 6.38a71.58 71.58 0 01-6 23.84zm-81.53-79.76a56.84 56.84 0 018.11-3.64 56.84 56.84 0 00-8.11 3.64zm15.57 115.3a53.54 53.54 0 01-7.72-2.89 53.54 53.54 0 007.72 2.89zm-44.43-56.24c2.66 23 16.26 42.63 34.23 52.12-18.01-9.49-31.57-29.16-34.23-52.12zM254.34 219a83.76 83.76 0 0022 51.32 70.76 70.76 0 0022.07 16.12 70.76 70.76 0 01-22.07-16.12 83.76 83.76 0 01-22-51.32q-.27-3.88-.18-7.68-.09 3.75.18 7.68zm50.16 69.82a63.47 63.47 0 01-6.1-2.43 63.47 63.47 0 006.1 2.43zm-48.57-92.28a66.46 66.46 0 0116.29-31.21 66.46 66.46 0 00-16.29 31.21zM375 165.46a68.15 68.15 0 0118 42.14 68.15 68.15 0 00-18-42.14 66.69 66.69 0 00-26.27-17.2 66.69 66.69 0 0126.27 17.2zM393 219a86.19 86.19 0 01-8.2 31 86.19 86.19 0 008.2-31zm-138.84-7.73a75.62 75.62 0 011.06-11.14 75.62 75.62 0 00-1.06 11.14zm129.03 41.89zm-176.31-64.11a57.86 57.86 0 0115.41 38.62 57.86 57.86 0 00-15.41-38.62 57 57 0 00-30.78-17 57 57 0 0130.78 17zM190 288a54.21 54.21 0 01-10 4.65 54.21 54.21 0 0010-4.65zm-84.51-63.55a59.87 59.87 0 015.2-20.64 59.87 59.87 0 00-5.2 20.64zm89.19 60.43C193.17 286 191.61 287 190 288c1.61-1 3.17-2 4.68-3.12zm21.49-26.99a69.49 69.49 0 01-5.73 10.42 69.49 69.49 0 005.73-10.42zm-105.48-54.08a56.76 56.76 0 012.78-5.3 56.76 56.76 0 00-2.78 5.3zm83.99 81.07a65.39 65.39 0 0015.76-16.57 65.39 65.39 0 01-15.76 16.57z"
+          />
+        </svg>
+        <span
+          class="emotion-14"
+        >
+          1
+           / 
+          3
+          명
+        </span>
+      </div>
+      <div
+        class="emotion-13"
+      >
+        <svg
+          color="#fc775a"
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(252, 119, 90);"
+          viewBox="0 0 512 512"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z"
+            fill="none"
+            stroke-miterlimit="10"
+            stroke-width="32"
+          />
+          <path
+            d="M256 128v144h96"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="32"
+          />
+        </svg>
+        <span
+          class="emotion-14"
+        >
+          1
+        </span>
+      </div>
+      <div
+        class="emotion-17"
+      >
+        <span
+          class="emotion-18"
+        >
+          1
+           남음
+        </span>
+      </div>
+      <div
+        class="emotion-13"
+      >
+        <button
+          class="emotion-20"
+          id="hi"
+        >
+          <span>
+            참여하기
+          </span>
+        </button>
+      </div>
+    </div>
+  </a>
+  <a
+    class="emotion-10"
+    href="/detail/hi"
+  >
+    <span
+      class="emotion-11"
+    >
+      hi
+    </span>
+    <div
+      class="emotion-12"
+    >
+      <div
+        class="emotion-13"
+      >
+        <svg
+          color="#fc775a"
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(252, 119, 90);"
+          viewBox="0 0 512 512"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M258.9 48C141.92 46.42 46.42 141.92 48 258.9c1.56 112.19 92.91 203.54 205.1 205.1 117 1.6 212.48-93.9 210.88-210.88C462.44 140.91 371.09 49.56 258.9 48zm-3.68 152.11c.21-1.2.44-2.4.71-3.59a66.46 66.46 0 0116.29-31.21c12.89-13.73 31.16-21.31 51.45-21.31a74.05 74.05 0 0125.06 4.26 66.69 66.69 0 0126.27 17.2 68.15 68.15 0 0118 42.14 78.46 78.46 0 010 11.4 86.19 86.19 0 01-8.2 31q-.76 1.59-1.59 3.15c-1.11 2.07-2.3 4.1-3.58 6.06a79.47 79.47 0 01-8.63 11c-13.12 14-29.92 21.73-47.31 21.73a59.61 59.61 0 01-19.17-3.18 63.47 63.47 0 01-6.1-2.43 70.76 70.76 0 01-22.07-16.12 83.76 83.76 0 01-22-51.32q-.27-3.88-.18-7.68a75.62 75.62 0 011.05-11.08zm-149.73 24.34a59.87 59.87 0 015.2-20.64 56.76 56.76 0 012.78-5.3 54.49 54.49 0 017.19-9.56 55.62 55.62 0 0114-10.82 56.84 56.84 0 018.11-3.64 63.85 63.85 0 0133.35-2.39 57 57 0 0130.78 17 57.86 57.86 0 0115.41 38.62c.05 2.11 0 4.23-.15 6.38a71.58 71.58 0 01-6 23.84 69.49 69.49 0 01-5.73 10.42 65.39 65.39 0 01-15.76 16.57c-1.5 1.07-3.06 2.07-4.67 3.07a54.21 54.21 0 01-10 4.65 49.31 49.31 0 01-16.2 2.76c-.93 0-1.86 0-2.78-.08a47.6 47.6 0 01-5.48-.62 51.19 51.19 0 01-5.35-1.23 53.54 53.54 0 01-7.72-2.89c-.84-.39-1.66-.8-2.48-1.23-18-9.49-31.57-29.16-34.23-52.12-.12-1.05-.22-2.1-.29-3.16a66.59 66.59 0 01.02-9.63zm53.92 178.6a177.27 177.27 0 01-61.94-70.65 4 4 0 011.62-5.26C117.67 316.69 141.4 311 163.82 311c17 0 30.7 2 42.69 5.88a8 8 0 012.59 13.77c-23.35 19-38.4 42.54-45.47 70.75a2.77 2.77 0 01-4.22 1.65zM256 432a175.12 175.12 0 01-65.7-12.72 4 4 0 01-2.4-4.46c.4-2.05.84-3.92 1.23-5.48 7.12-28.43 24.76-52 51-68.18 23.29-14.35 53-22.25 83.52-22.25 31.16 0 60 7.58 83.48 21.91a2.72 2.72 0 01.91 3.67A176.1 176.1 0 01256 432z"
+          />
+          <path
+            d="M161 295.28a47.6 47.6 0 01-5.48-.62 47.6 47.6 0 005.48.62zm-26.36-117.15a55.62 55.62 0 00-14 10.82 54.49 54.49 0 00-7.19 9.56 54.49 54.49 0 017.19-9.56 55.62 55.62 0 0114-10.82zm81.53 79.76a71.58 71.58 0 006-23.84c.15-2.15.2-4.27.15-6.38q.08 3.15-.15 6.38a71.58 71.58 0 01-6 23.84zm-81.53-79.76a56.84 56.84 0 018.11-3.64 56.84 56.84 0 00-8.11 3.64zm15.57 115.3a53.54 53.54 0 01-7.72-2.89 53.54 53.54 0 007.72 2.89zm-44.43-56.24c2.66 23 16.26 42.63 34.23 52.12-18.01-9.49-31.57-29.16-34.23-52.12zM254.34 219a83.76 83.76 0 0022 51.32 70.76 70.76 0 0022.07 16.12 70.76 70.76 0 01-22.07-16.12 83.76 83.76 0 01-22-51.32q-.27-3.88-.18-7.68-.09 3.75.18 7.68zm50.16 69.82a63.47 63.47 0 01-6.1-2.43 63.47 63.47 0 006.1 2.43zm-48.57-92.28a66.46 66.46 0 0116.29-31.21 66.46 66.46 0 00-16.29 31.21zM375 165.46a68.15 68.15 0 0118 42.14 68.15 68.15 0 00-18-42.14 66.69 66.69 0 00-26.27-17.2 66.69 66.69 0 0126.27 17.2zM393 219a86.19 86.19 0 01-8.2 31 86.19 86.19 0 008.2-31zm-138.84-7.73a75.62 75.62 0 011.06-11.14 75.62 75.62 0 00-1.06 11.14zm129.03 41.89zm-176.31-64.11a57.86 57.86 0 0115.41 38.62 57.86 57.86 0 00-15.41-38.62 57 57 0 00-30.78-17 57 57 0 0130.78 17zM190 288a54.21 54.21 0 01-10 4.65 54.21 54.21 0 0010-4.65zm-84.51-63.55a59.87 59.87 0 015.2-20.64 59.87 59.87 0 00-5.2 20.64zm89.19 60.43C193.17 286 191.61 287 190 288c1.61-1 3.17-2 4.68-3.12zm21.49-26.99a69.49 69.49 0 01-5.73 10.42 69.49 69.49 0 005.73-10.42zm-105.48-54.08a56.76 56.76 0 012.78-5.3 56.76 56.76 0 00-2.78 5.3zm83.99 81.07a65.39 65.39 0 0015.76-16.57 65.39 65.39 0 01-15.76 16.57z"
+          />
+        </svg>
+        <span
+          class="emotion-14"
+        >
+          1
+           / 
+          3
+          명
+        </span>
+      </div>
+      <div
+        class="emotion-13"
+      >
+        <svg
+          color="#fc775a"
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(252, 119, 90);"
+          viewBox="0 0 512 512"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z"
+            fill="none"
+            stroke-miterlimit="10"
+            stroke-width="32"
+          />
+          <path
+            d="M256 128v144h96"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="32"
+          />
+        </svg>
+        <span
+          class="emotion-14"
+        >
+          1
+        </span>
+      </div>
+      <div
+        class="emotion-17"
+      >
+        <span
+          class="emotion-18"
+        >
+          1
+           남음
+        </span>
+      </div>
+      <div
+        class="emotion-13"
+      >
+        <button
+          class="emotion-20"
+          id="hi"
+        >
+          <span>
+            참여하기
+          </span>
+        </button>
+      </div>
+    </div>
+  </a>
+  <a
+    class="emotion-10"
+    href="/detail/hi"
+  >
+    <span
+      class="emotion-11"
+    >
+      hi
+    </span>
+    <div
+      class="emotion-12"
+    >
+      <div
+        class="emotion-13"
+      >
+        <svg
+          color="#fc775a"
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(252, 119, 90);"
+          viewBox="0 0 512 512"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M258.9 48C141.92 46.42 46.42 141.92 48 258.9c1.56 112.19 92.91 203.54 205.1 205.1 117 1.6 212.48-93.9 210.88-210.88C462.44 140.91 371.09 49.56 258.9 48zm-3.68 152.11c.21-1.2.44-2.4.71-3.59a66.46 66.46 0 0116.29-31.21c12.89-13.73 31.16-21.31 51.45-21.31a74.05 74.05 0 0125.06 4.26 66.69 66.69 0 0126.27 17.2 68.15 68.15 0 0118 42.14 78.46 78.46 0 010 11.4 86.19 86.19 0 01-8.2 31q-.76 1.59-1.59 3.15c-1.11 2.07-2.3 4.1-3.58 6.06a79.47 79.47 0 01-8.63 11c-13.12 14-29.92 21.73-47.31 21.73a59.61 59.61 0 01-19.17-3.18 63.47 63.47 0 01-6.1-2.43 70.76 70.76 0 01-22.07-16.12 83.76 83.76 0 01-22-51.32q-.27-3.88-.18-7.68a75.62 75.62 0 011.05-11.08zm-149.73 24.34a59.87 59.87 0 015.2-20.64 56.76 56.76 0 012.78-5.3 54.49 54.49 0 017.19-9.56 55.62 55.62 0 0114-10.82 56.84 56.84 0 018.11-3.64 63.85 63.85 0 0133.35-2.39 57 57 0 0130.78 17 57.86 57.86 0 0115.41 38.62c.05 2.11 0 4.23-.15 6.38a71.58 71.58 0 01-6 23.84 69.49 69.49 0 01-5.73 10.42 65.39 65.39 0 01-15.76 16.57c-1.5 1.07-3.06 2.07-4.67 3.07a54.21 54.21 0 01-10 4.65 49.31 49.31 0 01-16.2 2.76c-.93 0-1.86 0-2.78-.08a47.6 47.6 0 01-5.48-.62 51.19 51.19 0 01-5.35-1.23 53.54 53.54 0 01-7.72-2.89c-.84-.39-1.66-.8-2.48-1.23-18-9.49-31.57-29.16-34.23-52.12-.12-1.05-.22-2.1-.29-3.16a66.59 66.59 0 01.02-9.63zm53.92 178.6a177.27 177.27 0 01-61.94-70.65 4 4 0 011.62-5.26C117.67 316.69 141.4 311 163.82 311c17 0 30.7 2 42.69 5.88a8 8 0 012.59 13.77c-23.35 19-38.4 42.54-45.47 70.75a2.77 2.77 0 01-4.22 1.65zM256 432a175.12 175.12 0 01-65.7-12.72 4 4 0 01-2.4-4.46c.4-2.05.84-3.92 1.23-5.48 7.12-28.43 24.76-52 51-68.18 23.29-14.35 53-22.25 83.52-22.25 31.16 0 60 7.58 83.48 21.91a2.72 2.72 0 01.91 3.67A176.1 176.1 0 01256 432z"
+          />
+          <path
+            d="M161 295.28a47.6 47.6 0 01-5.48-.62 47.6 47.6 0 005.48.62zm-26.36-117.15a55.62 55.62 0 00-14 10.82 54.49 54.49 0 00-7.19 9.56 54.49 54.49 0 017.19-9.56 55.62 55.62 0 0114-10.82zm81.53 79.76a71.58 71.58 0 006-23.84c.15-2.15.2-4.27.15-6.38q.08 3.15-.15 6.38a71.58 71.58 0 01-6 23.84zm-81.53-79.76a56.84 56.84 0 018.11-3.64 56.84 56.84 0 00-8.11 3.64zm15.57 115.3a53.54 53.54 0 01-7.72-2.89 53.54 53.54 0 007.72 2.89zm-44.43-56.24c2.66 23 16.26 42.63 34.23 52.12-18.01-9.49-31.57-29.16-34.23-52.12zM254.34 219a83.76 83.76 0 0022 51.32 70.76 70.76 0 0022.07 16.12 70.76 70.76 0 01-22.07-16.12 83.76 83.76 0 01-22-51.32q-.27-3.88-.18-7.68-.09 3.75.18 7.68zm50.16 69.82a63.47 63.47 0 01-6.1-2.43 63.47 63.47 0 006.1 2.43zm-48.57-92.28a66.46 66.46 0 0116.29-31.21 66.46 66.46 0 00-16.29 31.21zM375 165.46a68.15 68.15 0 0118 42.14 68.15 68.15 0 00-18-42.14 66.69 66.69 0 00-26.27-17.2 66.69 66.69 0 0126.27 17.2zM393 219a86.19 86.19 0 01-8.2 31 86.19 86.19 0 008.2-31zm-138.84-7.73a75.62 75.62 0 011.06-11.14 75.62 75.62 0 00-1.06 11.14zm129.03 41.89zm-176.31-64.11a57.86 57.86 0 0115.41 38.62 57.86 57.86 0 00-15.41-38.62 57 57 0 00-30.78-17 57 57 0 0130.78 17zM190 288a54.21 54.21 0 01-10 4.65 54.21 54.21 0 0010-4.65zm-84.51-63.55a59.87 59.87 0 015.2-20.64 59.87 59.87 0 00-5.2 20.64zm89.19 60.43C193.17 286 191.61 287 190 288c1.61-1 3.17-2 4.68-3.12zm21.49-26.99a69.49 69.49 0 01-5.73 10.42 69.49 69.49 0 005.73-10.42zm-105.48-54.08a56.76 56.76 0 012.78-5.3 56.76 56.76 0 00-2.78 5.3zm83.99 81.07a65.39 65.39 0 0015.76-16.57 65.39 65.39 0 01-15.76 16.57z"
+          />
+        </svg>
+        <span
+          class="emotion-14"
+        >
+          1
+           / 
+          3
+          명
+        </span>
+      </div>
+      <div
+        class="emotion-13"
+      >
+        <svg
+          color="#fc775a"
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(252, 119, 90);"
+          viewBox="0 0 512 512"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z"
+            fill="none"
+            stroke-miterlimit="10"
+            stroke-width="32"
+          />
+          <path
+            d="M256 128v144h96"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="32"
+          />
+        </svg>
+        <span
+          class="emotion-14"
+        >
+          1
+        </span>
+      </div>
+      <div
+        class="emotion-17"
+      >
+        <span
+          class="emotion-18"
+        >
+          1
+           남음
+        </span>
+      </div>
+      <div
+        class="emotion-13"
+      >
+        <button
+          class="emotion-20"
+          id="hi"
+        >
+          <span>
+            참여하기
+          </span>
+        </button>
+      </div>
+    </div>
+  </a>
+  <footer
+    class="emotion-54"
+  >
+    <a
+      class="emotion-55"
+      data-testid="link-home"
+      href="/"
+    >
+      <svg
+        color="#fc775a"
+        data-testid="icon-home"
+        fill="currentColor"
+        height="30"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: rgb(252, 119, 90);"
+        viewBox="0 0 1024 1024"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M512.1 172.6l-370 369.7h96V868H392V640c0-22.1 17.9-40 40-40h160c22.1 0 40 17.9 40 40v228h153.9V542.3H882L535.2 195.7l-23.1-23.1zm434.5 422.9c-6 6-13.1 10.8-20.8 13.9 7.7-3.2 14.8-7.9 20.8-13.9zm-887-34.7c5 30.3 31.4 53.5 63.1 53.5h.9c-31.9 0-58.9-23-64-53.5zm-.9-10.5v-1.9 1.9zm.1-2.6c.1-3.1.5-6.1 1-9.1-.6 2.9-.9 6-1 9.1z"
+        />
+        <path
+          d="M951 510c0-.1-.1-.1-.1-.2l-1.8-2.1c-.1-.1-.2-.3-.4-.4-.7-.8-1.5-1.6-2.2-2.4L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.6 63.6 0 0 0-16 26.6l-.6 2.1-.3 1.1-.3 1.2c-.2.7-.3 1.4-.4 2.1 0 .1 0 .3-.1.4-.6 3-.9 6-1 9.1v3.3c0 .5 0 1 .1 1.5 0 .5 0 .9.1 1.4 0 .5.1 1 .1 1.5 0 .6.1 1.2.2 1.8 0 .3.1.6.1.9l.3 2.5v.1c5.1 30.5 32.2 53.5 64 53.5h42.5V940h691.7V614.3h43.4c8.6 0 16.9-1.7 24.5-4.9s14.7-7.9 20.8-13.9a63.6 63.6 0 0 0 18.7-45.3c0-14.7-5-28.8-14.3-40.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"
+        />
+      </svg>
+    </a>
+    <a
+      class="emotion-55"
+      data-testid="link-chat"
+      href="/chat"
+    >
+      <svg
+        fill="currentColor"
+        height="30"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 24 24"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M8.667 11.511a1.276 1.276 0 0 1-1.285-1.285c0-.718.567-1.286 1.285-1.286.717 0 1.285.568 1.285 1.286 0 .717-.568 1.285-1.285 1.285zm6.666 0a1.276 1.276 0 0 1-1.285-1.285c0-.718.568-1.286 1.285-1.286.718 0 1.285.568 1.285 1.286 0 .717-.567 1.285-1.285 1.285zm-8.51 7.704l.715-.436a4 4 0 0 1 2.705-.536c.212.033.386.059.52.076.406.054.82.081 1.237.081 4.42 0 7.9-3.022 7.9-6.6S16.42 5.2 12 5.2s-7.9 3.022-7.9 6.6c0 1.366.5 2.673 1.432 3.781.048.057.12.137.214.235a4 4 0 0 1 1.101 3.102l-.025.297zm-.63 2.727a1 1 0 0 1-1.527-.93l.188-2.26a2 2 0 0 0-.55-1.551A6.993 6.993 0 0 1 4 16.868C2.806 15.447 2.1 13.695 2.1 11.8c0-4.75 4.432-8.6 9.9-8.6s9.9 3.85 9.9 8.6-4.432 8.6-9.9 8.6c-.51 0-1.01-.033-1.499-.098a23.61 23.61 0 0 1-.569-.084 2 2 0 0 0-1.353.268l-2.387 1.456z"
+          />
+        </g>
+      </svg>
+    </a>
+    <a
+      class="emotion-55"
+      href="/writing"
+    >
+      <svg
+        baseProfile="tiny"
+        fill="currentColor"
+        height="30"
+        stroke="currentColor"
+        stroke-width="0"
+        version="1.2"
+        viewBox="0 0 24 24"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18 10h-4v-4c0-1.104-.896-2-2-2s-2 .896-2 2l.071 4h-4.071c-1.104 0-2 .896-2 2s.896 2 2 2l4.071-.071-.071 4.071c0 1.104.896 2 2 2s2-.896 2-2v-4.071l4 .071c1.104 0 2-.896 2-2s-.896-2-2-2z"
+        />
+      </svg>
+    </a>
+    <a
+      class="emotion-55"
+      href="/myInfo"
+    >
+      <svg
+        fill="currentColor"
+        height="30"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M176 511a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm280 0a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm280 0a56 56 0 1 0 112 0 56 56 0 1 0-112 0z"
+        />
+      </svg>
+    </a>
+  </footer>
+</div>
+`;
+
+exports[`검색 페이지 테스트 검색어 입력후 전송 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.emotion-1 {
+  cursor: pointer;
+  margin-left: 5%;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  background-color: #f2f4f6;
+  border-radius: 5px;
+  height: 5rem;
+  padding: 1rem;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+.emotion-3 {
+  margin-left: 1rem;
+  background-color: inherit;
+  width: 100%;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 2.5;
+  -ms-flex: 2.5;
+  flex: 2.5;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  color: #6b7684;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 2.5;
+  -ms-flex: 2.5;
+  flex: 2.5;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  color: #6b7684;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+.emotion-10 {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  cursor: pointer;
+  padding: 1rem;
+  border-bottom: 1px solid #fc775a;
+}
+
+.emotion-10:hover {
+  background-color: #f2f4f6;
+}
+
+.emotion-11 {
+  font-size: 1.5rem;
+}
+
+.emotion-12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  height: 100%;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-self: center;
+  text-align: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.emotion-17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  height: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-self: center;
+  text-align: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.emotion-20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  height: 2.5rem;
+  border: 0 solid transparent;
+  border-radius: 0.7rem;
+  background-color: #fc775a;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+}
+
+.emotion-20:focus {
+  outline: none;
+}
+
+.emotion-20:disabled {
+  opacity: 0.26;
+  cursor: not-allowed;
+}
+
+.emotion-20:active {
+  background-color: #7b1fa2;
+}
+
+.emotion-54 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 7rem;
+  z-index: 777;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: space-around;
+  -ms-flex-pack: space-around;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  background-color: #e5e8eb;
+}
+
+.emotion-55 {
+  cursor: pointer;
+  width: 3rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+<div>
+  <div
+    class="emotion-0"
+  >
+    <a
+      class="emotion-1"
+      href="/"
+    >
+      <svg
+        color="#333d4b"
+        fill="none"
+        height="30"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color: rgb(51, 61, 75);"
+        viewBox="0 0 24 24"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="19"
+          x2="5"
+          y1="12"
+          y2="12"
+        />
+        <polyline
+          points="12 19 5 12 12 5"
+        />
+      </svg>
+    </a>
+    <form
+      class="emotion-2"
+      data-testid="search-form"
+    >
+      <svg
+        color="#fc775a"
+        fill="currentColor"
+        height="25"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: rgb(252, 119, 90);"
+        viewBox="0 0 24 24"
+        width="25"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"
+        />
+      </svg>
+      <input
+        class="emotion-3"
+        data-testid="search-input"
+        id="search-input"
+        placeholder="검색어를 입력해 주세요"
+        type="text"
+        value="123"
+      />
+    </form>
+  </div>
+  <div
+    class="emotion-4 emotion-5"
+  >
+    <span
+      class="emotion-6 emotion-7"
+    >
+      검색 결과
+    </span>
+    <span
+      class="emotion-8 emotion-9"
+    >
+      개수 : 30개
+    </span>
+  </div>
+  <a
+    class="emotion-10"
+    href="/detail/hi"
+  >
+    <span
+      class="emotion-11"
+    >
+      hi
+    </span>
+    <div
+      class="emotion-12"
+    >
+      <div
+        class="emotion-13"
+      >
+        <svg
+          color="#fc775a"
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(252, 119, 90);"
+          viewBox="0 0 512 512"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M258.9 48C141.92 46.42 46.42 141.92 48 258.9c1.56 112.19 92.91 203.54 205.1 205.1 117 1.6 212.48-93.9 210.88-210.88C462.44 140.91 371.09 49.56 258.9 48zm-3.68 152.11c.21-1.2.44-2.4.71-3.59a66.46 66.46 0 0116.29-31.21c12.89-13.73 31.16-21.31 51.45-21.31a74.05 74.05 0 0125.06 4.26 66.69 66.69 0 0126.27 17.2 68.15 68.15 0 0118 42.14 78.46 78.46 0 010 11.4 86.19 86.19 0 01-8.2 31q-.76 1.59-1.59 3.15c-1.11 2.07-2.3 4.1-3.58 6.06a79.47 79.47 0 01-8.63 11c-13.12 14-29.92 21.73-47.31 21.73a59.61 59.61 0 01-19.17-3.18 63.47 63.47 0 01-6.1-2.43 70.76 70.76 0 01-22.07-16.12 83.76 83.76 0 01-22-51.32q-.27-3.88-.18-7.68a75.62 75.62 0 011.05-11.08zm-149.73 24.34a59.87 59.87 0 015.2-20.64 56.76 56.76 0 012.78-5.3 54.49 54.49 0 017.19-9.56 55.62 55.62 0 0114-10.82 56.84 56.84 0 018.11-3.64 63.85 63.85 0 0133.35-2.39 57 57 0 0130.78 17 57.86 57.86 0 0115.41 38.62c.05 2.11 0 4.23-.15 6.38a71.58 71.58 0 01-6 23.84 69.49 69.49 0 01-5.73 10.42 65.39 65.39 0 01-15.76 16.57c-1.5 1.07-3.06 2.07-4.67 3.07a54.21 54.21 0 01-10 4.65 49.31 49.31 0 01-16.2 2.76c-.93 0-1.86 0-2.78-.08a47.6 47.6 0 01-5.48-.62 51.19 51.19 0 01-5.35-1.23 53.54 53.54 0 01-7.72-2.89c-.84-.39-1.66-.8-2.48-1.23-18-9.49-31.57-29.16-34.23-52.12-.12-1.05-.22-2.1-.29-3.16a66.59 66.59 0 01.02-9.63zm53.92 178.6a177.27 177.27 0 01-61.94-70.65 4 4 0 011.62-5.26C117.67 316.69 141.4 311 163.82 311c17 0 30.7 2 42.69 5.88a8 8 0 012.59 13.77c-23.35 19-38.4 42.54-45.47 70.75a2.77 2.77 0 01-4.22 1.65zM256 432a175.12 175.12 0 01-65.7-12.72 4 4 0 01-2.4-4.46c.4-2.05.84-3.92 1.23-5.48 7.12-28.43 24.76-52 51-68.18 23.29-14.35 53-22.25 83.52-22.25 31.16 0 60 7.58 83.48 21.91a2.72 2.72 0 01.91 3.67A176.1 176.1 0 01256 432z"
+          />
+          <path
+            d="M161 295.28a47.6 47.6 0 01-5.48-.62 47.6 47.6 0 005.48.62zm-26.36-117.15a55.62 55.62 0 00-14 10.82 54.49 54.49 0 00-7.19 9.56 54.49 54.49 0 017.19-9.56 55.62 55.62 0 0114-10.82zm81.53 79.76a71.58 71.58 0 006-23.84c.15-2.15.2-4.27.15-6.38q.08 3.15-.15 6.38a71.58 71.58 0 01-6 23.84zm-81.53-79.76a56.84 56.84 0 018.11-3.64 56.84 56.84 0 00-8.11 3.64zm15.57 115.3a53.54 53.54 0 01-7.72-2.89 53.54 53.54 0 007.72 2.89zm-44.43-56.24c2.66 23 16.26 42.63 34.23 52.12-18.01-9.49-31.57-29.16-34.23-52.12zM254.34 219a83.76 83.76 0 0022 51.32 70.76 70.76 0 0022.07 16.12 70.76 70.76 0 01-22.07-16.12 83.76 83.76 0 01-22-51.32q-.27-3.88-.18-7.68-.09 3.75.18 7.68zm50.16 69.82a63.47 63.47 0 01-6.1-2.43 63.47 63.47 0 006.1 2.43zm-48.57-92.28a66.46 66.46 0 0116.29-31.21 66.46 66.46 0 00-16.29 31.21zM375 165.46a68.15 68.15 0 0118 42.14 68.15 68.15 0 00-18-42.14 66.69 66.69 0 00-26.27-17.2 66.69 66.69 0 0126.27 17.2zM393 219a86.19 86.19 0 01-8.2 31 86.19 86.19 0 008.2-31zm-138.84-7.73a75.62 75.62 0 011.06-11.14 75.62 75.62 0 00-1.06 11.14zm129.03 41.89zm-176.31-64.11a57.86 57.86 0 0115.41 38.62 57.86 57.86 0 00-15.41-38.62 57 57 0 00-30.78-17 57 57 0 0130.78 17zM190 288a54.21 54.21 0 01-10 4.65 54.21 54.21 0 0010-4.65zm-84.51-63.55a59.87 59.87 0 015.2-20.64 59.87 59.87 0 00-5.2 20.64zm89.19 60.43C193.17 286 191.61 287 190 288c1.61-1 3.17-2 4.68-3.12zm21.49-26.99a69.49 69.49 0 01-5.73 10.42 69.49 69.49 0 005.73-10.42zm-105.48-54.08a56.76 56.76 0 012.78-5.3 56.76 56.76 0 00-2.78 5.3zm83.99 81.07a65.39 65.39 0 0015.76-16.57 65.39 65.39 0 01-15.76 16.57z"
+          />
+        </svg>
+        <span
+          class="emotion-14"
+        >
+          1
+           / 
+          3
+          명
+        </span>
+      </div>
+      <div
+        class="emotion-13"
+      >
+        <svg
+          color="#fc775a"
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(252, 119, 90);"
+          viewBox="0 0 512 512"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z"
+            fill="none"
+            stroke-miterlimit="10"
+            stroke-width="32"
+          />
+          <path
+            d="M256 128v144h96"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="32"
+          />
+        </svg>
+        <span
+          class="emotion-14"
+        >
+          1
+        </span>
+      </div>
+      <div
+        class="emotion-17"
+      >
+        <span
+          class="emotion-18"
+        >
+          1
+           남음
+        </span>
+      </div>
+      <div
+        class="emotion-13"
+      >
+        <button
+          class="emotion-20"
+          id="hi"
+        >
+          <span>
+            참여하기
+          </span>
+        </button>
+      </div>
+    </div>
+  </a>
+  <a
+    class="emotion-10"
+    href="/detail/hi"
+  >
+    <span
+      class="emotion-11"
+    >
+      hi
+    </span>
+    <div
+      class="emotion-12"
+    >
+      <div
+        class="emotion-13"
+      >
+        <svg
+          color="#fc775a"
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(252, 119, 90);"
+          viewBox="0 0 512 512"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M258.9 48C141.92 46.42 46.42 141.92 48 258.9c1.56 112.19 92.91 203.54 205.1 205.1 117 1.6 212.48-93.9 210.88-210.88C462.44 140.91 371.09 49.56 258.9 48zm-3.68 152.11c.21-1.2.44-2.4.71-3.59a66.46 66.46 0 0116.29-31.21c12.89-13.73 31.16-21.31 51.45-21.31a74.05 74.05 0 0125.06 4.26 66.69 66.69 0 0126.27 17.2 68.15 68.15 0 0118 42.14 78.46 78.46 0 010 11.4 86.19 86.19 0 01-8.2 31q-.76 1.59-1.59 3.15c-1.11 2.07-2.3 4.1-3.58 6.06a79.47 79.47 0 01-8.63 11c-13.12 14-29.92 21.73-47.31 21.73a59.61 59.61 0 01-19.17-3.18 63.47 63.47 0 01-6.1-2.43 70.76 70.76 0 01-22.07-16.12 83.76 83.76 0 01-22-51.32q-.27-3.88-.18-7.68a75.62 75.62 0 011.05-11.08zm-149.73 24.34a59.87 59.87 0 015.2-20.64 56.76 56.76 0 012.78-5.3 54.49 54.49 0 017.19-9.56 55.62 55.62 0 0114-10.82 56.84 56.84 0 018.11-3.64 63.85 63.85 0 0133.35-2.39 57 57 0 0130.78 17 57.86 57.86 0 0115.41 38.62c.05 2.11 0 4.23-.15 6.38a71.58 71.58 0 01-6 23.84 69.49 69.49 0 01-5.73 10.42 65.39 65.39 0 01-15.76 16.57c-1.5 1.07-3.06 2.07-4.67 3.07a54.21 54.21 0 01-10 4.65 49.31 49.31 0 01-16.2 2.76c-.93 0-1.86 0-2.78-.08a47.6 47.6 0 01-5.48-.62 51.19 51.19 0 01-5.35-1.23 53.54 53.54 0 01-7.72-2.89c-.84-.39-1.66-.8-2.48-1.23-18-9.49-31.57-29.16-34.23-52.12-.12-1.05-.22-2.1-.29-3.16a66.59 66.59 0 01.02-9.63zm53.92 178.6a177.27 177.27 0 01-61.94-70.65 4 4 0 011.62-5.26C117.67 316.69 141.4 311 163.82 311c17 0 30.7 2 42.69 5.88a8 8 0 012.59 13.77c-23.35 19-38.4 42.54-45.47 70.75a2.77 2.77 0 01-4.22 1.65zM256 432a175.12 175.12 0 01-65.7-12.72 4 4 0 01-2.4-4.46c.4-2.05.84-3.92 1.23-5.48 7.12-28.43 24.76-52 51-68.18 23.29-14.35 53-22.25 83.52-22.25 31.16 0 60 7.58 83.48 21.91a2.72 2.72 0 01.91 3.67A176.1 176.1 0 01256 432z"
+          />
+          <path
+            d="M161 295.28a47.6 47.6 0 01-5.48-.62 47.6 47.6 0 005.48.62zm-26.36-117.15a55.62 55.62 0 00-14 10.82 54.49 54.49 0 00-7.19 9.56 54.49 54.49 0 017.19-9.56 55.62 55.62 0 0114-10.82zm81.53 79.76a71.58 71.58 0 006-23.84c.15-2.15.2-4.27.15-6.38q.08 3.15-.15 6.38a71.58 71.58 0 01-6 23.84zm-81.53-79.76a56.84 56.84 0 018.11-3.64 56.84 56.84 0 00-8.11 3.64zm15.57 115.3a53.54 53.54 0 01-7.72-2.89 53.54 53.54 0 007.72 2.89zm-44.43-56.24c2.66 23 16.26 42.63 34.23 52.12-18.01-9.49-31.57-29.16-34.23-52.12zM254.34 219a83.76 83.76 0 0022 51.32 70.76 70.76 0 0022.07 16.12 70.76 70.76 0 01-22.07-16.12 83.76 83.76 0 01-22-51.32q-.27-3.88-.18-7.68-.09 3.75.18 7.68zm50.16 69.82a63.47 63.47 0 01-6.1-2.43 63.47 63.47 0 006.1 2.43zm-48.57-92.28a66.46 66.46 0 0116.29-31.21 66.46 66.46 0 00-16.29 31.21zM375 165.46a68.15 68.15 0 0118 42.14 68.15 68.15 0 00-18-42.14 66.69 66.69 0 00-26.27-17.2 66.69 66.69 0 0126.27 17.2zM393 219a86.19 86.19 0 01-8.2 31 86.19 86.19 0 008.2-31zm-138.84-7.73a75.62 75.62 0 011.06-11.14 75.62 75.62 0 00-1.06 11.14zm129.03 41.89zm-176.31-64.11a57.86 57.86 0 0115.41 38.62 57.86 57.86 0 00-15.41-38.62 57 57 0 00-30.78-17 57 57 0 0130.78 17zM190 288a54.21 54.21 0 01-10 4.65 54.21 54.21 0 0010-4.65zm-84.51-63.55a59.87 59.87 0 015.2-20.64 59.87 59.87 0 00-5.2 20.64zm89.19 60.43C193.17 286 191.61 287 190 288c1.61-1 3.17-2 4.68-3.12zm21.49-26.99a69.49 69.49 0 01-5.73 10.42 69.49 69.49 0 005.73-10.42zm-105.48-54.08a56.76 56.76 0 012.78-5.3 56.76 56.76 0 00-2.78 5.3zm83.99 81.07a65.39 65.39 0 0015.76-16.57 65.39 65.39 0 01-15.76 16.57z"
+          />
+        </svg>
+        <span
+          class="emotion-14"
+        >
+          1
+           / 
+          3
+          명
+        </span>
+      </div>
+      <div
+        class="emotion-13"
+      >
+        <svg
+          color="#fc775a"
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(252, 119, 90);"
+          viewBox="0 0 512 512"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z"
+            fill="none"
+            stroke-miterlimit="10"
+            stroke-width="32"
+          />
+          <path
+            d="M256 128v144h96"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="32"
+          />
+        </svg>
+        <span
+          class="emotion-14"
+        >
+          1
+        </span>
+      </div>
+      <div
+        class="emotion-17"
+      >
+        <span
+          class="emotion-18"
+        >
+          1
+           남음
+        </span>
+      </div>
+      <div
+        class="emotion-13"
+      >
+        <button
+          class="emotion-20"
+          id="hi"
+        >
+          <span>
+            참여하기
+          </span>
+        </button>
+      </div>
+    </div>
+  </a>
+  <a
+    class="emotion-10"
+    href="/detail/hi"
+  >
+    <span
+      class="emotion-11"
+    >
+      hi
+    </span>
+    <div
+      class="emotion-12"
+    >
+      <div
+        class="emotion-13"
+      >
+        <svg
+          color="#fc775a"
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(252, 119, 90);"
+          viewBox="0 0 512 512"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M258.9 48C141.92 46.42 46.42 141.92 48 258.9c1.56 112.19 92.91 203.54 205.1 205.1 117 1.6 212.48-93.9 210.88-210.88C462.44 140.91 371.09 49.56 258.9 48zm-3.68 152.11c.21-1.2.44-2.4.71-3.59a66.46 66.46 0 0116.29-31.21c12.89-13.73 31.16-21.31 51.45-21.31a74.05 74.05 0 0125.06 4.26 66.69 66.69 0 0126.27 17.2 68.15 68.15 0 0118 42.14 78.46 78.46 0 010 11.4 86.19 86.19 0 01-8.2 31q-.76 1.59-1.59 3.15c-1.11 2.07-2.3 4.1-3.58 6.06a79.47 79.47 0 01-8.63 11c-13.12 14-29.92 21.73-47.31 21.73a59.61 59.61 0 01-19.17-3.18 63.47 63.47 0 01-6.1-2.43 70.76 70.76 0 01-22.07-16.12 83.76 83.76 0 01-22-51.32q-.27-3.88-.18-7.68a75.62 75.62 0 011.05-11.08zm-149.73 24.34a59.87 59.87 0 015.2-20.64 56.76 56.76 0 012.78-5.3 54.49 54.49 0 017.19-9.56 55.62 55.62 0 0114-10.82 56.84 56.84 0 018.11-3.64 63.85 63.85 0 0133.35-2.39 57 57 0 0130.78 17 57.86 57.86 0 0115.41 38.62c.05 2.11 0 4.23-.15 6.38a71.58 71.58 0 01-6 23.84 69.49 69.49 0 01-5.73 10.42 65.39 65.39 0 01-15.76 16.57c-1.5 1.07-3.06 2.07-4.67 3.07a54.21 54.21 0 01-10 4.65 49.31 49.31 0 01-16.2 2.76c-.93 0-1.86 0-2.78-.08a47.6 47.6 0 01-5.48-.62 51.19 51.19 0 01-5.35-1.23 53.54 53.54 0 01-7.72-2.89c-.84-.39-1.66-.8-2.48-1.23-18-9.49-31.57-29.16-34.23-52.12-.12-1.05-.22-2.1-.29-3.16a66.59 66.59 0 01.02-9.63zm53.92 178.6a177.27 177.27 0 01-61.94-70.65 4 4 0 011.62-5.26C117.67 316.69 141.4 311 163.82 311c17 0 30.7 2 42.69 5.88a8 8 0 012.59 13.77c-23.35 19-38.4 42.54-45.47 70.75a2.77 2.77 0 01-4.22 1.65zM256 432a175.12 175.12 0 01-65.7-12.72 4 4 0 01-2.4-4.46c.4-2.05.84-3.92 1.23-5.48 7.12-28.43 24.76-52 51-68.18 23.29-14.35 53-22.25 83.52-22.25 31.16 0 60 7.58 83.48 21.91a2.72 2.72 0 01.91 3.67A176.1 176.1 0 01256 432z"
+          />
+          <path
+            d="M161 295.28a47.6 47.6 0 01-5.48-.62 47.6 47.6 0 005.48.62zm-26.36-117.15a55.62 55.62 0 00-14 10.82 54.49 54.49 0 00-7.19 9.56 54.49 54.49 0 017.19-9.56 55.62 55.62 0 0114-10.82zm81.53 79.76a71.58 71.58 0 006-23.84c.15-2.15.2-4.27.15-6.38q.08 3.15-.15 6.38a71.58 71.58 0 01-6 23.84zm-81.53-79.76a56.84 56.84 0 018.11-3.64 56.84 56.84 0 00-8.11 3.64zm15.57 115.3a53.54 53.54 0 01-7.72-2.89 53.54 53.54 0 007.72 2.89zm-44.43-56.24c2.66 23 16.26 42.63 34.23 52.12-18.01-9.49-31.57-29.16-34.23-52.12zM254.34 219a83.76 83.76 0 0022 51.32 70.76 70.76 0 0022.07 16.12 70.76 70.76 0 01-22.07-16.12 83.76 83.76 0 01-22-51.32q-.27-3.88-.18-7.68-.09 3.75.18 7.68zm50.16 69.82a63.47 63.47 0 01-6.1-2.43 63.47 63.47 0 006.1 2.43zm-48.57-92.28a66.46 66.46 0 0116.29-31.21 66.46 66.46 0 00-16.29 31.21zM375 165.46a68.15 68.15 0 0118 42.14 68.15 68.15 0 00-18-42.14 66.69 66.69 0 00-26.27-17.2 66.69 66.69 0 0126.27 17.2zM393 219a86.19 86.19 0 01-8.2 31 86.19 86.19 0 008.2-31zm-138.84-7.73a75.62 75.62 0 011.06-11.14 75.62 75.62 0 00-1.06 11.14zm129.03 41.89zm-176.31-64.11a57.86 57.86 0 0115.41 38.62 57.86 57.86 0 00-15.41-38.62 57 57 0 00-30.78-17 57 57 0 0130.78 17zM190 288a54.21 54.21 0 01-10 4.65 54.21 54.21 0 0010-4.65zm-84.51-63.55a59.87 59.87 0 015.2-20.64 59.87 59.87 0 00-5.2 20.64zm89.19 60.43C193.17 286 191.61 287 190 288c1.61-1 3.17-2 4.68-3.12zm21.49-26.99a69.49 69.49 0 01-5.73 10.42 69.49 69.49 0 005.73-10.42zm-105.48-54.08a56.76 56.76 0 012.78-5.3 56.76 56.76 0 00-2.78 5.3zm83.99 81.07a65.39 65.39 0 0015.76-16.57 65.39 65.39 0 01-15.76 16.57z"
+          />
+        </svg>
+        <span
+          class="emotion-14"
+        >
+          1
+           / 
+          3
+          명
+        </span>
+      </div>
+      <div
+        class="emotion-13"
+      >
+        <svg
+          color="#fc775a"
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(252, 119, 90);"
+          viewBox="0 0 512 512"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z"
+            fill="none"
+            stroke-miterlimit="10"
+            stroke-width="32"
+          />
+          <path
+            d="M256 128v144h96"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="32"
+          />
+        </svg>
+        <span
+          class="emotion-14"
+        >
+          1
+        </span>
+      </div>
+      <div
+        class="emotion-17"
+      >
+        <span
+          class="emotion-18"
+        >
+          1
+           남음
+        </span>
+      </div>
+      <div
+        class="emotion-13"
+      >
+        <button
+          class="emotion-20"
+          id="hi"
+        >
+          <span>
+            참여하기
+          </span>
+        </button>
+      </div>
+    </div>
+  </a>
+  <a
+    class="emotion-10"
+    href="/detail/hi"
+  >
+    <span
+      class="emotion-11"
+    >
+      hi
+    </span>
+    <div
+      class="emotion-12"
+    >
+      <div
+        class="emotion-13"
+      >
+        <svg
+          color="#fc775a"
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(252, 119, 90);"
+          viewBox="0 0 512 512"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M258.9 48C141.92 46.42 46.42 141.92 48 258.9c1.56 112.19 92.91 203.54 205.1 205.1 117 1.6 212.48-93.9 210.88-210.88C462.44 140.91 371.09 49.56 258.9 48zm-3.68 152.11c.21-1.2.44-2.4.71-3.59a66.46 66.46 0 0116.29-31.21c12.89-13.73 31.16-21.31 51.45-21.31a74.05 74.05 0 0125.06 4.26 66.69 66.69 0 0126.27 17.2 68.15 68.15 0 0118 42.14 78.46 78.46 0 010 11.4 86.19 86.19 0 01-8.2 31q-.76 1.59-1.59 3.15c-1.11 2.07-2.3 4.1-3.58 6.06a79.47 79.47 0 01-8.63 11c-13.12 14-29.92 21.73-47.31 21.73a59.61 59.61 0 01-19.17-3.18 63.47 63.47 0 01-6.1-2.43 70.76 70.76 0 01-22.07-16.12 83.76 83.76 0 01-22-51.32q-.27-3.88-.18-7.68a75.62 75.62 0 011.05-11.08zm-149.73 24.34a59.87 59.87 0 015.2-20.64 56.76 56.76 0 012.78-5.3 54.49 54.49 0 017.19-9.56 55.62 55.62 0 0114-10.82 56.84 56.84 0 018.11-3.64 63.85 63.85 0 0133.35-2.39 57 57 0 0130.78 17 57.86 57.86 0 0115.41 38.62c.05 2.11 0 4.23-.15 6.38a71.58 71.58 0 01-6 23.84 69.49 69.49 0 01-5.73 10.42 65.39 65.39 0 01-15.76 16.57c-1.5 1.07-3.06 2.07-4.67 3.07a54.21 54.21 0 01-10 4.65 49.31 49.31 0 01-16.2 2.76c-.93 0-1.86 0-2.78-.08a47.6 47.6 0 01-5.48-.62 51.19 51.19 0 01-5.35-1.23 53.54 53.54 0 01-7.72-2.89c-.84-.39-1.66-.8-2.48-1.23-18-9.49-31.57-29.16-34.23-52.12-.12-1.05-.22-2.1-.29-3.16a66.59 66.59 0 01.02-9.63zm53.92 178.6a177.27 177.27 0 01-61.94-70.65 4 4 0 011.62-5.26C117.67 316.69 141.4 311 163.82 311c17 0 30.7 2 42.69 5.88a8 8 0 012.59 13.77c-23.35 19-38.4 42.54-45.47 70.75a2.77 2.77 0 01-4.22 1.65zM256 432a175.12 175.12 0 01-65.7-12.72 4 4 0 01-2.4-4.46c.4-2.05.84-3.92 1.23-5.48 7.12-28.43 24.76-52 51-68.18 23.29-14.35 53-22.25 83.52-22.25 31.16 0 60 7.58 83.48 21.91a2.72 2.72 0 01.91 3.67A176.1 176.1 0 01256 432z"
+          />
+          <path
+            d="M161 295.28a47.6 47.6 0 01-5.48-.62 47.6 47.6 0 005.48.62zm-26.36-117.15a55.62 55.62 0 00-14 10.82 54.49 54.49 0 00-7.19 9.56 54.49 54.49 0 017.19-9.56 55.62 55.62 0 0114-10.82zm81.53 79.76a71.58 71.58 0 006-23.84c.15-2.15.2-4.27.15-6.38q.08 3.15-.15 6.38a71.58 71.58 0 01-6 23.84zm-81.53-79.76a56.84 56.84 0 018.11-3.64 56.84 56.84 0 00-8.11 3.64zm15.57 115.3a53.54 53.54 0 01-7.72-2.89 53.54 53.54 0 007.72 2.89zm-44.43-56.24c2.66 23 16.26 42.63 34.23 52.12-18.01-9.49-31.57-29.16-34.23-52.12zM254.34 219a83.76 83.76 0 0022 51.32 70.76 70.76 0 0022.07 16.12 70.76 70.76 0 01-22.07-16.12 83.76 83.76 0 01-22-51.32q-.27-3.88-.18-7.68-.09 3.75.18 7.68zm50.16 69.82a63.47 63.47 0 01-6.1-2.43 63.47 63.47 0 006.1 2.43zm-48.57-92.28a66.46 66.46 0 0116.29-31.21 66.46 66.46 0 00-16.29 31.21zM375 165.46a68.15 68.15 0 0118 42.14 68.15 68.15 0 00-18-42.14 66.69 66.69 0 00-26.27-17.2 66.69 66.69 0 0126.27 17.2zM393 219a86.19 86.19 0 01-8.2 31 86.19 86.19 0 008.2-31zm-138.84-7.73a75.62 75.62 0 011.06-11.14 75.62 75.62 0 00-1.06 11.14zm129.03 41.89zm-176.31-64.11a57.86 57.86 0 0115.41 38.62 57.86 57.86 0 00-15.41-38.62 57 57 0 00-30.78-17 57 57 0 0130.78 17zM190 288a54.21 54.21 0 01-10 4.65 54.21 54.21 0 0010-4.65zm-84.51-63.55a59.87 59.87 0 015.2-20.64 59.87 59.87 0 00-5.2 20.64zm89.19 60.43C193.17 286 191.61 287 190 288c1.61-1 3.17-2 4.68-3.12zm21.49-26.99a69.49 69.49 0 01-5.73 10.42 69.49 69.49 0 005.73-10.42zm-105.48-54.08a56.76 56.76 0 012.78-5.3 56.76 56.76 0 00-2.78 5.3zm83.99 81.07a65.39 65.39 0 0015.76-16.57 65.39 65.39 0 01-15.76 16.57z"
+          />
+        </svg>
+        <span
+          class="emotion-14"
+        >
+          1
+           / 
+          3
+          명
+        </span>
+      </div>
+      <div
+        class="emotion-13"
+      >
+        <svg
+          color="#fc775a"
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(252, 119, 90);"
+          viewBox="0 0 512 512"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z"
+            fill="none"
+            stroke-miterlimit="10"
+            stroke-width="32"
+          />
+          <path
+            d="M256 128v144h96"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="32"
+          />
+        </svg>
+        <span
+          class="emotion-14"
+        >
+          1
+        </span>
+      </div>
+      <div
+        class="emotion-17"
+      >
+        <span
+          class="emotion-18"
+        >
+          1
+           남음
+        </span>
+      </div>
+      <div
+        class="emotion-13"
+      >
+        <button
+          class="emotion-20"
+          id="hi"
+        >
+          <span>
+            참여하기
+          </span>
+        </button>
+      </div>
+    </div>
+  </a>
+  <footer
+    class="emotion-54"
+  >
+    <a
+      class="emotion-55"
+      data-testid="link-home"
+      href="/"
+    >
+      <svg
+        color="#fc775a"
+        data-testid="icon-home"
+        fill="currentColor"
+        height="30"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: rgb(252, 119, 90);"
+        viewBox="0 0 1024 1024"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M512.1 172.6l-370 369.7h96V868H392V640c0-22.1 17.9-40 40-40h160c22.1 0 40 17.9 40 40v228h153.9V542.3H882L535.2 195.7l-23.1-23.1zm434.5 422.9c-6 6-13.1 10.8-20.8 13.9 7.7-3.2 14.8-7.9 20.8-13.9zm-887-34.7c5 30.3 31.4 53.5 63.1 53.5h.9c-31.9 0-58.9-23-64-53.5zm-.9-10.5v-1.9 1.9zm.1-2.6c.1-3.1.5-6.1 1-9.1-.6 2.9-.9 6-1 9.1z"
+        />
+        <path
+          d="M951 510c0-.1-.1-.1-.1-.2l-1.8-2.1c-.1-.1-.2-.3-.4-.4-.7-.8-1.5-1.6-2.2-2.4L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.6 63.6 0 0 0-16 26.6l-.6 2.1-.3 1.1-.3 1.2c-.2.7-.3 1.4-.4 2.1 0 .1 0 .3-.1.4-.6 3-.9 6-1 9.1v3.3c0 .5 0 1 .1 1.5 0 .5 0 .9.1 1.4 0 .5.1 1 .1 1.5 0 .6.1 1.2.2 1.8 0 .3.1.6.1.9l.3 2.5v.1c5.1 30.5 32.2 53.5 64 53.5h42.5V940h691.7V614.3h43.4c8.6 0 16.9-1.7 24.5-4.9s14.7-7.9 20.8-13.9a63.6 63.6 0 0 0 18.7-45.3c0-14.7-5-28.8-14.3-40.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"
+        />
+      </svg>
+    </a>
+    <a
+      class="emotion-55"
+      data-testid="link-chat"
+      href="/chat"
+    >
+      <svg
+        fill="currentColor"
+        height="30"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 24 24"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M8.667 11.511a1.276 1.276 0 0 1-1.285-1.285c0-.718.567-1.286 1.285-1.286.717 0 1.285.568 1.285 1.286 0 .717-.568 1.285-1.285 1.285zm6.666 0a1.276 1.276 0 0 1-1.285-1.285c0-.718.568-1.286 1.285-1.286.718 0 1.285.568 1.285 1.286 0 .717-.567 1.285-1.285 1.285zm-8.51 7.704l.715-.436a4 4 0 0 1 2.705-.536c.212.033.386.059.52.076.406.054.82.081 1.237.081 4.42 0 7.9-3.022 7.9-6.6S16.42 5.2 12 5.2s-7.9 3.022-7.9 6.6c0 1.366.5 2.673 1.432 3.781.048.057.12.137.214.235a4 4 0 0 1 1.101 3.102l-.025.297zm-.63 2.727a1 1 0 0 1-1.527-.93l.188-2.26a2 2 0 0 0-.55-1.551A6.993 6.993 0 0 1 4 16.868C2.806 15.447 2.1 13.695 2.1 11.8c0-4.75 4.432-8.6 9.9-8.6s9.9 3.85 9.9 8.6-4.432 8.6-9.9 8.6c-.51 0-1.01-.033-1.499-.098a23.61 23.61 0 0 1-.569-.084 2 2 0 0 0-1.353.268l-2.387 1.456z"
+          />
+        </g>
+      </svg>
+    </a>
+    <a
+      class="emotion-55"
+      href="/writing"
+    >
+      <svg
+        baseProfile="tiny"
+        fill="currentColor"
+        height="30"
+        stroke="currentColor"
+        stroke-width="0"
+        version="1.2"
+        viewBox="0 0 24 24"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18 10h-4v-4c0-1.104-.896-2-2-2s-2 .896-2 2l.071 4h-4.071c-1.104 0-2 .896-2 2s.896 2 2 2l4.071-.071-.071 4.071c0 1.104.896 2 2 2s2-.896 2-2v-4.071l4 .071c1.104 0 2-.896 2-2s-.896-2-2-2z"
+        />
+      </svg>
+    </a>
+    <a
+      class="emotion-55"
+      href="/myInfo"
+    >
+      <svg
+        fill="currentColor"
+        height="30"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M176 511a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm280 0a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm280 0a56 56 0 1 0 112 0 56 56 0 1 0-112 0z"
+        />
+      </svg>
+    </a>
+  </footer>
+</div>
+`;
+
+exports[`검색 페이지 테스트 검색어 입력후 전송후 삭제 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.emotion-1 {
+  cursor: pointer;
+  margin-left: 5%;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  background-color: #f2f4f6;
+  border-radius: 5px;
+  height: 5rem;
+  padding: 1rem;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+.emotion-3 {
+  margin-left: 1rem;
+  background-color: inherit;
+  width: 100%;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 2.5;
+  -ms-flex: 2.5;
+  flex: 2.5;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  color: #6b7684;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0.7;
+  -ms-flex: 0.7;
+  flex: 0.7;
+  padding: 0.5rem;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #fc775a;
+  border-radius: 8px;
+  color: #f2f4f6;
+  cursor: pointer;
+}
+
+.emotion-8 span {
+  font-size: 1.3rem;
+}
+
+.emotion-10 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 7rem;
+  z-index: 777;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: space-around;
+  -ms-flex-pack: space-around;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  background-color: #e5e8eb;
+}
+
+.emotion-11 {
+  cursor: pointer;
+  width: 3rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+<div>
+  <div
+    class="emotion-0"
+  >
+    <a
+      class="emotion-1"
+      href="/"
+    >
+      <svg
+        color="#333d4b"
+        fill="none"
+        height="30"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color: rgb(51, 61, 75);"
+        viewBox="0 0 24 24"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="19"
+          x2="5"
+          y1="12"
+          y2="12"
+        />
+        <polyline
+          points="12 19 5 12 12 5"
+        />
+      </svg>
+    </a>
+    <form
+      class="emotion-2"
+      data-testid="search-form"
+    >
+      <svg
+        color="#fc775a"
+        fill="currentColor"
+        height="25"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: rgb(252, 119, 90);"
+        viewBox="0 0 24 24"
+        width="25"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"
+        />
+      </svg>
+      <input
+        class="emotion-3"
+        data-testid="search-input"
+        id="search-input"
+        placeholder="검색어를 입력해 주세요"
+        type="text"
+        value="안뇽"
+      />
+    </form>
+  </div>
+  <div
+    class="emotion-4 emotion-5"
+  >
+    <span
+      class="emotion-6 emotion-7"
+    >
+      최근 검색어
+    </span>
+    <button
+      class="emotion-8 emotion-9"
+    >
+      <span>
+        전체 삭제
+      </span>
+    </button>
+  </div>
+  <footer
+    class="emotion-10"
+  >
+    <a
+      class="emotion-11"
+      data-testid="link-home"
+      href="/"
+    >
+      <svg
+        color="#fc775a"
+        data-testid="icon-home"
+        fill="currentColor"
+        height="30"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: rgb(252, 119, 90);"
+        viewBox="0 0 1024 1024"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M512.1 172.6l-370 369.7h96V868H392V640c0-22.1 17.9-40 40-40h160c22.1 0 40 17.9 40 40v228h153.9V542.3H882L535.2 195.7l-23.1-23.1zm434.5 422.9c-6 6-13.1 10.8-20.8 13.9 7.7-3.2 14.8-7.9 20.8-13.9zm-887-34.7c5 30.3 31.4 53.5 63.1 53.5h.9c-31.9 0-58.9-23-64-53.5zm-.9-10.5v-1.9 1.9zm.1-2.6c.1-3.1.5-6.1 1-9.1-.6 2.9-.9 6-1 9.1z"
+        />
+        <path
+          d="M951 510c0-.1-.1-.1-.1-.2l-1.8-2.1c-.1-.1-.2-.3-.4-.4-.7-.8-1.5-1.6-2.2-2.4L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.6 63.6 0 0 0-16 26.6l-.6 2.1-.3 1.1-.3 1.2c-.2.7-.3 1.4-.4 2.1 0 .1 0 .3-.1.4-.6 3-.9 6-1 9.1v3.3c0 .5 0 1 .1 1.5 0 .5 0 .9.1 1.4 0 .5.1 1 .1 1.5 0 .6.1 1.2.2 1.8 0 .3.1.6.1.9l.3 2.5v.1c5.1 30.5 32.2 53.5 64 53.5h42.5V940h691.7V614.3h43.4c8.6 0 16.9-1.7 24.5-4.9s14.7-7.9 20.8-13.9a63.6 63.6 0 0 0 18.7-45.3c0-14.7-5-28.8-14.3-40.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"
+        />
+      </svg>
+    </a>
+    <a
+      class="emotion-11"
+      data-testid="link-chat"
+      href="/chat"
+    >
+      <svg
+        fill="currentColor"
+        height="30"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 24 24"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M8.667 11.511a1.276 1.276 0 0 1-1.285-1.285c0-.718.567-1.286 1.285-1.286.717 0 1.285.568 1.285 1.286 0 .717-.568 1.285-1.285 1.285zm6.666 0a1.276 1.276 0 0 1-1.285-1.285c0-.718.568-1.286 1.285-1.286.718 0 1.285.568 1.285 1.286 0 .717-.567 1.285-1.285 1.285zm-8.51 7.704l.715-.436a4 4 0 0 1 2.705-.536c.212.033.386.059.52.076.406.054.82.081 1.237.081 4.42 0 7.9-3.022 7.9-6.6S16.42 5.2 12 5.2s-7.9 3.022-7.9 6.6c0 1.366.5 2.673 1.432 3.781.048.057.12.137.214.235a4 4 0 0 1 1.101 3.102l-.025.297zm-.63 2.727a1 1 0 0 1-1.527-.93l.188-2.26a2 2 0 0 0-.55-1.551A6.993 6.993 0 0 1 4 16.868C2.806 15.447 2.1 13.695 2.1 11.8c0-4.75 4.432-8.6 9.9-8.6s9.9 3.85 9.9 8.6-4.432 8.6-9.9 8.6c-.51 0-1.01-.033-1.499-.098a23.61 23.61 0 0 1-.569-.084 2 2 0 0 0-1.353.268l-2.387 1.456z"
+          />
+        </g>
+      </svg>
+    </a>
+    <a
+      class="emotion-11"
+      href="/writing"
+    >
+      <svg
+        baseProfile="tiny"
+        fill="currentColor"
+        height="30"
+        stroke="currentColor"
+        stroke-width="0"
+        version="1.2"
+        viewBox="0 0 24 24"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18 10h-4v-4c0-1.104-.896-2-2-2s-2 .896-2 2l.071 4h-4.071c-1.104 0-2 .896-2 2s.896 2 2 2l4.071-.071-.071 4.071c0 1.104.896 2 2 2s2-.896 2-2v-4.071l4 .071c1.104 0 2-.896 2-2s-.896-2-2-2z"
+        />
+      </svg>
+    </a>
+    <a
+      class="emotion-11"
+      href="/myInfo"
+    >
+      <svg
+        fill="currentColor"
+        height="30"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M176 511a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm280 0a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm280 0a56 56 0 1 0 112 0 56 56 0 1 0-112 0z"
+        />
+      </svg>
+    </a>
+  </footer>
+</div>
+`;
+
+exports[`검색 페이지 테스트 렌더링 테스트 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.emotion-1 {
+  cursor: pointer;
+  margin-left: 5%;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  background-color: #f2f4f6;
+  border-radius: 5px;
+  height: 5rem;
+  padding: 1rem;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+.emotion-3 {
+  margin-left: 1rem;
+  background-color: inherit;
+  width: 100%;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 2.5;
+  -ms-flex: 2.5;
+  flex: 2.5;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  color: #6b7684;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0.7;
+  -ms-flex: 0.7;
+  flex: 0.7;
+  padding: 0.5rem;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #fc775a;
+  border-radius: 8px;
+  color: #f2f4f6;
+  cursor: pointer;
+}
+
+.emotion-8 span {
+  font-size: 1.3rem;
+}
+
+.emotion-10 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 7rem;
+  z-index: 777;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: space-around;
+  -ms-flex-pack: space-around;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  background-color: #e5e8eb;
+}
+
+.emotion-11 {
+  cursor: pointer;
+  width: 3rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+<div>
+  <div
+    class="emotion-0"
+  >
+    <a
+      class="emotion-1"
+      href="/"
+    >
+      <svg
+        color="#333d4b"
+        fill="none"
+        height="30"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color: rgb(51, 61, 75);"
+        viewBox="0 0 24 24"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="19"
+          x2="5"
+          y1="12"
+          y2="12"
+        />
+        <polyline
+          points="12 19 5 12 12 5"
+        />
+      </svg>
+    </a>
+    <form
+      class="emotion-2"
+      data-testid="search-form"
+    >
+      <svg
+        color="#fc775a"
+        fill="currentColor"
+        height="25"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: rgb(252, 119, 90);"
+        viewBox="0 0 24 24"
+        width="25"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"
+        />
+      </svg>
+      <input
+        class="emotion-3"
+        data-testid="search-input"
+        id="search-input"
+        placeholder="검색어를 입력해 주세요"
+        type="text"
+        value=""
+      />
+    </form>
+  </div>
+  <div
+    class="emotion-4 emotion-5"
+  >
+    <span
+      class="emotion-6 emotion-7"
+    >
+      최근 검색어
+    </span>
+    <button
+      class="emotion-8 emotion-9"
+    >
+      <span>
+        전체 삭제
+      </span>
+    </button>
+  </div>
+  <footer
+    class="emotion-10"
+  >
+    <a
+      class="emotion-11"
+      data-testid="link-home"
+      href="/"
+    >
+      <svg
+        color="#fc775a"
+        data-testid="icon-home"
+        fill="currentColor"
+        height="30"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: rgb(252, 119, 90);"
+        viewBox="0 0 1024 1024"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M512.1 172.6l-370 369.7h96V868H392V640c0-22.1 17.9-40 40-40h160c22.1 0 40 17.9 40 40v228h153.9V542.3H882L535.2 195.7l-23.1-23.1zm434.5 422.9c-6 6-13.1 10.8-20.8 13.9 7.7-3.2 14.8-7.9 20.8-13.9zm-887-34.7c5 30.3 31.4 53.5 63.1 53.5h.9c-31.9 0-58.9-23-64-53.5zm-.9-10.5v-1.9 1.9zm.1-2.6c.1-3.1.5-6.1 1-9.1-.6 2.9-.9 6-1 9.1z"
+        />
+        <path
+          d="M951 510c0-.1-.1-.1-.1-.2l-1.8-2.1c-.1-.1-.2-.3-.4-.4-.7-.8-1.5-1.6-2.2-2.4L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.6 63.6 0 0 0-16 26.6l-.6 2.1-.3 1.1-.3 1.2c-.2.7-.3 1.4-.4 2.1 0 .1 0 .3-.1.4-.6 3-.9 6-1 9.1v3.3c0 .5 0 1 .1 1.5 0 .5 0 .9.1 1.4 0 .5.1 1 .1 1.5 0 .6.1 1.2.2 1.8 0 .3.1.6.1.9l.3 2.5v.1c5.1 30.5 32.2 53.5 64 53.5h42.5V940h691.7V614.3h43.4c8.6 0 16.9-1.7 24.5-4.9s14.7-7.9 20.8-13.9a63.6 63.6 0 0 0 18.7-45.3c0-14.7-5-28.8-14.3-40.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"
+        />
+      </svg>
+    </a>
+    <a
+      class="emotion-11"
+      data-testid="link-chat"
+      href="/chat"
+    >
+      <svg
+        fill="currentColor"
+        height="30"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 24 24"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M8.667 11.511a1.276 1.276 0 0 1-1.285-1.285c0-.718.567-1.286 1.285-1.286.717 0 1.285.568 1.285 1.286 0 .717-.568 1.285-1.285 1.285zm6.666 0a1.276 1.276 0 0 1-1.285-1.285c0-.718.568-1.286 1.285-1.286.718 0 1.285.568 1.285 1.286 0 .717-.567 1.285-1.285 1.285zm-8.51 7.704l.715-.436a4 4 0 0 1 2.705-.536c.212.033.386.059.52.076.406.054.82.081 1.237.081 4.42 0 7.9-3.022 7.9-6.6S16.42 5.2 12 5.2s-7.9 3.022-7.9 6.6c0 1.366.5 2.673 1.432 3.781.048.057.12.137.214.235a4 4 0 0 1 1.101 3.102l-.025.297zm-.63 2.727a1 1 0 0 1-1.527-.93l.188-2.26a2 2 0 0 0-.55-1.551A6.993 6.993 0 0 1 4 16.868C2.806 15.447 2.1 13.695 2.1 11.8c0-4.75 4.432-8.6 9.9-8.6s9.9 3.85 9.9 8.6-4.432 8.6-9.9 8.6c-.51 0-1.01-.033-1.499-.098a23.61 23.61 0 0 1-.569-.084 2 2 0 0 0-1.353.268l-2.387 1.456z"
+          />
+        </g>
+      </svg>
+    </a>
+    <a
+      class="emotion-11"
+      href="/writing"
+    >
+      <svg
+        baseProfile="tiny"
+        fill="currentColor"
+        height="30"
+        stroke="currentColor"
+        stroke-width="0"
+        version="1.2"
+        viewBox="0 0 24 24"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18 10h-4v-4c0-1.104-.896-2-2-2s-2 .896-2 2l.071 4h-4.071c-1.104 0-2 .896-2 2s.896 2 2 2l4.071-.071-.071 4.071c0 1.104.896 2 2 2s2-.896 2-2v-4.071l4 .071c1.104 0 2-.896 2-2s-.896-2-2-2z"
+        />
+      </svg>
+    </a>
+    <a
+      class="emotion-11"
+      href="/myInfo"
+    >
+      <svg
+        fill="currentColor"
+        height="30"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M176 511a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm280 0a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm280 0a56 56 0 1 0 112 0 56 56 0 1 0-112 0z"
+        />
+      </svg>
+    </a>
+  </footer>
+</div>
+`;
+
+exports[`검색 페이지 테스트 전체 삭제 버튼 클릭 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.emotion-1 {
+  cursor: pointer;
+  margin-left: 5%;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  background-color: #f2f4f6;
+  border-radius: 5px;
+  height: 5rem;
+  padding: 1rem;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+.emotion-3 {
+  margin-left: 1rem;
+  background-color: inherit;
+  width: 100%;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 2.5;
+  -ms-flex: 2.5;
+  flex: 2.5;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  color: #6b7684;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0.7;
+  -ms-flex: 0.7;
+  flex: 0.7;
+  padding: 0.5rem;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #fc775a;
+  border-radius: 8px;
+  color: #f2f4f6;
+  cursor: pointer;
+}
+
+.emotion-8 span {
+  font-size: 1.3rem;
+}
+
+.emotion-10 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 7rem;
+  z-index: 777;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: space-around;
+  -ms-flex-pack: space-around;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  background-color: #e5e8eb;
+}
+
+.emotion-11 {
+  cursor: pointer;
+  width: 3rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+<div>
+  <div
+    class="emotion-0"
+  >
+    <a
+      class="emotion-1"
+      href="/"
+    >
+      <svg
+        color="#333d4b"
+        fill="none"
+        height="30"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color: rgb(51, 61, 75);"
+        viewBox="0 0 24 24"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="19"
+          x2="5"
+          y1="12"
+          y2="12"
+        />
+        <polyline
+          points="12 19 5 12 12 5"
+        />
+      </svg>
+    </a>
+    <form
+      class="emotion-2"
+      data-testid="search-form"
+    >
+      <svg
+        color="#fc775a"
+        fill="currentColor"
+        height="25"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: rgb(252, 119, 90);"
+        viewBox="0 0 24 24"
+        width="25"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"
+        />
+      </svg>
+      <input
+        class="emotion-3"
+        data-testid="search-input"
+        id="search-input"
+        placeholder="검색어를 입력해 주세요"
+        type="text"
+        value="안뇽"
+      />
+    </form>
+  </div>
+  <div
+    class="emotion-4 emotion-5"
+  >
+    <span
+      class="emotion-6 emotion-7"
+    >
+      최근 검색어
+    </span>
+    <button
+      class="emotion-8 emotion-9"
+    >
+      <span>
+        전체 삭제
+      </span>
+    </button>
+  </div>
+  <footer
+    class="emotion-10"
+  >
+    <a
+      class="emotion-11"
+      data-testid="link-home"
+      href="/"
+    >
+      <svg
+        color="#fc775a"
+        data-testid="icon-home"
+        fill="currentColor"
+        height="30"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: rgb(252, 119, 90);"
+        viewBox="0 0 1024 1024"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M512.1 172.6l-370 369.7h96V868H392V640c0-22.1 17.9-40 40-40h160c22.1 0 40 17.9 40 40v228h153.9V542.3H882L535.2 195.7l-23.1-23.1zm434.5 422.9c-6 6-13.1 10.8-20.8 13.9 7.7-3.2 14.8-7.9 20.8-13.9zm-887-34.7c5 30.3 31.4 53.5 63.1 53.5h.9c-31.9 0-58.9-23-64-53.5zm-.9-10.5v-1.9 1.9zm.1-2.6c.1-3.1.5-6.1 1-9.1-.6 2.9-.9 6-1 9.1z"
+        />
+        <path
+          d="M951 510c0-.1-.1-.1-.1-.2l-1.8-2.1c-.1-.1-.2-.3-.4-.4-.7-.8-1.5-1.6-2.2-2.4L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.6 63.6 0 0 0-16 26.6l-.6 2.1-.3 1.1-.3 1.2c-.2.7-.3 1.4-.4 2.1 0 .1 0 .3-.1.4-.6 3-.9 6-1 9.1v3.3c0 .5 0 1 .1 1.5 0 .5 0 .9.1 1.4 0 .5.1 1 .1 1.5 0 .6.1 1.2.2 1.8 0 .3.1.6.1.9l.3 2.5v.1c5.1 30.5 32.2 53.5 64 53.5h42.5V940h691.7V614.3h43.4c8.6 0 16.9-1.7 24.5-4.9s14.7-7.9 20.8-13.9a63.6 63.6 0 0 0 18.7-45.3c0-14.7-5-28.8-14.3-40.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"
+        />
+      </svg>
+    </a>
+    <a
+      class="emotion-11"
+      data-testid="link-chat"
+      href="/chat"
+    >
+      <svg
+        fill="currentColor"
+        height="30"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 24 24"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M8.667 11.511a1.276 1.276 0 0 1-1.285-1.285c0-.718.567-1.286 1.285-1.286.717 0 1.285.568 1.285 1.286 0 .717-.568 1.285-1.285 1.285zm6.666 0a1.276 1.276 0 0 1-1.285-1.285c0-.718.568-1.286 1.285-1.286.718 0 1.285.568 1.285 1.286 0 .717-.567 1.285-1.285 1.285zm-8.51 7.704l.715-.436a4 4 0 0 1 2.705-.536c.212.033.386.059.52.076.406.054.82.081 1.237.081 4.42 0 7.9-3.022 7.9-6.6S16.42 5.2 12 5.2s-7.9 3.022-7.9 6.6c0 1.366.5 2.673 1.432 3.781.048.057.12.137.214.235a4 4 0 0 1 1.101 3.102l-.025.297zm-.63 2.727a1 1 0 0 1-1.527-.93l.188-2.26a2 2 0 0 0-.55-1.551A6.993 6.993 0 0 1 4 16.868C2.806 15.447 2.1 13.695 2.1 11.8c0-4.75 4.432-8.6 9.9-8.6s9.9 3.85 9.9 8.6-4.432 8.6-9.9 8.6c-.51 0-1.01-.033-1.499-.098a23.61 23.61 0 0 1-.569-.084 2 2 0 0 0-1.353.268l-2.387 1.456z"
+          />
+        </g>
+      </svg>
+    </a>
+    <a
+      class="emotion-11"
+      href="/writing"
+    >
+      <svg
+        baseProfile="tiny"
+        fill="currentColor"
+        height="30"
+        stroke="currentColor"
+        stroke-width="0"
+        version="1.2"
+        viewBox="0 0 24 24"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18 10h-4v-4c0-1.104-.896-2-2-2s-2 .896-2 2l.071 4h-4.071c-1.104 0-2 .896-2 2s.896 2 2 2l4.071-.071-.071 4.071c0 1.104.896 2 2 2s2-.896 2-2v-4.071l4 .071c1.104 0 2-.896 2-2s-.896-2-2-2z"
+        />
+      </svg>
+    </a>
+    <a
+      class="emotion-11"
+      href="/myInfo"
+    >
+      <svg
+        fill="currentColor"
+        height="30"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M176 511a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm280 0a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm280 0a56 56 0 1 0 112 0 56 56 0 1 0-112 0z"
+        />
+      </svg>
+    </a>
+  </footer>
+</div>
+`;
+
+exports[`검색 페이지 테스트 최근 검색어 클릭 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.emotion-1 {
+  cursor: pointer;
+  margin-left: 5%;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  background-color: #f2f4f6;
+  border-radius: 5px;
+  height: 5rem;
+  padding: 1rem;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+.emotion-3 {
+  margin-left: 1rem;
+  background-color: inherit;
+  width: 100%;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 2.5;
+  -ms-flex: 2.5;
+  flex: 2.5;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  color: #6b7684;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 2.5;
+  -ms-flex: 2.5;
+  flex: 2.5;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  color: #6b7684;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+.emotion-10 {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  cursor: pointer;
+  padding: 1rem;
+  border-bottom: 1px solid #fc775a;
+}
+
+.emotion-10:hover {
+  background-color: #f2f4f6;
+}
+
+.emotion-11 {
+  font-size: 1.5rem;
+}
+
+.emotion-12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  height: 100%;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-self: center;
+  text-align: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.emotion-17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  height: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-self: center;
+  text-align: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.emotion-20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  height: 2.5rem;
+  border: 0 solid transparent;
+  border-radius: 0.7rem;
+  background-color: #fc775a;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+}
+
+.emotion-20:focus {
+  outline: none;
+}
+
+.emotion-20:disabled {
+  opacity: 0.26;
+  cursor: not-allowed;
+}
+
+.emotion-20:active {
+  background-color: #7b1fa2;
+}
+
+.emotion-54 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 7rem;
+  z-index: 777;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: space-around;
+  -ms-flex-pack: space-around;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  background-color: #e5e8eb;
+}
+
+.emotion-55 {
+  cursor: pointer;
+  width: 3rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+<div>
+  <div
+    class="emotion-0"
+  >
+    <a
+      class="emotion-1"
+      href="/"
+    >
+      <svg
+        color="#333d4b"
+        fill="none"
+        height="30"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color: rgb(51, 61, 75);"
+        viewBox="0 0 24 24"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="19"
+          x2="5"
+          y1="12"
+          y2="12"
+        />
+        <polyline
+          points="12 19 5 12 12 5"
+        />
+      </svg>
+    </a>
+    <form
+      class="emotion-2"
+      data-testid="search-form"
+    >
+      <svg
+        color="#fc775a"
+        fill="currentColor"
+        height="25"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: rgb(252, 119, 90);"
+        viewBox="0 0 24 24"
+        width="25"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"
+        />
+      </svg>
+      <input
+        class="emotion-3"
+        data-testid="search-input"
+        id="search-input"
+        placeholder="검색어를 입력해 주세요"
+        type="text"
+        value="안뇽"
+      />
+    </form>
+  </div>
+  <div
+    class="emotion-4 emotion-5"
+  >
+    <span
+      class="emotion-6 emotion-7"
+    >
+      검색 결과
+    </span>
+    <span
+      class="emotion-8 emotion-9"
+    >
+      개수 : 30개
+    </span>
+  </div>
+  <a
+    class="emotion-10"
+    href="/detail/hi"
+  >
+    <span
+      class="emotion-11"
+    >
+      hi
+    </span>
+    <div
+      class="emotion-12"
+    >
+      <div
+        class="emotion-13"
+      >
+        <svg
+          color="#fc775a"
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(252, 119, 90);"
+          viewBox="0 0 512 512"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M258.9 48C141.92 46.42 46.42 141.92 48 258.9c1.56 112.19 92.91 203.54 205.1 205.1 117 1.6 212.48-93.9 210.88-210.88C462.44 140.91 371.09 49.56 258.9 48zm-3.68 152.11c.21-1.2.44-2.4.71-3.59a66.46 66.46 0 0116.29-31.21c12.89-13.73 31.16-21.31 51.45-21.31a74.05 74.05 0 0125.06 4.26 66.69 66.69 0 0126.27 17.2 68.15 68.15 0 0118 42.14 78.46 78.46 0 010 11.4 86.19 86.19 0 01-8.2 31q-.76 1.59-1.59 3.15c-1.11 2.07-2.3 4.1-3.58 6.06a79.47 79.47 0 01-8.63 11c-13.12 14-29.92 21.73-47.31 21.73a59.61 59.61 0 01-19.17-3.18 63.47 63.47 0 01-6.1-2.43 70.76 70.76 0 01-22.07-16.12 83.76 83.76 0 01-22-51.32q-.27-3.88-.18-7.68a75.62 75.62 0 011.05-11.08zm-149.73 24.34a59.87 59.87 0 015.2-20.64 56.76 56.76 0 012.78-5.3 54.49 54.49 0 017.19-9.56 55.62 55.62 0 0114-10.82 56.84 56.84 0 018.11-3.64 63.85 63.85 0 0133.35-2.39 57 57 0 0130.78 17 57.86 57.86 0 0115.41 38.62c.05 2.11 0 4.23-.15 6.38a71.58 71.58 0 01-6 23.84 69.49 69.49 0 01-5.73 10.42 65.39 65.39 0 01-15.76 16.57c-1.5 1.07-3.06 2.07-4.67 3.07a54.21 54.21 0 01-10 4.65 49.31 49.31 0 01-16.2 2.76c-.93 0-1.86 0-2.78-.08a47.6 47.6 0 01-5.48-.62 51.19 51.19 0 01-5.35-1.23 53.54 53.54 0 01-7.72-2.89c-.84-.39-1.66-.8-2.48-1.23-18-9.49-31.57-29.16-34.23-52.12-.12-1.05-.22-2.1-.29-3.16a66.59 66.59 0 01.02-9.63zm53.92 178.6a177.27 177.27 0 01-61.94-70.65 4 4 0 011.62-5.26C117.67 316.69 141.4 311 163.82 311c17 0 30.7 2 42.69 5.88a8 8 0 012.59 13.77c-23.35 19-38.4 42.54-45.47 70.75a2.77 2.77 0 01-4.22 1.65zM256 432a175.12 175.12 0 01-65.7-12.72 4 4 0 01-2.4-4.46c.4-2.05.84-3.92 1.23-5.48 7.12-28.43 24.76-52 51-68.18 23.29-14.35 53-22.25 83.52-22.25 31.16 0 60 7.58 83.48 21.91a2.72 2.72 0 01.91 3.67A176.1 176.1 0 01256 432z"
+          />
+          <path
+            d="M161 295.28a47.6 47.6 0 01-5.48-.62 47.6 47.6 0 005.48.62zm-26.36-117.15a55.62 55.62 0 00-14 10.82 54.49 54.49 0 00-7.19 9.56 54.49 54.49 0 017.19-9.56 55.62 55.62 0 0114-10.82zm81.53 79.76a71.58 71.58 0 006-23.84c.15-2.15.2-4.27.15-6.38q.08 3.15-.15 6.38a71.58 71.58 0 01-6 23.84zm-81.53-79.76a56.84 56.84 0 018.11-3.64 56.84 56.84 0 00-8.11 3.64zm15.57 115.3a53.54 53.54 0 01-7.72-2.89 53.54 53.54 0 007.72 2.89zm-44.43-56.24c2.66 23 16.26 42.63 34.23 52.12-18.01-9.49-31.57-29.16-34.23-52.12zM254.34 219a83.76 83.76 0 0022 51.32 70.76 70.76 0 0022.07 16.12 70.76 70.76 0 01-22.07-16.12 83.76 83.76 0 01-22-51.32q-.27-3.88-.18-7.68-.09 3.75.18 7.68zm50.16 69.82a63.47 63.47 0 01-6.1-2.43 63.47 63.47 0 006.1 2.43zm-48.57-92.28a66.46 66.46 0 0116.29-31.21 66.46 66.46 0 00-16.29 31.21zM375 165.46a68.15 68.15 0 0118 42.14 68.15 68.15 0 00-18-42.14 66.69 66.69 0 00-26.27-17.2 66.69 66.69 0 0126.27 17.2zM393 219a86.19 86.19 0 01-8.2 31 86.19 86.19 0 008.2-31zm-138.84-7.73a75.62 75.62 0 011.06-11.14 75.62 75.62 0 00-1.06 11.14zm129.03 41.89zm-176.31-64.11a57.86 57.86 0 0115.41 38.62 57.86 57.86 0 00-15.41-38.62 57 57 0 00-30.78-17 57 57 0 0130.78 17zM190 288a54.21 54.21 0 01-10 4.65 54.21 54.21 0 0010-4.65zm-84.51-63.55a59.87 59.87 0 015.2-20.64 59.87 59.87 0 00-5.2 20.64zm89.19 60.43C193.17 286 191.61 287 190 288c1.61-1 3.17-2 4.68-3.12zm21.49-26.99a69.49 69.49 0 01-5.73 10.42 69.49 69.49 0 005.73-10.42zm-105.48-54.08a56.76 56.76 0 012.78-5.3 56.76 56.76 0 00-2.78 5.3zm83.99 81.07a65.39 65.39 0 0015.76-16.57 65.39 65.39 0 01-15.76 16.57z"
+          />
+        </svg>
+        <span
+          class="emotion-14"
+        >
+          1
+           / 
+          3
+          명
+        </span>
+      </div>
+      <div
+        class="emotion-13"
+      >
+        <svg
+          color="#fc775a"
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(252, 119, 90);"
+          viewBox="0 0 512 512"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z"
+            fill="none"
+            stroke-miterlimit="10"
+            stroke-width="32"
+          />
+          <path
+            d="M256 128v144h96"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="32"
+          />
+        </svg>
+        <span
+          class="emotion-14"
+        >
+          1
+        </span>
+      </div>
+      <div
+        class="emotion-17"
+      >
+        <span
+          class="emotion-18"
+        >
+          1
+           남음
+        </span>
+      </div>
+      <div
+        class="emotion-13"
+      >
+        <button
+          class="emotion-20"
+          id="hi"
+        >
+          <span>
+            참여하기
+          </span>
+        </button>
+      </div>
+    </div>
+  </a>
+  <a
+    class="emotion-10"
+    href="/detail/hi"
+  >
+    <span
+      class="emotion-11"
+    >
+      hi
+    </span>
+    <div
+      class="emotion-12"
+    >
+      <div
+        class="emotion-13"
+      >
+        <svg
+          color="#fc775a"
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(252, 119, 90);"
+          viewBox="0 0 512 512"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M258.9 48C141.92 46.42 46.42 141.92 48 258.9c1.56 112.19 92.91 203.54 205.1 205.1 117 1.6 212.48-93.9 210.88-210.88C462.44 140.91 371.09 49.56 258.9 48zm-3.68 152.11c.21-1.2.44-2.4.71-3.59a66.46 66.46 0 0116.29-31.21c12.89-13.73 31.16-21.31 51.45-21.31a74.05 74.05 0 0125.06 4.26 66.69 66.69 0 0126.27 17.2 68.15 68.15 0 0118 42.14 78.46 78.46 0 010 11.4 86.19 86.19 0 01-8.2 31q-.76 1.59-1.59 3.15c-1.11 2.07-2.3 4.1-3.58 6.06a79.47 79.47 0 01-8.63 11c-13.12 14-29.92 21.73-47.31 21.73a59.61 59.61 0 01-19.17-3.18 63.47 63.47 0 01-6.1-2.43 70.76 70.76 0 01-22.07-16.12 83.76 83.76 0 01-22-51.32q-.27-3.88-.18-7.68a75.62 75.62 0 011.05-11.08zm-149.73 24.34a59.87 59.87 0 015.2-20.64 56.76 56.76 0 012.78-5.3 54.49 54.49 0 017.19-9.56 55.62 55.62 0 0114-10.82 56.84 56.84 0 018.11-3.64 63.85 63.85 0 0133.35-2.39 57 57 0 0130.78 17 57.86 57.86 0 0115.41 38.62c.05 2.11 0 4.23-.15 6.38a71.58 71.58 0 01-6 23.84 69.49 69.49 0 01-5.73 10.42 65.39 65.39 0 01-15.76 16.57c-1.5 1.07-3.06 2.07-4.67 3.07a54.21 54.21 0 01-10 4.65 49.31 49.31 0 01-16.2 2.76c-.93 0-1.86 0-2.78-.08a47.6 47.6 0 01-5.48-.62 51.19 51.19 0 01-5.35-1.23 53.54 53.54 0 01-7.72-2.89c-.84-.39-1.66-.8-2.48-1.23-18-9.49-31.57-29.16-34.23-52.12-.12-1.05-.22-2.1-.29-3.16a66.59 66.59 0 01.02-9.63zm53.92 178.6a177.27 177.27 0 01-61.94-70.65 4 4 0 011.62-5.26C117.67 316.69 141.4 311 163.82 311c17 0 30.7 2 42.69 5.88a8 8 0 012.59 13.77c-23.35 19-38.4 42.54-45.47 70.75a2.77 2.77 0 01-4.22 1.65zM256 432a175.12 175.12 0 01-65.7-12.72 4 4 0 01-2.4-4.46c.4-2.05.84-3.92 1.23-5.48 7.12-28.43 24.76-52 51-68.18 23.29-14.35 53-22.25 83.52-22.25 31.16 0 60 7.58 83.48 21.91a2.72 2.72 0 01.91 3.67A176.1 176.1 0 01256 432z"
+          />
+          <path
+            d="M161 295.28a47.6 47.6 0 01-5.48-.62 47.6 47.6 0 005.48.62zm-26.36-117.15a55.62 55.62 0 00-14 10.82 54.49 54.49 0 00-7.19 9.56 54.49 54.49 0 017.19-9.56 55.62 55.62 0 0114-10.82zm81.53 79.76a71.58 71.58 0 006-23.84c.15-2.15.2-4.27.15-6.38q.08 3.15-.15 6.38a71.58 71.58 0 01-6 23.84zm-81.53-79.76a56.84 56.84 0 018.11-3.64 56.84 56.84 0 00-8.11 3.64zm15.57 115.3a53.54 53.54 0 01-7.72-2.89 53.54 53.54 0 007.72 2.89zm-44.43-56.24c2.66 23 16.26 42.63 34.23 52.12-18.01-9.49-31.57-29.16-34.23-52.12zM254.34 219a83.76 83.76 0 0022 51.32 70.76 70.76 0 0022.07 16.12 70.76 70.76 0 01-22.07-16.12 83.76 83.76 0 01-22-51.32q-.27-3.88-.18-7.68-.09 3.75.18 7.68zm50.16 69.82a63.47 63.47 0 01-6.1-2.43 63.47 63.47 0 006.1 2.43zm-48.57-92.28a66.46 66.46 0 0116.29-31.21 66.46 66.46 0 00-16.29 31.21zM375 165.46a68.15 68.15 0 0118 42.14 68.15 68.15 0 00-18-42.14 66.69 66.69 0 00-26.27-17.2 66.69 66.69 0 0126.27 17.2zM393 219a86.19 86.19 0 01-8.2 31 86.19 86.19 0 008.2-31zm-138.84-7.73a75.62 75.62 0 011.06-11.14 75.62 75.62 0 00-1.06 11.14zm129.03 41.89zm-176.31-64.11a57.86 57.86 0 0115.41 38.62 57.86 57.86 0 00-15.41-38.62 57 57 0 00-30.78-17 57 57 0 0130.78 17zM190 288a54.21 54.21 0 01-10 4.65 54.21 54.21 0 0010-4.65zm-84.51-63.55a59.87 59.87 0 015.2-20.64 59.87 59.87 0 00-5.2 20.64zm89.19 60.43C193.17 286 191.61 287 190 288c1.61-1 3.17-2 4.68-3.12zm21.49-26.99a69.49 69.49 0 01-5.73 10.42 69.49 69.49 0 005.73-10.42zm-105.48-54.08a56.76 56.76 0 012.78-5.3 56.76 56.76 0 00-2.78 5.3zm83.99 81.07a65.39 65.39 0 0015.76-16.57 65.39 65.39 0 01-15.76 16.57z"
+          />
+        </svg>
+        <span
+          class="emotion-14"
+        >
+          1
+           / 
+          3
+          명
+        </span>
+      </div>
+      <div
+        class="emotion-13"
+      >
+        <svg
+          color="#fc775a"
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(252, 119, 90);"
+          viewBox="0 0 512 512"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z"
+            fill="none"
+            stroke-miterlimit="10"
+            stroke-width="32"
+          />
+          <path
+            d="M256 128v144h96"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="32"
+          />
+        </svg>
+        <span
+          class="emotion-14"
+        >
+          1
+        </span>
+      </div>
+      <div
+        class="emotion-17"
+      >
+        <span
+          class="emotion-18"
+        >
+          1
+           남음
+        </span>
+      </div>
+      <div
+        class="emotion-13"
+      >
+        <button
+          class="emotion-20"
+          id="hi"
+        >
+          <span>
+            참여하기
+          </span>
+        </button>
+      </div>
+    </div>
+  </a>
+  <a
+    class="emotion-10"
+    href="/detail/hi"
+  >
+    <span
+      class="emotion-11"
+    >
+      hi
+    </span>
+    <div
+      class="emotion-12"
+    >
+      <div
+        class="emotion-13"
+      >
+        <svg
+          color="#fc775a"
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(252, 119, 90);"
+          viewBox="0 0 512 512"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M258.9 48C141.92 46.42 46.42 141.92 48 258.9c1.56 112.19 92.91 203.54 205.1 205.1 117 1.6 212.48-93.9 210.88-210.88C462.44 140.91 371.09 49.56 258.9 48zm-3.68 152.11c.21-1.2.44-2.4.71-3.59a66.46 66.46 0 0116.29-31.21c12.89-13.73 31.16-21.31 51.45-21.31a74.05 74.05 0 0125.06 4.26 66.69 66.69 0 0126.27 17.2 68.15 68.15 0 0118 42.14 78.46 78.46 0 010 11.4 86.19 86.19 0 01-8.2 31q-.76 1.59-1.59 3.15c-1.11 2.07-2.3 4.1-3.58 6.06a79.47 79.47 0 01-8.63 11c-13.12 14-29.92 21.73-47.31 21.73a59.61 59.61 0 01-19.17-3.18 63.47 63.47 0 01-6.1-2.43 70.76 70.76 0 01-22.07-16.12 83.76 83.76 0 01-22-51.32q-.27-3.88-.18-7.68a75.62 75.62 0 011.05-11.08zm-149.73 24.34a59.87 59.87 0 015.2-20.64 56.76 56.76 0 012.78-5.3 54.49 54.49 0 017.19-9.56 55.62 55.62 0 0114-10.82 56.84 56.84 0 018.11-3.64 63.85 63.85 0 0133.35-2.39 57 57 0 0130.78 17 57.86 57.86 0 0115.41 38.62c.05 2.11 0 4.23-.15 6.38a71.58 71.58 0 01-6 23.84 69.49 69.49 0 01-5.73 10.42 65.39 65.39 0 01-15.76 16.57c-1.5 1.07-3.06 2.07-4.67 3.07a54.21 54.21 0 01-10 4.65 49.31 49.31 0 01-16.2 2.76c-.93 0-1.86 0-2.78-.08a47.6 47.6 0 01-5.48-.62 51.19 51.19 0 01-5.35-1.23 53.54 53.54 0 01-7.72-2.89c-.84-.39-1.66-.8-2.48-1.23-18-9.49-31.57-29.16-34.23-52.12-.12-1.05-.22-2.1-.29-3.16a66.59 66.59 0 01.02-9.63zm53.92 178.6a177.27 177.27 0 01-61.94-70.65 4 4 0 011.62-5.26C117.67 316.69 141.4 311 163.82 311c17 0 30.7 2 42.69 5.88a8 8 0 012.59 13.77c-23.35 19-38.4 42.54-45.47 70.75a2.77 2.77 0 01-4.22 1.65zM256 432a175.12 175.12 0 01-65.7-12.72 4 4 0 01-2.4-4.46c.4-2.05.84-3.92 1.23-5.48 7.12-28.43 24.76-52 51-68.18 23.29-14.35 53-22.25 83.52-22.25 31.16 0 60 7.58 83.48 21.91a2.72 2.72 0 01.91 3.67A176.1 176.1 0 01256 432z"
+          />
+          <path
+            d="M161 295.28a47.6 47.6 0 01-5.48-.62 47.6 47.6 0 005.48.62zm-26.36-117.15a55.62 55.62 0 00-14 10.82 54.49 54.49 0 00-7.19 9.56 54.49 54.49 0 017.19-9.56 55.62 55.62 0 0114-10.82zm81.53 79.76a71.58 71.58 0 006-23.84c.15-2.15.2-4.27.15-6.38q.08 3.15-.15 6.38a71.58 71.58 0 01-6 23.84zm-81.53-79.76a56.84 56.84 0 018.11-3.64 56.84 56.84 0 00-8.11 3.64zm15.57 115.3a53.54 53.54 0 01-7.72-2.89 53.54 53.54 0 007.72 2.89zm-44.43-56.24c2.66 23 16.26 42.63 34.23 52.12-18.01-9.49-31.57-29.16-34.23-52.12zM254.34 219a83.76 83.76 0 0022 51.32 70.76 70.76 0 0022.07 16.12 70.76 70.76 0 01-22.07-16.12 83.76 83.76 0 01-22-51.32q-.27-3.88-.18-7.68-.09 3.75.18 7.68zm50.16 69.82a63.47 63.47 0 01-6.1-2.43 63.47 63.47 0 006.1 2.43zm-48.57-92.28a66.46 66.46 0 0116.29-31.21 66.46 66.46 0 00-16.29 31.21zM375 165.46a68.15 68.15 0 0118 42.14 68.15 68.15 0 00-18-42.14 66.69 66.69 0 00-26.27-17.2 66.69 66.69 0 0126.27 17.2zM393 219a86.19 86.19 0 01-8.2 31 86.19 86.19 0 008.2-31zm-138.84-7.73a75.62 75.62 0 011.06-11.14 75.62 75.62 0 00-1.06 11.14zm129.03 41.89zm-176.31-64.11a57.86 57.86 0 0115.41 38.62 57.86 57.86 0 00-15.41-38.62 57 57 0 00-30.78-17 57 57 0 0130.78 17zM190 288a54.21 54.21 0 01-10 4.65 54.21 54.21 0 0010-4.65zm-84.51-63.55a59.87 59.87 0 015.2-20.64 59.87 59.87 0 00-5.2 20.64zm89.19 60.43C193.17 286 191.61 287 190 288c1.61-1 3.17-2 4.68-3.12zm21.49-26.99a69.49 69.49 0 01-5.73 10.42 69.49 69.49 0 005.73-10.42zm-105.48-54.08a56.76 56.76 0 012.78-5.3 56.76 56.76 0 00-2.78 5.3zm83.99 81.07a65.39 65.39 0 0015.76-16.57 65.39 65.39 0 01-15.76 16.57z"
+          />
+        </svg>
+        <span
+          class="emotion-14"
+        >
+          1
+           / 
+          3
+          명
+        </span>
+      </div>
+      <div
+        class="emotion-13"
+      >
+        <svg
+          color="#fc775a"
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(252, 119, 90);"
+          viewBox="0 0 512 512"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z"
+            fill="none"
+            stroke-miterlimit="10"
+            stroke-width="32"
+          />
+          <path
+            d="M256 128v144h96"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="32"
+          />
+        </svg>
+        <span
+          class="emotion-14"
+        >
+          1
+        </span>
+      </div>
+      <div
+        class="emotion-17"
+      >
+        <span
+          class="emotion-18"
+        >
+          1
+           남음
+        </span>
+      </div>
+      <div
+        class="emotion-13"
+      >
+        <button
+          class="emotion-20"
+          id="hi"
+        >
+          <span>
+            참여하기
+          </span>
+        </button>
+      </div>
+    </div>
+  </a>
+  <a
+    class="emotion-10"
+    href="/detail/hi"
+  >
+    <span
+      class="emotion-11"
+    >
+      hi
+    </span>
+    <div
+      class="emotion-12"
+    >
+      <div
+        class="emotion-13"
+      >
+        <svg
+          color="#fc775a"
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(252, 119, 90);"
+          viewBox="0 0 512 512"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M258.9 48C141.92 46.42 46.42 141.92 48 258.9c1.56 112.19 92.91 203.54 205.1 205.1 117 1.6 212.48-93.9 210.88-210.88C462.44 140.91 371.09 49.56 258.9 48zm-3.68 152.11c.21-1.2.44-2.4.71-3.59a66.46 66.46 0 0116.29-31.21c12.89-13.73 31.16-21.31 51.45-21.31a74.05 74.05 0 0125.06 4.26 66.69 66.69 0 0126.27 17.2 68.15 68.15 0 0118 42.14 78.46 78.46 0 010 11.4 86.19 86.19 0 01-8.2 31q-.76 1.59-1.59 3.15c-1.11 2.07-2.3 4.1-3.58 6.06a79.47 79.47 0 01-8.63 11c-13.12 14-29.92 21.73-47.31 21.73a59.61 59.61 0 01-19.17-3.18 63.47 63.47 0 01-6.1-2.43 70.76 70.76 0 01-22.07-16.12 83.76 83.76 0 01-22-51.32q-.27-3.88-.18-7.68a75.62 75.62 0 011.05-11.08zm-149.73 24.34a59.87 59.87 0 015.2-20.64 56.76 56.76 0 012.78-5.3 54.49 54.49 0 017.19-9.56 55.62 55.62 0 0114-10.82 56.84 56.84 0 018.11-3.64 63.85 63.85 0 0133.35-2.39 57 57 0 0130.78 17 57.86 57.86 0 0115.41 38.62c.05 2.11 0 4.23-.15 6.38a71.58 71.58 0 01-6 23.84 69.49 69.49 0 01-5.73 10.42 65.39 65.39 0 01-15.76 16.57c-1.5 1.07-3.06 2.07-4.67 3.07a54.21 54.21 0 01-10 4.65 49.31 49.31 0 01-16.2 2.76c-.93 0-1.86 0-2.78-.08a47.6 47.6 0 01-5.48-.62 51.19 51.19 0 01-5.35-1.23 53.54 53.54 0 01-7.72-2.89c-.84-.39-1.66-.8-2.48-1.23-18-9.49-31.57-29.16-34.23-52.12-.12-1.05-.22-2.1-.29-3.16a66.59 66.59 0 01.02-9.63zm53.92 178.6a177.27 177.27 0 01-61.94-70.65 4 4 0 011.62-5.26C117.67 316.69 141.4 311 163.82 311c17 0 30.7 2 42.69 5.88a8 8 0 012.59 13.77c-23.35 19-38.4 42.54-45.47 70.75a2.77 2.77 0 01-4.22 1.65zM256 432a175.12 175.12 0 01-65.7-12.72 4 4 0 01-2.4-4.46c.4-2.05.84-3.92 1.23-5.48 7.12-28.43 24.76-52 51-68.18 23.29-14.35 53-22.25 83.52-22.25 31.16 0 60 7.58 83.48 21.91a2.72 2.72 0 01.91 3.67A176.1 176.1 0 01256 432z"
+          />
+          <path
+            d="M161 295.28a47.6 47.6 0 01-5.48-.62 47.6 47.6 0 005.48.62zm-26.36-117.15a55.62 55.62 0 00-14 10.82 54.49 54.49 0 00-7.19 9.56 54.49 54.49 0 017.19-9.56 55.62 55.62 0 0114-10.82zm81.53 79.76a71.58 71.58 0 006-23.84c.15-2.15.2-4.27.15-6.38q.08 3.15-.15 6.38a71.58 71.58 0 01-6 23.84zm-81.53-79.76a56.84 56.84 0 018.11-3.64 56.84 56.84 0 00-8.11 3.64zm15.57 115.3a53.54 53.54 0 01-7.72-2.89 53.54 53.54 0 007.72 2.89zm-44.43-56.24c2.66 23 16.26 42.63 34.23 52.12-18.01-9.49-31.57-29.16-34.23-52.12zM254.34 219a83.76 83.76 0 0022 51.32 70.76 70.76 0 0022.07 16.12 70.76 70.76 0 01-22.07-16.12 83.76 83.76 0 01-22-51.32q-.27-3.88-.18-7.68-.09 3.75.18 7.68zm50.16 69.82a63.47 63.47 0 01-6.1-2.43 63.47 63.47 0 006.1 2.43zm-48.57-92.28a66.46 66.46 0 0116.29-31.21 66.46 66.46 0 00-16.29 31.21zM375 165.46a68.15 68.15 0 0118 42.14 68.15 68.15 0 00-18-42.14 66.69 66.69 0 00-26.27-17.2 66.69 66.69 0 0126.27 17.2zM393 219a86.19 86.19 0 01-8.2 31 86.19 86.19 0 008.2-31zm-138.84-7.73a75.62 75.62 0 011.06-11.14 75.62 75.62 0 00-1.06 11.14zm129.03 41.89zm-176.31-64.11a57.86 57.86 0 0115.41 38.62 57.86 57.86 0 00-15.41-38.62 57 57 0 00-30.78-17 57 57 0 0130.78 17zM190 288a54.21 54.21 0 01-10 4.65 54.21 54.21 0 0010-4.65zm-84.51-63.55a59.87 59.87 0 015.2-20.64 59.87 59.87 0 00-5.2 20.64zm89.19 60.43C193.17 286 191.61 287 190 288c1.61-1 3.17-2 4.68-3.12zm21.49-26.99a69.49 69.49 0 01-5.73 10.42 69.49 69.49 0 005.73-10.42zm-105.48-54.08a56.76 56.76 0 012.78-5.3 56.76 56.76 0 00-2.78 5.3zm83.99 81.07a65.39 65.39 0 0015.76-16.57 65.39 65.39 0 01-15.76 16.57z"
+          />
+        </svg>
+        <span
+          class="emotion-14"
+        >
+          1
+           / 
+          3
+          명
+        </span>
+      </div>
+      <div
+        class="emotion-13"
+      >
+        <svg
+          color="#fc775a"
+          fill="currentColor"
+          height="25"
+          stroke="currentColor"
+          stroke-width="0"
+          style="color: rgb(252, 119, 90);"
+          viewBox="0 0 512 512"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z"
+            fill="none"
+            stroke-miterlimit="10"
+            stroke-width="32"
+          />
+          <path
+            d="M256 128v144h96"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="32"
+          />
+        </svg>
+        <span
+          class="emotion-14"
+        >
+          1
+        </span>
+      </div>
+      <div
+        class="emotion-17"
+      >
+        <span
+          class="emotion-18"
+        >
+          1
+           남음
+        </span>
+      </div>
+      <div
+        class="emotion-13"
+      >
+        <button
+          class="emotion-20"
+          id="hi"
+        >
+          <span>
+            참여하기
+          </span>
+        </button>
+      </div>
+    </div>
+  </a>
+  <footer
+    class="emotion-54"
+  >
+    <a
+      class="emotion-55"
+      data-testid="link-home"
+      href="/"
+    >
+      <svg
+        color="#fc775a"
+        data-testid="icon-home"
+        fill="currentColor"
+        height="30"
+        stroke="currentColor"
+        stroke-width="0"
+        style="color: rgb(252, 119, 90);"
+        viewBox="0 0 1024 1024"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M512.1 172.6l-370 369.7h96V868H392V640c0-22.1 17.9-40 40-40h160c22.1 0 40 17.9 40 40v228h153.9V542.3H882L535.2 195.7l-23.1-23.1zm434.5 422.9c-6 6-13.1 10.8-20.8 13.9 7.7-3.2 14.8-7.9 20.8-13.9zm-887-34.7c5 30.3 31.4 53.5 63.1 53.5h.9c-31.9 0-58.9-23-64-53.5zm-.9-10.5v-1.9 1.9zm.1-2.6c.1-3.1.5-6.1 1-9.1-.6 2.9-.9 6-1 9.1z"
+        />
+        <path
+          d="M951 510c0-.1-.1-.1-.1-.2l-1.8-2.1c-.1-.1-.2-.3-.4-.4-.7-.8-1.5-1.6-2.2-2.4L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.6 63.6 0 0 0-16 26.6l-.6 2.1-.3 1.1-.3 1.2c-.2.7-.3 1.4-.4 2.1 0 .1 0 .3-.1.4-.6 3-.9 6-1 9.1v3.3c0 .5 0 1 .1 1.5 0 .5 0 .9.1 1.4 0 .5.1 1 .1 1.5 0 .6.1 1.2.2 1.8 0 .3.1.6.1.9l.3 2.5v.1c5.1 30.5 32.2 53.5 64 53.5h42.5V940h691.7V614.3h43.4c8.6 0 16.9-1.7 24.5-4.9s14.7-7.9 20.8-13.9a63.6 63.6 0 0 0 18.7-45.3c0-14.7-5-28.8-14.3-40.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"
+        />
+      </svg>
+    </a>
+    <a
+      class="emotion-55"
+      data-testid="link-chat"
+      href="/chat"
+    >
+      <svg
+        fill="currentColor"
+        height="30"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 24 24"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M8.667 11.511a1.276 1.276 0 0 1-1.285-1.285c0-.718.567-1.286 1.285-1.286.717 0 1.285.568 1.285 1.286 0 .717-.568 1.285-1.285 1.285zm6.666 0a1.276 1.276 0 0 1-1.285-1.285c0-.718.568-1.286 1.285-1.286.718 0 1.285.568 1.285 1.286 0 .717-.567 1.285-1.285 1.285zm-8.51 7.704l.715-.436a4 4 0 0 1 2.705-.536c.212.033.386.059.52.076.406.054.82.081 1.237.081 4.42 0 7.9-3.022 7.9-6.6S16.42 5.2 12 5.2s-7.9 3.022-7.9 6.6c0 1.366.5 2.673 1.432 3.781.048.057.12.137.214.235a4 4 0 0 1 1.101 3.102l-.025.297zm-.63 2.727a1 1 0 0 1-1.527-.93l.188-2.26a2 2 0 0 0-.55-1.551A6.993 6.993 0 0 1 4 16.868C2.806 15.447 2.1 13.695 2.1 11.8c0-4.75 4.432-8.6 9.9-8.6s9.9 3.85 9.9 8.6-4.432 8.6-9.9 8.6c-.51 0-1.01-.033-1.499-.098a23.61 23.61 0 0 1-.569-.084 2 2 0 0 0-1.353.268l-2.387 1.456z"
+          />
+        </g>
+      </svg>
+    </a>
+    <a
+      class="emotion-55"
+      href="/writing"
+    >
+      <svg
+        baseProfile="tiny"
+        fill="currentColor"
+        height="30"
+        stroke="currentColor"
+        stroke-width="0"
+        version="1.2"
+        viewBox="0 0 24 24"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18 10h-4v-4c0-1.104-.896-2-2-2s-2 .896-2 2l.071 4h-4.071c-1.104 0-2 .896-2 2s.896 2 2 2l4.071-.071-.071 4.071c0 1.104.896 2 2 2s2-.896 2-2v-4.071l4 .071c1.104 0 2-.896 2-2s-.896-2-2-2z"
+        />
+      </svg>
+    </a>
+    <a
+      class="emotion-55"
+      href="/myInfo"
+    >
+      <svg
+        fill="currentColor"
+        height="30"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        width="30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M176 511a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm280 0a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm280 0a56 56 0 1 0 112 0 56 56 0 1 0-112 0z"
+        />
+      </svg>
+    </a>
+  </footer>
+</div>
+`;
