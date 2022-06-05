@@ -8,7 +8,7 @@ jest.mock('react', () => ({
   useState: jest.fn(),
   useEffect: jest.fn(),
 }));
-describe('로그인 페이지 테스트', () => {
+describe('상세정보 페이지 테스트', () => {
   const setState = jest.fn();
 
   beforeEach(() => {
@@ -47,6 +47,8 @@ describe('로그인 페이지 테스트', () => {
     expect(setInterval).toHaveBeenLastCalledWith(expect.any(Function), 1000 * 60);
     expect(useEffectMock).toHaveBeenCalledTimes(1);
     expect(useStateMock).toHaveBeenCalledTimes(3);
+    expect(useEffectMock).toBeCalledTimes(1);
+
     expect(container).toMatchSnapshot();
   });
 });
