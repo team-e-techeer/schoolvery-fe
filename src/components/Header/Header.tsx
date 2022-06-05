@@ -47,23 +47,26 @@ export default function Header({ title, Left, Right, secondRight }: Props) {
             display: flex;
             flex: 1;
             flex-direction: row;
-            justify-content: flex-end;
           `}
         >
           <div
             css={css`
-              flex: 0.3;
-              background-color: 'transparent';
-            `}
-          />
-          {secondRight && secondRight()}
-          <div
-            css={css`
+              display: flex;
               flex: 1;
               background-color: 'transparent';
             `}
-          />
-          {Right && Right()}
+          >
+            {secondRight && secondRight()}
+          </div>
+          <div
+            css={css`
+              display: flex;
+              flex: 1;
+              background-color: 'transparent';
+            `}
+          >
+            {Right && Right()}
+          </div>
         </div>
       </header>
     </>
