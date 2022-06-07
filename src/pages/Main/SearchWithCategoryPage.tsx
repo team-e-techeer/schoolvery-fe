@@ -1,5 +1,7 @@
 import Header from '@/components/Header/Header';
 import JoinSummary from '@/components/Join/JoinSummary';
+import ModalCategory from '@/components/Modal/ModalCategory';
+
 import colors from '@/constants/colors';
 import styled from '@emotion/styled';
 import { useEffect, useState } from 'react';
@@ -62,6 +64,7 @@ export default function SearchWithCategory() {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const [title, setTitle] = useState('');
+  const [modalVisible, setModalVisible] = useState(false);
 
   useEffect(() => {
     setTitle(decodeURI(pathname.split('/')[2]));
@@ -71,14 +74,14 @@ export default function SearchWithCategory() {
       <Header
         title={title}
         Left={() => (
-          <IconWrapper data-testid="btn-back" onClick={() => navigate(-1)}>
+          <IconWrapper data-testid="btn-back" onClick={() => navigate('/')}>
             <button>
               <LeftIcon size={30} color="#fff" />
             </button>
           </IconWrapper>
         )}
         Right={() => (
-          <RightIconWrapper>
+          <RightIconWrapper onClick={() => setModalVisible(true)}>
             <button>
               <RightIcon size={33} color="#fff" />
             </button>
@@ -95,6 +98,8 @@ export default function SearchWithCategory() {
         <JoinSummary title="hi" time={{ left: '1', post: '1' }} people={{ current: 1, total: 3 }} />
         <JoinSummary title="hi" time={{ left: '1', post: '1' }} people={{ current: 1, total: 3 }} />
       </>
+
+      <ModalCategory visible={modalVisible} setModalVisible={setModalVisible} />
     </>
   );
 }
