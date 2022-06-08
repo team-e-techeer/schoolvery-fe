@@ -17,6 +17,8 @@ export const IconWrapper = styled.div`
 
 export const ProfileBlock = styled.div`
   display:flex;
+  justify-Content: center;
+  align-Items: center;
   margin-top: 5%;
   width:100%;
   border-top: 0.8px solid #878787;
@@ -25,7 +27,8 @@ export const ProfileBlock = styled.div`
 
 export const ProfileImg = styled.div`
   margin-top:5%;
-  margin-left: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
   margin-bottom:5%;
   background-color: #C4C4C4;
   border-radius: 50%;
@@ -34,13 +37,16 @@ export const ProfileImg = styled.div`
 `;
 
 export const ProfileInfo = styled.div`
-  margin-top:5%;
+  width: 30%;
+  margin-top:7%;
   margin-left: 5%;
-  margin-bottom:5%;
+  margin-right: 5%;
+  margin-bottom:7%;
 `;
 
 export const ProfileSetting = styled.button`
-  margin-right:10%;
+  margin-left:7%;
+  margin-right:7%;
   margin-bottom:15%;
 `;
 

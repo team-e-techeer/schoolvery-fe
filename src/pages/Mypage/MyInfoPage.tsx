@@ -25,7 +25,7 @@ function PersonalPage() {
       <ProfileBlock>
         <ProfileImg></ProfileImg>
         <ProfileInfo>
-          <p>아이디</p>
+          <p style={{fontWeight: 'bold'}}>아이디</p>
           <p style={{display : 'inline-block'}}>스탠포드</p><p style={{display : 'inline-block'}}>대학교</p>
           <p>standford@gmail.com</p>
         </ProfileInfo>
@@ -34,7 +34,7 @@ function PersonalPage() {
       </ProfileBlock>
       <BoardBlock>
       <BoardBtn><Link to="/chat"><img src ={Participation}/></Link></BoardBtn>
-      <BoardBtn><Link to="/"><img src ={Post}/></Link></BoardBtn>
+      <BoardBtn><Link to="/myWriting"><img src ={Post}/></Link></BoardBtn>
       <BoardBtn><Link to="/"><img src ={Notice}/></Link></BoardBtn>
         </BoardBlock>
       <BottomNavigation />
