@@ -92,13 +92,13 @@ const GlobalStyle = () => (
         border: 0;
         font-size: 100%;
         font: inherit;
-        font-family: 'Jalnan';
+        font-family: 'Nanum';
         vertical-align: baseline;
         box-sizing: border-box;
       }
       html {
         font-size: 62.5%;
-        font-family: 'Noto Sans KR', 'sans-serif';
+        font-family: 'Nanum';
         body {
           font-size: 1.6rem;
         }
@@ -137,10 +137,24 @@ const GlobalStyle = () => (
       input {
         outline: none;
       }
+      input[type='password'] {
+        font-family: 'Jalnan';
+      }
+      input[type='password']::placeholder {
+        font-family: 'Nanum';
+      }
+      @font-face {
+        font-family: 'Nanum';
+        src: url('./src/assets/fonts/Nanum.ttf') format('truetype'), url('./src/assets/fonts/Nanum.woff') format('woff'),
+          url('./src/assets/fonts/Nanum.eot?iefix') format('embedded-opentype');
+        font-weight: 400;
+        font-style: normal;
+      }
       @font-face {
         font-family: 'Jalnan';
-        src: url('./assets/fonts/Jalnan.ttf') format('truetype'), url('./assets/fonts/Jalnan.woff') format('woff'),
-          url('./assets/fonts/Jalnan.eot?iefix') format('embedded-opentype');
+        src: url('./src/assets/fonts/Jalnan.ttf') format('truetype'),
+          url('./src/assets/fonts/Jalnan.woff') format('woff'),
+          url('./src/assets/fonts/Jalnan.eot?iefix') format('embedded-opentype');
         font-weight: 400;
         font-style: normal;
       }
