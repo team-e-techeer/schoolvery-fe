@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import { BrowserRouter, Router } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import Category from './Category';
 import type { ImgInfo } from './Category';
 import Ch from '../../assets/img/ch.png';
