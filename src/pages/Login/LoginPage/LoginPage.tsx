@@ -1,14 +1,22 @@
 /* eslint-disable import/extensions */
 import Header from '../../../components/Header/Header';
 import { AiOutlineLeft as LeftIcon } from 'react-icons/ai';
-import { IconWrapper, Input, Title, LinkText, InputBlock, AlertText } from './LoginPage.styles';
-import { useRecoilValue } from 'recoil';
-import { loginState } from '../../../atoms/loginState';
+import {
+  IconWrapper,
+  Input,
+  LinkText,
+  InputBlock,
+  AlertText,
+  LogoImage,
+  LogoWrapper,
+  UnderLogo,
+} from './LoginPage.styles';
 import React, { useCallback, useRef, useState } from 'react';
 import Button from '../../../components/Button';
 import { useNavigate } from 'react-router-dom';
 import { useCheckBlank } from '@/hooks/useCheckBlank';
-
+import Logo from '../../../assets/img/Logo.png';
+import LogoText from '../../../assets/img/LogoText.png';
 interface LoginInfo {
   id: string;
   pw: string;
@@ -55,14 +63,16 @@ function LoginPage() {
     <>
       <Header
         Left={() => (
-          <IconWrapper>
-            <button onClick={() => console.log('hi')}>
+          <IconWrapper data-testid="logo-prev">
+            <button onClick={() => navigate('/')}>
               <LeftIcon size={30} color="#fff" />
             </button>
           </IconWrapper>
         )}
       />
-      <Title>스쿨버리</Title>
+      <LogoWrapper>
+        <LogoImage src={Logo} alt="토끼가 오토바이를 타고 있는 로고 이미지" />
+      </LogoWrapper>
       <InputBlock ref={loginRef} onBlur={onCheckBlank} onSubmit={onSubmit}>
         <Input
           autoComplete="username"
@@ -95,6 +105,7 @@ function LoginPage() {
       </InputBlock>
       <LinkText to="">아이디/비밀번호 찾기</LinkText>
       <LinkText to="/register">아직 회원이 아니신가요? 회원가입 하기</LinkText>
+      <UnderLogo src={LogoText} alt="스쿨버리 로고 이미지" />
     </>
   );
 }
