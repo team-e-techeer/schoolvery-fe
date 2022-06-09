@@ -92,6 +92,7 @@ const GlobalStyle = () => (
         border: 0;
         font-size: 100%;
         font: inherit;
+        font-family: 'Jalnan';
         vertical-align: baseline;
         box-sizing: border-box;
       }
@@ -135,6 +136,13 @@ const GlobalStyle = () => (
       }
       input {
         outline: none;
+      }
+      @font-face {
+        font-family: 'Jalnan';
+        src: url('./assets/fonts/Jalnan.ttf') format('truetype'), url('./assets/fonts/Jalnan.woff') format('woff'),
+          url('./assets/fonts/Jalnan.eot?iefix') format('embedded-opentype');
+        font-weight: 400;
+        font-style: normal;
       }
     `}
   />
