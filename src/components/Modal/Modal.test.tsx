@@ -23,7 +23,7 @@ describe('[Modal Component]', () => {
       { wrapper: BrowserRouter }
     );
     expect(getByText('hi')).toBeTruthy();
-    const button = screen.getByTestId('test-modal');
+    const button = screen.getByTestId('test-modal-button');
     fireEvent.click(button);
 
     expect(handleClose).toHaveBeenCalledTimes(1);
