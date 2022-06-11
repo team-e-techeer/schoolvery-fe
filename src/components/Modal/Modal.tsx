@@ -33,6 +33,7 @@ export default function Modal({ visible, setModalVisible, children }: Props) {
         <div onClick={onClickOther} className="modal-background">
           <div className="modal">
             <button
+              data-testid="test-modal-button"
               onClick={onClickOther}
               css={css`
                 display: flex;
