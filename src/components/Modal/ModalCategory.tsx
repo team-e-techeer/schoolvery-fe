@@ -16,6 +16,7 @@ import { useNavigate } from 'react-router-dom';
 interface Props {
   visible: boolean;
   setModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  isNavigating: boolean;
 }
 
 interface Info {
@@ -26,7 +27,7 @@ interface Info {
   id: number;
 }
 
-export default function ModalCategory({ visible, setModalVisible }: Props) {
+export default function ModalCategory({ visible, setModalVisible, isNavigating }: Props) {
   const navigate = useNavigate();
   const [imageInfo, setImage] = useState<Info[]>([
     { path: '/category/전체', src: All, name: '전체', select: true, id: 0 },
@@ -42,7 +43,7 @@ export default function ModalCategory({ visible, setModalVisible }: Props) {
   ]);
   const onClickCategory = (image: Info) => {
     setImage(imageInfo.map(img => (img.id === image.id ? { ...img, select: true } : { ...img, select: false })));
-    navigate(`${image.path}`);
+    isNavigating && navigate(`${image.path}`);
   };
   return (
     <>
