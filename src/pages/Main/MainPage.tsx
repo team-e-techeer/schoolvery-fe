@@ -35,6 +35,9 @@ function MainPage() {
         <SearchInput isLinking={true} />
         <Category imageInfo={imageInfo} />
         <JoinSummary title="hi" time={{ left: '1', post: '1' }} people={{ current: 1, total: 3 }} />
+        <JoinSummary title="hi" time={{ left: '1', post: '1' }} people={{ current: 1, total: 3 }} />
+        <JoinSummary title="hi" time={{ left: '1', post: '1' }} people={{ current: 1, total: 3 }} />
+        <JoinSummary title="hi" time={{ left: '1', post: '1' }} people={{ current: 1, total: 3 }} />
       </>
       <BottomNavigation />
     </>
