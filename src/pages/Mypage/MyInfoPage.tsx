@@ -7,6 +7,7 @@ import Participation from '../../assets/img/Participation.png';
 import Post from '../../assets/img/post.png';
 import Notice from '../../assets/img/notice.png';
 import Setting from '../../assets/img/settings.png';
+import Dog from '../../assets/img/dog.png';
 
 function PersonalPage() {
   return (
@@ -23,11 +24,14 @@ function PersonalPage() {
         )}
       />
       <ProfileBlock>
-        <ProfileImg></ProfileImg>
+        <ProfileImg src={Dog}></ProfileImg>
         <ProfileInfo>
           <p style={{fontWeight: 'bold'}}>아이디</p>
-          <p style={{display : 'inline-block'}}>스탠포드</p><p style={{display : 'inline-block'}}>대학교</p>
-          <p>standford@gmail.com</p>
+          <br/>
+          <p style={{display : 'inline-block', color: '#878787'}}>스탠포드</p>
+          <p style={{marginLeft:'2%', display : 'inline-block', color: '#878787'}}>대학교</p>
+          <br/>
+          <p><u>standford@gmail.com</u></p>
         </ProfileInfo>
         <ProfileSetting><Link to="/"><img src={Setting}/></Link></ProfileSetting>
         

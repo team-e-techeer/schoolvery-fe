@@ -25,7 +25,7 @@ export const ProfileBlock = styled.div`
   border-bottom: 0.8px solid #878787;
 `;
 
-export const ProfileImg = styled.div`
+export const ProfileImg = styled.img`
   margin-top:5%;
   margin-left: 10%;
   margin-right: 10%;
@@ -38,10 +38,10 @@ export const ProfileImg = styled.div`
 
 export const ProfileInfo = styled.div`
   width: 30%;
-  margin-top:7%;
+  margin-top:2%;
   margin-left: 5%;
   margin-right: 5%;
-  margin-bottom:7%;
+  margin-bottom: 2%;
 `;
 
 export const ProfileSetting = styled.button`
