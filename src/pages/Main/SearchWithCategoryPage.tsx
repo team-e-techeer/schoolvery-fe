@@ -99,7 +99,7 @@ export default function SearchWithCategory() {
         <JoinSummary title="hi" time={{ left: '1', post: '1' }} people={{ current: 1, total: 3 }} />
       </>
 
-      <ModalCategory visible={modalVisible} setModalVisible={setModalVisible} />
+      <ModalCategory visible={modalVisible} setModalVisible={setModalVisible} isNavigating={true} />
     </>
   );
 }
