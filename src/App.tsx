@@ -3,6 +3,7 @@ import MainPage from './pages/Main/MainPage';
 import LoginPage from './pages/Login/LoginPage/LoginPage';
 import RegisterPage from './pages/Login/LoginPage/RegisterPage';
 import MyInfoPage from './pages/Mypage/MyInfoPage';
+import MyWritingPage from './pages/Mypage/MyWritingPage';
 import ChattingPage from './pages/ChattingPage';
 import WritingPage from './pages/WritingPage';
 import SearchPage from './pages/Main/SearchPage';
@@ -17,6 +18,9 @@ export default function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/myInfo" element={<MyInfoPage />} />
+
+        <Route path="/myWriting" element={<MyWritingPage />} />
+
         <Route path="/chat" element={<ChattingPage />} />
         <Route path="/writing" element={<WritingPage />} />
         <Route path="/search" element={<SearchPage />}>
