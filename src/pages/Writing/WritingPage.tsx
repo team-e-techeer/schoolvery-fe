@@ -86,19 +86,19 @@ function WritingPage() {
       <Container ref={spanRef} onBlur={onCheckBlank} onSubmit={onSubmit}>
         <FirstSection>
           <InputBlock>
-            <IconBlock><img src={Shop}/></IconBlock>
+            <IconBlock><img src={Shop} alt="제목"/></IconBlock>
       <Input value={title} name="title" placeholder={'게시글 제목'} onChange={onChange} autoFocus={true} autoComplete="off"></Input>
       </InputBlock>
       <InputBlock>
-            <IconBlock><img src={Shop}/></IconBlock>
+            <IconBlock><img src={Shop} alt="매장"/></IconBlock>
       <Input value={store} name="store" placeholder={'주문할 매장을 입력해 주세요'} onChange={onChange} autoComplete="off"></Input>
       </InputBlock>
       <InputBlock>
-            <IconBlock><img src={Location}/></IconBlock>
+            <IconBlock><img src={Location} alt="카테고리"/></IconBlock>
       <Input value={category} name="category" placeholder={'카테고리를 선택해 주세요'} onChange={onChange} autoComplete="off"></Input>
       </InputBlock>
       <InputBlock>
-            <IconBlock><img src={Location}/></IconBlock>
+            <IconBlock><img src={Location} alt="배달 위치"/></IconBlock>
       <Input value={location} name="location" placeholder={'배달을 받을 위치를 입력해 주세요'} onChange={onChange} autoComplete="off"></Input>
       </InputBlock>
 </FirstSection>
@@ -107,15 +107,15 @@ function WritingPage() {
 <SecondSection>
   <SecondDetailSection>
       <NumInput placeholder={'인원수'} name="peopleNum" type={'number'} pattern={"[0-9]*"} value={peopleNum} onChange={onChange} autoComplete="off"></NumInput>
-      <IconCenterBlock><img src={Ppl}/></IconCenterBlock>
+      <IconCenterBlock><img src={Ppl} alt="인원"/></IconCenterBlock>
   </SecondDetailSection>
   <SecondDetailSection>
       <NumInput placeholder={'마감 시간'} name="closedTime" value={closedTime} onChange={onChange} autoComplete="off"></NumInput>
-      <IconCenterBlock><img src={Time}/></IconCenterBlock>
+      <IconCenterBlock><img src={Time} alt="마감시간"/></IconCenterBlock>
   </SecondDetailSection>
   <SecondDetailSection>
       <NumInput placeholder={'배달비'} name="fee" type={"number"} pattern={"[0-9]*"} value={fee} onChange={onChange} autoComplete="off"></NumInput>
-      <IconCenterBlock><img src={Fee}/></IconCenterBlock>
+      <IconCenterBlock><img src={Fee} alt="배달비"/></IconCenterBlock>
   </SecondDetailSection>
 </SecondSection>
       
