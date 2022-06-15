@@ -24,3 +24,7 @@ export const TopBlock = styled.div`
   justify-Content: center;
   align-Items: center;
 `;
+
+export const PostBlock = styled.div`
+  //height:80%;
+`;
