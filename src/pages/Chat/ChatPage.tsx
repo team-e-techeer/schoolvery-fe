@@ -1,13 +1,11 @@
 import BottomNavigation from '@/components/BottomNavigation';
 import Header from '@/components/Header/Header';
 
-function ChattingPage() {
+export default function ChatPage() {
   return (
     <>
-      <Header />
+      <Header title="채팅목록" />
       <BottomNavigation />
     </>
   );
 }
-
-export default ChattingPage;
