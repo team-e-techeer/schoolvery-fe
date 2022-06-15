@@ -4,10 +4,10 @@ import LoginPage from './pages/Login/LoginPage/LoginPage';
 import RegisterPage from './pages/Login/LoginPage/RegisterPage';
 import MyInfoPage from './pages/MyInfoPage';
 import ChattingPage from './pages/ChattingPage';
-import WritingPage from './pages/WritingPage';
+import WritingPage from './pages/Writing/WritingPage';
 import SearchPage from './pages/Main/SearchPage';
 import SearchDetailPage from './pages/Main/SearchDetailPage';
-import SearchWithCategory from './pages/Main/SearchWithCategoryPage';
+//import SearchWithCategory from './pages/Main/SearchWithCategoryPage';
 
 export default function App() {
   return (
@@ -22,9 +22,9 @@ export default function App() {
         <Route path="/search" element={<SearchPage />}>
           <Route path=":searchValue" element={<SearchDetailPage />} />
         </Route>
-        <Route path="/category" element={<SearchWithCategory />}>
+        {/* <Route path="/category" element={<SearchWithCategory />}>
           <Route path=":name" element={<SearchWithCategory />} />
-        </Route>
+        </Route> */}
         <Route path="/detail/*" element={<SearchDetailPage />} />
       </Routes>
     </BrowserRouter>
