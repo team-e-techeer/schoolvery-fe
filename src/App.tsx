@@ -9,6 +9,7 @@ import SearchDetailPage from './pages/Main/SearchDetailPage';
 import SearchWithCategory from './pages/Main/SearchWithCategoryPage';
 import ChatPage from './pages/Chat/ChatPage';
 import ChatRoomPage from './pages/Chat/ChatRoomPage';
+import AlarmPage from './pages/Alarm/AlarmPage';
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
         <Route path="/chat" element={<ChatPage />}>
           <Route path=":roomName" element={<ChatRoomPage />} />
         </Route>
+        <Route path="/notification" element={<AlarmPage />} />
       </Routes>
     </BrowserRouter>
   );
