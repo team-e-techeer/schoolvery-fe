@@ -162,3 +162,28 @@ const GlobalStyle = () => (
   />
 );
 export default GlobalStyle;
+
+export const RightIconWrapper = css`
+  margin-right: 2rem;
+  .button {
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    &:focus {
+      outline: none;
+    }
+  }
+`;
+
+export const LeftIconWrapper = css`
+  flex: 1;
+  margin-left: 2rem;
+  .button {
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    &:focus {
+      outline: none;
+    }
+  }
+`;
