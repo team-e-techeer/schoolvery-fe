@@ -15,7 +15,14 @@ import koreanFood from '../../assets/img/koreanFood.png';
 import Coffee from '../../assets/img/Coffee.png';
 import { useState } from 'react';
 import type { ImgInfo } from '../../components/Category/Category';
+import { IoMdNotifications as NotificationIcon } from 'react-icons/io';
+// eslint-disable-next-line import/extensions
+import colors from '@/constants/colors';
+import { RightIconWrapper } from '@/GlobalStyle';
+import { useNavigate } from 'react-router-dom';
+
 function MainPage() {
+  const navigate = useNavigate();
   const [imageInfo] = useState<ImgInfo[]>([
     { path: '/category/전체', src: All, name: '전체' },
     { path: '/category/한식', src: Ko, name: '한식' },
@@ -28,9 +35,21 @@ function MainPage() {
     { path: '/category/분식', src: koreanFood, name: '분식' },
     { path: '/category/커피', src: Coffee, name: '커피' },
   ]);
+
   return (
     <>
-      <Header title="OO 대학교" Right={() => <></>} />
+      <Header
+        title="OO 대학교"
+        Right={() => (
+          <>
+            <div css={RightIconWrapper}>
+              <button onClick={() => navigate('/notification')}>
+                <NotificationIcon color={colors.white} size={25} />
+              </button>
+            </div>
+          </>
+        )}
+      />
       <>
         <SearchInput isLinking={true} />
         <Category imageInfo={imageInfo} />
