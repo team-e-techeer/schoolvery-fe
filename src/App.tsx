@@ -27,9 +27,8 @@ export default function App() {
           <Route path=":name" element={<SearchWithCategory />} />
         </Route>
         <Route path="/detail/*" element={<SearchDetailPage />} />
-        <Route path="/chat" element={<ChatPage />}>
-          <Route path=":roomName" element={<ChatRoomPage />} />
-        </Route>
+        <Route path="/chat" element={<ChatPage />} />
+        <Route path="/chat/:roomName" element={<ChatRoomPage />} />
         <Route path="/notification" element={<AlarmPage />} />
       </Routes>
     </BrowserRouter>
