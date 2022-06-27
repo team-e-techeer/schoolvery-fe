@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MainPage from './pages/Main/MainPage';
 import LoginPage from './pages/Login/LoginPage/LoginPage';
 import RegisterPage from './pages/Login/LoginPage/RegisterPage';
-import MyInfoPage from './pages/MyInfoPage';
 import WritingPage from './pages/Writing/WritingPage';
 import MyInfoPage from './pages/Mypage/MyInfoPage';
 import MyWritingPage from './pages/Mypage/MyWritingPage';
