@@ -16,6 +16,7 @@ const imageWrapper = css`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 `;
 
 export default function Category({ imageInfo }: Props) {
@@ -40,7 +41,8 @@ export default function Category({ imageInfo }: Props) {
               css={css`
                 display: flex;
                 flex-direction: column;
-                flex-basis: 20%;
+                flex-basis: 17%;
+                margin: 1%;
                 flex-grow: 0;
                 flex-shrink: 1;
                 align-items: center;
@@ -58,7 +60,13 @@ export default function Category({ imageInfo }: Props) {
                 src={image.src}
                 alt={`category img for ${image.name}`}
               />
-              <span>{image.name}</span>
+              <span
+                css={css`
+                  font-size: 1.3rem;
+                `}
+              >
+                {image.name}
+              </span>
             </Link>
           ))}
         </ul>

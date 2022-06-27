@@ -30,6 +30,10 @@ exports[`로그인 페이지 테스트 렌더링 테스트 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
 }
 
 .emotion-2 {
@@ -40,9 +44,10 @@ exports[`로그인 페이지 테스트 렌더링 테스트 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex-basis: 20%;
-  -ms-flex-preferred-size: 20%;
-  flex-basis: 20%;
+  -webkit-flex-basis: 17%;
+  -ms-flex-preferred-size: 17%;
+  flex-basis: 17%;
+  margin: 1%;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
@@ -65,6 +70,10 @@ exports[`로그인 페이지 테스트 렌더링 테스트 1`] = `
   max-height: 7rem;
 }
 
+.emotion-4 {
+  font-size: 1.3rem;
+}
+
 <div>
   <div
     class="emotion-0"
@@ -81,7 +90,9 @@ exports[`로그인 페이지 테스트 렌더링 테스트 1`] = `
           class="emotion-3"
           src="test-file-stub"
         />
-        <span>
+        <span
+          class="emotion-4"
+        >
           한식
         </span>
       </a>
@@ -94,7 +105,9 @@ exports[`로그인 페이지 테스트 렌더링 테스트 1`] = `
           class="emotion-3"
           src="test-file-stub"
         />
-        <span>
+        <span
+          class="emotion-4"
+        >
           중식
         </span>
       </a>
@@ -107,7 +120,9 @@ exports[`로그인 페이지 테스트 렌더링 테스트 1`] = `
           class="emotion-3"
           src="test-file-stub"
         />
-        <span>
+        <span
+          class="emotion-4"
+        >
           일식
         </span>
       </a>
@@ -120,7 +135,9 @@ exports[`로그인 페이지 테스트 렌더링 테스트 1`] = `
           class="emotion-3"
           src="test-file-stub"
         />
-        <span>
+        <span
+          class="emotion-4"
+        >
           치킨
         </span>
       </a>

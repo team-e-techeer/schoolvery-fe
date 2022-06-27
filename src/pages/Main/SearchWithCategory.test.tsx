@@ -27,7 +27,6 @@ describe('검색 상세 페이지 테스트', () => {
 
   it('[SearchWithCategoryPage] 렌더링 테스트', () => {
     expect(screen.getByText('검색 결과')).toBeInTheDocument();
-    expect(screen.getByText('한식')).toBeInTheDocument();
     expect(history.location.pathname).toBe('/category/한식');
   });
   it('[SearchWithCategoryPage] 뒤로 가기 버튼 테스트', () => {

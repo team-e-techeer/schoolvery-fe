@@ -16,6 +16,13 @@ export const IconWrapper = styled.div`
   }
 `;
 
+export const BlankInput = styled.input`
+  display: flex;
+  width: 0px;
+  height: 0px;
+  border: 0;
+`;
+
 export const JoinBlock = styled.form`
   display: block;
   width: 80%;
@@ -67,4 +74,5 @@ export const AlertText = styled.span`
   display: none;
   color: ${colors.red500};
   font-size: 1.3rem;
+  margin-top: 1.5rem;
 `;

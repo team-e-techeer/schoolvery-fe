@@ -92,12 +92,13 @@ const GlobalStyle = () => (
         border: 0;
         font-size: 100%;
         font: inherit;
+        font-family: 'Nanum';
         vertical-align: baseline;
         box-sizing: border-box;
       }
       html {
         font-size: 62.5%;
-        font-family: 'Noto Sans KR', 'sans-serif';
+        font-family: 'Nanum';
         body {
           font-size: 1.6rem;
         }
@@ -136,7 +137,53 @@ const GlobalStyle = () => (
       input {
         outline: none;
       }
+      input[type='password'] {
+        font-family: 'Jalnan';
+      }
+      input[type='password']::placeholder {
+        font-family: 'Nanum';
+      }
+      @font-face {
+        font-family: 'Nanum';
+        src: url('./src/assets/fonts/Nanum.ttf') format('truetype'), url('./src/assets/fonts/Nanum.woff') format('woff'),
+          url('./src/assets/fonts/Nanum.eot?iefix') format('embedded-opentype');
+        font-weight: 400;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'Jalnan';
+        src: url('./src/assets/fonts/Jalnan.ttf') format('truetype'),
+          url('./src/assets/fonts/Jalnan.woff') format('woff'),
+          url('./src/assets/fonts/Jalnan.eot?iefix') format('embedded-opentype');
+        font-weight: 400;
+        font-style: normal;
+      }
     `}
   />
 );
 export default GlobalStyle;
+
+export const RightIconWrapper = css`
+  margin-right: 2rem;
+  .button {
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    &:focus {
+      outline: none;
+    }
+  }
+`;
+
+export const LeftIconWrapper = css`
+  flex: 1;
+  margin-left: 2rem;
+  .button {
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    &:focus {
+      outline: none;
+    }
+  }
+`;

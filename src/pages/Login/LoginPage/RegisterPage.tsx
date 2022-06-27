@@ -1,13 +1,15 @@
 /* eslint-disable import/extensions */
 import Header from '../../../components/Header/Header';
 import { AiOutlineLeft as LeftIcon } from 'react-icons/ai';
-import { AlertText, IconWrapper, Input, InputField, InputOverText, JoinBlock } from './RegisterPage.styles';
+import { AlertText, BlankInput, IconWrapper, Input, InputField, InputOverText, JoinBlock } from './RegisterPage.styles';
 import Button from '../../../components/Button';
 import { css } from '@emotion/react';
 import { useCallback, useState } from 'react';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useCheckBlank } from '@/hooks/useCheckBlank';
+import { UnderLogo } from './LoginPage.styles';
+import LogoText from '../../../assets/img/LogoText.png';
 
 interface RegisterInfo {
   id: string;
@@ -87,6 +89,8 @@ function RegisterPage() {
         )}
       />
       <JoinBlock ref={spanRef} onBlur={onCheckBlank} onSubmit={onSubmit}>
+        <BlankInput name="id" type="username" />
+        <BlankInput type="password" />
         <InputField>
           <InputOverText>아이디</InputOverText>
           <Input value={id} name="id" onChange={onChange} autoFocus={true} autoComplete="off" data-testid="id-input" />
@@ -96,7 +100,7 @@ function RegisterPage() {
         </InputField>
         <InputField>
           <InputOverText>비밀번호</InputOverText>
-          <Input value={pw} name="pw" onChange={onChange} autoComplete="off" type={'password'} data-testid="pw-input" />
+          <Input value={pw} name="pw" onChange={onChange} autoComplete="off" type="password" data-testid="pw-input" />
           <AlertText id="pw">입력란이 비어 있습니다</AlertText>
         </InputField>
         <InputField>
@@ -106,7 +110,7 @@ function RegisterPage() {
             name="pwConfirm"
             autoComplete="off"
             onChange={onChange}
-            type={'password'}
+            type="password"
             data-testid="pw-differ"
           />
           <AlertText id="pwConfirm" data-testid="pw-alert">
@@ -134,6 +138,7 @@ function RegisterPage() {
           회원가입
         </Button>
       </JoinBlock>
+      <UnderLogo src={LogoText} alt="스클버리 로고 이미지" />
     </>
   );
 }
