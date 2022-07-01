@@ -7,6 +7,9 @@ import {AiOutlineClockCircle as Time} from 'react-icons/ai';
 import {TiDelete as DeletePost} from 'react-icons/ti';
 import ModifyPost from '../../assets/img/ModifyPost.png';
 import {useState} from 'react';
+import ModalDelete from '../Modal/ModalDelete';
+import Button from '../Button';
+import { Link } from 'react-router-dom';
 
 interface PostInfo {
     title: string;
@@ -41,7 +44,7 @@ width: 70%;
 
 const TitleWrapper = styled.div`
 width:90%;
-height:30%;
+height:10%;
 font-size:160%;
 margin: 5% 0% 20% 0%;
 `;
@@ -49,11 +52,19 @@ margin: 5% 0% 20% 0%;
 const SubWrapper = styled.div`
 width:70%;
 display: flex;
+flex-direction: column;
 `;
 
 const SubtitleWrapper = styled.div`
 display: flex;
 margin: 3% 0% 10% 15%;
+`;
+
+const IconWrapper = styled.div`
+display: flex;
+margin-top:1%;
+width:100%;
+height:100%;
 `;
 
 const RightDiv = styled.div`
@@ -64,18 +75,10 @@ margin-right:10%;
 width: 20%;
 `;
 
-const IconWrapper = styled.div`
-margin-top:2%;
-width:20%;
-height:20%;
-`;
-
 const DeleteBtn = styled.button`
-margin-left:400%;
-`;
-
-const ModifyBtn = styled.button`
-margin: 800% 0% 0% 100%;
+margin:0% 0% 0% 100%;
+width:50%;
+height:50%;
 `;
 
 export default function Post({title,location,peopleNum,time,fee}:PostInfo){
@@ -87,36 +90,38 @@ export default function Post({title,location,peopleNum,time,fee}:PostInfo){
         fee: fee,  
     });
 
+    const [modalVisible,setModalVisible] = useState(false);
+
   return (
     <>
     <PostDiv>
         <LeftDiv>
         <TitleWrapper>{title}</TitleWrapper>
         <SubWrapper>
+          <IconWrapper>
           <Location size={25} color='gray'/> 
           <SubtitleWrapper>{location}</SubtitleWrapper>
-        </SubWrapper>
-
-        <SubWrapper>
-        <Ppl size={30}/> 
-        <SubtitleWrapper>{peopleNum}명</SubtitleWrapper>
-        </SubWrapper>
-
-        <SubWrapper>
-        <Time size={25}/> 
-        <SubtitleWrapper>{time}</SubtitleWrapper>
-        </SubWrapper>
-
-        <SubWrapper>
-        <Fee size={25}/> 
-        <SubtitleWrapper>{fee}</SubtitleWrapper>
+          </IconWrapper>
+          <IconWrapper>
+          <Ppl size={30}/> 
+          <SubtitleWrapper>{peopleNum}명</SubtitleWrapper>
+          </IconWrapper>
+          <IconWrapper>
+          <Time size={25}/> 
+          <SubtitleWrapper>{time}</SubtitleWrapper>
+          </IconWrapper>
+          <IconWrapper>
+          <Fee size={25}/> 
+          <SubtitleWrapper>{fee}</SubtitleWrapper>
+          </IconWrapper>
         </SubWrapper>
         </LeftDiv>
 
 
         <RightDiv>
-        <IconWrapper><DeleteBtn><DeletePost color={colors.mainColor} size={40}/></DeleteBtn></IconWrapper>
-        <IconWrapper><ModifyBtn><img src={ModifyPost}/></ModifyBtn></IconWrapper>
+        <ModalDelete visible={modalVisible} setModalVisible={setModalVisible} isNavigating={true}/>
+        <DeleteBtn onClick={() => setModalVisible(true)}><DeletePost color={colors.mainColor} size={40}/></DeleteBtn>
+        <Link to="/writing"><Button height={3} buttonId="modify" style={{marginTop:80,marginLeft:30}}>수정</Button></Link>       
         </RightDiv>
     </PostDiv>
     </>
