@@ -39,7 +39,7 @@ function PersonalPage() {
       <BoardBlock>
       <BoardBtn><Link to="/chat"><img src ={Participation}/></Link></BoardBtn>
       <BoardBtn><Link to="/myWriting"><img src ={Post}/></Link></BoardBtn>
-      <BoardBtn><Link to="/"><img src ={Notice}/></Link></BoardBtn>
+      <BoardBtn><Link to="/notification"><img src ={Notice}/></Link></BoardBtn>
         </BoardBlock>
       <BottomNavigation />
     </>
