@@ -2,8 +2,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MainPage from './pages/Main/MainPage';
 import LoginPage from './pages/Login/LoginPage/LoginPage';
 import RegisterPage from './pages/Login/LoginPage/RegisterPage';
-import MyInfoPage from './pages/MyInfoPage';
 import WritingPage from './pages/Writing/WritingPage';
+import MyInfoPage from './pages/Mypage/MyInfoPage';
+import MyWritingPage from './pages/Mypage/MyWritingPage';
 import SearchPage from './pages/Main/SearchPage';
 import SearchDetailPage from './pages/Main/SearchDetailPage';
 import SearchWithCategory from './pages/Main/SearchWithCategoryPage';
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/myInfo" element={<MyInfoPage />} />
+        <Route path="/myWriting" element={<MyWritingPage />} />
         <Route path="/writing" element={<WritingPage />} />
         <Route path="/search" element={<SearchPage />}>
           <Route path=":searchValue" element={<SearchDetailPage />} />
