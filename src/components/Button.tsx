@@ -40,7 +40,7 @@ export default function Button(props: Props) {
           cursor: not-allowed;
         }
         &:active {
-          background-color: ${colors.purple700};
+          background-color: ${colors.orange400};
         }
       `}
       {...rest}

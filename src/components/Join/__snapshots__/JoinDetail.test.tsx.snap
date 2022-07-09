@@ -120,7 +120,7 @@ exports[`상세정보 페이지 테스트 렌더링 테스트 1`] = `
 }
 
 .emotion-18:active {
-  background-color: #7b1fa2;
+  background-color: #ffa726;
 }
 
 <div>

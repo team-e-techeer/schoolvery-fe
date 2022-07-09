@@ -17,19 +17,19 @@ interface Info {
 }
 
 const BtnDiv = styled.div`
-display: flex;
-width: 90%;
-margin: 2rem auto;
-border: 1px solid #gray;
-border-radius: 8px;
+  display: flex;
+  width: 90%;
+  margin: 2rem auto;
+  border: 1px solid ${colors.grey300};
+  border-radius: 8px;
 `;
 
-export default function ModalDelete({ visible, setModalVisible}: Props) {
+export default function ModalDelete({ visible, setModalVisible }: Props) {
   const navigate = useNavigate();
   const [checkDelete, setCheckDelete] = useState(false);
-  const onClick = () =>{
+  const onClick = () => {
     setCheckDelete(true);
-  }
+  };
   return (
     <>
       <Modal visible={visible} setModalVisible={setModalVisible}>
@@ -45,8 +45,12 @@ export default function ModalDelete({ visible, setModalVisible}: Props) {
             글을 삭제하시겠습니까?
           </span>
           <BtnDiv>
-          <Button height={5} buttonId="deleteA" style={{marginRight:5}}>확인</Button>
-          <Button height={5} buttonId="deleteB" style={{marginLeft:5}} onClick={onClick}>취소</Button>
+            <Button height={5} buttonId="deleteA" style={{ marginRight: 5 }}>
+              확인
+            </Button>
+            <Button height={5} buttonId="deleteB" style={{ marginLeft: 5 }} onClick={onClick}>
+              취소
+            </Button>
           </BtnDiv>
         </>
       </Modal>

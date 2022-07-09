@@ -1,6 +1,4 @@
 import styled from '@emotion/styled';
-import colors from '../../constants/colors';
-import { Link } from 'react-router-dom';
 
 export const IconWrapper = styled.div`
   flex: 1;
@@ -19,12 +17,12 @@ export const TopBlock = styled.div`
   display: flex;
   margin-top: 10%;
   padding-bottom: 10%;
-  width:100%;
+  width: 100%;
   border-bottom: 0.8px solid #878787;
-  justify-Content: center;
-  align-Items: center;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const PostBlock = styled.div`
-  //height:80%;
+  padding-bottom: 9rem;
 `;

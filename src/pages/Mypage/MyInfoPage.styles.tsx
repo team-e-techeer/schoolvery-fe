@@ -3,8 +3,9 @@ import colors from '../../constants/colors';
 import { Link } from 'react-router-dom';
 
 export const IconWrapper = styled.div`
+  display: flex;
   flex: 1;
-  margin-left: 2rem;
+  width: 80%;
   .button {
     border: none;
     cursor: pointer;
@@ -16,45 +17,84 @@ export const IconWrapper = styled.div`
 `;
 
 export const ProfileBlock = styled.div`
-  display:flex;
-  justify-Content: center;
-  align-Items: center;
-  margin-top: 5%;
-  width:100%;
-  border-top: 0.8px solid #878787;
-  border-bottom: 0.8px solid #878787;
+  display: flex;
+  flex: 1;
+
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 3rem;
+  /* padding: 5rem; */
 `;
 
-export const ProfileImg = styled.img`
-  margin-top:5%;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom:5%;
-  background-color: #C4C4C4;
-  border-radius: 50%;
-  width:105px;
-  height:105px;
+export const ImgBlock = styled.div`
+  display: flex;
+  flex: 1;
+
+  justify-content: center;
+  img {
+    border-radius: 50%;
+
+    width: 8rem;
+    height: 8rem;
+  }
 `;
 
 export const ProfileInfo = styled.div`
-  width: 30%;
-  margin-top:2%;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-bottom: 2%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  p {
+    margin-left: 2rem;
+  }
 `;
 
 export const ProfileSetting = styled.button`
-  margin-left:7%;
-  margin-right:7%;
-  margin-bottom:15%;
+  display: flex;
+  flex: 1;
+`;
+
+export const GreyLine = styled.div`
+  width: 100%;
+  border-bottom: 0.8px solid #878787;
+  margin: 3rem 0;
 `;
 
 export const BoardBlock = styled.div`
-  margin-top: 5%;
-  display:flex;
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
 `;
 
-export const BoardBtn = styled.button`
-width:33%;
+export const BoardBtn = styled(Link)`
+  display: flex;
+  flex: 1;
+  background-color: ${colors.mainColor};
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  border-radius: 1.3rem;
+
+  margin: 0 1.5rem;
+  padding: 1rem;
+  -webkit-font-smoothing: antialiased;
+  transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    background-color: ${colors.orange600};
+  }
+  p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: ${colors.grey100};
+    font-weight: 600;
+  }
+`;
+
+export const BlankView = styled.div`
+  display: flex;
+  flex: 0.2;
 `;
