@@ -16,7 +16,7 @@ import {
   IconCenterBlock,
 } from './WritingPage.styles';
 import { AiOutlineLeft as LeftIcon } from 'react-icons/ai';
-import { useState, useCallback, useRef } from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 import { useCheckBlank } from '@/hooks/useCheckBlank';
 import { Link } from 'react-router-dom';
 import Shop from '../../assets/img/shop.png';
@@ -24,17 +24,18 @@ import Location from '../../assets/img/Location.png';
 import Fee from '../../assets/img/fee_icon.png';
 import Time from '../../assets/img/time_icon.png';
 import Ppl from '../../assets/img/ppl_icon.png';
-import Bell from '../../assets/img/bell 1.png';
 import axios from 'axios';
 
 interface WritingInfo {
   title: string;
+  schoolId: string;
+  userId: string;
   store: string;
-  category: string;
+  categoryId: string;
   location: string;
   peopleNum: string;
-  closedTime: string;
-  fee: string;
+  deadline: string;
+  deliveryFee: string;
   content: string;
   [prop: string]: string;
 }
@@ -43,22 +44,24 @@ function WritingPage() {
   const spanRef = useRef() as React.MutableRefObject<HTMLFormElement>;
   const [writingInfo, setWritingInfo] = useState<WritingInfo>({
     title: '',
+    schoolId: '1',
+    userId: 'bd62b27b-6d60-4192-a7b3-26fcee71cb62',
     store: '',
-    category: '',
+    categoryId: '',
     location: '',
     peopleNum: '',
-    closedTime: '',
-    fee: '',
+    deadline: '',
+    deliveryFee: '',
     content: ''
   });
+  
   const [submitOK, setSubmit] = useState(true);
-  const [submitted,setSubmitted] = useState(false);
-  const { title, store, category, location, peopleNum, closedTime, fee, content } = writingInfo;
-
+  const { title, schoolId, userId, store, categoryId, location, peopleNum, deadline, deliveryFee, content } = writingInfo;
+  
   const onSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      const submitItems = ['title', 'store', 'category', 'location', 'peopleNum', 'closedTime', 'fee', 'content'];
+      const submitItems = ['title', 'store', 'categoryId', 'location', 'peopleNum', 'deadline', 'deliveryFee'];
       submitItems.forEach(item => {
         if (!writingInfo[item].length) {
           setSubmit(false);
@@ -66,24 +69,24 @@ function WritingPage() {
           if (select && !writingInfo[item]) select.style.display = 'block';
         }
       });
-      
-      let body = {
-        title: writingInfo[title], //"보쌈정식",
-        schoolId: 196,
-        userId: "bd62b27b-6d60-4192-a7b3-26fcee71cb62",
-        categoryId: 1,
-        location: "잠실역 4번 출구",
-        peopleNum: 3,
-        deliveryFee: 5000,
-        deadline: "2022-07-16T01:54:13.655Z",
-        content: "같이 먹을 사람 구합니다! 기숙사생이면 좋겠습니다~",
-        store: "싸움의고수"
-      };
-      console.log(body);
 
-      axios.post("http://52.79.69.132/api/v1/posts",body).then((response)=>{
+  
+      console.log(writingInfo);
+      // let body = {
+      //   title: writingInfo[title], //"보쌈정식",
+      //   schoolId: 196,
+      //   userId: "bd62b27b-6d60-4192-a7b3-26fcee71cb62",
+      //   categoryId: 1,
+      //   location: "잠실역 4번 출구",
+      //   peopleNum: 3,
+      //   deliveryFee: 5000,
+      //   deadline: "2022-07-16T01:54:13.655Z",
+      //   content: "같이 먹을 사람 구합니다! 기숙사생이면 좋겠습니다~",
+      //   store: "싸움의고수"
+      // };
+
+      axios.post("http://52.79.69.132/api/v1/posts",writingInfo).then((response)=>{
         console.log(response.data);
-        setSubmitted(true);
       })
       .catch(
       )
@@ -103,9 +106,20 @@ function WritingPage() {
     [writingInfo]
   );
 
+  const onChangeContent = useCallback(
+    (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      const {value, name} = e.target;
+      setWritingInfo({
+        ...writingInfo,
+        [name]: value,
+      });
+    },
+    [writingInfo]
+  );
+
   const onCheckBlank = useCallback(
     (e: React.FocusEvent<HTMLFormElement, Element>) => {
-      useCheckBlank({ e, ref: spanRef, state: writingInfo });
+      //useCheckBlank({ e, ref: spanRef, state: writingInfo });
     },
     [writingInfo, spanRef]
   );
@@ -154,8 +168,8 @@ function WritingPage() {
               <img src={Location} alt="카테고리" />
             </IconBlock>
             <Input
-              value={category}
-              name="category"
+              value={categoryId}
+              name="categoryId"
               placeholder={'카테고리를 선택해 주세요'}
               onChange={onChange}
               autoComplete="off"
@@ -193,8 +207,8 @@ function WritingPage() {
           <SecondDetailSection>
             <NumInput
               placeholder={'마감 시간'}
-              name="closedTime"
-              value={closedTime}
+              name="deadline"
+              value={deadline}
               onChange={onChange}
               autoComplete="off"
             />
@@ -205,10 +219,10 @@ function WritingPage() {
           <SecondDetailSection>
             <NumInput
               placeholder={'배달비'}
-              name="fee"
+              name="deliveryFee"
               type={'number'}
               pattern={'[0-9]*'}
-              value={fee}
+              value={deliveryFee}
               onChange={onChange}
               autoComplete="off"
             />
@@ -219,7 +233,10 @@ function WritingPage() {
         </SecondSection>
 
         <ThirdSection>
-          <TextArea name="detail" value={content}></TextArea>
+          <TextArea 
+          name="content"
+          value={content}
+          onChange={onChangeContent}></TextArea>
         </ThirdSection>
 
         <Post type="submit">글 등록</Post>
