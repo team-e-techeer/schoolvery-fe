@@ -25,6 +25,7 @@ import Fee from '../../assets/img/fee_icon.png';
 import Time from '../../assets/img/time_icon.png';
 import Ppl from '../../assets/img/ppl_icon.png';
 import Bell from '../../assets/img/bell 1.png';
+import axios from 'axios';
 
 interface WritingInfo {
   title: string;
@@ -34,6 +35,7 @@ interface WritingInfo {
   peopleNum: string;
   closedTime: string;
   fee: string;
+  content: string;
   [prop: string]: string;
 }
 
@@ -47,15 +49,16 @@ function WritingPage() {
     peopleNum: '',
     closedTime: '',
     fee: '',
+    content: ''
   });
   const [submitOK, setSubmit] = useState(true);
-
-  const { title, store, category, location, peopleNum, closedTime, fee } = writingInfo;
+  const [submitted,setSubmitted] = useState(false);
+  const { title, store, category, location, peopleNum, closedTime, fee, content } = writingInfo;
 
   const onSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      const submitItems = ['title', 'store', 'category', 'location', 'peopleNum', 'closedTime', 'fee'];
+      const submitItems = ['title', 'store', 'category', 'location', 'peopleNum', 'closedTime', 'fee', 'content'];
       submitItems.forEach(item => {
         if (!writingInfo[item].length) {
           setSubmit(false);
@@ -63,8 +66,30 @@ function WritingPage() {
           if (select && !writingInfo[item]) select.style.display = 'block';
         }
       });
+      
+      let body = {
+        title: writingInfo[title], //"보쌈정식",
+        schoolId: 196,
+        userId: "bd62b27b-6d60-4192-a7b3-26fcee71cb62",
+        categoryId: 1,
+        location: "잠실역 4번 출구",
+        peopleNum: 3,
+        deliveryFee: 5000,
+        deadline: "2022-07-16T01:54:13.655Z",
+        content: "같이 먹을 사람 구합니다! 기숙사생이면 좋겠습니다~",
+        store: "싸움의고수"
+      };
+      console.log(body);
+
+      axios.post("http://52.79.69.132/api/v1/posts",body).then((response)=>{
+        console.log(response.data);
+        setSubmitted(true);
+      })
+      .catch(
+      )
     },
     [writingInfo]
+
   );
 
   const onChange = useCallback(
@@ -80,7 +105,7 @@ function WritingPage() {
 
   const onCheckBlank = useCallback(
     (e: React.FocusEvent<HTMLFormElement, Element>) => {
-      // useCheckBlank({ e, ref: spanRef, state: writingInfo });
+      useCheckBlank({ e, ref: spanRef, state: writingInfo });
     },
     [writingInfo, spanRef]
   );
@@ -194,7 +219,7 @@ function WritingPage() {
         </SecondSection>
 
         <ThirdSection>
-          <TextArea name="detail"></TextArea>
+          <TextArea name="detail" value={content}></TextArea>
         </ThirdSection>
 
         <Post type="submit">글 등록</Post>
