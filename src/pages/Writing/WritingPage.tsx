@@ -31,27 +31,27 @@ interface WritingInfo {
   schoolId: string;
   userId: string;
   store: string;
-  categoryId: string;
+  categoryId: number;
   location: string;
-  peopleNum: string;
+  peopleNum: number;
   deadline: string;
-  deliveryFee: string;
+  deliveryFee: number;
   content: string;
-  [prop: string]: string;
+  // [prop: string]: string;
 }
 
 function WritingPage() {
   const spanRef = useRef() as React.MutableRefObject<HTMLFormElement>;
   const [writingInfo, setWritingInfo] = useState<WritingInfo>({
     title: '',
-    schoolId: '1',
-    userId: 'bd62b27b-6d60-4192-a7b3-26fcee71cb62',
+    schoolId: '6e212f1e-c42a-4203-bb84-222e8aae12c7',
+    userId: '3e9c5072-bea6-48df-b029-8cfc05f326c1',
     store: '',
-    categoryId: '',
+    categoryId: 0,
     location: '',
-    peopleNum: '',
+    peopleNum: 0,
     deadline: '',
-    deliveryFee: '',
+    deliveryFee: 0,
     content: ''
   });
   
@@ -62,33 +62,30 @@ function WritingPage() {
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       const submitItems = ['title', 'store', 'categoryId', 'location', 'peopleNum', 'deadline', 'deliveryFee'];
-      submitItems.forEach(item => {
-        if (!writingInfo[item].length) {
-          setSubmit(false);
-          const select = spanRef.current?.querySelector<HTMLElement>(`#${item}`);
-          if (select && !writingInfo[item]) select.style.display = 'block';
-        }
-      });
+      // submitItems.forEach(item => {
+      //   if (!writingInfo[item].length) {
+      //     setSubmit(false);
+      //     const select = spanRef.current?.querySelector<HTMLElement>(`#${item}`);
+      //     if (select && !writingInfo[item]) select.style.display = 'block';
+      //   }
+      // }
+      // );
 
   
       console.log(writingInfo);
-      // let body = {
-      //   title: writingInfo[title], //"보쌈정식",
-      //   schoolId: 196,
-      //   userId: "bd62b27b-6d60-4192-a7b3-26fcee71cb62",
-      //   categoryId: 1,
-      //   location: "잠실역 4번 출구",
-      //   peopleNum: 3,
-      //   deliveryFee: 5000,
-      //   deadline: "2022-07-16T01:54:13.655Z",
-      //   content: "같이 먹을 사람 구합니다! 기숙사생이면 좋겠습니다~",
-      //   store: "싸움의고수"
-      // };
+      console.log(peopleNum);
 
-      axios.post("http://52.79.69.132/api/v1/posts",writingInfo).then((response)=>{
+      axios.post("http://localhost:8080/api/v1/posts",writingInfo,{
+        headers: {
+        'Content-Type': 'application/json'
+        }
+    }).then((response)=>{
         console.log(response.data);
       })
-      .catch(
+      .catch(error=>{
+        console.log(error);
+        console.log(writingInfo);
+      }
       )
     },
     [writingInfo]
