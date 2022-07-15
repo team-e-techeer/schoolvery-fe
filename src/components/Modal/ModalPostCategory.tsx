@@ -16,6 +16,10 @@ import { useNavigate } from 'react-router-dom';
 interface Props {
   visible: boolean;
   setModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  categoryName: string;
+  setCategoryName: React.Dispatch<React.SetStateAction<string>>;
+  categoryId : string;
+  setCategoryId: React.Dispatch<React.SetStateAction<string>>;
 }
 
 interface Info {
@@ -26,10 +30,9 @@ interface Info {
   id: number;
 }
 
-export default function ModalCategory({ visible, setModalVisible }: Props) {
-  const navigate = useNavigate();
+export default function ModalCategory({ visible, setModalVisible, categoryName, setCategoryName, categoryId, setCategoryId }: Props) {
+
   const [imageInfo, setImage] = useState<Info[]>([
-    { path: '/category/전체', src: All, name: '전체', select: true, id: 0 },
     { path: '/category/한식', src: Ko, name: '한식', select: false, id: 1 },
     { path: '/category/중식', src: Ch, name: '중식', select: false, id: 2 },
     { path: '/category/일식', src: Jp, name: '일식', select: false, id: 3 },
@@ -42,6 +45,8 @@ export default function ModalCategory({ visible, setModalVisible }: Props) {
   ]);
   const onClickCategory = (image: Info) => {
     setImage(imageInfo.map(img => (img.id === image.id ? { ...img, select: true } : { ...img, select: false })));
+    setCategoryId(`${image.id}`);
+    setCategoryName(`${image.name}`);
   };
   return (
     <>

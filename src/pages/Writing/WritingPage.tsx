@@ -77,6 +77,8 @@ function WritingPage() {
   
   const [submitOK, setSubmit] = useState(true);
   const [modalVisible, setModalVisible] = useState(false);
+  const [categoryName, setCategoryName] = useState('');
+  const [categoryID, setCategoryID] = useState('');
   const { title, schoolId, userId, store, categoryId, location, peopleNum, deadline, deliveryFee, content } = writingInfo;
   
   const onSubmit = useCallback(
@@ -100,7 +102,7 @@ function WritingPage() {
           [time,padTo2Digits(date.getSeconds()),].join(':')
         );}
 
-      const category : number =+categoryId;
+      const category : number =+categoryID;
       const people : number =+peopleNum;
       const fee : number =+ deliveryFee;
       const time = formatDate(deadline);
@@ -116,7 +118,7 @@ function WritingPage() {
         deliveryFee: fee,
         content: content
       }
-
+      console.log(data);
       axios.post("http://localhost:8080/api/v1/posts",data,{
         headers: {
         'Content-Type': 'application/json'
@@ -206,10 +208,10 @@ function WritingPage() {
               <img src={Location} alt="카테고리" />
             </IconBlock>
             <Input
-              value={categoryId}
-              name="categoryId"
+              value={categoryName}
+              //name="categoryId"
               placeholder={'카테고리를 선택해 주세요'}
-              onChange={onChange}
+              //onChange={onChange}
               onClick={() => setModalVisible(true)}
               autoComplete="off"
             ></Input>
@@ -280,7 +282,9 @@ function WritingPage() {
 
         <Post type="submit">글 등록</Post>
       </Container>
-      <ModalPostCategory visible={modalVisible} setModalVisible={setModalVisible} />
+      <ModalPostCategory visible={modalVisible} setModalVisible={setModalVisible} 
+      categoryName={categoryName} setCategoryName={setCategoryName}
+      categoryId={categoryID} setCategoryId={setCategoryID}/>
     </>
   );
 }
