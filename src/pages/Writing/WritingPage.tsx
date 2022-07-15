@@ -90,15 +90,9 @@ function WritingPage() {
       }
       );
 
-  
-      console.log(writingInfo);
-
-
-      // 👇️ format as "YYYY-MM-DD hh:mm:ss"
-      // You can tweak formatting easily
+      // 👇️ format "YYYY-MM-DD hh:mm:ss"
       function formatDate(time:string) {
         var date = changeTimeZone(new Date(), 'Asia/Seoul');
-        console.log(date);
         return (
           [date.getFullYear(),padTo2Digits(date.getMonth() + 1),padTo2Digits(date.getDate()),].join('-') +'T' +
           [time,padTo2Digits(date.getSeconds()),].join(':')
@@ -127,7 +121,6 @@ function WritingPage() {
         }
     }).then((response)=>{
         console.log(response.data);
-        console.log(data);
       })
       .catch(error=>{
         console.log(error);
