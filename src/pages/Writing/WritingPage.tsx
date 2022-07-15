@@ -31,13 +31,17 @@ interface WritingInfo {
   schoolId: string;
   userId: string;
   store: string;
-  categoryId: number;
+  categoryId: string;
   location: string;
-  peopleNum: number;
+  peopleNum: string;
   deadline: string;
-  deliveryFee: number;
+  deliveryFee: string;
   content: string;
-  // [prop: string]: string;
+  [prop: string]: string;
+}
+
+function padTo2Digits(num: number) {
+  return num.toString().padStart(2, '0');
 }
 
 function WritingPage() {
@@ -47,11 +51,11 @@ function WritingPage() {
     schoolId: '6e212f1e-c42a-4203-bb84-222e8aae12c7',
     userId: '3e9c5072-bea6-48df-b029-8cfc05f326c1',
     store: '',
-    categoryId: 0,
+    categoryId: '',
     location: '',
-    peopleNum: 0,
+    peopleNum:'',
     deadline: '',
-    deliveryFee: 0,
+    deliveryFee: '',
     content: ''
   });
   
@@ -62,20 +66,46 @@ function WritingPage() {
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       const submitItems = ['title', 'store', 'categoryId', 'location', 'peopleNum', 'deadline', 'deliveryFee'];
-      // submitItems.forEach(item => {
-      //   if (!writingInfo[item].length) {
-      //     setSubmit(false);
-      //     const select = spanRef.current?.querySelector<HTMLElement>(`#${item}`);
-      //     if (select && !writingInfo[item]) select.style.display = 'block';
-      //   }
-      // }
-      // );
+      submitItems.forEach(item => {
+        if (!writingInfo[item].length) {
+          setSubmit(false);
+          const select = spanRef.current?.querySelector<HTMLElement>(`#${item}`);
+          if (select && !writingInfo[item]) select.style.display = 'block';
+        }
+      }
+      );
 
   
       console.log(writingInfo);
-      console.log(peopleNum);
 
-      axios.post("http://localhost:8080/api/v1/posts",writingInfo,{
+
+      // 👇️ format as "YYYY-MM-DD hh:mm:ss"
+      // You can tweak formatting easily
+      function formatDate(time:string) {
+        var date = new Date;
+        return (
+          [date.getFullYear(),padTo2Digits(date.getMonth() + 1),padTo2Digits(date.getDate()),].join('-') +'T' +
+          [time,padTo2Digits(date.getSeconds()),].join(':')
+        );}
+
+      const category : number =+categoryId;
+      const people : number =+peopleNum;
+      const fee : number =+ deliveryFee;
+      const time = formatDate(deadline);
+      const data = {
+        title: title,
+        schoolId: schoolId,
+        userId: userId,
+        store: store,
+        categoryId: category,
+        location:location,
+        peopleNum:people,
+        deadline: time,
+        deliveryFee: fee,
+        content: content
+      }
+
+      axios.post("http://localhost:8080/api/v1/posts",data,{
         headers: {
         'Content-Type': 'application/json'
         }
