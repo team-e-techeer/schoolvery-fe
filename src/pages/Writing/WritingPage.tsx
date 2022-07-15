@@ -18,15 +18,17 @@ import {
 import { AiOutlineLeft as LeftIcon } from 'react-icons/ai';
 import React, { useState, useCallback, useRef } from 'react';
 import { useCheckBlank } from '@/hooks/useCheckBlank';
-import { Link } from 'react-router-dom';
-import Shop from '../../assets/img/shop.png';
-import Location from '../../assets/img/Location.png';
+import { Link, useNavigate } from 'react-router-dom';
+import { FaPen} from 'react-icons/fa';
+import {BsShop as Shop} from 'react-icons/bs';
+import { BiCategory} from 'react-icons/bi';
+import {MdLocationPin as Location} from 'react-icons/md';
 import Fee from '../../assets/img/fee_icon.png';
 import Time from '../../assets/img/time_icon.png';
 import Ppl from '../../assets/img/ppl_icon.png';
 import axios from 'axios';
 import ModalPostCategory from '@/components/Modal/ModalPostCategory';
-
+import colors from '@/constants/colors';
 interface WritingInfo {
   title: string;
   schoolId: string;
@@ -64,8 +66,8 @@ function WritingPage() {
   const spanRef = useRef() as React.MutableRefObject<HTMLFormElement>;
   const [writingInfo, setWritingInfo] = useState<WritingInfo>({
     title: '',
-    schoolId: '6e212f1e-c42a-4203-bb84-222e8aae12c7',
-    userId: '3e9c5072-bea6-48df-b029-8cfc05f326c1',
+    schoolId: '431a14a5-fe1a-4817-a36c-2878bd7e96c8',
+    userId: '7d0c761a-89e2-426c-b30e-f59adf089bd8',
     store: '',
     categoryId: '',
     location: '',
@@ -76,6 +78,7 @@ function WritingPage() {
   });
   
   const [submitOK, setSubmit] = useState(true);
+  const [linkOk, setLinkOk] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
   const [categoryName, setCategoryName] = useState('');
   const [categoryID, setCategoryID] = useState('');
@@ -84,7 +87,7 @@ function WritingPage() {
   const onSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      const submitItems = ['title', 'store', 'categoryId', 'location', 'peopleNum', 'deadline', 'deliveryFee'];
+      const submitItems = ['title', 'store','location', 'peopleNum', 'deadline', 'deliveryFee'];
       submitItems.forEach(item => {
         if (!writingInfo[item].length) {
           setSubmit(false);
@@ -119,6 +122,7 @@ function WritingPage() {
         content: content
       }
       console.log(data);
+
       axios.post("http://localhost:8080/api/v1/posts",data,{
         headers: {
         'Content-Type': 'application/json'
@@ -180,7 +184,7 @@ function WritingPage() {
         <FirstSection>
           <InputBlock>
             <IconBlock>
-              <img src={Shop} alt="제목" />
+              <FaPen size={33} color={colors.grey500} />
             </IconBlock>
             <Input
               value={title}
@@ -193,7 +197,7 @@ function WritingPage() {
           </InputBlock>
           <InputBlock>
             <IconBlock>
-              <img src={Shop} alt="매장" />
+              <Shop size={33} color={colors.grey500}/>
             </IconBlock>
             <Input
               value={store}
@@ -205,7 +209,7 @@ function WritingPage() {
           </InputBlock>
           <InputBlock>
             <IconBlock>
-              <img src={Location} alt="카테고리" />
+              <BiCategory size={33} color={colors.grey500}/>
             </IconBlock>
             <Input
               value={categoryName}
@@ -218,7 +222,7 @@ function WritingPage() {
           </InputBlock>
           <InputBlock>
             <IconBlock>
-              <img src={Location} alt="배달 위치" />
+              <Location size={33} color={colors.grey500}/>
             </IconBlock>
             <Input
               value={location}
@@ -281,6 +285,7 @@ function WritingPage() {
         </ThirdSection>
 
         <Post type="submit">글 등록</Post>
+        
       </Container>
       <ModalPostCategory visible={modalVisible} setModalVisible={setModalVisible} 
       categoryName={categoryName} setCategoryName={setCategoryName}
