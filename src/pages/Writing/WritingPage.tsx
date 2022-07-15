@@ -25,6 +25,7 @@ import Fee from '../../assets/img/fee_icon.png';
 import Time from '../../assets/img/time_icon.png';
 import Ppl from '../../assets/img/ppl_icon.png';
 import axios from 'axios';
+import ModalPostCategory from '@/components/Modal/ModalPostCategory';
 
 interface WritingInfo {
   title: string;
@@ -43,7 +44,7 @@ interface WritingInfo {
 function padTo2Digits(num: number) {
   return num.toString().padStart(2, '0');
 }
-function changeTimeZone(date, timeZone) {
+function changeTimeZone(date: Date, timeZone:string) {
   if (typeof date === 'string') {
     return new Date(
       new Date(date).toLocaleString('en-US', {
@@ -75,6 +76,7 @@ function WritingPage() {
   });
   
   const [submitOK, setSubmit] = useState(true);
+  const [modalVisible, setModalVisible] = useState(false);
   const { title, schoolId, userId, store, categoryId, location, peopleNum, deadline, deliveryFee, content } = writingInfo;
   
   const onSubmit = useCallback(
@@ -208,6 +210,7 @@ function WritingPage() {
               name="categoryId"
               placeholder={'카테고리를 선택해 주세요'}
               onChange={onChange}
+              onClick={() => setModalVisible(true)}
               autoComplete="off"
             ></Input>
           </InputBlock>
@@ -277,6 +280,7 @@ function WritingPage() {
 
         <Post type="submit">글 등록</Post>
       </Container>
+      <ModalPostCategory visible={modalVisible} setModalVisible={setModalVisible} />
     </>
   );
 }
