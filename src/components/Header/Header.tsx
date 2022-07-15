@@ -45,15 +45,16 @@ export default function Header({ title, Left, Right, secondRight }: Props) {
         <div
           css={css`
             display: flex;
+            flex-direction: row-reverse;
             flex: 1;
-            flex-direction: row;
           `}
         >
           <div
             css={css`
               display: flex;
-              flex: 1;
+              flex: ${secondRight ? 1 : 0};
               background-color: 'transparent';
+              flex-direction: row-reverse;
             `}
           >
             {secondRight && secondRight()}
@@ -61,8 +62,9 @@ export default function Header({ title, Left, Right, secondRight }: Props) {
           <div
             css={css`
               display: flex;
-              flex: 1;
+              flex: ${Right ? 1 : 0};
               background-color: 'transparent';
+              flex-direction: row-reverse;
             `}
           >
             {Right && Right()}
