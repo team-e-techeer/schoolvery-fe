@@ -43,6 +43,21 @@ interface WritingInfo {
 function padTo2Digits(num: number) {
   return num.toString().padStart(2, '0');
 }
+function changeTimeZone(date, timeZone) {
+  if (typeof date === 'string') {
+    return new Date(
+      new Date(date).toLocaleString('en-US', {
+        timeZone,
+      }),
+    );
+  }
+
+  return new Date(
+    date.toLocaleString('en-US', {
+      timeZone,
+    }),
+  );
+}
 
 function WritingPage() {
   const spanRef = useRef() as React.MutableRefObject<HTMLFormElement>;
@@ -82,7 +97,8 @@ function WritingPage() {
       // 👇️ format as "YYYY-MM-DD hh:mm:ss"
       // You can tweak formatting easily
       function formatDate(time:string) {
-        var date = new Date;
+        var date = changeTimeZone(new Date(), 'Asia/Seoul');
+        console.log(date);
         return (
           [date.getFullYear(),padTo2Digits(date.getMonth() + 1),padTo2Digits(date.getDate()),].join('-') +'T' +
           [time,padTo2Digits(date.getSeconds()),].join(':')
@@ -111,10 +127,10 @@ function WritingPage() {
         }
     }).then((response)=>{
         console.log(response.data);
+        console.log(data);
       })
       .catch(error=>{
         console.log(error);
-        console.log(writingInfo);
       }
       )
     },
