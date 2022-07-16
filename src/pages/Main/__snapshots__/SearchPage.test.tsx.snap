@@ -264,9 +264,8 @@ exports[`검색 페이지 테스트 검색 쿼리문 테스트 1`] = `
   <div
     class="emotion-0"
   >
-    <a
+    <div
       class="emotion-1"
-      href="/"
     >
       <svg
         color="#333d4b"
@@ -291,7 +290,7 @@ exports[`검색 페이지 테스트 검색 쿼리문 테스트 1`] = `
           points="12 19 5 12 12 5"
         />
       </svg>
-    </a>
+    </div>
     <form
       class="emotion-2"
       data-testid="search-form"
@@ -1094,9 +1093,8 @@ exports[`검색 페이지 테스트 검색어 입력후 전송 1`] = `
   <div
     class="emotion-0"
   >
-    <a
+    <div
       class="emotion-1"
-      href="/"
     >
       <svg
         color="#333d4b"
@@ -1121,7 +1119,7 @@ exports[`검색 페이지 테스트 검색어 입력후 전송 1`] = `
           points="12 19 5 12 12 5"
         />
       </svg>
-    </a>
+    </div>
     <form
       class="emotion-2"
       data-testid="search-form"
@@ -1794,9 +1792,8 @@ exports[`검색 페이지 테스트 검색어 입력후 전송후 삭제 1`] = `
   <div
     class="emotion-0"
   >
-    <a
+    <div
       class="emotion-1"
-      href="/"
     >
       <svg
         color="#333d4b"
@@ -1821,7 +1818,7 @@ exports[`검색 페이지 테스트 검색어 입력후 전송후 삭제 1`] = `
           points="12 19 5 12 12 5"
         />
       </svg>
-    </a>
+    </div>
     <form
       class="emotion-2"
       data-testid="search-form"
@@ -2096,9 +2093,8 @@ exports[`검색 페이지 테스트 렌더링 테스트 1`] = `
   <div
     class="emotion-0"
   >
-    <a
+    <div
       class="emotion-1"
-      href="/"
     >
       <svg
         color="#333d4b"
@@ -2123,7 +2119,7 @@ exports[`검색 페이지 테스트 렌더링 테스트 1`] = `
           points="12 19 5 12 12 5"
         />
       </svg>
-    </a>
+    </div>
     <form
       class="emotion-2"
       data-testid="search-form"
@@ -2398,9 +2394,8 @@ exports[`검색 페이지 테스트 전체 삭제 버튼 클릭 1`] = `
   <div
     class="emotion-0"
   >
-    <a
+    <div
       class="emotion-1"
-      href="/"
     >
       <svg
         color="#333d4b"
@@ -2425,7 +2420,7 @@ exports[`검색 페이지 테스트 전체 삭제 버튼 클릭 1`] = `
           points="12 19 5 12 12 5"
         />
       </svg>
-    </a>
+    </div>
     <form
       class="emotion-2"
       data-testid="search-form"
@@ -2830,9 +2825,8 @@ exports[`검색 페이지 테스트 최근 검색어 클릭 1`] = `
   <div
     class="emotion-0"
   >
-    <a
+    <div
       class="emotion-1"
-      href="/"
     >
       <svg
         color="#333d4b"
@@ -2857,7 +2851,7 @@ exports[`검색 페이지 테스트 최근 검색어 클릭 1`] = `
           points="12 19 5 12 12 5"
         />
       </svg>
-    </a>
+    </div>
     <form
       class="emotion-2"
       data-testid="search-form"

@@ -1,6 +1,6 @@
 import colors from '@/constants/colors';
 import { css } from '@emotion/react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { BiSearch as SearchIcon } from 'react-icons/bi';
 import { FiArrowLeft as LeftIcon } from 'react-icons/fi';
 interface Props {
@@ -49,6 +49,7 @@ export default function Input({
   formTestId,
 }: Props) {
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => setInputValue && setInputValue(e.target.value);
+  const navigate = useNavigate();
   return isLinking ? (
     <Link css={inputWithoutPrev} to="/search">
       <SearchIcon size={25} color={colors.mainColor} />
@@ -69,15 +70,15 @@ export default function Input({
         margin-top: 2rem;
       `}
     >
-      <Link
-        to="/"
+      <div
+        onClick={() => navigate(-1)}
         css={css`
           cursor: pointer;
           margin-left: 5%;
         `}
       >
         <LeftIcon color={colors.grey800} size={30} />
-      </Link>
+      </div>
       <form css={inputStyle} onSubmit={onSubmit} data-testid={formTestId}>
         <SearchIcon size={25} color={colors.mainColor} />
         <input
