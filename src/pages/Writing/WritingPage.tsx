@@ -16,55 +16,127 @@ import {
   IconCenterBlock,
 } from './WritingPage.styles';
 import { AiOutlineLeft as LeftIcon } from 'react-icons/ai';
-import { useState, useCallback, useRef } from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 import { useCheckBlank } from '@/hooks/useCheckBlank';
-import { Link } from 'react-router-dom';
-import Shop from '../../assets/img/shop.png';
-import Location from '../../assets/img/Location.png';
+import { Link, useNavigate } from 'react-router-dom';
+import { FaPen} from 'react-icons/fa';
+import {BsShop as Shop} from 'react-icons/bs';
+import { BiCategory} from 'react-icons/bi';
+import {MdLocationPin as Location} from 'react-icons/md';
 import Fee from '../../assets/img/fee_icon.png';
 import Time from '../../assets/img/time_icon.png';
 import Ppl from '../../assets/img/ppl_icon.png';
-import Bell from '../../assets/img/bell 1.png';
-
+import axios from 'axios';
+import ModalPostCategory from '@/components/Modal/ModalPostCategory';
+import colors from '@/constants/colors';
 interface WritingInfo {
   title: string;
+  schoolId: string;
+  userId: string;
   store: string;
-  category: string;
+  categoryId: string;
   location: string;
   peopleNum: string;
-  closedTime: string;
-  fee: string;
+  deadline: string;
+  deliveryFee: string;
+  content: string;
   [prop: string]: string;
+}
+
+function padTo2Digits(num: number) {
+  return num.toString().padStart(2, '0');
+}
+function changeTimeZone(date: Date, timeZone:string) {
+  if (typeof date === 'string') {
+    return new Date(
+      new Date(date).toLocaleString('en-US', {
+        timeZone,
+      }),
+    );
+  }
+
+  return new Date(
+    date.toLocaleString('en-US', {
+      timeZone,
+    }),
+  );
 }
 
 function WritingPage() {
   const spanRef = useRef() as React.MutableRefObject<HTMLFormElement>;
   const [writingInfo, setWritingInfo] = useState<WritingInfo>({
     title: '',
+    schoolId: '431a14a5-fe1a-4817-a36c-2878bd7e96c8',
+    userId: '7d0c761a-89e2-426c-b30e-f59adf089bd8',
     store: '',
-    category: '',
+    categoryId: '',
     location: '',
-    peopleNum: '',
-    closedTime: '',
-    fee: '',
+    peopleNum:'',
+    deadline: '',
+    deliveryFee: '',
+    content: ''
   });
+  
   const [submitOK, setSubmit] = useState(true);
-
-  const { title, store, category, location, peopleNum, closedTime, fee } = writingInfo;
-
+  const [linkOk, setLinkOk] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [categoryName, setCategoryName] = useState('');
+  const [categoryID, setCategoryID] = useState('');
+  const { title, schoolId, userId, store, categoryId, location, peopleNum, deadline, deliveryFee, content } = writingInfo;
+  
   const onSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      const submitItems = ['title', 'store', 'category', 'location', 'peopleNum', 'closedTime', 'fee'];
+      const submitItems = ['title', 'store','location', 'peopleNum', 'deadline', 'deliveryFee'];
       submitItems.forEach(item => {
         if (!writingInfo[item].length) {
           setSubmit(false);
           const select = spanRef.current?.querySelector<HTMLElement>(`#${item}`);
           if (select && !writingInfo[item]) select.style.display = 'block';
         }
-      });
+      }
+      );
+
+      // 👇️ format "YYYY-MM-DD hh:mm:ss"
+      function formatDate(time:string) {
+        var date = changeTimeZone(new Date(), 'Asia/Seoul');
+        return (
+          [date.getFullYear(),padTo2Digits(date.getMonth() + 1),padTo2Digits(date.getDate()),].join('-') +'T' +
+          [time,padTo2Digits(date.getSeconds()),].join(':')
+        );}
+
+      const category : number =+categoryID;
+      const people : number =+peopleNum;
+      const fee : number =+ deliveryFee;
+      const time = formatDate(deadline);
+      const data = {
+        title: title,
+        schoolId: schoolId,
+        userId: userId,
+        store: store,
+        categoryId: category,
+        location:location,
+        peopleNum:people,
+        deadline: time,
+        deliveryFee: fee,
+        content: content
+      }
+      console.log(data);
+
+      axios.post("http://localhost:8080/api/v1/posts",data,{
+        headers: {
+        'Content-Type': 'application/json'
+        }
+    }).then((response)=>{
+        console.log(response.data);
+      })
+      .catch(error=>{
+        console.log(error);
+      }
+      )
     },
     [writingInfo]
+
   );
 
   const onChange = useCallback(
@@ -78,9 +150,20 @@ function WritingPage() {
     [writingInfo]
   );
 
+  const onChangeContent = useCallback(
+    (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      const {value, name} = e.target;
+      setWritingInfo({
+        ...writingInfo,
+        [name]: value,
+      });
+    },
+    [writingInfo]
+  );
+
   const onCheckBlank = useCallback(
     (e: React.FocusEvent<HTMLFormElement, Element>) => {
-      // useCheckBlank({ e, ref: spanRef, state: writingInfo });
+      //useCheckBlank({ e, ref: spanRef, state: writingInfo });
     },
     [writingInfo, spanRef]
   );
@@ -101,7 +184,7 @@ function WritingPage() {
         <FirstSection>
           <InputBlock>
             <IconBlock>
-              <img src={Shop} alt="제목" />
+              <FaPen size={33} color={colors.grey500} />
             </IconBlock>
             <Input
               value={title}
@@ -114,7 +197,7 @@ function WritingPage() {
           </InputBlock>
           <InputBlock>
             <IconBlock>
-              <img src={Shop} alt="매장" />
+              <Shop size={33} color={colors.grey500}/>
             </IconBlock>
             <Input
               value={store}
@@ -126,19 +209,20 @@ function WritingPage() {
           </InputBlock>
           <InputBlock>
             <IconBlock>
-              <img src={Location} alt="카테고리" />
+              <BiCategory size={33} color={colors.grey500}/>
             </IconBlock>
             <Input
-              value={category}
-              name="category"
+              value={categoryName}
+              //name="categoryId"
               placeholder={'카테고리를 선택해 주세요'}
-              onChange={onChange}
+              //onChange={onChange}
+              onClick={() => setModalVisible(true)}
               autoComplete="off"
             ></Input>
           </InputBlock>
           <InputBlock>
             <IconBlock>
-              <img src={Location} alt="배달 위치" />
+              <Location size={33} color={colors.grey500}/>
             </IconBlock>
             <Input
               value={location}
@@ -168,8 +252,8 @@ function WritingPage() {
           <SecondDetailSection>
             <NumInput
               placeholder={'마감 시간'}
-              name="closedTime"
-              value={closedTime}
+              name="deadline"
+              value={deadline}
               onChange={onChange}
               autoComplete="off"
             />
@@ -180,10 +264,10 @@ function WritingPage() {
           <SecondDetailSection>
             <NumInput
               placeholder={'배달비'}
-              name="fee"
+              name="deliveryFee"
               type={'number'}
               pattern={'[0-9]*'}
-              value={fee}
+              value={deliveryFee}
               onChange={onChange}
               autoComplete="off"
             />
@@ -194,11 +278,18 @@ function WritingPage() {
         </SecondSection>
 
         <ThirdSection>
-          <TextArea name="detail"></TextArea>
+          <TextArea 
+          name="content"
+          value={content}
+          onChange={onChangeContent}></TextArea>
         </ThirdSection>
 
         <Post type="submit">글 등록</Post>
+        
       </Container>
+      <ModalPostCategory visible={modalVisible} setModalVisible={setModalVisible} 
+      categoryName={categoryName} setCategoryName={setCategoryName}
+      categoryId={categoryID} setCategoryId={setCategoryID}/>
     </>
   );
 }
