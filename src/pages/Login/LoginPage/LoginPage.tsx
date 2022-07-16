@@ -35,6 +35,7 @@ function LoginPage() {
       e.preventDefault();
       const submitItems = ['email', 'password'];
       mutate({ email, password });
+      navigate('/');
       // submitItems.forEach(item => {
       //   if (loginInfo[item].length) {
       //     const select = loginRef.current?.querySelector<HTMLElement>(`#${item}-alert`) as HTMLElement;
