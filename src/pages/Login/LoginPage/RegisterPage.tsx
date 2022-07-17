@@ -120,7 +120,7 @@ function RegisterPage() {
         </InputField>
         <InputField>
           <InputOverText>닉네임</InputOverText>
-          <Input value={id || ''} name="id" onChange={onChange} autoComplete="off" data-testid="id-input" />
+          <Input value={nickname || ''} name="id" onChange={onChange} autoComplete="off" data-testid="id-input" />
           <AlertText id="id" data-testid="id-alert">
             입력란이 비어 있습니다
           </AlertText>
