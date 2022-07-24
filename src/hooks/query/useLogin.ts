@@ -1,5 +1,5 @@
 import { LoginAPI } from '@/interface/auth';
-import { getLoginAPI } from '@/lib/api/auth';
+import { getLoginAPI } from '@/lib/api/auth/auth';
 
 import { useMutation } from 'react-query';
 

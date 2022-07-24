@@ -13,13 +13,14 @@ import Asian from '../../assets/img/asian.png';
 import Hamburger from '../../assets/img/hamburger.png';
 import koreanFood from '../../assets/img/koreanFood.png';
 import Coffee from '../../assets/img/Coffee.png';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { ImgInfo } from '../../components/Category/Category';
 import { IoMdNotifications as NotificationIcon } from 'react-icons/io';
 // eslint-disable-next-line import/extensions
 import colors from '@/constants/colors';
 import { RightIconWrapper } from '@/GlobalStyle';
 import { useNavigate } from 'react-router-dom';
+import { useGetListQuery } from '@/hooks/query/useGetList';
 
 function MainPage() {
   const navigate = useNavigate();
@@ -35,6 +36,12 @@ function MainPage() {
     { path: '/category/분식', src: koreanFood, name: '분식' },
     { path: '/category/커피', src: Coffee, name: '커피' },
   ]);
+
+  const { data, isSuccess } = useGetListQuery({ schoolId: '3196ce05-cbb3-44f0-b254-bbb85d9e11ad' });
+
+  useEffect(() => {
+    console.log(data?.data, isSuccess);
+  }, [data, isSuccess]);
 
   return (
     <>
