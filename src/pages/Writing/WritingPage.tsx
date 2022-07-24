@@ -19,10 +19,10 @@ import { AiOutlineLeft as LeftIcon } from 'react-icons/ai';
 import React, { useState, useCallback, useRef } from 'react';
 import { useCheckBlank } from '@/hooks/useCheckBlank';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaPen} from 'react-icons/fa';
-import {BsShop as Shop} from 'react-icons/bs';
-import { BiCategory} from 'react-icons/bi';
-import {MdLocationPin as Location} from 'react-icons/md';
+import { FaPen } from 'react-icons/fa';
+import { BsShop as Shop } from 'react-icons/bs';
+import { BiCategory } from 'react-icons/bi';
+import { MdLocationPin as Location } from 'react-icons/md';
 import Fee from '../../assets/img/fee_icon.png';
 import Time from '../../assets/img/time_icon.png';
 import Ppl from '../../assets/img/ppl_icon.png';
@@ -46,19 +46,19 @@ interface WritingInfo {
 function padTo2Digits(num: number) {
   return num.toString().padStart(2, '0');
 }
-function changeTimeZone(date: Date, timeZone:string) {
+function changeTimeZone(date: Date, timeZone: string) {
   if (typeof date === 'string') {
     return new Date(
       new Date(date).toLocaleString('en-US', {
         timeZone,
-      }),
+      })
     );
   }
 
   return new Date(
     date.toLocaleString('en-US', {
       timeZone,
-    }),
+    })
   );
 }
 
@@ -66,48 +66,50 @@ function WritingPage() {
   const spanRef = useRef() as React.MutableRefObject<HTMLFormElement>;
   const [writingInfo, setWritingInfo] = useState<WritingInfo>({
     title: '',
-    schoolId: '431a14a5-fe1a-4817-a36c-2878bd7e96c8',
+    schoolId: '3196ce05-cbb3-44f0-b254-bbb85d9e11ad',
     userId: '7d0c761a-89e2-426c-b30e-f59adf089bd8',
     store: '',
     categoryId: '',
     location: '',
-    peopleNum:'',
+    peopleNum: '',
     deadline: '',
     deliveryFee: '',
-    content: ''
+    content: '',
   });
-  
+
   const [submitOK, setSubmit] = useState(true);
   const [linkOk, setLinkOk] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
   const [categoryName, setCategoryName] = useState('');
   const [categoryID, setCategoryID] = useState('');
-  const { title, schoolId, userId, store, categoryId, location, peopleNum, deadline, deliveryFee, content } = writingInfo;
-  
+  const { title, schoolId, userId, store, categoryId, location, peopleNum, deadline, deliveryFee, content } =
+    writingInfo;
+
   const onSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      const submitItems = ['title', 'store','location', 'peopleNum', 'deadline', 'deliveryFee'];
+      const submitItems = ['title', 'store', 'location', 'peopleNum', 'deadline', 'deliveryFee'];
       submitItems.forEach(item => {
         if (!writingInfo[item].length) {
           setSubmit(false);
           const select = spanRef.current?.querySelector<HTMLElement>(`#${item}`);
           if (select && !writingInfo[item]) select.style.display = 'block';
         }
-      }
-      );
+      });
 
       // 👇️ format "YYYY-MM-DD hh:mm:ss"
-      function formatDate(time:string) {
-        var date = changeTimeZone(new Date(), 'Asia/Seoul');
+      function formatDate(time: string) {
+        const date = changeTimeZone(new Date(), 'Asia/Seoul');
         return (
-          [date.getFullYear(),padTo2Digits(date.getMonth() + 1),padTo2Digits(date.getDate()),].join('-') +'T' +
-          [time,padTo2Digits(date.getSeconds()),].join(':')
-        );}
+          [date.getFullYear(), padTo2Digits(date.getMonth() + 1), padTo2Digits(date.getDate())].join('-') +
+          'T' +
+          [time, padTo2Digits(date.getSeconds())].join(':')
+        );
+      }
 
-      const category : number =+categoryID;
-      const people : number =+peopleNum;
-      const fee : number =+ deliveryFee;
+      const category = Number(categoryID);
+      const people = Number(peopleNum);
+      const fee = Number(deliveryFee);
       const time = formatDate(deadline);
       const data = {
         title: title,
@@ -115,28 +117,28 @@ function WritingPage() {
         userId: userId,
         store: store,
         categoryId: category,
-        location:location,
-        peopleNum:people,
+        location: location,
+        peopleNum: people,
         deadline: time,
         deliveryFee: fee,
-        content: content
-      }
+        content: content,
+      };
       console.log(data);
 
-      axios.post("http://localhost:8080/api/v1/posts",data,{
-        headers: {
-        'Content-Type': 'application/json'
-        }
-    }).then((response)=>{
-        console.log(response.data);
-      })
-      .catch(error=>{
-        console.log(error);
-      }
-      )
+      axios
+        .post('http://localhost:8080/api/v1/posts', data, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
     },
     [writingInfo]
-
   );
 
   const onChange = useCallback(
@@ -152,7 +154,7 @@ function WritingPage() {
 
   const onChangeContent = useCallback(
     (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-      const {value, name} = e.target;
+      const { value, name } = e.target;
       setWritingInfo({
         ...writingInfo,
         [name]: value,
@@ -197,7 +199,7 @@ function WritingPage() {
           </InputBlock>
           <InputBlock>
             <IconBlock>
-              <Shop size={33} color={colors.grey500}/>
+              <Shop size={33} color={colors.grey500} />
             </IconBlock>
             <Input
               value={store}
@@ -209,7 +211,7 @@ function WritingPage() {
           </InputBlock>
           <InputBlock>
             <IconBlock>
-              <BiCategory size={33} color={colors.grey500}/>
+              <BiCategory size={33} color={colors.grey500} />
             </IconBlock>
             <Input
               value={categoryName}
@@ -222,7 +224,7 @@ function WritingPage() {
           </InputBlock>
           <InputBlock>
             <IconBlock>
-              <Location size={33} color={colors.grey500}/>
+              <Location size={33} color={colors.grey500} />
             </IconBlock>
             <Input
               value={location}
@@ -278,18 +280,19 @@ function WritingPage() {
         </SecondSection>
 
         <ThirdSection>
-          <TextArea 
-          name="content"
-          value={content}
-          onChange={onChangeContent}></TextArea>
+          <TextArea name="content" value={content} onChange={onChangeContent}></TextArea>
         </ThirdSection>
 
         <Post type="submit">글 등록</Post>
-        
       </Container>
-      <ModalPostCategory visible={modalVisible} setModalVisible={setModalVisible} 
-      categoryName={categoryName} setCategoryName={setCategoryName}
-      categoryId={categoryID} setCategoryId={setCategoryID}/>
+      <ModalPostCategory
+        visible={modalVisible}
+        setModalVisible={setModalVisible}
+        categoryName={categoryName}
+        setCategoryName={setCategoryName}
+        categoryId={categoryID}
+        setCategoryId={setCategoryID}
+      />
     </>
   );
 }
