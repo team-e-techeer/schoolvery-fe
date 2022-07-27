@@ -1,4 +1,5 @@
-import { LoginAPI, LoginAPIResponse, RegisterAPI } from '@/interface/auth';
+import { LoginAPI, LoginAPIResponse, RegisterAPI, UserMeAPIResponse } from '@/interface/auth';
+import { makeHeader } from '@/util/makeHeader';
 import client from '../client';
 
 export const postRegisterAPI = async (registerInfo: RegisterAPI) => {
@@ -11,5 +12,11 @@ export const postRegisterAPI = async (registerInfo: RegisterAPI) => {
 export const getLoginAPI = async (loginInfo: LoginAPI): Promise<LoginAPIResponse> => {
   const headers = { 'Content-type': 'Application/json', Accept: '*/*' };
   const { data } = await client.post('/api/v1/users/login', JSON.stringify(loginInfo), { headers });
+  return data;
+};
+
+export const getUserInfoAPI = async (token: string): Promise<UserMeAPIResponse> => {
+  const headers = makeHeader(token);
+  const { data } = await client.get('/api/v1/users/authorization', { headers });
   return data;
 };

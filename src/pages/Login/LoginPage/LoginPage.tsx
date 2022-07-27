@@ -18,21 +18,24 @@ import { useCheckBlank } from '@/hooks/useCheckBlank';
 import Logo from '../../../assets/img/Logo.png';
 import LogoText from '../../../assets/img/LogoText.png';
 
-import { useLoginMutation } from '@/hooks/query/useLogin';
-import { useRecoilState } from 'recoil';
+import { useLoginMutation } from '@/hooks/query/user/useLogin';
+import { useRecoilState, useSetRecoilState } from 'recoil';
 import { loginState } from '@/atoms/Login/loginState';
+import { userState } from '@/atoms/user/userState';
 
 function LoginPage() {
   const navigate = useNavigate();
   const loginRef = useRef() as React.MutableRefObject<HTMLFormElement>;
   const [loginInfo, setLoginInfo] = useRecoilState(loginState);
+  const setUserState = useSetRecoilState(userState);
 
   const { email, password } = loginInfo;
   const { mutate, data, isSuccess } = useLoginMutation();
 
   useEffect(() => {
+    data && setUserState(prev => ({ ...prev, accessToken: data.accessToken, email: data.email }));
     isSuccess && navigate('/');
-  }, [isSuccess]);
+  }, [data]);
 
   const onSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {

@@ -1,6 +1,7 @@
 import client from '../client';
 
 export const getSchoolListAPI = async () => {
-  const response = await client.get('/api/v1/school');
-  return response.data;
+  const headers = { 'Content-type': 'Application/json', Accept: '*/*' };
+  const { data } = await client.get('/api/v1/school', { headers });
+  return data;
 };

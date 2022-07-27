@@ -1,11 +1,11 @@
 {
-  "name": "schoolvery-fe",
+  "name": "schoolvery",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:team-e-techeer/schoolvery-fe.git",
   "author": "ww8007 <wshmin@naver.com>",
   "license": "MIT",
-  "proxy": "http://localhost:8080",
+  "proxy": "http://localhost:8000",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

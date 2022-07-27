@@ -13,7 +13,7 @@ import LogoText from '../../../assets/img/LogoText.png';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { schoolSearchState } from '@/atoms/Login/schoolSearchState';
 import { registerState } from '@/atoms/Login/registerState';
-import { useRegisterMutation } from '@/hooks/query/useRegister';
+import { useRegisterMutation } from '@/hooks/query/user/useRegister';
 
 function RegisterPage() {
   const spanRef = useRef() as React.MutableRefObject<HTMLFormElement>;
@@ -61,7 +61,7 @@ function RegisterPage() {
 
   const onCheckBlank = useCallback(
     (e: React.FocusEvent<HTMLFormElement, Element>) => {
-      useCheckBlank({ e, ref: spanRef, state: registerInfo });
+      !registerInfo.schoolName && useCheckBlank({ e, ref: spanRef, state: registerInfo });
       onCheckHaveSamePassword();
       onCheckEmail();
     },
@@ -120,8 +120,8 @@ function RegisterPage() {
         </InputField>
         <InputField>
           <InputOverText>닉네임</InputOverText>
-          <Input value={nickname || ''} name="id" onChange={onChange} autoComplete="off" data-testid="id-input" />
-          <AlertText id="id" data-testid="id-alert">
+          <Input value={nickname || ''} name="nickname" onChange={onChange} autoComplete="off" data-testid="id-input" />
+          <AlertText id="nickname" data-testid="id-alert">
             입력란이 비어 있습니다
           </AlertText>
         </InputField>
@@ -163,7 +163,7 @@ function RegisterPage() {
         </InputField>
         <InputField onClick={() => navigate('/register/schoolSearch')}>
           <InputOverText>학교</InputOverText>
-          <Input value={school || ''} name="school" onChange={onChange} data-testid="school-input" />
+          <Input readOnly={true} value={school || ''} name="school" data-testid="school-input" />
           <AlertText id="school">입력란이 비어 있습니다</AlertText>
         </InputField>
         <Button
