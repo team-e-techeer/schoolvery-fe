@@ -20,7 +20,13 @@ import { IoMdNotifications as NotificationIcon } from 'react-icons/io';
 import colors from '@/constants/colors';
 import { RightIconWrapper } from '@/GlobalStyle';
 import { useNavigate } from 'react-router-dom';
-import { useGetListQuery } from '@/hooks/query/useGetList';
+import { useGetPostListQuery } from '@/hooks/query/list/useGetPostList';
+import { useGetUserInfo } from '@/hooks/query/user/useGetUserInfo';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { userState } from '@/atoms/user/userState';
+import { useGetCategoryListQuery } from '@/hooks/query/list/useGetCategoryList';
+import { UseQueryResult } from 'react-query';
+import { CategoryListAPIResponse } from '@/interface/list';
 
 function MainPage() {
   const navigate = useNavigate();
@@ -36,12 +42,28 @@ function MainPage() {
     { path: '/category/분식', src: koreanFood, name: '분식' },
     { path: '/category/커피', src: Coffee, name: '커피' },
   ]);
+  const user = useRecoilValue(userState);
+  const [userInfo, setUserInfo] = useRecoilState(userState);
+  useEffect(() => {
+    if (!user.accessToken) navigate('/login');
+  }, [user]);
 
-  const { data, isSuccess } = useGetListQuery({ schoolId: '3196ce05-cbb3-44f0-b254-bbb85d9e11ad' });
+  const categoryList = useGetCategoryListQuery({ page: 1, size: 10 });
+
+  const userQueryInfo = useGetUserInfo(user.accessToken);
+
+  const postList = useGetPostListQuery({ schoolId: userInfo.schoolId, accessToken: user.accessToken });
 
   useEffect(() => {
-    console.log(data?.data, isSuccess);
-  }, [data, isSuccess]);
+    if (userQueryInfo.data) {
+      const { id, modDate, name, nickname, phoneNum, profileImageUrl, regDate, schoolId } = userQueryInfo.data;
+      setUserInfo(prev => ({ ...prev, id, modDate, name, nickname, phoneNum, profileImageUrl, regDate, schoolId }));
+    }
+  }, [userQueryInfo.data]);
+
+  useEffect(() => {
+    console.log(postList.data?.dtoList);
+  }, [postList]);
 
   return (
     <>
