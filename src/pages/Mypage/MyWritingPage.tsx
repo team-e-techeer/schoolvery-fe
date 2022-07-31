@@ -2,12 +2,12 @@
 import BottomNavigation from '@/components/BottomNavigation';
 import Header from '@/components/Header/Header';
 import { AiOutlineLeft as LeftIcon } from 'react-icons/ai';
-import { IconWrapper, TopBlock, PostBlock } from './MyWritingPage.styles';
+
 import { Link } from 'react-router-dom';
 import PostI from '../../assets/img/post.png';
-import PostDetail from '../../components/Post/PostDetail';
-import JoinDetail from '@/components/Join/JoinDetail';
 import MyPostDetail from '@/components/Post/MyPostDetail';
+import { IconWrapper } from './MyInfoPage.styles';
+import { PostBlock, TopBlock } from './MyWritingPage.styles';
 
 function PersonalPage() {
   return (
