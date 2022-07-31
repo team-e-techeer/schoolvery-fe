@@ -8,6 +8,8 @@ export interface WatchingPostState {
   content: string;
   store: string;
   location: string;
+  categoryId: string;
+  deadline: string;
 }
 
 const watchingPostState = atom<WatchingPostState>({
@@ -19,7 +21,9 @@ const watchingPostState = atom<WatchingPostState>({
     deliveryFee: 0,
     content: '',
     store: '',
+    categoryId: '',
     location: '',
+    deadline: '',
   },
 });
 
