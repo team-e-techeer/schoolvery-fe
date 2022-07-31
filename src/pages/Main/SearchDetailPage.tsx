@@ -11,7 +11,7 @@ export default function SearchDetailPage() {
     <>
       <div
         css={css`
-          background-color: ${colors.grey200};
+          background-color: ${colors.grey100};
           height: 100vh;
         `}
       >
