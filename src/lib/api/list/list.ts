@@ -1,9 +1,15 @@
 import client from '../client';
-import type { CategoryListAPI, CategoryListAPIResponse, PostListAPI, PostListWithCategoryAPI } from '@/interface/list';
+import type {
+  CategoryListAPI,
+  CategoryListAPIResponse,
+  PostListAPI,
+  PostListAPIResponse,
+  PostListWithCategoryAPI,
+} from '@/interface/list';
 import { makeHeader } from '@/util/makeHeader';
 
 // 포스트 목록 불러오기
-export const getPostListAPI = async ({ schoolId, accessToken }: PostListAPI): Promise<CategoryListAPIResponse> => {
+export const getPostListAPI = async ({ schoolId, accessToken }: PostListAPI): Promise<PostListAPIResponse> => {
   const headers = makeHeader(accessToken);
   const { data } = await client.get(`/api/v1/posts/school/${schoolId}`, { headers });
   return data;
