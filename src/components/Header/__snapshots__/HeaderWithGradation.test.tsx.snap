@@ -3,8 +3,8 @@
 exports[`로그인 페이지 테스트 렌더링 테스트 1`] = `
 .emotion-0 {
   height: 17rem;
-  background: rgb(249, 168, 168);
-  background: linear-gradient(0deg, rgba(249, 168, 168, 1) 0%, rgba(91, 52, 170, 1) 100%);
+  background: #fc775a;
+  background: linear-gradient(0deg, #f5b7b7 0%, #fc775a 100%);
   padding-left: 5%;
 }
 

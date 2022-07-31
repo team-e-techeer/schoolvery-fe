@@ -1,8 +1,12 @@
+import { watchingPostState } from '@/atoms/user/watchingPostState';
 import colors from '@/constants/colors';
+import { Post } from '@/interface/list';
 import { css } from '@emotion/react';
 import { IoPeopleCircle as People, IoTimeOutline as Time } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
 import Button from '../Button';
+
 interface Props {
   title: string;
   people: {
@@ -13,6 +17,7 @@ interface Props {
     post: string;
     left: string;
   };
+  item: Post;
 }
 
 const iconSize = 25;
@@ -32,10 +37,12 @@ const spanStyle = css`
   align-self: center;
 `;
 
-export default function JoinSummary({ title, people, time }: Props) {
+export default function JoinSummary({ title, people, time, item }: Props) {
+  const [_, setWatchingPostState] = useRecoilState(watchingPostState);
   return (
     <Link
       to={`/detail/${title}`}
+      onClick={() => setWatchingPostState(item)}
       css={css`
         display: block;
         width: 90%;
@@ -43,14 +50,19 @@ export default function JoinSummary({ title, people, time }: Props) {
         cursor: pointer;
         padding: 1rem;
         border-bottom: 1px solid ${colors.mainColor};
+        transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
         :hover {
           background-color: ${colors.grey100};
+        }
+        &:active {
+          background-color: ${colors.grey200};
+          box-shadow: 2px 2px 2px 2px ${colors.grey200};
         }
       `}
     >
       <span
         css={css`
-          font-size: 1.5rem;
+          font-size: 1.7rem;
         `}
       >
         {title}
@@ -61,6 +73,7 @@ export default function JoinSummary({ title, people, time }: Props) {
           justify-content: space-between;
           flex-direction: row;
           align-items: center;
+          margin-top: 1rem;
         `}
       >
         <div css={wrapFlex}>
