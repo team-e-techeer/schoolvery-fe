@@ -6,7 +6,6 @@ import {
   Input,
   InputBlock,
   NumInput,
-  Post,
   TextArea,
   FirstSection,
   SecondSection,
@@ -21,11 +20,10 @@ import {
 } from './WritingPage.styles';
 import { AiOutlineLeft as LeftIcon } from 'react-icons/ai';
 import React, { useState, useCallback, useRef } from 'react';
-import { useCheckBlank } from '@/hooks/useCheckBlank';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FaPen } from 'react-icons/fa';
 import { BsShop as Shop } from 'react-icons/bs';
-import { BiCategory, BiTimeFive, BiMoney } from 'react-icons/bi';
+import { BiCategory, BiMoney } from 'react-icons/bi';
 import { MdLocationPin as Location } from 'react-icons/md';
 
 import ModalPostCategory from '@/components/Modal/ModalPostCategory';
@@ -37,12 +35,12 @@ import { categoryListState } from '@/atoms/list/categoryListState';
 import { useWritingMutation } from '@/hooks/query/writing/useWritingMutation';
 import Select from 'react-select';
 import type {} from 'react-select';
-import { css } from '@emotion/react';
 import { BsFillPeopleFill } from 'react-icons/bs';
 
 // dayjs
 import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
+import { WritingFooter } from '@/components/Writing/WritingFooter';
 dayjs.locale('ko');
 
 interface WritingInfo {
@@ -74,19 +72,17 @@ function WritingPage() {
     content: '',
   });
 
-  const [submitOK, setSubmit] = useState(true);
-  const [linkOk, setLinkOk] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
   const [categoryName, setCategoryName] = useState('');
   const [categoryID, setCategoryID] = useState('');
   const [isAM, setIsAM] = useState(dayjs().format('A'));
-  const [isAfterNoon, setIstAfterNoon] = useState('A');
-  const { title, schoolId, userId, store, categoryId, location, peopleNum, endHour, endMinute, deliveryFee, content } =
-    writingInfo;
+  const { title, store, location, peopleNum, endHour, endMinute, deliveryFee, content } = writingInfo;
   const userInfo = useRecoilValue(userState);
   const categoryList = useRecoilValue(categoryListState);
 
-  const { mutate, data } = useWritingMutation();
+  const { search } = useLocation();
+
+  const { mutate } = useWritingMutation();
   const onSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
@@ -156,7 +152,7 @@ function WritingPage() {
     { value: '오전', label: '오전' },
     { value: '오후', label: '오후' },
   ];
-  const [selectedOption, setSelectedOption] = useState();
+
   const styles = {
     control: (provided: any, state: any) => ({
       ...provided,
@@ -309,8 +305,8 @@ function WritingPage() {
         <ThirdSection>
           <TextArea name="content" defaultValue={content} onChange={onChangeContent}></TextArea>
         </ThirdSection>
-
-        <Post type="submit">글 등록</Post>
+        <WritingFooter isEdit={Boolean(search.length)} />
+        {/* <Post type="submit">글 등록</Post> */}
       </Container>
       <ModalPostCategory
         visible={modalVisible}
