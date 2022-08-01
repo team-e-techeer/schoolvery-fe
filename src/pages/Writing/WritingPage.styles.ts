@@ -148,17 +148,6 @@ export const TimeInput = styled.input`
   }
 `;
 
-export const Post = styled.button`
-  display: flex;
-  margin-top: 2rem;
-  margin-bottom: ${inputPadding}rem;
-  border-radius: 0.7rem;
-  width: 100%;
-  padding: ${inputPadding}rem;
-  color: #ffffff;
-  background-color: ${colors.mainColor};
-`;
-
 export const TextArea = styled.textarea`
   border: 1px solid ${colors.mainColor};
   width: 100%;
