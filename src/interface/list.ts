@@ -1,3 +1,4 @@
+// 게시물 불러오기 API
 export interface Post {
   id: string;
   title: string;
@@ -11,11 +12,24 @@ export interface Post {
   store: string;
 }
 
+// Request
 export interface PostListAPI {
   schoolId: string;
   accessToken: string;
 }
 
+export interface PostListWithCategoryAPI {
+  schoolId: string;
+  categoryId: string;
+  accessToken: string;
+}
+
+export interface MyPostListAPI {
+  userId: string;
+  token: string;
+}
+
+// Response
 export interface PostListAPIResponse {
   dtoList: Post[];
   totalPage: number;
@@ -23,12 +37,6 @@ export interface PostListAPIResponse {
   size: number;
   start: number;
   end: number;
-}
-
-export interface PostListWithCategoryAPI {
-  schoolId: string;
-  categoryId: number;
-  accessToken: string;
 }
 
 // 카테고리
