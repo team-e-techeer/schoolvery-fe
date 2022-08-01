@@ -31,9 +31,10 @@ import { categoryListState } from '@/atoms/list/categoryListState';
 
 import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
-import relativeTime from 'dayjs/plugin/relativeTime';
-dayjs.extend(relativeTime);
 dayjs.locale('ko');
+
+import { useTimer } from '@/hooks/useTimer';
+
 function MainPage() {
   const navigate = useNavigate();
   const [imageInfo] = useState<ImgInfo[]>([
@@ -52,7 +53,7 @@ function MainPage() {
 
   const [userInfo, setUserInfo] = useRecoilState(userState);
   const [categoryList, setCategoryList] = useRecoilState(categoryListState);
-  const [currentTime, setCurrentTime] = useState(dayjs());
+  const time = useTimer();
   useEffect(() => {
     if (!user.accessToken) navigate('/login');
   }, [user]);
@@ -73,15 +74,6 @@ function MainPage() {
   useEffect(() => {
     categoryListResponse.data?.dtoList && setCategoryList(categoryListResponse.data.dtoList);
   }, [categoryListResponse.data?.dtoList]);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentTime(() => dayjs());
-    }, 1000 * 10);
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
 
   return (
     <>
@@ -106,7 +98,7 @@ function MainPage() {
             key={list.id}
             title={list.title}
             time={{
-              left: dayjs(dayjs(list.deadline).diff(currentTime)).format('h시간 mm분'),
+              left: dayjs(dayjs(time).diff(list.deadline)).format('h시간 mm분'),
               post: dayjs(list.deadline).format('A hh:mm'),
             }}
             people={{ current: 1, total: list.peopleNum }}
