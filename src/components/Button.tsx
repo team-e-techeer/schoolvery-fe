@@ -7,10 +7,21 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   height?: number;
   buttonId: string;
   fontSize?: number;
+  buttonColor?: string;
+  activeButtonColor?: string;
 }
 
 export default function Button(props: Props) {
-  const { width = 100, height = 5, fontSize = 1.5, children, buttonId, ...rest } = props;
+  const {
+    width = 100,
+    height = 5,
+    fontSize = 1.5,
+    children,
+    buttonId,
+    buttonColor,
+    activeButtonColor,
+    ...rest
+  } = props;
 
   return (
     <button
@@ -24,7 +35,7 @@ export default function Button(props: Props) {
         height: ${height}rem;
         border: 0 solid transparent;
         border-radius: 0.7rem;
-        background-color: ${colors.mainColor};
+        background-color: ${buttonColor ? buttonColor : colors.mainColor};
         color: ${colors.white};
         font-size: ${fontSize}rem;
         font-weight: 600;
@@ -40,7 +51,7 @@ export default function Button(props: Props) {
           cursor: not-allowed;
         }
         &:active {
-          background-color: ${colors.orange400};
+          background-color: ${activeButtonColor ? activeButtonColor : colors.orange400};
         }
       `}
       {...rest}

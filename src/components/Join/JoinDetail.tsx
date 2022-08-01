@@ -10,6 +10,7 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
 import { useRecoilValue } from 'recoil';
 import { watchingPostState } from '@/atoms/user/watchingPostState';
+import { useTimer } from '@/hooks/useTimer';
 
 dayjs.locale('ko');
 
@@ -58,15 +59,9 @@ interface Props {
 }
 
 export default function JoinDetail({ shopName, schoolName, categoryName, people, time, payment }: Props) {
-  const [currentTime] = useState(dayjs(time.post).format('a hh : mm'));
+  const currentTime = useTimer();
   const [timeLeft, setTimeLeft] = useState(dayjs(time.left).format('a hh : mm'));
   const watchingPost = useRecoilValue(watchingPostState);
-
-  useEffect(() => {
-    setInterval(() => {
-      setTimeLeft(dayjs(time.left).subtract(1, 'm').format('a hh : mm'));
-    }, 1000 * 60);
-  }, []);
 
   return (
     <>
@@ -110,7 +105,9 @@ export default function JoinDetail({ shopName, schoolName, categoryName, people,
         <ul css={ulStyle}>
           <Time css={iconStyle} />
           <span css={eachSpanStyle}>{dayjs(watchingPost.deadline).format('A hh : mm')}</span>
-          <span css={eachSpanStyle}>{dayjs(dayjs().diff(watchingPost.deadline)).format('h시간 mm분')} 남음</span>
+          <span css={eachSpanStyle}>
+            {dayjs(dayjs(currentTime).diff(watchingPost.deadline)).format('h시간 mm분')} 남음
+          </span>
         </ul>
         <ul css={ulStyle}>
           <CardIcon css={iconStyle} />
