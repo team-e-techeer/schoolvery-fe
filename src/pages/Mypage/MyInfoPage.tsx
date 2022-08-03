@@ -45,7 +45,7 @@ function PersonalPage() {
           <p>standford@gmail.com</p>
         </ProfileInfo>
         <ProfileSetting>
-          <Link to="/">
+          <Link to="/myProfile">
             <SettingIcon size={33} color={colors.grey500} />
           </Link>
         </ProfileSetting>
