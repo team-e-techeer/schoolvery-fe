@@ -27,6 +27,13 @@ import { userState } from '@/atoms/user/userState';
 import { useGetCategoryListQuery } from '@/hooks/query/list/useGetCategoryList';
 import { UseQueryResult } from 'react-query';
 import { CategoryListAPIResponse } from '@/interface/list';
+import { categoryListState } from '@/atoms/list/categoryListState';
+
+import dayjs from 'dayjs';
+import 'dayjs/locale/ko';
+dayjs.locale('ko');
+
+import { useTimer } from '@/hooks/useTimer';
 
 function MainPage() {
   const navigate = useNavigate();
@@ -43,17 +50,20 @@ function MainPage() {
     { path: '/category/커피', src: Coffee, name: '커피' },
   ]);
   const user = useRecoilValue(userState);
+
   const [userInfo, setUserInfo] = useRecoilState(userState);
+  const [categoryList, setCategoryList] = useRecoilState(categoryListState);
+  const time = useTimer();
   useEffect(() => {
     if (!user.accessToken) navigate('/login');
   }, [user]);
 
-  const categoryList = useGetCategoryListQuery({ page: 1, size: 10 });
+  const categoryListResponse = useGetCategoryListQuery({ page: 1, size: 10 });
 
   const userQueryInfo = useGetUserInfo(user.accessToken);
 
   const postList = useGetPostListQuery({ schoolId: userInfo.schoolId, accessToken: user.accessToken });
-
+  console.log(postList.data?.dtoList);
   useEffect(() => {
     if (userQueryInfo.data) {
       const { id, modDate, name, nickname, phoneNum, profileImageUrl, regDate, schoolId } = userQueryInfo.data;
@@ -62,8 +72,8 @@ function MainPage() {
   }, [userQueryInfo.data]);
 
   useEffect(() => {
-    console.log(postList.data?.dtoList);
-  }, [postList]);
+    categoryListResponse.data?.dtoList && setCategoryList(categoryListResponse.data.dtoList);
+  }, [categoryListResponse.data?.dtoList]);
 
   return (
     <>
@@ -82,10 +92,18 @@ function MainPage() {
       <>
         <SearchInput isLinking={true} />
         <Category imageInfo={imageInfo} />
-        <JoinSummary title="hi" time={{ left: '1', post: '1' }} people={{ current: 1, total: 3 }} />
-        <JoinSummary title="hi" time={{ left: '1', post: '1' }} people={{ current: 1, total: 3 }} />
-        <JoinSummary title="hi" time={{ left: '1', post: '1' }} people={{ current: 1, total: 3 }} />
-        <JoinSummary title="hi" time={{ left: '1', post: '1' }} people={{ current: 1, total: 3 }} />
+        {postList.data?.dtoList.map(list => (
+          <JoinSummary
+            item={list}
+            key={list.id}
+            title={list.title}
+            time={{
+              left: dayjs(dayjs(time).diff(list.deadline)).format('h시간 mm분'),
+              post: dayjs(list.deadline).format('A hh:mm'),
+            }}
+            people={{ current: 1, total: list.peopleNum }}
+          />
+        ))}
       </>
       <BottomNavigation />
     </>

@@ -92,14 +92,21 @@ exports[`검색 페이지 테스트 검색 쿼리문 테스트 1`] = `
   cursor: pointer;
   padding: 1rem;
   border-bottom: 1px solid #fc775a;
+  -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
 }
 
 .emotion-10:hover {
   background-color: #f2f4f6;
 }
 
+.emotion-10:active {
+  background-color: #e5e8eb;
+  box-shadow: 2px 2px 2px 2px #e5e8eb;
+}
+
 .emotion-11 {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 
 .emotion-12 {
@@ -117,6 +124,7 @@ exports[`검색 페이지 테스트 검색 쿼리문 테스트 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  margin-top: 1rem;
 }
 
 .emotion-13 {
@@ -921,14 +929,21 @@ exports[`검색 페이지 테스트 검색어 입력후 전송 1`] = `
   cursor: pointer;
   padding: 1rem;
   border-bottom: 1px solid #fc775a;
+  -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
 }
 
 .emotion-10:hover {
   background-color: #f2f4f6;
 }
 
+.emotion-10:active {
+  background-color: #e5e8eb;
+  box-shadow: 2px 2px 2px 2px #e5e8eb;
+}
+
 .emotion-11 {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 
 .emotion-12 {
@@ -946,6 +961,7 @@ exports[`검색 페이지 테스트 검색어 입력후 전송 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  margin-top: 1rem;
 }
 
 .emotion-13 {
@@ -2653,14 +2669,21 @@ exports[`검색 페이지 테스트 최근 검색어 클릭 1`] = `
   cursor: pointer;
   padding: 1rem;
   border-bottom: 1px solid #fc775a;
+  -webkit-transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,background-color 0.1s ease-in-out;
 }
 
 .emotion-10:hover {
   background-color: #f2f4f6;
 }
 
+.emotion-10:active {
+  background-color: #e5e8eb;
+  box-shadow: 2px 2px 2px 2px #e5e8eb;
+}
+
 .emotion-11 {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 
 .emotion-12 {
@@ -2678,6 +2701,7 @@ exports[`검색 페이지 테스트 최근 검색어 클릭 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  margin-top: 1rem;
 }
 
 .emotion-13 {

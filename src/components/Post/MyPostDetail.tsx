@@ -1,5 +1,4 @@
 import { css } from '@emotion/react';
-import { MdOutlinePlace as PlaceIcon } from 'react-icons/md';
 import { BiCategory as CategoryIcon } from 'react-icons/bi';
 import { IoPeopleCircle as People, IoTimeOutline as Time } from 'react-icons/io5';
 import { FaMoneyCheck as CardIcon } from 'react-icons/fa';
@@ -8,6 +7,11 @@ import Button from '../Button';
 import { useEffect, useState } from 'react';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { categoryListState } from '@/atoms/list/categoryListState';
+import { Link } from 'react-router-dom';
+import { watchingPostState } from '@/atoms/user/watchingPostState';
+import { Post } from '@/interface/list';
 
 dayjs.locale('ko');
 
@@ -42,31 +46,33 @@ const iconStyle = css`
 interface Props {
   shopName: string;
   schoolName: string;
-  categoryName: string;
+  categoryId: string;
   people: {
     current: number;
     total: number;
   };
   time: {
-    post: number;
-    left: number;
+    post: string;
+    left: string;
   };
   payment: number;
+  id: string;
+  item: Post;
 }
 
-export default function MyPostDetail({ shopName, schoolName, categoryName, people, time, payment }: Props) {
-  const [currentTime] = useState(dayjs(time.post).format('a hh : mm'));
-  const [timeLeft, setTimeLeft] = useState(dayjs(time.left).format('a hh : mm'));
-
+export default function MyPostDetail({ shopName, id, categoryId, people, time, payment, item }: Props) {
+  const [categoryName, setCategoryName] = useState('');
+  const categoryList = useRecoilValue(categoryListState);
+  const [_, setWatchingPostState] = useRecoilState(watchingPostState);
   useEffect(() => {
-    setInterval(() => {
-      setTimeLeft(dayjs(time.left).subtract(1, 'm').format('a hh : mm'));
-    }, 1000 * 60);
-  }, []);
+    setCategoryName(categoryList.find(category => category.id === categoryId)?.name as string);
+  }, [categoryList, categoryId]);
 
   return (
     <>
-      <div
+      <Link
+        to={`/writing/?id=${id}`}
+        onClick={() => setWatchingPostState(item)}
         css={css`
           display: flex;
           flex-direction: column;
@@ -127,13 +133,13 @@ export default function MyPostDetail({ shopName, schoolName, categoryName, peopl
         </ul>
         <ul css={ulStyle}>
           <Time color={colors.mainColor} css={iconStyle} />
-          <span css={eachSpanStyle}>{currentTime}</span>
+          <span css={eachSpanStyle}>{time.post}</span>
         </ul>
         <ul css={ulStyle}>
           <CardIcon color={colors.mainColor} css={iconStyle} />
           <span css={eachSpanStyle}>총 {payment}원</span>
         </ul>
-      </div>
+      </Link>
     </>
   );
 }

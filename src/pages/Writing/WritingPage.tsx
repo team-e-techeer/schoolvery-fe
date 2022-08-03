@@ -6,139 +6,118 @@ import {
   Input,
   InputBlock,
   NumInput,
-  Post,
   TextArea,
   FirstSection,
   SecondSection,
   ThirdSection,
   IconBlock,
-  SecondDetailSection,
   IconCenterBlock,
+  TimeInput,
+  TimeInputBlock,
+  RawFlexWrapper,
+  FlexWrapper,
+  RawFlexTimeWrapper,
 } from './WritingPage.styles';
 import { AiOutlineLeft as LeftIcon } from 'react-icons/ai';
 import React, { useState, useCallback, useRef } from 'react';
-import { useCheckBlank } from '@/hooks/useCheckBlank';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FaPen } from 'react-icons/fa';
 import { BsShop as Shop } from 'react-icons/bs';
-import { BiCategory } from 'react-icons/bi';
+import { BiCategory, BiMoney } from 'react-icons/bi';
 import { MdLocationPin as Location } from 'react-icons/md';
-import Fee from '../../assets/img/fee_icon.png';
-import Time from '../../assets/img/time_icon.png';
-import Ppl from '../../assets/img/ppl_icon.png';
-import axios from 'axios';
+
 import ModalPostCategory from '@/components/Modal/ModalPostCategory';
 import colors from '@/constants/colors';
+import { useRecoilValue } from 'recoil';
+import { userState } from '@/atoms/user/userState';
+import { categoryListState } from '@/atoms/list/categoryListState';
+
+import { useWritingMutation } from '@/hooks/query/writing/useWritingMutation';
+import Select from 'react-select';
+import type {} from 'react-select';
+import { BsFillPeopleFill } from 'react-icons/bs';
+
+// dayjs
+import dayjs from 'dayjs';
+import 'dayjs/locale/ko';
+import { WritingFooter } from '@/components/Writing/WritingFooter';
+dayjs.locale('ko');
+
 interface WritingInfo {
   title: string;
-  schoolId: string;
-  userId: string;
   store: string;
-  categoryId: string;
   location: string;
-  peopleNum: string;
-  deadline: string;
-  deliveryFee: string;
+  peopleNum: number;
+  endHour: number;
+  endMinute: number;
+  deliveryFee: number;
   content: string;
-  [prop: string]: string;
+  [prop: string]: unknown;
 }
-
-function padTo2Digits(num: number) {
-  return num.toString().padStart(2, '0');
+interface iOption {
+  label: string;
+  value: string;
 }
-function changeTimeZone(date: Date, timeZone: string) {
-  if (typeof date === 'string') {
-    return new Date(
-      new Date(date).toLocaleString('en-US', {
-        timeZone,
-      })
-    );
-  }
-
-  return new Date(
-    date.toLocaleString('en-US', {
-      timeZone,
-    })
-  );
-}
-
 function WritingPage() {
   const spanRef = useRef() as React.MutableRefObject<HTMLFormElement>;
   const [writingInfo, setWritingInfo] = useState<WritingInfo>({
     title: '',
-    schoolId: '3196ce05-cbb3-44f0-b254-bbb85d9e11ad',
-    userId: '7d0c761a-89e2-426c-b30e-f59adf089bd8',
     store: '',
     categoryId: '',
     location: '',
-    peopleNum: '',
-    deadline: '',
-    deliveryFee: '',
+    peopleNum: 0,
+    endHour: dayjs().hour() > 12 ? dayjs().hour() - 12 : dayjs().hour(),
+    endMinute: dayjs().minute(),
+    deliveryFee: 0,
     content: '',
   });
 
-  const [submitOK, setSubmit] = useState(true);
-  const [linkOk, setLinkOk] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
   const [categoryName, setCategoryName] = useState('');
   const [categoryID, setCategoryID] = useState('');
-  const { title, schoolId, userId, store, categoryId, location, peopleNum, deadline, deliveryFee, content } =
-    writingInfo;
+  const [isAM, setIsAM] = useState(dayjs().format('A'));
+  const { title, store, location, peopleNum, endHour, endMinute, deliveryFee, content } = writingInfo;
+  const userInfo = useRecoilValue(userState);
+  const categoryList = useRecoilValue(categoryListState);
 
+  const { search } = useLocation();
+
+  const { mutate } = useWritingMutation();
   const onSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      const submitItems = ['title', 'store', 'location', 'peopleNum', 'deadline', 'deliveryFee'];
-      submitItems.forEach(item => {
-        if (!writingInfo[item].length) {
-          setSubmit(false);
-          const select = spanRef.current?.querySelector<HTMLElement>(`#${item}`);
-          if (select && !writingInfo[item]) select.style.display = 'block';
-        }
-      });
+      const submitItems = ['title', 'store', 'location', 'peopleNum', 'endHour', 'endMinute', 'deliveryFee'];
+      // submitItems.forEach(item => {
+      //   if (!writingInfo[item].length) {
+      //     setSubmit(false);
+      //     const select = spanRef.current?.querySelector<HTMLElement>(`#${item}`);
+      //     if (select && !writingInfo[item]) select.style.display = 'block';
+      //   }
+      // });
 
-      // 👇️ format "YYYY-MM-DD hh:mm:ss"
-      function formatDate(time: string) {
-        const date = changeTimeZone(new Date(), 'Asia/Seoul');
-        return (
-          [date.getFullYear(), padTo2Digits(date.getMonth() + 1), padTo2Digits(date.getDate())].join('-') +
-          'T' +
-          [time, padTo2Digits(date.getSeconds())].join(':')
-        );
-      }
-
-      const category = Number(categoryID);
-      const people = Number(peopleNum);
-      const fee = Number(deliveryFee);
-      const time = formatDate(deadline);
+      const onFindCategoryId = (): string => {
+        const id = categoryList.find(category => category.name === categoryName)?.id as string;
+        return id;
+      };
+      const time = dayjs()
+        .set('h', isAM === '오후' ? endHour + 12 : endHour)
+        .set('m', endMinute)
+        .toJSON();
       const data = {
         title: title,
-        schoolId: schoolId,
-        userId: userId,
+        schoolId: userInfo.schoolId,
+        userId: userInfo.id,
         store: store,
-        categoryId: category,
+        categoryId: onFindCategoryId(),
         location: location,
-        peopleNum: people,
+        peopleNum,
         deadline: time,
-        deliveryFee: fee,
+        deliveryFee,
         content: content,
       };
-      console.log(data);
-
-      axios
-        .post('http://localhost:8080/api/v1/posts', data, {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        })
-        .then(response => {
-          console.log(response.data);
-        })
-        .catch(error => {
-          console.log(error);
-        });
+      mutate({ accessToken: userInfo.accessToken, postData: data });
     },
-    [writingInfo]
+    [writingInfo, userInfo]
   );
 
   const onChange = useCallback(
@@ -169,7 +148,28 @@ function WritingPage() {
     },
     [writingInfo, spanRef]
   );
+  const options = [
+    { value: '오전', label: '오전' },
+    { value: '오후', label: '오후' },
+  ];
 
+  const styles = {
+    control: (provided: any, state: any) => ({
+      ...provided,
+      background: '#fff',
+      borderColor: colors.mainColor,
+      borderRadius: 7,
+      minHeight: '45px',
+      height: '45px',
+      boxShadow: state.isFocused ? null : null,
+      flex: 3,
+    }),
+    container: (base: any) => ({
+      ...base,
+      flex: 1,
+    }),
+  };
+  console.log(isAM);
   return (
     <>
       <Header
@@ -186,104 +186,127 @@ function WritingPage() {
         <FirstSection>
           <InputBlock>
             <IconBlock>
-              <FaPen size={33} color={colors.grey500} />
+              <FaPen size={33} color={colors.mainColor} />
             </IconBlock>
             <Input
-              value={title}
+              defaultValue={title}
               name="title"
               placeholder={'게시글 제목'}
               onChange={onChange}
               autoFocus={true}
               autoComplete="off"
-            ></Input>
+            />
           </InputBlock>
           <InputBlock>
             <IconBlock>
-              <Shop size={33} color={colors.grey500} />
+              <Shop size={33} color={colors.mainColor} />
             </IconBlock>
             <Input
-              value={store}
+              defaultValue={store}
               name="store"
               placeholder={'주문할 매장을 입력해 주세요'}
               onChange={onChange}
               autoComplete="off"
-            ></Input>
+            />
           </InputBlock>
           <InputBlock>
             <IconBlock>
-              <BiCategory size={33} color={colors.grey500} />
+              <BiCategory size={33} color={colors.mainColor} />
             </IconBlock>
             <Input
-              value={categoryName}
-              //name="categoryId"
+              defaultValue={categoryName}
+              name="categoryName"
               placeholder={'카테고리를 선택해 주세요'}
               //onChange={onChange}
               onClick={() => setModalVisible(true)}
               autoComplete="off"
-            ></Input>
+            />
           </InputBlock>
           <InputBlock>
             <IconBlock>
-              <Location size={33} color={colors.grey500} />
+              <Location size={33} color={colors.mainColor} />
             </IconBlock>
             <Input
-              value={location}
+              defaultValue={location}
               name="location"
               placeholder={'배달을 받을 위치를 입력해 주세요'}
               onChange={onChange}
               autoComplete="off"
-            ></Input>
+            />
+          </InputBlock>
+          <InputBlock>
+            <RawFlexTimeWrapper>
+              <Select
+                defaultValue={isAM === '오후' ? options[1] : options[0]}
+                styles={styles}
+                placeholder="오전"
+                options={options}
+                onChange={option => setIsAM((option as iOption).value)}
+              />
+              <TimeInputBlock>
+                <TimeInput
+                  placeholder={'0'}
+                  name="endHour"
+                  defaultValue={endHour}
+                  onChange={onChange}
+                  autoComplete="off"
+                />
+                <p>:</p>
+                <TimeInput
+                  placeholder={'0'}
+                  name="endMinute"
+                  defaultValue={dayjs().format('mm')}
+                  onChange={onChange}
+                  autoComplete="off"
+                />
+              </TimeInputBlock>
+            </RawFlexTimeWrapper>
           </InputBlock>
         </FirstSection>
 
         <SecondSection>
-          <SecondDetailSection>
-            <NumInput
-              placeholder={'인원수'}
-              name="peopleNum"
-              type={'number'}
-              pattern={'[0-9]*'}
-              value={peopleNum}
-              onChange={onChange}
-              autoComplete="off"
-            />
+          <FlexWrapper>
             <IconCenterBlock>
-              <img src={Ppl} alt="인원" />
+              <BsFillPeopleFill size={33} color={colors.mainColor} />
             </IconCenterBlock>
-          </SecondDetailSection>
-          <SecondDetailSection>
-            <NumInput
-              placeholder={'마감 시간'}
-              name="deadline"
-              value={deadline}
-              onChange={onChange}
-              autoComplete="off"
-            />
-            <IconCenterBlock>
-              <img src={Time} alt="마감시간" />
-            </IconCenterBlock>
-          </SecondDetailSection>
-          <SecondDetailSection>
-            <NumInput
-              placeholder={'배달비'}
-              name="deliveryFee"
-              type={'number'}
-              pattern={'[0-9]*'}
-              value={deliveryFee}
-              onChange={onChange}
-              autoComplete="off"
-            />
-            <IconCenterBlock>
-              <img src={Fee} alt="배달비" />
-            </IconCenterBlock>
-          </SecondDetailSection>
+            <RawFlexWrapper>
+              <NumInput
+                placeholder={'0'}
+                name="peopleNum"
+                type={'number'}
+                pattern={'[0-9]*'}
+                defaultValue={peopleNum}
+                onChange={onChange}
+                autoComplete="off"
+              ></NumInput>
+              <p>명</p>
+            </RawFlexWrapper>
+          </FlexWrapper>
+
+          <FlexWrapper>
+            <RawFlexWrapper>
+              <IconCenterBlock>
+                <BiMoney size={33} color={colors.mainColor} />
+              </IconCenterBlock>
+              <NumInput
+                placeholder={'배달비'}
+                name="deliveryFee"
+                type={'number'}
+                pattern={'[0-9]*'}
+                defaultValue={deliveryFee}
+                onChange={onChange}
+                autoComplete="off"
+              />
+              <p>원</p>
+            </RawFlexWrapper>
+          </FlexWrapper>
         </SecondSection>
 
         <ThirdSection>
-          <TextArea name="content" value={content} onChange={onChangeContent}></TextArea>
+          <TextArea name="content" defaultValue={content} onChange={onChangeContent}></TextArea>
         </ThirdSection>
-
-        <Post type="submit">글 등록</Post>
+        <WritingFooter isEdit={Boolean(search.length)} />
+        {/* <Post type="submit">글 등록</Post> */}
       </Container>
       <ModalPostCategory
         visible={modalVisible}

@@ -4,7 +4,7 @@ import LoginPage from './pages/Login/LoginPage/LoginPage';
 import RegisterPage from './pages/Login/LoginPage/RegisterPage';
 import WritingPage from './pages/Writing/WritingPage';
 import MyInfoPage from './pages/MyPage/MyInfoPage';
-import MyWritingPage from './pages/MyPage/MyWritingPage';
+import MyWritingPage from './pages/MyPage/MyWritingListPage';
 import SearchPage from './pages/Main/SearchPage';
 import SearchDetailPage from './pages/Main/SearchDetailPage';
 import SearchWithCategory from './pages/Main/SearchWithCategoryPage';
@@ -24,6 +24,7 @@ export default function App() {
         <Route path="/myInfo" element={<MyInfoPage />} />
         <Route path="/myWriting" element={<MyWritingPage />} />
         <Route path="/writing" element={<WritingPage />} />
+        <Route path="/writing/?id=:id" element={<WritingPage />} />
         <Route path="/search" element={<SearchPage />}>
           <Route path=":searchValue" element={<SearchDetailPage />} />
         </Route>
@@ -35,7 +36,7 @@ export default function App() {
         <Route path="/chat/:roomName" element={<ChatRoomPage />} />
         <Route path="/notification" element={<AlarmPage />} />
       </Routes>
-      <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
+      {/* <ReactQueryDevtools initialIsOpen={false} position="bottom-right" /> */}
     </BrowserRouter>
   );
 }

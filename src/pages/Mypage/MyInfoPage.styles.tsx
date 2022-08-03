@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export const IconWrapper = styled.div`
   display: flex;
   flex: 1;
-  width: 80%;
+  margin-left: 2rem;
   .button {
     border: none;
     cursor: pointer;
