@@ -10,7 +10,7 @@ export const getUserAPI = async ({ userId, accessToken }: UserAPI): Promise<User
   };
 
 // 유저 정보 수정하기
-export const API = async (profileInfo: ProfileAPI): Promise<ProfileAPIResponse> => {
+export const patchUserAPI = async (profileInfo: ProfileAPI): Promise<ProfileAPIResponse> => {
     const headers = { 'Content-type': 'Application/json', Accept: '*/*' };
     const { data } = await client.patch(`/api/v1/users/${profileInfo.userId}`, JSON.stringify(profileInfo), { headers });
     return data;
