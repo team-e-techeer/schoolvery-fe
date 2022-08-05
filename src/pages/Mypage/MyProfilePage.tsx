@@ -1,18 +1,14 @@
-/* eslint-disable import/extensions */
-import BottomNavigation from '@/components/BottomNavigation';
 import Header from '@/components/Header/Header';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { AiOutlineLeft as LeftIcon } from 'react-icons/ai';
 import { AlertText, BlankInput, IconWrapper, Input, InputField, InputOverText, JoinBlock } from './MyProfilePage.styles';
-import { css } from '@emotion/react';
-import Button from '../../components/Button';
 import { useCallback, useEffect, useState } from 'react';
 import { useRef } from 'react';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { userState } from '@/atoms/user/userState';
 import { useCheckBlank } from '@/hooks/useCheckBlank';
-import { UnderLogo } from '../Login/LoginPage/LoginPage.styles';
-import LogoText from '../../assets/img/LogoText.png';
+import { ProfileFooter } from '@/components/Profile/ProfileFooter';
 import { usePatchUserQuery } from '@/hooks/query/profile/usePatchUser';
-
 
 interface UserInfo {
     nickname: string;
@@ -24,27 +20,32 @@ interface UserInfo {
 function MyProfilePage(){
     const spanRef = useRef() as React.MutableRefObject<HTMLFormElement>;
     const navigate = useNavigate();
-    const [UserInfo, setUserInfo] = useState<UserInfo>({
+    const user = useRecoilValue(userState);
+    const [userInfo, setUserInfo] = useRecoilState(userState);
+    const [profileInfo, setProfileInfo] = useState<UserInfo>({
         nickname: '',
         password: '',
         phoneNum: '',
   });
-  const { nickname, password, phoneNum} = UserInfo;
-//   const { mutate, data, isSuccess } = usePatchUserQuery();
-//   useEffect(() => {
-//     console.log(isSuccess, data);
-//     isSuccess && navigate('/myInfo');
-//   }, [data, isSuccess]);
+  const { nickname, password, phoneNum} = profileInfo;
+  const { search } = useLocation();
+  const { mutate, data, isSuccess } = usePatchUserQuery();
+
+  useEffect(() => {
+    console.log(isSuccess, data);
+    isSuccess && navigate('/myInfo');
+  }, [data, isSuccess]);
   const onChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const { value, name } = e.target;
-      setUserInfo({
-        ...UserInfo,
+      setProfileInfo({
+        ...profileInfo,
         [name]: value,
       });
     },
-    [UserInfo]
+    [profileInfo]
   );
+
     return (
         <>
           <Header
@@ -60,14 +61,22 @@ function MyProfilePage(){
             <BlankInput name="id" type="username" />
             <BlankInput type="password" />
             <InputField>
+              <InputOverText>이름</InputOverText>
+              <Input value={user.name} name="name" autoComplete="off" data-testid="id-input" disabled={true}/>
+            </InputField>
+            <InputField>
+              <InputOverText>이메일</InputOverText>
+              <Input value={user.email} name="email" autoComplete="off" data-testid="id-input" disabled={true}/>
+            </InputField>
+            <InputField>
               <InputOverText>닉네임</InputOverText>
-              <Input value={nickname || ''} name="nickname" onChange={onChange} autoComplete="off" data-testid="id-input" />
+              <Input value={nickname || user.nickname} name="nickname" onChange={onChange} autoComplete="off" data-testid="id-input" />
               <AlertText id="nickname" data-testid="id-alert">
                 입력란이 비어 있습니다
               </AlertText>
             </InputField>
             <InputField>
-              <InputOverText>비밀번호</InputOverText>
+              <InputOverText>새 비밀번호 입력</InputOverText>
               <Input
                 value={password || ''}
                 name="password"
@@ -79,7 +88,7 @@ function MyProfilePage(){
               <AlertText id="password">입력란이 비어 있습니다</AlertText>
             </InputField>
             <InputField>
-              <InputOverText>비밀번호 확인</InputOverText>
+              <InputOverText>새 비밀번호 확인</InputOverText>
               <Input
                 value={password || ''}
                 name="passwordConfirm"
@@ -94,21 +103,11 @@ function MyProfilePage(){
             </InputField>
             <InputField>
               <InputOverText>핸드폰</InputOverText>
-              <Input value={phoneNum || ''} name="phoneNum" onChange={onChange} data-testid="phoneNum-input" />
+              <Input value={phoneNum || user.phoneNum} name="phoneNum" onChange={onChange} data-testid="phoneNum-input" />
               <AlertText id="phoneNum">올바른 핸드폰 번호를 입력해 주세요</AlertText>
             </InputField>
-            <Button
-              css={css`
-                margin-top: 3rem;
-              `}
-              buttonId="login-button"
-              type="submit"
-              name="registerBtn"
-            >
-              회원가입
-            </Button>
+            <ProfileFooter/>
           </JoinBlock>
-          <UnderLogo src={LogoText} alt="스클버리 로고 이미지" />
         </>
       );
 }
