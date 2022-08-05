@@ -15,3 +15,10 @@ export const patchUserAPI = async (profileInfo: ProfileAPI): Promise<ProfileAPIR
     const { data } = await client.patch(`/api/v1/users/${profileInfo.userId}`, JSON.stringify(profileInfo), { headers });
     return data;
   };
+
+// 유저 정보 삭제하기
+export const deleteUserAPI = async ({ userId, accessToken }: UserAPI) => {
+    const headers = makeHeader(accessToken);
+    const { data } = await client.delete(`/api/v1/users/${userId}`, { headers });
+    return data;
+  };
