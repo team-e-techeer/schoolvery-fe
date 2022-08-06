@@ -50,10 +50,10 @@ function MainPage() {
     { path: '/category/커피', src: Coffee, name: '커피' },
   ]);
   const user = useRecoilValue(userState);
-
+  const time = useTimer();
   const [userInfo, setUserInfo] = useRecoilState(userState);
   const [categoryList, setCategoryList] = useRecoilState(categoryListState);
-  const time = useTimer();
+
   useEffect(() => {
     if (!user.accessToken) navigate('/login');
   }, [user]);
@@ -63,7 +63,7 @@ function MainPage() {
   const userQueryInfo = useGetUserInfo(user.accessToken);
 
   const postList = useGetPostListQuery({ schoolId: userInfo.schoolId, accessToken: user.accessToken });
-  console.log(postList.data?.dtoList);
+
   useEffect(() => {
     if (userQueryInfo.data) {
       const { id, modDate, name, nickname, phoneNum, profileImageUrl, regDate, schoolId } = userQueryInfo.data;

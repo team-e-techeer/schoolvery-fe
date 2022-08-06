@@ -16,9 +16,9 @@ import { useNavigate } from 'react-router-dom';
 interface Props {
   visible: boolean;
   setModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
-  categoryName: string;
+
   setCategoryName: React.Dispatch<React.SetStateAction<string>>;
-  categoryId : string;
+
   setCategoryId: React.Dispatch<React.SetStateAction<string>>;
 }
 
@@ -30,8 +30,14 @@ interface Info {
   id: number;
 }
 
-export default function ModalCategory({ visible, setModalVisible, categoryName, setCategoryName, categoryId, setCategoryId }: Props) {
+export default function ModalCategory({
+  visible,
+  setModalVisible,
 
+  setCategoryName,
+
+  setCategoryId,
+}: Props) {
   const [imageInfo, setImage] = useState<Info[]>([
     { path: '/category/한식', src: Ko, name: '한식', select: false, id: 1 },
     { path: '/category/중식', src: Ch, name: '중식', select: false, id: 2 },
