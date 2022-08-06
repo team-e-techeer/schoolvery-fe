@@ -1,6 +1,9 @@
 import colors from '@/constants/colors';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { useEffect } from 'react';
+import { UseMutationResult } from 'react-query';
+import { useNavigate } from 'react-router-dom';
 import Button from '../Button';
 
 export const Post = styled.button`
@@ -16,9 +19,14 @@ export const Post = styled.button`
 
 interface Props {
   isEdit: boolean;
+  deletePostMutation?: UseMutationResult<any, unknown, void, unknown>;
 }
 
-export function WritingFooter({ isEdit }: Props) {
+export function WritingFooter({ isEdit, deletePostMutation }: Props) {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (deletePostMutation?.isSuccess) navigate(-1);
+  }, [deletePostMutation?.isSuccess]);
   return (
     <div
       css={css`
@@ -30,6 +38,7 @@ export function WritingFooter({ isEdit }: Props) {
       {isEdit && (
         <>
           <Button
+            onClick={() => deletePostMutation?.mutate()}
             css={css`
               margin-right: 2rem;
             `}
@@ -38,12 +47,14 @@ export function WritingFooter({ isEdit }: Props) {
           >
             삭제하기
           </Button>
-          <Button buttonId="good">수정하기</Button>
+          <Button type="submit" buttonId="put-writing">
+            수정하기
+          </Button>
         </>
       )}
       {!isEdit && (
         <>
-          <Button type="submit" buttonId="good">
+          <Button type="submit" buttonId="submit-writing">
             작성하기
           </Button>
         </>
