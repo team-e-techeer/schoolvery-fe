@@ -8,7 +8,8 @@ import { useRecoilState, useRecoilValue } from 'recoil';
 import { userState } from '@/atoms/user/userState';
 import { useCheckBlank } from '@/hooks/useCheckBlank';
 import { ProfileFooter } from '@/components/Profile/ProfileFooter';
-import { usePatchUserQuery } from '@/hooks/query/profile/usePatchUser';
+import { usePatchUserMutation } from '@/hooks/query/profile/usePatchUser';
+import { useDeleteUserMutation} from '@/hooks/query/profile/useDeleteUser';
 
 interface UserInfo {
     nickname: string;
@@ -28,13 +29,27 @@ function MyProfilePage(){
         phoneNum: '',
   });
   const { nickname, password, phoneNum} = profileInfo;
-  const { search } = useLocation();
-  const { mutate, data, isSuccess } = usePatchUserQuery();
+  const [isEdit, setIsEdit] = useState(false);
+  const [isDelete,setIsDelete] = useState(false);
+  const { mutate, data, isSuccess } = usePatchUserMutation();
+  //const { mutate, deleteData, isDeleteSuccess } = useDeleteUserMutation();
 
-  useEffect(() => {
-    console.log(isSuccess, data);
-    isSuccess && navigate('/myInfo');
-  }, [data, isSuccess]);
+  // useEffect(() => {
+  //   data && setUserInfo(prev => ({ ...prev, nickname: data.nickname, password: data. }));
+  //   isSuccess && navigate('/');
+  // }, [data]);
+
+//   useEffect(()=>{
+//       if (isDelete){
+//           const deleteData = {
+//               userId: userInfo.id,
+//               token: userInfo.accessToken,
+//           }
+//       const {mutate, deleteData, isSuccess} = useDeleteUserMutation();
+//       isDelete && navigate('/login');
+//       }
+//   },[isDelete])
+
   const onChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const { value, name } = e.target;
@@ -106,7 +121,7 @@ function MyProfilePage(){
               <Input value={phoneNum || user.phoneNum} name="phoneNum" onChange={onChange} data-testid="phoneNum-input" />
               <AlertText id="phoneNum">올바른 핸드폰 번호를 입력해 주세요</AlertText>
             </InputField>
-            <ProfileFooter/>
+            <ProfileFooter isEdit={isEdit} setIsEdit={setIsEdit} isDelete={isDelete} setIsDelete={setIsDelete}/>
           </JoinBlock>
         </>
       );
