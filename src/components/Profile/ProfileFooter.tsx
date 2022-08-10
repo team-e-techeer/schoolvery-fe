@@ -1,24 +1,31 @@
 import colors from '@/constants/colors';
 import { css } from '@emotion/react';
+import styled from '@emotion/styled';
+import { useEffect } from 'react';
+import { UseMutationResult } from 'react-query';
+import { useNavigate } from 'react-router-dom';
 import Button from '../Button';
-import { useRecoilState, useRecoilValue } from 'recoil';
-import { userState } from '@/atoms/user/userState';
-import { useDeleteUserMutation} from '@/hooks/query/profile/useDeleteUser';
+
+export const Post = styled.button`
+  display: flex;
+  margin-top: 2rem;
+  margin-bottom: 1.3rem;
+  border-radius: 0.7rem;
+  width: 100%;
+  padding: 1.3rem;
+  color: #ffffff;
+  background-color: ${colors.mainColor};
+`;
 
 interface Props {
-  isEdit: boolean;
-  setIsEdit:React.Dispatch<React.SetStateAction<boolean>>;
-  isDelete: boolean;
-  setIsDelete:React.Dispatch<React.SetStateAction<boolean>>;
+  deleteProfileMutation?: UseMutationResult<any, unknown, void, unknown>;
 }
 
-export function ProfileFooter({isEdit,setIsEdit,isDelete,setIsDelete}: Props){
-  const onEdit = () =>{
-    setIsEdit(true);
-  }
-  const onDelete = () => {
-    setIsDelete(true);
-  }
+export function ProfileFooter({deleteProfileMutation }: Props) {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (deleteProfileMutation?.isSuccess) navigate(-1);
+  }, [deleteProfileMutation?.isSuccess]);
   return (
     <div
       css={css`
@@ -28,21 +35,21 @@ export function ProfileFooter({isEdit,setIsEdit,isDelete,setIsDelete}: Props){
       `}
     >
         <>
-          <Button css={css`
+          <Button
+            onClick={() => deleteProfileMutation?.mutate()}
+            css={css`
               margin-right: 2rem;
             `}
             buttonId="hi"
             buttonColor={colors.orange500}
-            onClick={() => setIsDelete}
           >
             회원 탈퇴하기
           </Button>
-          <Button buttonId="good"
-          onClick={() => setIsEdit}
-          >
+          <Button type="submit" buttonId="put-writing">
             회원 수정하기
-            </Button>
+          </Button>
         </>
+      )
     </div>
   );
 }
