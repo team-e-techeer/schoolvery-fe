@@ -117,7 +117,7 @@ export default function JoinDetail({ shopName, schoolName, categoryName, people,
         <div
           css={css`
             width: 100%;
-            background-color: ${colors.grey300};
+            background-color: ${colors.subColor};
             margin-top: 2rem;
             border-radius: 0.7rem;
             padding: 2rem;
@@ -126,7 +126,7 @@ export default function JoinDetail({ shopName, schoolName, categoryName, people,
           <p
             css={css`
               font-size: 1.3rem;
-              color: ${colors.black};
+              color: ${colors.white};
             `}
           >
             {watchingPost.content}

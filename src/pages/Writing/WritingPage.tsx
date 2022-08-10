@@ -19,8 +19,8 @@ import {
   RawFlexTimeWrapper,
 } from './WritingPage.styles';
 import { AiOutlineLeft as LeftIcon } from 'react-icons/ai';
-import React, { useState, useCallback, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useCallback, useRef, useEffect, useMemo } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaPen } from 'react-icons/fa';
 import { BsShop as Shop } from 'react-icons/bs';
 import { BiCategory, BiMoney } from 'react-icons/bi';
@@ -41,9 +41,15 @@ import { BsFillPeopleFill } from 'react-icons/bs';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
 import { WritingFooter } from '@/components/Writing/WritingFooter';
+import { useGetOnePostInformation } from '@/hooks/query/writing/useGetOnePostInformation';
+import { useCheckWritingMode } from '@/hooks/componentHooks/writing/useCheckWritingMode';
+import { usePutPostInformation } from '@/hooks/query/writing/usePutPostInfromation';
+import { getQueryString } from '@/util/getQueryString';
+import { PostData } from '@/interface/writing';
+import { useDeleteOnePost } from '@/hooks/query/writing/useDeleteOnePost';
 dayjs.locale('ko');
 
-interface WritingInfo {
+export interface WritingInfo {
   title: string;
   store: string;
   location: string;
@@ -58,7 +64,13 @@ interface iOption {
   label: string;
   value: string;
 }
+export enum PageMode {
+  Write = 'Write',
+  Fix = 'Fix',
+}
+
 function WritingPage() {
+  const navigate = useNavigate();
   const spanRef = useRef() as React.MutableRefObject<HTMLFormElement>;
   const [writingInfo, setWritingInfo] = useState<WritingInfo>({
     title: '',
@@ -72,6 +84,24 @@ function WritingPage() {
     content: '',
   });
 
+  const onChangePostData = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const { value, name } = e.target;
+      setWritingInfo({
+        ...writingInfo,
+        [name]: value,
+      });
+    },
+    [writingInfo]
+  );
+
+  const onCheckBlank = useCallback(
+    (e: React.FocusEvent<HTMLFormElement, Element>) => {
+      //useCheckBlank({ e, ref: spanRef, state: writingInfo });
+    },
+    [writingInfo, spanRef]
+  );
+
   const [modalVisible, setModalVisible] = useState(false);
   const [categoryName, setCategoryName] = useState('');
   const [categoryID, setCategoryID] = useState('');
@@ -82,8 +112,25 @@ function WritingPage() {
 
   const { search } = useLocation();
 
-  const { mutate } = useWritingMutation();
-  const onSubmit = useCallback(
+  // 페이지 모드 분리
+  // 쓰기 모드, 수정 모드
+
+  // 쓰기 모드
+  const writingMutation = useWritingMutation();
+  useEffect(() => {
+    writingMutation.isSuccess && navigate('/');
+  }, [writingMutation.isSuccess]);
+
+  // 수정 모드
+
+  const queryString = useMemo(() => getQueryString(search), [search]);
+
+  const { data } = useGetOnePostInformation({ accessToken: userInfo.accessToken, postId: Number(queryString.id) });
+  const [pageMode] = useCheckWritingMode({ search, data, setWritingInfo, setCategoryID });
+
+  const putPostInformation = usePutPostInformation();
+
+  const onSubmitWritingInfo = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       const submitItems = ['title', 'store', 'location', 'peopleNum', 'endHour', 'endMinute', 'deliveryFee'];
@@ -103,7 +150,7 @@ function WritingPage() {
         .set('h', isAM === '오후' ? endHour + 12 : endHour)
         .set('m', endMinute)
         .toJSON();
-      const data = {
+      const data: PostData = {
         title: title,
         schoolId: userInfo.schoolId,
         userId: userInfo.id,
@@ -115,39 +162,18 @@ function WritingPage() {
         deliveryFee,
         content: content,
       };
-      mutate({ accessToken: userInfo.accessToken, postData: data });
+      if (pageMode === PageMode.Write) writingMutation.mutate({ accessToken: userInfo.accessToken, postData: data });
+      if (pageMode === PageMode.Fix) {
+        data.id = Number(queryString.id);
+        putPostInformation.mutate({ accessToken: userInfo.accessToken, postData: data });
+      }
     },
-    [writingInfo, userInfo]
+    [writingInfo, userInfo, pageMode]
   );
 
-  const onChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      const { value, name } = e.target;
-      setWritingInfo({
-        ...writingInfo,
-        [name]: value,
-      });
-    },
-    [writingInfo]
-  );
+  // 삭제하기
+  const deletePostMutation = useDeleteOnePost({ accessToken: userInfo.accessToken, postId: Number(queryString.id) });
 
-  const onChangeContent = useCallback(
-    (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-      const { value, name } = e.target;
-      setWritingInfo({
-        ...writingInfo,
-        [name]: value,
-      });
-    },
-    [writingInfo]
-  );
-
-  const onCheckBlank = useCallback(
-    (e: React.FocusEvent<HTMLFormElement, Element>) => {
-      //useCheckBlank({ e, ref: spanRef, state: writingInfo });
-    },
-    [writingInfo, spanRef]
-  );
   const options = [
     { value: '오전', label: '오전' },
     { value: '오후', label: '오후' },
@@ -169,7 +195,7 @@ function WritingPage() {
       flex: 1,
     }),
   };
-  console.log(isAM);
+
   return (
     <>
       <Header
@@ -182,7 +208,7 @@ function WritingPage() {
           </IconWrapper>
         )}
       />
-      <Container ref={spanRef} onBlur={onCheckBlank} onSubmit={onSubmit}>
+      <Container ref={spanRef} onBlur={onCheckBlank} onSubmit={onSubmitWritingInfo}>
         <FirstSection>
           <InputBlock>
             <IconBlock>
@@ -192,7 +218,7 @@ function WritingPage() {
               defaultValue={title}
               name="title"
               placeholder={'게시글 제목'}
-              onChange={onChange}
+              onChange={onChangePostData}
               autoFocus={true}
               autoComplete="off"
             />
@@ -205,7 +231,7 @@ function WritingPage() {
               defaultValue={store}
               name="store"
               placeholder={'주문할 매장을 입력해 주세요'}
-              onChange={onChange}
+              onChange={onChangePostData}
               autoComplete="off"
             />
           </InputBlock>
@@ -217,7 +243,6 @@ function WritingPage() {
               defaultValue={categoryName}
               name="categoryName"
               placeholder={'카테고리를 선택해 주세요'}
-              //onChange={onChange}
               onClick={() => setModalVisible(true)}
               autoComplete="off"
             />
@@ -230,7 +255,7 @@ function WritingPage() {
               defaultValue={location}
               name="location"
               placeholder={'배달을 받을 위치를 입력해 주세요'}
-              onChange={onChange}
+              onChange={onChangePostData}
               autoComplete="off"
             />
           </InputBlock>
@@ -248,7 +273,7 @@ function WritingPage() {
                   placeholder={'0'}
                   name="endHour"
                   defaultValue={endHour}
-                  onChange={onChange}
+                  onChange={onChangePostData}
                   autoComplete="off"
                 />
                 <p>:</p>
@@ -256,7 +281,7 @@ function WritingPage() {
                   placeholder={'0'}
                   name="endMinute"
                   defaultValue={dayjs().format('mm')}
-                  onChange={onChange}
+                  onChange={onChangePostData}
                   autoComplete="off"
                 />
               </TimeInputBlock>
@@ -271,14 +296,14 @@ function WritingPage() {
             </IconCenterBlock>
             <RawFlexWrapper>
               <NumInput
-                placeholder={'0'}
+                // placeholder={'0'}
                 name="peopleNum"
                 type={'number'}
                 pattern={'[0-9]*'}
-                defaultValue={peopleNum}
-                onChange={onChange}
+                value={peopleNum}
+                onChange={onChangePostData}
                 autoComplete="off"
-              ></NumInput>
+              />
               <p>명</p>
             </RawFlexWrapper>
           </FlexWrapper>
@@ -289,12 +314,12 @@ function WritingPage() {
                 <BiMoney size={33} color={colors.mainColor} />
               </IconCenterBlock>
               <NumInput
-                placeholder={'배달비'}
+                placeholder={'0'}
                 name="deliveryFee"
                 type={'number'}
                 pattern={'[0-9]*'}
-                defaultValue={deliveryFee}
-                onChange={onChange}
+                value={deliveryFee}
+                onChange={onChangePostData}
                 autoComplete="off"
               />
               <p>원</p>
@@ -303,17 +328,15 @@ function WritingPage() {
         </SecondSection>
 
         <ThirdSection>
-          <TextArea name="content" defaultValue={content} onChange={onChangeContent}></TextArea>
+          <TextArea name="content" defaultValue={content} onChange={onChangePostData}></TextArea>
         </ThirdSection>
-        <WritingFooter isEdit={Boolean(search.length)} />
+        <WritingFooter isEdit={Boolean(search.length)} deletePostMutation={deletePostMutation} />
         {/* <Post type="submit">글 등록</Post> */}
       </Container>
       <ModalPostCategory
         visible={modalVisible}
         setModalVisible={setModalVisible}
-        categoryName={categoryName}
         setCategoryName={setCategoryName}
-        categoryId={categoryID}
         setCategoryId={setCategoryID}
       />
     </>

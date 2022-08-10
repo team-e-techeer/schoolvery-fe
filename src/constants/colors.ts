@@ -3,6 +3,7 @@ const grey100 = '#f2f4f6';
 const inverseGrey50 = '#202027';
 const inverseGrey100 = '#2c2c35';
 const mainColor = '#fc775a';
+const subColor = '#F79A86';
 const colors = {
   grey50: '#f9fafb',
   grey100,
@@ -125,6 +126,7 @@ const colors = {
   floatBackground: white,
   darkFloatBackground: inverseGrey100,
   mainColor,
+  subColor,
 };
 
 export default colors;
