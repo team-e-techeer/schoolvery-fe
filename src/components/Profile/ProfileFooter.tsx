@@ -42,7 +42,8 @@ export function ProfileFooter({deleteProfileMutation }: Props) {
           >
             회원 탈퇴하기
           </Button>
-          <Button type="submit" buttonId="put-writing">
+          <Button
+          type="submit" buttonId="put-writing">
             회원 수정하기
           </Button>
         </>
