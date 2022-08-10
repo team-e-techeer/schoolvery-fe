@@ -1,5 +1,5 @@
 import Header from '@/components/Header/Header';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineLeft as LeftIcon } from 'react-icons/ai';
 import { AlertText, BlankInput, IconWrapper, Input, InputField, InputOverText, JoinBlock } from './MyProfilePage.styles';
 import { useCallback, useEffect, useState } from 'react';
@@ -9,7 +9,7 @@ import { userState } from '@/atoms/user/userState';
 import { useCheckBlank } from '@/hooks/useCheckBlank';
 import { ProfileFooter } from '@/components/Profile/ProfileFooter';
 import { usePatchUserMutation } from '@/hooks/query/profile/usePatchUser';
-import { useDeleteUserMutation} from '@/hooks/query/profile/useDeleteUser';
+import { useDeleteUser} from '@/hooks/query/profile/useDeleteUser';
 
 interface UserInfo {
     nickname: string;
@@ -29,26 +29,16 @@ function MyProfilePage(){
         phoneNum: '',
   });
   const { nickname, password, phoneNum} = profileInfo;
-  const [isEdit, setIsEdit] = useState(false);
-  const [isDelete,setIsDelete] = useState(false);
-  const { mutate, data, isSuccess } = usePatchUserMutation();
-  //const { mutate, deleteData, isDeleteSuccess } = useDeleteUserMutation();
-
+  //const { mutate, data, isSuccess } = usePatchUserMutation();
   // useEffect(() => {
   //   data && setUserInfo(prev => ({ ...prev, nickname: data.nickname, password: data. }));
   //   isSuccess && navigate('/');
   // }, [data]);
 
-//   useEffect(()=>{
-//       if (isDelete){
-//           const deleteData = {
-//               userId: userInfo.id,
-//               token: userInfo.accessToken,
-//           }
-//       const {mutate, deleteData, isSuccess} = useDeleteUserMutation();
-//       isDelete && navigate('/login');
-//       }
-//   },[isDelete])
+
+  // 삭제하기
+  const deletePostMutation = useDeleteUser({ accessToken: userInfo.accessToken, userId: userInfo.id });
+  
 
   const onChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -77,15 +67,15 @@ function MyProfilePage(){
             <BlankInput type="password" />
             <InputField>
               <InputOverText>이름</InputOverText>
-              <Input value={user.name} name="name" autoComplete="off" data-testid="id-input" disabled={true}/>
+              <Input value={userInfo.name} name="name" autoComplete="off" data-testid="id-input" disabled={true}/>
             </InputField>
             <InputField>
               <InputOverText>이메일</InputOverText>
-              <Input value={user.email} name="email" autoComplete="off" data-testid="id-input" disabled={true}/>
+              <Input value={userInfo.email} name="email" autoComplete="off" data-testid="id-input" disabled={true}/>
             </InputField>
             <InputField>
               <InputOverText>닉네임</InputOverText>
-              <Input value={nickname || user.nickname} name="nickname" onChange={onChange} autoComplete="off" data-testid="id-input" />
+              <Input value={nickname || userInfo.nickname} name="nickname" onChange={onChange} autoComplete="off" data-testid="id-input" />
               <AlertText id="nickname" data-testid="id-alert">
                 입력란이 비어 있습니다
               </AlertText>
@@ -118,10 +108,10 @@ function MyProfilePage(){
             </InputField>
             <InputField>
               <InputOverText>핸드폰</InputOverText>
-              <Input value={phoneNum || user.phoneNum} name="phoneNum" onChange={onChange} data-testid="phoneNum-input" />
+              <Input value={phoneNum || userInfo.phoneNum} name="phoneNum" onChange={onChange} data-testid="phoneNum-input" />
               <AlertText id="phoneNum">올바른 핸드폰 번호를 입력해 주세요</AlertText>
             </InputField>
-            <ProfileFooter isEdit={isEdit} setIsEdit={setIsEdit} isDelete={isDelete} setIsDelete={setIsDelete}/>
+            <ProfileFooter deleteProfileMutation={deletePostMutation}/>
           </JoinBlock>
         </>
       );

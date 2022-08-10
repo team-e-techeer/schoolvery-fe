@@ -1,7 +1,6 @@
 import colors from '@/constants/colors';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { useEffect } from 'react';
 import { UseMutationResult } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 import Button from '../Button';
@@ -23,9 +22,6 @@ interface Props {
 
 export function ProfileFooter({deleteProfileMutation }: Props) {
   const navigate = useNavigate();
-  useEffect(() => {
-    if (deleteProfileMutation?.isSuccess) navigate(-1);
-  }, [deleteProfileMutation?.isSuccess]);
   return (
     <div
       css={css`
@@ -36,7 +32,8 @@ export function ProfileFooter({deleteProfileMutation }: Props) {
     >
         <>
           <Button
-            onClick={() => deleteProfileMutation?.mutate()}
+            onClick={() => {deleteProfileMutation?.mutate()
+            navigate('/login')}}
             css={css`
               margin-right: 2rem;
             `}
@@ -49,7 +46,7 @@ export function ProfileFooter({deleteProfileMutation }: Props) {
             회원 수정하기
           </Button>
         </>
-      )
+
     </div>
   );
 }
