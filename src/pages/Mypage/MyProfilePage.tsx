@@ -72,7 +72,6 @@ function MyProfilePage(){
 
   const onCheckHaveSamePassword = useCallback(() => {
     const select = spanRef.current?.querySelector<HTMLElement>('#passwordConfirm') as HTMLElement;
-
     if (isEqualPassword(profileInfo.password, profileInfo.passwordConfirm)) return (select.style.display = 'none');
     select.style.display = 'block';
   }, [spanRef, profileInfo]);
@@ -106,7 +105,7 @@ function MyProfilePage(){
             </InputField>
             <InputField>
               <InputOverText>닉네임</InputOverText>
-              <Input value={nickname || '' || userInfo.nickname} name="nickname"
+              <Input defaultValue={userInfo.nickname} name="nickname"
               onChange={onChange} autoComplete="off" data-testid="id-input" />
               <AlertText id="nickname">입력란이 비어 있습니다</AlertText>
             </InputField>
@@ -136,7 +135,7 @@ function MyProfilePage(){
             </InputField>
             <InputField>
               <InputOverText>핸드폰</InputOverText>
-              <Input value={phoneNum || userInfo.phoneNum} name="phoneNum" onChange={onChange} data-testid="phoneNum-input" />
+              <Input defaultValue={userInfo.phoneNum} name="phoneNum" onChange={onChange} />
               <AlertText id="phoneNum">입력란이 비어 있습니다</AlertText>
             </InputField>
             <ProfileFooter deleteProfileMutation={deletePostMutation}/>
