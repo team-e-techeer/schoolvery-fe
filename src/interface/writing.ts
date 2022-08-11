@@ -28,6 +28,7 @@ export interface WritingAPIResponse {
   deadline: string;
   content: string;
   store: string;
+  roomId: string;
 }
 
 /**
