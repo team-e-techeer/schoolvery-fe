@@ -12,9 +12,10 @@ interface Props {
   newMessageCount: number;
   time: number;
   chatURL: string;
+  roomId: string;
 }
 
-export default function ChatList({ imgPath, storeName, lastMessage, newMessageCount, time, chatURL }: Props) {
+export default function ChatList({ imgPath, storeName, lastMessage, newMessageCount, time, chatURL, roomId }: Props) {
   return (
     <>
       <Link
@@ -25,6 +26,7 @@ export default function ChatList({ imgPath, storeName, lastMessage, newMessageCo
           padding: 1rem;
         `}
         to={`/chat/${chatURL}`}
+        state={{ roomId }}
       >
         <div
           css={css`
