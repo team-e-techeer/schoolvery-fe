@@ -28,7 +28,6 @@ function RegisterPage() {
   }, [schoolInfo.schoolName]);
 
   useEffect(() => {
-    console.log(isSuccess, data);
     isSuccess && navigate('/login');
   }, [data, isSuccess]);
 
