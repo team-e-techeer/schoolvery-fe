@@ -34,6 +34,7 @@ import 'dayjs/locale/ko';
 dayjs.locale('ko');
 
 import { useTimer } from '@/hooks/useTimer';
+import { css } from '@emotion/react';
 
 function MainPage() {
   const navigate = useNavigate();
@@ -92,18 +93,27 @@ function MainPage() {
       <>
         <SearchInput isLinking={true} />
         <Category imageInfo={imageInfo} />
-        {postList.data?.dtoList.map(list => (
-          <JoinSummary
-            item={list}
-            key={list.id}
-            title={list.title}
-            time={{
-              left: dayjs(dayjs(time).diff(list.deadline)).format('h시간 mm분'),
-              post: dayjs(list.deadline).format('A hh:mm'),
-            }}
-            people={{ current: 1, total: list.peopleNum }}
-          />
-        ))}
+        <div
+          css={css`
+            overflow-y: auto;
+            position: relative;
+
+            height: 60rem;
+          `}
+        >
+          {postList.data?.dtoList.map(list => (
+            <JoinSummary
+              item={list}
+              key={list.id}
+              title={list.title}
+              time={{
+                left: dayjs(dayjs(time).diff(list.deadline)).format('h시간 mm분'),
+                post: dayjs(list.deadline).format('A hh:mm'),
+              }}
+              people={{ current: 1, total: list.peopleNum }}
+            />
+          ))}
+        </div>
       </>
       <BottomNavigation />
     </>
