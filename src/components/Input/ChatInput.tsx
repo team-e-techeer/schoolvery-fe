@@ -29,7 +29,6 @@ export default function ChatInput({ sendMessage, formValue, setFormValue, textRe
           position: fixed;
           bottom: 0;
           width: 100%;
-          /* border: 1px solid ${colors.black}; */
           background-color: ${colors.subColor};
           padding: 2rem 0;
         `}
@@ -48,7 +47,6 @@ export default function ChatInput({ sendMessage, formValue, setFormValue, textRe
             display: flex;
             justify-items: center;
             flex: 1;
-            /* border: 1px solid black; */
             border-radius: 1.3rem;
             padding: 1.5rem;
             outline: none;
