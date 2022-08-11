@@ -88,8 +88,6 @@ export default function SearchWithCategory() {
     categoryId: categoryList.find(category => category.name === title)?.id as string,
   });
 
-  console.log(title);
-
   return (
     <>
       <Header
