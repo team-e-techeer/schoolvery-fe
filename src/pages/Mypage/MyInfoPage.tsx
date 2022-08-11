@@ -17,11 +17,14 @@ import {
   BlankView,
 } from './MyInfoPage.styles';
 import { Link } from 'react-router-dom';
-
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { userState } from '@/atoms/user/userState';
 import Dog from '../../assets/img/dog.png';
 import colors from '@/constants/colors';
 
 function PersonalPage() {
+  const user = useRecoilValue(userState);
+  const [userInfo, setUserInfo] = useRecoilState(userState);
   return (
     <>
       <Header
@@ -39,13 +42,13 @@ function PersonalPage() {
           <img src={Dog}></img>
         </ImgBlock>
         <ProfileInfo>
-          <p style={{ fontWeight: 'bold' }}>아이디</p>
+          <p style={{ fontWeight: 'bold' }}>{userInfo.nickname}</p>
           <br />
 
-          <p>standford@gmail.com</p>
+          <p>{userInfo.email}</p>
         </ProfileInfo>
         <ProfileSetting>
-          <Link to="/">
+          <Link to="/myProfile">
             <SettingIcon size={33} color={colors.grey500} />
           </Link>
         </ProfileSetting>
