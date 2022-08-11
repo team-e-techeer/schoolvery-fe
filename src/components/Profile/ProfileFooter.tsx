@@ -20,7 +20,7 @@ interface Props {
   deleteProfileMutation?: UseMutationResult<any, unknown, void, unknown>;
 }
 
-export function ProfileFooter({deleteProfileMutation }: Props) {
+export function ProfileFooter({ deleteProfileMutation }: Props) {
   const navigate = useNavigate();
   return (
     <div
@@ -30,24 +30,24 @@ export function ProfileFooter({deleteProfileMutation }: Props) {
         margin-top: 3rem;
       `}
     >
-        <>
-          <Button
-            onClick={() => {deleteProfileMutation?.mutate()
-            navigate('/login')}}
-            css={css`
-              margin-right: 2rem;
-            `}
-            buttonId="hi"
-            buttonColor={colors.orange500}
-          >
-            회원 탈퇴하기
-          </Button>
-          <Button
-          type="submit" buttonId="put-writing">
-            회원 수정하기
-          </Button>
-        </>
-
+      <>
+        <Button
+          onClick={() => {
+            deleteProfileMutation?.mutate();
+            navigate('/login');
+          }}
+          css={css`
+            margin-right: 2rem;
+          `}
+          buttonId="hi"
+          buttonColor={colors.orange500}
+        >
+          회원 탈퇴하기
+        </Button>
+        <Button type="submit" buttonId="put-writing">
+          회원 수정하기
+        </Button>
+      </>
     </div>
   );
 }
