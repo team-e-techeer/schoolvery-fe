@@ -12,7 +12,13 @@ import { makeHeader } from '@/util/makeHeader';
 // 포스트 목록 불러오기
 export const getPostListAPI = async ({ schoolId, accessToken }: PostListAPI): Promise<PostListAPIResponse> => {
   const headers = makeHeader(accessToken);
-  const { data } = await client.get(`/api/v1/posts/school/${schoolId}`, { headers });
+  const { data } = await client.get(`/api/v1/posts/school/${schoolId}`, {
+    headers,
+    params: {
+      page: 1,
+      size: 15,
+    },
+  });
   return data;
 };
 

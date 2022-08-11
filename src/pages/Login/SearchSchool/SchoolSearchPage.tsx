@@ -16,12 +16,11 @@ export default function SchoolSearchPage() {
   const [searchText, setSearchText] = useState('');
   const [searchList, setSearchList] = useState<SchoolItem[]>([]);
   const [schoolList, setSchoolList] = useState<SchoolItem[]>([]);
-  const [schoolSearchValue, setSchoolSearchValue] = useRecoilState(schoolSearchState);
+  const [_, setSchoolSearchValue] = useRecoilState(schoolSearchState);
 
-  const { data, isSuccess } = useGetSchoolListQuery();
+  const { data } = useGetSchoolListQuery();
 
   useEffect(() => {
-    console.log(data);
     setSchoolList(data);
     setSearchList(data);
   }, [data]);

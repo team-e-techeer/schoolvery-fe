@@ -14,7 +14,13 @@ import client from '../../client';
 // 모든 채팅방 조회
 export const getAllChatList = async ({ accessToken }: GetAllChatListAPI): Promise<GetAllChatListAPIResponse> => {
   const headers = makeHeader(accessToken);
-  const { data } = await client.get('/api/v1/chats', { headers });
+  const { data } = await client.get('/api/v1/chats', {
+    headers,
+    params: {
+      page: 1,
+      size: 15,
+    },
+  });
   return data;
 };
 
