@@ -1,4 +1,3 @@
-/* eslint-disable import/extensions */
 import BottomNavigation from '@/components/BottomNavigation';
 import Header from '@/components/Header/Header';
 import { AiOutlineLeft as LeftIcon } from 'react-icons/ai';
@@ -6,7 +5,9 @@ import { AiOutlineLeft as LeftIcon } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import PostI from '../../assets/img/post.png';
 import MyPostDetail from '@/components/Post/MyPostDetail';
+/* eslint-disable import/extensions */
 import { IconWrapper } from './MyInfoPage.styles';
+/* eslint-disable import/extensions */
 import { PostBlock, TopBlock } from './MyWritingPage.styles';
 import { useGetMyPostList } from '@/hooks/query/list/useGetMyPostList';
 import { useRecoilValue } from 'recoil';
