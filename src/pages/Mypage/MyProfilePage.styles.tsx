@@ -76,4 +76,3 @@ export const AlertText = styled.span`
   font-size: 1.3rem;
   margin-top: 1.5rem;
 `;
- 
