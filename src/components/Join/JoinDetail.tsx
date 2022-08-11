@@ -1,17 +1,14 @@
 import { css } from '@emotion/react';
-import { MdOutlinePlace as PlaceIcon } from 'react-icons/md';
 import { BiCategory as CategoryIcon } from 'react-icons/bi';
 import { IoPeopleCircle as People, IoTimeOutline as Time } from 'react-icons/io5';
 import { FaMoneyCheck as CardIcon } from 'react-icons/fa';
 import colors from '@/constants/colors';
 import Button from '../Button';
-import { useEffect, useState } from 'react';
-import dayjs from 'dayjs';
-import 'dayjs/locale/ko';
 import { useRecoilValue } from 'recoil';
 import { watchingPostState } from '@/atoms/user/watchingPostState';
 import { useTimer } from '@/hooks/useTimer';
-
+import dayjs from 'dayjs';
+import 'dayjs/locale/ko';
 dayjs.locale('ko');
 
 const spanStyle = css`
@@ -60,7 +57,6 @@ interface Props {
 
 export default function JoinDetail({ shopName, schoolName, categoryName, people, time, payment }: Props) {
   const currentTime = useTimer();
-  const [timeLeft, setTimeLeft] = useState(dayjs(time.left).format('a hh : mm'));
   const watchingPost = useRecoilValue(watchingPostState);
 
   return (
