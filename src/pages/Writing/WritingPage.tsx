@@ -28,7 +28,7 @@ import { MdLocationPin as Location } from 'react-icons/md';
 
 import ModalPostCategory from '@/components/Modal/ModalPostCategory';
 import colors from '@/constants/colors';
-import { useRecoilValue } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { userState } from '@/atoms/user/userState';
 import { categoryListState } from '@/atoms/list/categoryListState';
 
@@ -47,6 +47,8 @@ import { usePutPostInformation } from '@/hooks/query/writing/usePutPostInfromati
 import { getQueryString } from '@/util/getQueryString';
 import { PostData } from '@/interface/writing';
 import { useDeleteOnePost } from '@/hooks/query/writing/useDeleteOnePost';
+import { usePostParticipateChat } from '@/hooks/query/chat/POST/usePostParticipateChat';
+import { prevWriteState } from '@/atoms/user/prevWritingState';
 dayjs.locale('ko');
 
 export interface WritingInfo {
@@ -117,16 +119,24 @@ function WritingPage() {
 
   // 쓰기 모드
   const writingMutation = useWritingMutation();
+  const [_, setPrevWrite] = useRecoilState(prevWriteState);
+
   useEffect(() => {
+    setPrevWrite({ title: writingInfo.title });
     writingMutation.isSuccess && navigate('/');
-  }, [writingMutation.isSuccess]);
+  }, [writingMutation.isSuccess, writingInfo.title, userInfo.accessToken]);
 
   // 수정 모드
 
   const queryString = useMemo(() => getQueryString(search), [search]);
 
-  const { data } = useGetOnePostInformation({ accessToken: userInfo.accessToken, postId: Number(queryString.id) });
-  const [pageMode] = useCheckWritingMode({ search, data, setWritingInfo, setCategoryID });
+  const postInformation = useGetOnePostInformation({
+    accessToken: userInfo.accessToken,
+    postId: Number(queryString.id),
+  });
+  console.log(postInformation.data);
+
+  const [pageMode] = useCheckWritingMode({ search, data: postInformation.data, setWritingInfo, setCategoryID });
 
   const putPostInformation = usePutPostInformation();
 
@@ -170,6 +180,20 @@ function WritingPage() {
     },
     [writingInfo, userInfo, pageMode]
   );
+
+  const participateChat = usePostParticipateChat();
+  useEffect(() => {
+    if (writingMutation.isSuccess) {
+      const response = writingMutation.data;
+      participateChat.mutate({
+        accessToken: userInfo.accessToken,
+        postData: {
+          room_id: response.roomId,
+          user_id: userInfo.id,
+        },
+      });
+    }
+  }, [writingMutation, userInfo]);
 
   // 삭제하기
   const deletePostMutation = useDeleteOnePost({ accessToken: userInfo.accessToken, postId: Number(queryString.id) });
