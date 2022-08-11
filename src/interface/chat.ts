@@ -12,8 +12,8 @@ export interface GetMyAllChatListAPI {
 }
 interface dtoLIst {
   id: string;
-  name: string;
-  post_id: number;
+  room_id: string;
+  user_id: string;
 }
 // 📩 RESPONSE
 /**
@@ -21,12 +21,8 @@ interface dtoLIst {
  * 내가 참여중인 채팅방 조회
  */
 // 내가 참여중인 채팅방 조회 Response
-export interface GetMyAllChatListAPIResponse {
-  dtoList: dtoLIst[];
-  page: number;
-  totalPage: number;
-  size: number;
-}
+export type GetMyAllChatListAPIResponse = dtoLIst[];
+
 //////////////////////////////////////////////////
 
 //////////////////////////////////////////////////
@@ -121,30 +117,8 @@ export interface GetChatMessagesAPIResponse {
 }
 //////////////////////////////////////////////////
 
-// 🔧 PUT
+// 🔧 POST
 
-//////////////////////////////////////////////////
-// 채팅방 전체 조회
-// 📭 REQUEST
-/**
- * @interface PostParticipateChatAPI
- * 채팅방 전체 조회 Request
- */
-export interface PostParticipateChatAPI {
-  accessToken: string;
-  postData: {
-    user_id: string;
-    room_id: string;
-  };
-}
-// 📩 RESPONSE
-/**
- * @interface PostParticipateChatAPIResponse
- * 채팅방 전체 조회 Response
- */
-export interface PostParticipateChatAPIResponse {
-  room_id: string;
-}
 //////////////////////////////////////////////////
 
 //////////////////////////////////////////////////
@@ -155,8 +129,11 @@ export interface PostParticipateChatAPIResponse {
  * 특정 채팅방 참여하기 Request
  */
 export interface PostParticipateChatAPI {
-  user_id: string;
-  room_id: string;
+  accessToken: string;
+  postData: {
+    user_id: string;
+    room_id: string;
+  };
 }
 // 📩 RESPONSE
 /**
