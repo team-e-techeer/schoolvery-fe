@@ -6,6 +6,6 @@ export const useGetOnePostInformation = ({ accessToken, postId }: OnePostInforma
   return useQuery(['getOnePost', postId], async () => getOnePostInformationAPI({ accessToken, postId }), {
     refetchOnWindowFocus: false,
     retry: 0,
-    enabled: Boolean([accessToken, postId]),
+    enabled: Boolean(postId),
   });
 };
