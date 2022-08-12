@@ -54,8 +54,8 @@ export interface WritingInfo {
   store: string;
   location: string;
   peopleNum: number;
-  endHour: number;
-  endMinute: number;
+  endHour: string;
+  endMinute: string;
   deliveryFee: number;
   content: string;
   [prop: string]: unknown;
@@ -78,8 +78,8 @@ function WritingPage() {
     categoryId: '',
     location: '',
     peopleNum: 0,
-    endHour: dayjs().hour() > 12 ? dayjs().hour() - 12 : dayjs().hour(),
-    endMinute: dayjs().minute(),
+    endHour: '00',
+    endMinute: '00',
     deliveryFee: 0,
     content: '',
   });
@@ -105,15 +105,14 @@ function WritingPage() {
   const [modalVisible, setModalVisible] = useState(false);
   const [categoryName, setCategoryName] = useState('');
   const [categoryID, setCategoryID] = useState('');
-  const [isAM, setIsAM] = useState(dayjs().format('A'));
+  const [isAM, setIsAM] = useState(dayjs().format('a'));
   const { title, store, location, peopleNum, endHour, endMinute, deliveryFee, content } = writingInfo;
   const userInfo = useRecoilValue(userState);
   const categoryList = useRecoilValue(categoryListState);
 
   const { search } = useLocation();
 
-  // 페이지 모드 분리
-  // 쓰기 모드, 수정 모드
+  // 페이지 모드 분리 (쓰기 모드, 수정 모드)
 
   // 쓰기 모드
   const writingMutation = useWritingMutation();
@@ -146,10 +145,23 @@ function WritingPage() {
         const id = categoryList.find(category => category.name === categoryName)?.id as string;
         return id;
       };
-      const time = dayjs()
-        .set('h', isAM === '오후' ? endHour + 12 : endHour)
-        .set('m', endMinute)
-        .toJSON();
+
+      const getTime = (): string => {
+        const currTime = dayjs();
+        const time = dayjs()
+        .set('hour',isAM==='오후'? Number(endHour)+12 : Number(endHour))
+        .set('minute',Number(endMinute))
+        .set('date', currTime.hour()>12&&isAM==='오전'? currTime.date()+1 : currTime.date());
+        // 10 : 1       22 : 10      22 : 02
+        // if (currTime.hour() > 12 && isAM === '오전'){
+        //   console.log(isAM, currTime.date()+1);
+        //   time.set('date',currTime.date()+1)
+        // }
+        var timeResult = time.format('YYYY-MM-DD')+"T"+time.format('HH:mm:ss')+'Z';
+        console.log(timeResult);
+        return timeResult;
+      };
+
       const data: PostData = {
         title: title,
         schoolId: userInfo.schoolId,
@@ -158,7 +170,7 @@ function WritingPage() {
         categoryId: onFindCategoryId(),
         location: location,
         peopleNum,
-        deadline: time,
+        deadline: getTime(),
         deliveryFee,
         content: content,
       };
@@ -170,7 +182,6 @@ function WritingPage() {
     },
     [writingInfo, userInfo, pageMode]
   );
-
   // 삭제하기
   const deletePostMutation = useDeleteOnePost({ accessToken: userInfo.accessToken, postId: Number(queryString.id) });
 
@@ -262,7 +273,7 @@ function WritingPage() {
           <InputBlock>
             <RawFlexTimeWrapper>
               <Select
-                defaultValue={isAM === '오후' ? options[1] : options[0]}
+                defaultValue={isAM === '오전' ? options[0] : options[1]}
                 styles={styles}
                 placeholder="오전"
                 options={options}
@@ -270,17 +281,17 @@ function WritingPage() {
               />
               <TimeInputBlock>
                 <TimeInput
-                  placeholder={'0'}
+                  placeholder={'00'}
                   name="endHour"
-                  defaultValue={endHour}
+                  value={endHour}
                   onChange={onChangePostData}
                   autoComplete="off"
                 />
                 <p>:</p>
                 <TimeInput
-                  placeholder={'0'}
+                  placeholder={'00'}
                   name="endMinute"
-                  defaultValue={dayjs().format('mm')}
+                  value={endMinute}
                   onChange={onChangePostData}
                   autoComplete="off"
                 />
