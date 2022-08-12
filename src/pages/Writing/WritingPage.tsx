@@ -78,8 +78,8 @@ function WritingPage() {
     categoryId: '',
     location: '',
     peopleNum: 0,
-    endHour: '00',
-    endMinute: '00',
+    endHour: dayjs().hour().toString(),
+    endMinute: dayjs().minute().toString(),
     deliveryFee: 0,
     content: '',
   });
