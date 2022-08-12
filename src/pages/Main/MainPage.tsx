@@ -34,6 +34,7 @@ import 'dayjs/locale/ko';
 dayjs.locale('ko');
 
 import { useTimer } from '@/hooks/useTimer';
+import { logDOM } from '@testing-library/react';
 
 function MainPage() {
   const navigate = useNavigate();
@@ -98,7 +99,9 @@ function MainPage() {
             key={list.id}
             title={list.title}
             time={{
-              left: dayjs(dayjs(time).diff(list.deadline)).format('h시간 mm분'),
+              left: Math.floor(dayjs(list.deadline).diff(time, "minute")/60)+"시간 "+
+              (dayjs(list.deadline).diff(time, "minute"))%60+"분",
+              // left: dayjs(dayjs(time).diff(list.deadline, "minute")).format('h시간 mm분'),
               post: dayjs(list.deadline).format('A hh:mm'),
             }}
             people={{ current: 1, total: list.peopleNum }}
