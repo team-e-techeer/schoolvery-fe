@@ -152,13 +152,7 @@ function WritingPage() {
         .set('hour',isAM==='오후'? Number(endHour)+12 : Number(endHour))
         .set('minute',Number(endMinute))
         .set('date', currTime.hour()>12&&isAM==='오전'? currTime.date()+1 : currTime.date());
-        // 10 : 1       22 : 10      22 : 02
-        // if (currTime.hour() > 12 && isAM === '오전'){
-        //   console.log(isAM, currTime.date()+1);
-        //   time.set('date',currTime.date()+1)
-        // }
         var timeResult = time.format('YYYY-MM-DD')+"T"+time.format('HH:mm:ss')+'Z';
-        console.log(timeResult);
         return timeResult;
       };
 
