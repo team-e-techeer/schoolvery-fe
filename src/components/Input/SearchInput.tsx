@@ -71,7 +71,7 @@ export default function Input({
       `}
     >
       <div
-        onClick={() => navigate(-1)}
+        onClick={() => navigate('/')}
         css={css`
           cursor: pointer;
           margin-left: 5%;
