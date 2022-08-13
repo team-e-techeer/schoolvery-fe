@@ -6,6 +6,8 @@ import type {
   PostListAPI,
   PostListAPIResponse,
   PostListWithCategoryAPI,
+  SearchListAPI,
+  SearchListAPIResponse,
 } from '@/interface/list';
 import { makeHeader } from '@/util/makeHeader';
 
@@ -51,5 +53,12 @@ export const getCategoryListAPI = async ({
   size = 15,
 }: CategoryListAPI): Promise<CategoryListAPIResponse> => {
   const { data } = await client.get('/api/v1/categories', { params: { page, size } });
+  return data;
+};
+
+// 게시물 검색하기
+export const getSearchListAPI = async ({ keyword, accessToken }: SearchListAPI): Promise<SearchListAPIResponse> => {
+  const headers = makeHeader(accessToken);
+  const { data } = await client.get(`api/v1/posts?keyword=${keyword}`, { headers, params: { page: 1, size: 15 } });
   return data;
 };
