@@ -1,10 +1,10 @@
 import { LoginAPI, LoginAPIResponse, RegisterAPI, UserMeAPIResponse } from '@/interface/auth';
 import { makeHeader } from '@/util/makeHeader';
+
 import client from '../client';
 
 export const postRegisterAPI = async (registerInfo: RegisterAPI) => {
-  const headers = { 'Content-type': 'Application/json', Accept: '*/*' };
-  const { data } = await client.post('/api/v1/users/signup', JSON.stringify(registerInfo), { headers });
+  const { data } = await client.post('/api/v1/users/signup', registerInfo);
 
   return data;
 };

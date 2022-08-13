@@ -14,6 +14,7 @@ interface dtoLIst {
   id: string;
   room_id: string;
   user_id: string;
+  name: string;
 }
 // 📩 RESPONSE
 /**
@@ -22,6 +23,31 @@ interface dtoLIst {
  */
 // 내가 참여중인 채팅방 조회 Response
 export type GetMyAllChatListAPIResponse = dtoLIst[];
+
+//////////////////////////////////////////////////
+
+//////////////////////////////////////////////////
+// 📭 REQUEST
+/**
+ * @interface GetChatInfoWithPostId
+ * 내가 참여중인 채팅방 조회
+ */
+export interface GetChatInfoWithPostId {
+  accessToken: string;
+  postId: string;
+}
+
+// 📩 RESPONSE
+/**
+ * @interface GetChatInfoWithPostIdResponse
+ * 내가 참여중인 채팅방 조회
+ */
+// 내가 참여중인 채팅방 조회 Response
+export interface GetChatInfoWithPostIdResponse {
+  id: string;
+  name: string;
+  post_id: string;
+}
 
 //////////////////////////////////////////////////
 
@@ -35,13 +61,20 @@ export type GetMyAllChatListAPIResponse = dtoLIst[];
 export interface GetAllChatListAPI {
   accessToken: string;
 }
+
+interface AllChatList {
+  id: string;
+  name: string;
+  post_id: string;
+}
+
 // 📩 RESPONSE
 /**
  * @interface GetAllChatListAPIResponse
  * 채팅방 전체 조회 Response
  */
 export interface GetAllChatListAPIResponse {
-  dtoList: dtoLIst[];
+  dtoList: AllChatList[];
   page: number;
   totalPage: number;
   size: number;
@@ -133,6 +166,7 @@ export interface PostParticipateChatAPI {
   postData: {
     user_id: string;
     room_id: string;
+    name: string;
   };
 }
 // 📩 RESPONSE

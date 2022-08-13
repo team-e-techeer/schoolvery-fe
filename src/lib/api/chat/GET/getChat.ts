@@ -7,6 +7,8 @@ import type {
   GetChatMessagesAPIResponse,
   GetMyAllChatListAPI,
   GetMyAllChatListAPIResponse,
+  GetChatInfoWithPostId,
+  GetChatInfoWithPostIdResponse,
 } from '@/interface/chat';
 import { makeHeader } from '@/util/makeHeader';
 import client from '../../client';
@@ -53,5 +55,15 @@ export const getChatMessages = async ({
 }: GetChatMessagesAPI): Promise<GetChatMessagesAPIResponse> => {
   const headers = makeHeader(accessToken);
   const { data } = await client.get(`/api/v1/chats/room/${roomId}`, { headers });
+  return data;
+};
+
+// postId로 채팅 가져오기
+export const getChatInfoWithPostId = async ({
+  postId,
+  accessToken,
+}: GetChatInfoWithPostId): Promise<GetChatInfoWithPostIdResponse> => {
+  const headers = makeHeader(accessToken);
+  const { data } = await client.get(`/api/v1/chats/postId/${postId}`, { headers });
   return data;
 };

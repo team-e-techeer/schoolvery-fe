@@ -23,8 +23,16 @@ export const Title = styled.h2`
 `;
 
 export const Container = styled.form`
-  margin-left: 10%;
-  margin-right: 10%;
+  @media (min-width: 200px) {
+    width: 80%;
+  }
+  @media (min-width: 768px) {
+    width: 40%;
+  }
+  @media (min-width: 1024px) {
+    width: 40%;
+  }
+  margin: auto;
 `;
 
 export const FirstSection = styled.div`
@@ -67,6 +75,33 @@ export const InputBlock = styled.div`
   align-items: center;
 `;
 
+export const ButtonBlock = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  @media (min-width: 200px) {
+    margin-left: 10%;
+  }
+  @media (min-width: 768px) {
+    margin-left: 7%;
+  }
+  @media (min-width: 1024px) {
+    margin-left: 7%;
+  }
+  img {
+    width: 5rem;
+    max-height: 8rem;
+  }
+  p {
+    margin-left: 2rem;
+  }
+`;
+
+export const BlankView = styled.div`
+  flex: 1;
+`;
+
 export const IconCenterBlock = styled.div`
   /* margin-left: 47%;
   margin-right: 47%; */
@@ -85,7 +120,7 @@ export const NumInput = styled.input`
   display: flex;
   border: 1px solid ${colors.mainColor};
   border-radius: 0.7rem;
-  width: 100%;
+  width: 50%;
   padding: 1rem;
   font-size: ${inputPadding}rem;
   text-align: center;
@@ -103,11 +138,77 @@ export const RawFlexTimeWrapper = styled.div`
   /* margin-left: 2rem; */
 `;
 
-export const Input = styled.input`
+export const InputForm = styled.div`
   display: flex;
+  position: relative;
+  flex: 1;
+  padding: 2.5rem;
+  font-size: ${inputPadding}rem;
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  & input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid ${colors.mainColor};
+    border-radius: 0.7rem;
+    color: ${colors.black};
+
+    outline: none;
+    /* padding: 1.25rem; */
+    padding: ${inputPadding}rem;
+    background: none;
+
+    &:hover {
+      border-color: ${colors.subColor};
+    }
+
+    &:focus {
+      border-color: ${colors.mainColor};
+    }
+  }
+
+  & label {
+    position: absolute;
+    left: 1rem;
+    top: 1.3rem;
+    padding: 0.4rem;
+    border-radius: 0.7rem;
+    color: ${colors.grey100};
+    cursor: text;
+    transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+    background-color: ${colors.subColor};
+  }
+  input:focus ~ label,
+  input:not(:placeholder-shown) ~ label,
+  input:-webkit-autofill ~ label {
+    top: -1rem;
+    font-size: 1rem;
+    left: 0.8rem;
+  }
+  @media (min-width: 200px) {
+    margin-left: 7%;
+  }
+  @media (min-width: 768px) {
+    margin-left: 7%;
+  }
+  @media (min-width: 1024px) {
+    margin-left: 7%;
+  }
+`;
+
+export const Input = styled.input`
+  display: block;
   flex: 1;
   border: 1px solid ${colors.mainColor};
-  margin-left: 7%;
+  /* margin-left: 7%; */
   border-radius: 0.7rem;
   padding: ${inputPadding}rem;
   font-size: ${inputPadding}rem;
@@ -116,6 +217,21 @@ export const Input = styled.input`
     font-size: ${inputPadding}rem;
     color: #a3a3a3;
   }
+  &:focus {
+    border: 5px solid ${colors.mainColor};
+    transition: 0.5s ease-in;
+  }
+`;
+
+export const Label = styled.label`
+  position: relative;
+  left: 1rem;
+  top: 0.8rem;
+  padding: 0 0.5rem;
+  color: white;
+  cursor: text;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+  background-color: $clr-bg;
 `;
 
 export const TimeInputBlock = styled.div`
@@ -157,3 +273,5 @@ export const TextArea = styled.textarea`
   resize: none;
   outline: none;
 `;
+
+export const CategoryBtn = styled.button``;

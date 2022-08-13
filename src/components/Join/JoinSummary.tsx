@@ -1,6 +1,6 @@
 import { watchingPostState } from '@/atoms/user/watchingPostState';
 import colors from '@/constants/colors';
-import { Post } from '@/interface/list';
+import { JoinDetail, Post } from '@/interface/list';
 import { css } from '@emotion/react';
 import { IoPeopleCircle as People, IoTimeOutline as Time } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
@@ -18,6 +18,7 @@ interface Props {
     left: string;
   };
   item: Post;
+  left: string;
 }
 
 const iconSize = 25;
@@ -37,12 +38,12 @@ const spanStyle = css`
   align-self: center;
 `;
 
-export default function JoinSummary({ title, people, time, item }: Props) {
+export default function JoinSummary({ title, people, time, item, left }: Props) {
   const [_, setWatchingPostState] = useRecoilState(watchingPostState);
   return (
     <Link
       to={`/detail/${title}`}
-      onClick={() => setWatchingPostState(item)}
+      onClick={() => setWatchingPostState({ ...item, left: left })}
       css={css`
         display: block;
         width: 90%;
@@ -86,7 +87,7 @@ export default function JoinSummary({ title, people, time, item }: Props) {
           <Time size={iconSize} color={colors.mainColor} />
           <span css={spanStyle}>{time.post}</span>
         </div>
-        <div css={[wrapFlex, { justifyContent: 'center' }]}>
+        <div css={[wrapFlex, { justifyContent: 'center', color: colors.red500 }]}>
           <span css={[spanStyle]}>{time.left} 남음</span>
         </div>
         <div css={wrapFlex}>

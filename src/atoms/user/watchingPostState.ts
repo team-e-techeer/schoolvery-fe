@@ -10,6 +10,7 @@ export interface WatchingPostState {
   location: string;
   categoryId: string;
   deadline: string;
+  left: string;
 }
 
 const watchingPostState = atom<WatchingPostState>({
@@ -24,6 +25,7 @@ const watchingPostState = atom<WatchingPostState>({
     categoryId: '',
     location: '',
     deadline: '',
+    left: '',
   },
 });
 

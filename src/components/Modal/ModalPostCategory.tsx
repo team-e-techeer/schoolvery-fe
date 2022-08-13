@@ -7,12 +7,11 @@ import Chicken from '../../assets/img/Chicken.png';
 import Jp from '../../assets/img/jp.png';
 import Ko from '../../assets/img/ko.png';
 import Pizza from '../../assets/img/pizza.png';
-import All from '../../assets/img/all.png';
 import Asian from '../../assets/img/asian.png';
 import Hamburger from '../../assets/img/hamburger.png';
 import koreanFood from '../../assets/img/koreanFood.png';
 import Coffee from '../../assets/img/Coffee.png';
-import { useNavigate } from 'react-router-dom';
+
 interface Props {
   visible: boolean;
   setModalVisible: React.Dispatch<React.SetStateAction<boolean>>;

@@ -35,6 +35,7 @@ dayjs.locale('ko');
 
 import { useTimer } from '@/hooks/useTimer';
 import { css } from '@emotion/react';
+import { useGetSchoolListQuery } from '@/hooks/query/list/useGetSchoolList';
 
 function MainPage() {
   const navigate = useNavigate();
@@ -65,6 +66,8 @@ function MainPage() {
 
   const postList = useGetPostListQuery({ schoolId: userInfo.schoolId, accessToken: user.accessToken });
 
+  const schoolList = useGetSchoolListQuery();
+
   useEffect(() => {
     if (userQueryInfo.data) {
       const { id, modDate, name, nickname, phoneNum, profileImageUrl, regDate, schoolId } = userQueryInfo.data;
@@ -76,10 +79,19 @@ function MainPage() {
     categoryListResponse.data?.dtoList && setCategoryList(categoryListResponse.data.dtoList);
   }, [categoryListResponse.data?.dtoList]);
 
+  const [schoolTitle, setSchoolTitle] = useState('');
+
+  useEffect(() => {
+    const title = Array.isArray(schoolList.data)
+      ? schoolList?.data.find(school => school.schoolId === userInfo.schoolId)?.schoolName
+      : '';
+    title && setSchoolTitle(title);
+  }, [schoolList, schoolList, userInfo]);
+
   return (
     <>
       <Header
-        title="OO 대학교"
+        title={schoolTitle || ''}
         Right={() => (
           <>
             <div css={RightIconWrapper}>
@@ -90,7 +102,17 @@ function MainPage() {
           </>
         )}
       />
-      <>
+      <div
+        css={css`
+          margin: auto;
+          @media (min-width: 500px) {
+            width: 90%;
+          }
+          @media (min-width: 1024px) {
+            width: 50%;
+          }
+        `}
+      >
         <SearchInput isLinking={true} />
         <Category imageInfo={imageInfo} />
         <div
@@ -106,15 +128,25 @@ function MainPage() {
               item={list}
               key={list.id}
               title={list.title}
+              left={
+                Math.floor(dayjs(list.deadline).diff(time, 'minute') / 60) +
+                '시간 ' +
+                (dayjs(list.deadline).diff(time, 'minute') % 60) +
+                '분'
+              }
               time={{
-                left: dayjs(dayjs(time).diff(list.deadline)).format('h시간 mm분'),
+                left:
+                  Math.floor(dayjs(list.deadline).diff(time, 'minute') / 60) +
+                  '시간 ' +
+                  (dayjs(list.deadline).diff(time, 'minute') % 60) +
+                  '분',
                 post: dayjs(list.deadline).format('A hh:mm'),
               }}
               people={{ current: 1, total: list.peopleNum }}
             />
           ))}
         </div>
-      </>
+      </div>
       <BottomNavigation />
     </>
   );

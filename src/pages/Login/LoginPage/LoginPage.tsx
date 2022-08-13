@@ -10,6 +10,7 @@ import {
   LogoImage,
   LogoWrapper,
   UnderLogo,
+  InputForm,
 } from './LoginPage.styles';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import Button from '../../../components/Button';
@@ -83,38 +84,46 @@ function LoginPage() {
         <LogoImage src={Logo} alt="토끼가 오토바이를 타고 있는 로고 이미지" />
       </LogoWrapper>
       <InputBlock ref={loginRef} onBlur={onCheckBlank} onSubmit={onSubmit}>
-        <Input
-          autoComplete="email"
-          placeholder="이메일"
-          onChange={onChange}
-          id="input-email"
-          name="email"
-          value={email}
-          data-testid="email-input"
-          type={'email'}
-        />
-        <AlertText id="id" data-testid="id-alert">
+        <InputForm>
+          <input
+            autoComplete="email"
+            placeholder=" "
+            onChange={onChange}
+            id="input-email"
+            name="email"
+            value={email}
+            data-testid="email-input"
+            type={'email'}
+          />
+          <label htmlFor="title">이메일 주소</label>
+        </InputForm>
+
+        <AlertText id="email" data-testid="id-alert">
           입력란이 비어 있습니다
         </AlertText>
-        <Input
-          autoComplete="current-password"
-          placeholder="비밀번호"
-          type="password"
-          onChange={onChange}
-          id="input-pw"
-          name="password"
-          value={password}
-          data-testid="pw-input"
-        />
+        <InputForm>
+          <input
+            autoComplete="current-password"
+            placeholder="비밀번호"
+            type="password"
+            onChange={onChange}
+            id="input-pw"
+            name="password"
+            value={password}
+            data-testid="pw-input"
+          />
+          <label htmlFor="title">비밀번호</label>
+        </InputForm>
         <AlertText id="password" data-testid="pw-alert">
           입력란이 비어 있습니다
         </AlertText>
         <Button buttonId="login-button" data-testid="login-button">
           로그인
         </Button>
+        <LinkText to="">아이디/비밀번호 찾기</LinkText>
+        <LinkText to="/register">아직 회원이 아니신가요? 회원가입 하기</LinkText>
       </InputBlock>
-      <LinkText to="">아이디/비밀번호 찾기</LinkText>
-      <LinkText to="/register">아직 회원이 아니신가요? 회원가입 하기</LinkText>
+
       <UnderLogo src={LogoText} alt="스쿨버리 로고 이미지" />
     </>
   );

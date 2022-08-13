@@ -1,4 +1,17 @@
-import { atom } from 'recoil';
+import { atom, AtomEffect } from 'recoil';
+import { recoilPersist } from 'recoil-persist';
+const { persistAtom } = recoilPersist();
+// const localStorageEffect: <T>(key: string) => AtomEffect<T> =
+//   (key: string) =>
+//   ({ setSelf, onSet }) => {
+//     const savedValue = localStorage.getItem(key);
+//     if (savedValue != null) {
+//       setSelf(JSON.parse(savedValue));
+//     }
+//     onSet((newValue, _, isReset) => {
+//       isReset ? localStorage.removeItem(key) : localStorage.setItem(key, JSON.stringify(newValue));
+//     });
+//   };
 
 export interface User {
   accessToken: string;
@@ -27,6 +40,7 @@ const userState = atom<User>({
     modDate: '',
     regDate: '',
   },
+  effects_UNSTABLE: [persistAtom],
 });
 
 export { userState };

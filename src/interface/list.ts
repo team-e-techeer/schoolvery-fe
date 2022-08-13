@@ -59,3 +59,42 @@ interface Category {
 export interface CategoryListAPIResponse {
   dtoList: Category[];
 }
+
+// 게시물 검색
+
+export interface SearchListAPI {
+  keyword: string;
+  accessToken: string;
+}
+
+export interface SearchListAPIResponse {
+  dtoList: Post[];
+  totalPage: number;
+  page: number;
+  size: number;
+  start: number;
+  end: number;
+}
+
+// 학교 리스트
+
+interface schoolInfo {
+  schoolId: '';
+  schoolName: '';
+}
+
+export type SchoolListResponse = schoolInfo[];
+
+export interface JoinDetail {
+  id: string;
+  title: string;
+  location: string;
+  schoolId: string;
+  categoryId: string;
+  peopleNum: number;
+  deliveryFee: number;
+  deadline: string;
+  content: string;
+  store: string;
+  left: string;
+}

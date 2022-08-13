@@ -1,13 +1,15 @@
 // Register
-export interface RegisterAPI {
+interface RegisterInfo {
   name: string;
   nickname: string;
   phoneNum: string;
-  profileImageUrl: string;
+
   schoolId: string;
   email: string;
   password: string;
 }
+
+export type RegisterAPI = FormData;
 
 // Login
 export interface LoginAPI {

@@ -2,7 +2,7 @@ import BottomNavigation from '@/components/BottomNavigation';
 import Header from '@/components/Header/Header';
 import { AiOutlineLeft as LeftIcon } from 'react-icons/ai';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import PostI from '../../assets/img/post.png';
 import MyPostDetail from '@/components/Post/MyPostDetail';
 /* eslint-disable import/extensions */
@@ -22,15 +22,13 @@ function MyWritingListPage() {
   const userInfo = useRecoilValue(userState);
   const myPostList = useGetMyPostList({ token: userInfo.accessToken, userId: userInfo.id });
   const time = useTimer();
-
+  const navigate = useNavigate();
   return (
     <>
       <Header
         Left={() => (
-          <IconWrapper>
-            <Link to="/">
-              <LeftIcon size={30} color="#fff" />
-            </Link>
+          <IconWrapper onClick={() => navigate(-1)}>
+            <LeftIcon size={30} color="#fff" />
           </IconWrapper>
         )}
       />
@@ -38,7 +36,7 @@ function MyWritingListPage() {
         <img src={PostI} />
       </TopBlock>
       <PostBlock>
-        {myPostList.data?.dtoList.map(list => (
+        {myPostList.data?.dtoList?.map(list => (
           <MyPostDetail
             item={list}
             key={list.id}

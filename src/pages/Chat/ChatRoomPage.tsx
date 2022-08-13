@@ -71,7 +71,7 @@ export default function ChatRoomPage() {
     set(newChatRef, {
       nickname: userInfo.nickname,
       text,
-      imgUrl: faker.image.avatar(),
+      imgUrl: userInfo.profileImageUrl,
       time,
     });
 

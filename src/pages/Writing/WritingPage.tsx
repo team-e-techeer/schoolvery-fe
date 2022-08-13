@@ -17,6 +17,10 @@ import {
   RawFlexWrapper,
   FlexWrapper,
   RawFlexTimeWrapper,
+  Label,
+  InputForm,
+  ButtonBlock,
+  BlankView,
 } from './WritingPage.styles';
 import { AiOutlineLeft as LeftIcon } from 'react-icons/ai';
 import React, { useState, useCallback, useRef, useEffect, useMemo } from 'react';
@@ -28,7 +32,7 @@ import { MdLocationPin as Location } from 'react-icons/md';
 
 import ModalPostCategory from '@/components/Modal/ModalPostCategory';
 import colors from '@/constants/colors';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilValue } from 'recoil';
 import { userState } from '@/atoms/user/userState';
 import { categoryListState } from '@/atoms/list/categoryListState';
 
@@ -48,7 +52,17 @@ import { getQueryString } from '@/util/getQueryString';
 import { PostData } from '@/interface/writing';
 import { useDeleteOnePost } from '@/hooks/query/writing/useDeleteOnePost';
 import { usePostParticipateChat } from '@/hooks/query/chat/POST/usePostParticipateChat';
-import { prevWriteState } from '@/atoms/user/prevWritingState';
+import Button from '@/components/Button';
+import 중식 from '../../assets/img/ch.png';
+import 치킨 from '../../assets/img/Chicken.png';
+import 일식 from '../../assets/img/jp.png';
+import 한식 from '../../assets/img/ko.png';
+import 피자 from '../../assets/img/pizza.png';
+import 아시안 from '../../assets/img/asian.png';
+import 햄버거 from '../../assets/img/hamburger.png';
+import 분식 from '../../assets/img/koreanFood.png';
+import 커피 from '../../assets/img/Coffee.png';
+import { css } from '@emotion/react';
 dayjs.locale('ko');
 
 export interface WritingInfo {
@@ -56,8 +70,8 @@ export interface WritingInfo {
   store: string;
   location: string;
   peopleNum: number;
-  endHour: number;
-  endMinute: number;
+  endHour: string;
+  endMinute: string;
   deliveryFee: number;
   content: string;
   [prop: string]: unknown;
@@ -70,6 +84,9 @@ export enum PageMode {
   Write = 'Write',
   Fix = 'Fix',
 }
+interface ImageList {
+  [prop: string]: string;
+}
 
 function WritingPage() {
   const navigate = useNavigate();
@@ -80,8 +97,8 @@ function WritingPage() {
     categoryId: '',
     location: '',
     peopleNum: 0,
-    endHour: dayjs().hour() > 12 ? dayjs().hour() - 12 : dayjs().hour(),
-    endMinute: dayjs().minute(),
+    endHour: dayjs().format('hh'),
+    endMinute: dayjs().format('mm'),
     deliveryFee: 0,
     content: '',
   });
@@ -105,26 +122,41 @@ function WritingPage() {
   );
 
   const [modalVisible, setModalVisible] = useState(false);
-  const [categoryName, setCategoryName] = useState('');
+  const [categoryName, setCategoryName] = useState('한식');
   const [categoryID, setCategoryID] = useState('');
-  const [isAM, setIsAM] = useState(dayjs().format('A'));
+  const [isAM, setIsAM] = useState(dayjs().format('a'));
   const { title, store, location, peopleNum, endHour, endMinute, deliveryFee, content } = writingInfo;
   const userInfo = useRecoilValue(userState);
   const categoryList = useRecoilValue(categoryListState);
 
   const { search } = useLocation();
+  const [imageList] = useState<ImageList>({
+    중식: 중식,
+    치킨: 치킨,
+    일식: 일식,
+    한식: 한식,
+    피자: 피자,
+    아시안: 아시안,
+    햄버거: 햄버거,
+    분식: 분식,
+    커피: 커피,
+  });
+  const [currentImg, setImg] = useState({
+    src: 한식,
+    name: '한식',
+  });
 
-  // 페이지 모드 분리
-  // 쓰기 모드, 수정 모드
+  useEffect(() => {
+    setImg(prev => ({ ...prev, name: categoryName, src: imageList[categoryName] }));
+  }, [categoryID, categoryName]);
+
+  // 페이지 모드 분리 (쓰기 모드, 수정 모드)
 
   // 쓰기 모드
   const writingMutation = useWritingMutation();
-  const [_, setPrevWrite] = useRecoilState(prevWriteState);
-
   useEffect(() => {
-    setPrevWrite({ title: writingInfo.title });
     writingMutation.isSuccess && navigate('/');
-  }, [writingMutation.isSuccess, writingInfo.title, userInfo.accessToken]);
+  }, [writingMutation.isSuccess]);
 
   // 수정 모드
 
@@ -134,11 +166,25 @@ function WritingPage() {
     accessToken: userInfo.accessToken,
     postId: Number(queryString.id),
   });
-  console.log(postInformation.data);
 
   const [pageMode] = useCheckWritingMode({ search, data: postInformation.data, setWritingInfo, setCategoryID });
 
   const putPostInformation = usePutPostInformation();
+
+  useEffect(() => {
+    if (pageMode === PageMode.Fix && postInformation.isSuccess) {
+      const { content, deliveryFee, location, peopleNum, store, title } = postInformation.data;
+      setWritingInfo(prev => ({
+        ...prev,
+        content,
+        deliveryFee: Number(deliveryFee),
+        location,
+        peopleNum: Number(peopleNum),
+        store,
+        title,
+      }));
+    }
+  }, [pageMode, postInformation]);
 
   const onSubmitWritingInfo = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
@@ -156,10 +202,17 @@ function WritingPage() {
         const id = categoryList.find(category => category.name === categoryName)?.id as string;
         return id;
       };
-      const time = dayjs()
-        .set('h', isAM === '오후' ? endHour + 12 : endHour)
-        .set('m', endMinute)
-        .toJSON();
+
+      const getTime = (): string => {
+        const currTime = dayjs();
+        const time = dayjs()
+          .set('hour', isAM === '오후' ? Number(endHour) + 12 : Number(endHour))
+          .set('minute', Number(endMinute))
+          .set('date', currTime.hour() > 12 && isAM === '오전' ? currTime.date() + 1 : currTime.date());
+        const timeResult = time.format('YYYY-MM-DD') + 'T' + time.format('HH:mm:ss') + 'Z';
+        return timeResult;
+      };
+      // const postDat = postInformation.data;
       const data: PostData = {
         title: title,
         schoolId: userInfo.schoolId,
@@ -168,19 +221,19 @@ function WritingPage() {
         categoryId: onFindCategoryId(),
         location: location,
         peopleNum,
-        deadline: time,
+        deadline: getTime(),
         deliveryFee,
         content: content,
       };
       if (pageMode === PageMode.Write) writingMutation.mutate({ accessToken: userInfo.accessToken, postData: data });
       if (pageMode === PageMode.Fix) {
         data.id = Number(queryString.id);
+
         putPostInformation.mutate({ accessToken: userInfo.accessToken, postData: data });
       }
     },
     [writingInfo, userInfo, pageMode]
   );
-
   const participateChat = usePostParticipateChat();
   useEffect(() => {
     if (writingMutation.isSuccess) {
@@ -190,6 +243,7 @@ function WritingPage() {
         postData: {
           room_id: response.roomId,
           user_id: userInfo.id,
+          name: response.title,
         },
       });
     }
@@ -209,102 +263,133 @@ function WritingPage() {
       background: '#fff',
       borderColor: colors.mainColor,
       borderRadius: 7,
-      minHeight: '45px',
-      height: '45px',
+      minHeight: '4.5rem',
+      height: '4.5rem',
       boxShadow: state.isFocused ? null : null,
       flex: 3,
     }),
+
     container: (base: any) => ({
       ...base,
       flex: 1,
     }),
   };
 
+  const onClickPrev = useCallback(() => {
+    search.length ? navigate(-1) : navigate('/');
+  }, [search.length]);
+
   return (
     <>
       <Header
         title="글 등록"
         Left={() => (
-          <IconWrapper>
-            <Link to="/">
-              <LeftIcon size={30} color="#fff" />
-            </Link>
+          <IconWrapper onClick={onClickPrev}>
+            <LeftIcon size={30} color="#fff" />
           </IconWrapper>
         )}
       />
+
       <Container ref={spanRef} onBlur={onCheckBlank} onSubmit={onSubmitWritingInfo}>
         <FirstSection>
           <InputBlock>
             <IconBlock>
               <FaPen size={33} color={colors.mainColor} />
             </IconBlock>
-            <Input
-              defaultValue={title}
-              name="title"
-              placeholder={'게시글 제목'}
-              onChange={onChangePostData}
-              autoFocus={true}
-              autoComplete="off"
-            />
+            <InputForm>
+              <input
+                defaultValue={title}
+                name="title"
+                onChange={onChangePostData}
+                autoFocus={true}
+                autoComplete="off"
+                placeholder=" "
+              />
+              <label htmlFor="title">제목</label>
+            </InputForm>
           </InputBlock>
           <InputBlock>
             <IconBlock>
               <Shop size={33} color={colors.mainColor} />
             </IconBlock>
-            <Input
-              defaultValue={store}
-              name="store"
-              placeholder={'주문할 매장을 입력해 주세요'}
-              onChange={onChangePostData}
-              autoComplete="off"
-            />
+            <InputForm>
+              <input defaultValue={store} name="store" onChange={onChangePostData} autoComplete="off" placeholder=" " />
+              <label htmlFor="title">가게 이름</label>
+            </InputForm>
           </InputBlock>
           <InputBlock>
             <IconBlock>
               <BiCategory size={33} color={colors.mainColor} />
             </IconBlock>
-            <Input
-              defaultValue={categoryName}
-              name="categoryName"
-              placeholder={'카테고리를 선택해 주세요'}
+
+            {/* <input defaultValue={categoryName} name="categoryName" autoComplete="off" placeholder=" " />
+              <label htmlFor="title">카테고리</label> */}
+            <ButtonBlock>
+              <img src={currentImg.src} />
+              <p>{categoryName}</p>
+            </ButtonBlock>
+            <BlankView />
+            <Button
+              css={css`
+                justify-self: flex-end;
+              `}
+              type="button"
               onClick={() => setModalVisible(true)}
-              autoComplete="off"
-            />
+              buttonId="category"
+              width={30}
+              height={5}
+            >
+              카테고리 선택
+            </Button>
           </InputBlock>
           <InputBlock>
             <IconBlock>
               <Location size={33} color={colors.mainColor} />
             </IconBlock>
-            <Input
-              defaultValue={location}
-              name="location"
-              placeholder={'배달을 받을 위치를 입력해 주세요'}
-              onChange={onChangePostData}
-              autoComplete="off"
-            />
+            <InputForm>
+              <input
+                defaultValue={location}
+                name="location"
+                onChange={onChangePostData}
+                autoComplete="off"
+                placeholder=" "
+              />
+              <label htmlFor="title">배달 주소</label>
+            </InputForm>
           </InputBlock>
+
           <InputBlock>
             <RawFlexTimeWrapper>
               <Select
-                defaultValue={isAM === '오후' ? options[1] : options[0]}
+                defaultValue={isAM === '오전' ? options[0] : options[1]}
                 styles={styles}
                 placeholder="오전"
                 options={options}
                 onChange={option => setIsAM((option as iOption).value)}
+                theme={theme => ({
+                  ...theme,
+                  borderRadius: 15,
+                  colors: {
+                    ...theme.colors,
+                    text: 'orangered',
+                    primary25: colors.orange100,
+                    primary: colors.mainColor,
+                  },
+                })}
               />
               <TimeInputBlock>
                 <TimeInput
-                  placeholder={'0'}
+                  placeholder={'00'}
                   name="endHour"
-                  defaultValue={endHour}
+                  value={endHour}
                   onChange={onChangePostData}
                   autoComplete="off"
                 />
                 <p>:</p>
                 <TimeInput
-                  placeholder={'0'}
+                  placeholder={'00'}
                   name="endMinute"
-                  defaultValue={dayjs().format('mm')}
+                  value={endMinute}
                   onChange={onChangePostData}
                   autoComplete="off"
                 />

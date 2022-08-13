@@ -18,7 +18,7 @@ export default function ChatPage() {
           <ChatList
             key={chat.id}
             imgPath={Korean}
-            storeName={'hi'}
+            storeName={chat.name}
             lastMessage="h"
             time={Date.now()}
             newMessageCount={1}
