@@ -24,12 +24,13 @@ import { debounce } from 'lodash';
 dayjs.locale('ko');
 interface LinkParam {
   roomId: string;
+  storeName: string;
 }
 
 export default function ChatRoomPage() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  const { roomId } = location.state as LinkParam;
+  const { roomId, storeName } = location.state as LinkParam;
   const navigate = useNavigate();
   const toggleDrawer = useCallback(() => setIsOpen(prevState => !prevState), []);
 
@@ -116,7 +117,7 @@ export default function ChatRoomPage() {
   return (
     <>
       <Header
-        title="hi"
+        title={storeName}
         Left={() => (
           <div css={LeftIconWrapper} data-testid="btn-back" onClick={() => navigate('/')}>
             <button>

@@ -54,14 +54,14 @@ import { useDeleteOnePost } from '@/hooks/query/writing/useDeleteOnePost';
 import { usePostParticipateChat } from '@/hooks/query/chat/POST/usePostParticipateChat';
 import Button from '@/components/Button';
 import 중식 from '../../assets/img/ch.png';
-import 치킨 from '../../assets/img/Chicken.png';
+import 치킨 from '../../assets/img/chicken.png';
 import 일식 from '../../assets/img/jp.png';
 import 한식 from '../../assets/img/ko.png';
 import 피자 from '../../assets/img/pizza.png';
 import 아시안 from '../../assets/img/asian.png';
 import 햄버거 from '../../assets/img/hamburger.png';
 import 분식 from '../../assets/img/koreanFood.png';
-import 커피 from '../../assets/img/Coffee.png';
+import 커피 from '../../assets/img/coffee.png';
 import { css } from '@emotion/react';
 dayjs.locale('ko');
 
@@ -122,7 +122,7 @@ function WritingPage() {
   );
 
   const [modalVisible, setModalVisible] = useState(false);
-  const [categoryName, setCategoryName] = useState('한식');
+  const [categoryName, setCategoryName] = useState('치킨');
   const [categoryID, setCategoryID] = useState('');
   const [isAM, setIsAM] = useState(dayjs().format('a'));
   const { title, store, location, peopleNum, endHour, endMinute, deliveryFee, content } = writingInfo;

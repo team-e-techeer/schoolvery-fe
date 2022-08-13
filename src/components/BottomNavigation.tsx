@@ -41,8 +41,8 @@ export default function BottomNavigation() {
           <AiOutlineHome size={iconSize} />
         )}
       </Link>
-      <Link to="/chat" css={iconWrapper} data-testid="link-chat">
-        {pathname === '/chat' ? (
+      <Link to="/chat/rooms" css={iconWrapper} data-testid="link-chat">
+        {pathname === '/chat/rooms' ? (
           <RiWechat2Fill size={iconSize} color={colors.mainColor} />
         ) : (
           <RiWechat2Line size={iconSize} />

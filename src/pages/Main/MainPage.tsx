@@ -4,7 +4,7 @@ import SearchInput from '@/components/Input/SearchInput';
 import JoinSummary from '@/components/Join/JoinSummary';
 import Header from '../../components/Header/Header';
 import Ch from '../../assets/img/ch.png';
-import Chicken from '../../assets/img/Chicken.png';
+import chicken from '../../assets/img/chicken.png';
 import Jp from '../../assets/img/jp.png';
 import Ko from '../../assets/img/ko.png';
 import Pizza from '../../assets/img/pizza.png';
@@ -12,7 +12,7 @@ import All from '../../assets/img/all.png';
 import Asian from '../../assets/img/asian.png';
 import Hamburger from '../../assets/img/hamburger.png';
 import koreanFood from '../../assets/img/koreanFood.png';
-import Coffee from '../../assets/img/Coffee.png';
+import coffee from '../../assets/img/coffee.png';
 import { useEffect, useState } from 'react';
 import type { ImgInfo } from '../../components/Category/Category';
 import { IoMdNotifications as NotificationIcon } from 'react-icons/io';
@@ -36,6 +36,7 @@ dayjs.locale('ko');
 import { useTimer } from '@/hooks/useTimer';
 import { css } from '@emotion/react';
 import { useGetSchoolListQuery } from '@/hooks/query/list/useGetSchoolList';
+import { schoolListState } from '@/atoms/list/schoolList';
 
 function MainPage() {
   const navigate = useNavigate();
@@ -45,16 +46,17 @@ function MainPage() {
     { path: '/category/중식', src: Ch, name: '중식' },
     { path: '/category/일식', src: Jp, name: '일식' },
     { path: '/category/아시안', src: Asian, name: '아시안' },
-    { path: '/category/치킨', src: Chicken, name: '치킨' },
+    { path: '/category/치킨', src: chicken, name: '치킨' },
     { path: '/category/피자', src: Pizza, name: '피자' },
     { path: '/category/햄버거', src: Hamburger, name: '햄버거' },
     { path: '/category/분식', src: koreanFood, name: '분식' },
-    { path: '/category/커피', src: Coffee, name: '커피' },
+    { path: '/category/커피', src: coffee, name: '커피' },
   ]);
   const user = useRecoilValue(userState);
   const time = useTimer();
   const [userInfo, setUserInfo] = useRecoilState(userState);
   const [categoryList, setCategoryList] = useRecoilState(categoryListState);
+  const [_, setSchoolList] = useRecoilState(schoolListState);
 
   useEffect(() => {
     if (!user.accessToken) navigate('/login');
@@ -66,7 +68,11 @@ function MainPage() {
 
   const postList = useGetPostListQuery({ schoolId: userInfo.schoolId, accessToken: user.accessToken });
 
-  const schoolList = useGetSchoolListQuery();
+  const schoolListQuery = useGetSchoolListQuery();
+
+  useEffect(() => {
+    schoolListQuery.data && setSchoolList(schoolListQuery.data);
+  }, [schoolListQuery.data]);
 
   useEffect(() => {
     if (userQueryInfo.data) {
@@ -82,11 +88,11 @@ function MainPage() {
   const [schoolTitle, setSchoolTitle] = useState('');
 
   useEffect(() => {
-    const title = Array.isArray(schoolList.data)
-      ? schoolList?.data.find(school => school.schoolId === userInfo.schoolId)?.schoolName
+    const title = Array.isArray(schoolListQuery.data)
+      ? schoolListQuery?.data.find(school => school.schoolId === userInfo.schoolId)?.schoolName
       : '';
     title && setSchoolTitle(title);
-  }, [schoolList, schoolList, userInfo]);
+  }, [schoolListQuery, schoolListQuery, userInfo]);
 
   return (
     <>

@@ -3,29 +3,33 @@ import { useCallback, useEffect, useState } from 'react';
 // eslint-disable-next-line import/extensions
 import { BlankView, ListWrapper, SearchItem, SearchWrapper } from './SchoolSearchPage.styles';
 import { AiOutlineArrowRight as RightIcon } from 'react-icons/ai';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { schoolSearchState } from '@/atoms/Login/schoolSearchState';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useGetSchoolListQuery } from '@/hooks/query/list/useGetSchoolList';
+import { schoolListState } from '@/atoms/list/schoolList';
 interface SchoolItem {
   schoolId: string;
   schoolName: string;
 }
 
+interface LinkParam {
+  schoolList: SchoolItem[];
+}
+
 export default function SchoolSearchPage() {
   const [searchText, setSearchText] = useState('');
   const [searchList, setSearchList] = useState<SchoolItem[]>([]);
-  const [schoolList, setSchoolList] = useState<SchoolItem[]>([]);
+
   const [_, setSchoolSearchValue] = useRecoilState(schoolSearchState);
 
-  const schoolListData = useGetSchoolListQuery();
+  const location = useLocation();
+  const schoolList = useRecoilValue(schoolListState);
+  // const { schoolList } = location.state as LinkParam;
 
   useEffect(() => {
-    if (schoolListData.data) {
-      setSchoolList(schoolListData.data);
-      setSearchList(schoolListData.data);
-    }
-  }, [schoolListData.data]);
+    setSearchList(schoolList);
+  }, [schoolList]);
 
   const navigate = useNavigate();
 

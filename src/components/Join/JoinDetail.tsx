@@ -77,7 +77,10 @@ export default function JoinDetail({ shopName, schoolName, categoryName, people,
 
   useEffect(() => {
     if (enterChatMutate.isSuccess && enterChatMutate.data?.room_id) {
-      navigate(`/chat/${enterChatMutate.data?.room_id}`, { state: { roomId: enterChatMutate.data.room_id } });
+      navigate(`/chat/?room=${enterChatMutate.data?.room_id}`, {
+        state: { roomId: enterChatMutate.data.room_id, storeName: watchingPost.title },
+        replace: true,
+      });
     }
   }, [enterChatMutate.isSuccess, enterChatMutate.data?.room_id]);
 

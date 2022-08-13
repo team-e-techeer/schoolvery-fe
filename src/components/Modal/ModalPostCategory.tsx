@@ -3,14 +3,14 @@ import { css } from '@emotion/react';
 import { useState } from 'react';
 import Modal from './Modal';
 import Ch from '../../assets/img/ch.png';
-import Chicken from '../../assets/img/Chicken.png';
+import chicken from '../../assets/img/chicken.png';
 import Jp from '../../assets/img/jp.png';
 import Ko from '../../assets/img/ko.png';
 import Pizza from '../../assets/img/pizza.png';
 import Asian from '../../assets/img/asian.png';
 import Hamburger from '../../assets/img/hamburger.png';
 import koreanFood from '../../assets/img/koreanFood.png';
-import Coffee from '../../assets/img/Coffee.png';
+import coffee from '../../assets/img/coffee.png';
 
 interface Props {
   visible: boolean;
@@ -42,11 +42,11 @@ export default function ModalCategory({
     { path: '/category/중식', src: Ch, name: '중식', select: false, id: 2 },
     { path: '/category/일식', src: Jp, name: '일식', select: false, id: 3 },
     { path: '/category/아시안', src: Asian, name: '아시안', select: false, id: 4 },
-    { path: '/category/치킨', src: Chicken, name: '치킨', select: false, id: 5 },
+    { path: '/category/치킨', src: chicken, name: '치킨', select: false, id: 5 },
     { path: '/category/피자', src: Pizza, name: '피자', select: false, id: 6 },
     { path: '/category/햄버거', src: Hamburger, name: '햄버거', select: false, id: 7 },
     { path: '/category/분식', src: koreanFood, name: '분식', select: false, id: 8 },
-    { path: '/category/커피', src: Coffee, name: '커피', select: false, id: 9 },
+    { path: '/category/커피', src: coffee, name: '커피', select: false, id: 9 },
   ]);
   const onClickCategory = (image: Info) => {
     setImage(imageInfo.map(img => (img.id === image.id ? { ...img, select: true } : { ...img, select: false })));

@@ -27,15 +27,16 @@ export default function App() {
         <Route path="/myWriting" element={<MyWritingPage />} />
         <Route path="/writing" element={<WritingPage />} />
         <Route path="/writing/?id=:id" element={<WritingPage />} />
-        <Route path="/search" element={<SearchPage />}>
-          <Route path=":searchValue" element={<SearchDetailPage />} />
+        <Route path="/search/" element={<SearchPage />}>
+          <Route path="?search:searchValue" element={<SearchDetailPage />} />
         </Route>
         <Route path="/category" element={<SearchWithCategory />}>
           <Route path=":name" element={<SearchWithCategory />} />
         </Route>
         <Route path="/detail/*" element={<SearchDetailPage />} />
-        <Route path="/chat" element={<ChatPage />} />
-        <Route path="/chat/:roomName" element={<ChatRoomPage />} />
+        <Route path="/chat" element={<ChatRoomPage />} />
+        <Route path="/chat/rooms" element={<ChatPage />} />
+        <Route path="/chat/?room=:room" element={<ChatRoomPage />} />
         <Route path="/notification" element={<AlarmPage />} />
       </Routes>
       {/* <ReactQueryDevtools initialIsOpen={false} position="bottom-right" /> */}

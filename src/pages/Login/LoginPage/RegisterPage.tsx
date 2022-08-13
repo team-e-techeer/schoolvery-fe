@@ -25,6 +25,9 @@ import { registerState } from '@/atoms/Login/registerState';
 import { useRegisterMutation } from '@/hooks/query/user/useRegister';
 import { faker } from '@faker-js/faker';
 import axios from 'axios';
+import colors from '@/constants/colors';
+import { useGetSchoolListQuery } from '@/hooks/query/list/useGetSchoolList';
+import { schoolListState } from '@/atoms/list/schoolList';
 
 function RegisterPage() {
   const spanRef = useRef() as React.MutableRefObject<HTMLFormElement>;
@@ -35,6 +38,13 @@ function RegisterPage() {
   const { name, nickname, id, password, passwordConfirm, phoneNum, email, school, profileImageUrl } = registerInfo;
   const { mutate, data, isSuccess } = useRegisterMutation();
   const [img, setImg] = useState<FormData>(new FormData());
+  const schoolListQuery = useGetSchoolListQuery();
+  const [schoolList, setSchoolList] = useRecoilState(schoolListState);
+
+  useEffect(() => {
+    schoolListQuery.data && setSchoolList(schoolListQuery.data);
+  }, [schoolListQuery]);
+
   useEffect(() => {
     setRegisterInfo({ ...registerInfo, school: schoolInfo.schoolName });
   }, [schoolInfo.schoolName]);
@@ -78,9 +88,9 @@ function RegisterPage() {
 
   const onCheckBlank = useCallback(
     (e: React.FocusEvent<HTMLFormElement, Element>) => {
-      !registerInfo.schoolName && useCheckBlank({ e, ref: spanRef, state: registerInfo });
-      onCheckHaveSamePassword();
-      onCheckEmail();
+      // !registerInfo.schoolName && useCheckBlank({ e, ref: spanRef, state: registerInfo });
+      // onCheckHaveSamePassword();
+      // onCheckEmail();
     },
     [registerInfo, spanRef]
   );
@@ -251,7 +261,7 @@ function RegisterPage() {
 
           <AlertText id="email">이메일 형식이 잘못 되었습니다</AlertText>
         </InputField>
-        <InputField onClick={() => navigate('/register/schoolSearch')}>
+        <InputField onClick={() => navigate('/register/schoolSearch', { state: { schoolList } })}>
           <InputForm>
             <input
               onFocus={() => navigate('/register/schoolSearch')}
@@ -265,7 +275,42 @@ function RegisterPage() {
           </InputForm>
           <AlertText id="school">입력란이 비어 있습니다</AlertText>
         </InputField>
-        <input type="file" accept="image/png" name="profileImageUrl" onChange={onChangeImg} />
+
+        <input
+          css={css`
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 3rem;
+            height: 3rem;
+            border: 0 solid transparent;
+            border-radius: 0.7rem;
+            background-color: ${colors.mainColor};
+            color: ${colors.white};
+            font-size: 1.7rem;
+            font-weight: 600;
+            white-space: nowrap;
+            user-select: none;
+            -webkit-font-smoothing: antialiased;
+            transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+            &:focus {
+              outline: none;
+            }
+            &:disabled {
+              opacity: 0.26;
+              cursor: not-allowed;
+            }
+            &:active {
+              background-color: ${colors.subColor};
+            }
+          `}
+          type="file"
+          accept="image/png"
+          name="profileImageUrl"
+          onChange={onChangeImg}
+        />
         <Button
           css={css`
             margin-top: 3rem;
