@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
 import MainPage from './pages/Main/MainPage';
 import LoginPage from './pages/Login/LoginPage/LoginPage';
 import RegisterPage from './pages/Login/LoginPage/RegisterPage';
@@ -16,7 +16,7 @@ import SchoolSearchPage from './pages/Login/SearchSchool/SchoolSearchPage';
 import { ReactQueryDevtools } from 'react-query/devtools';
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/login" element={<LoginPage />} />
@@ -40,6 +40,6 @@ export default function App() {
         <Route path="/notification" element={<AlarmPage />} />
       </Routes>
       {/* <ReactQueryDevtools initialIsOpen={false} position="bottom-right" /> */}
-    </BrowserRouter>
+    </HashRouter>
   );
 }
