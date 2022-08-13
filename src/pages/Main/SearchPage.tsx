@@ -3,12 +3,19 @@ import BottomNavigation from '@/components/BottomNavigation';
 import SearchInput from '@/components/Input/SearchInput';
 import styled from '@emotion/styled';
 import { useCallback, useEffect, useState } from 'react';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { AiOutlineClose as CloseIcon, AiOutlineClockCircle as RecentIcon } from 'react-icons/ai';
 import colors from '@/constants/colors';
 import { css } from '@emotion/react';
 import JoinSummary from '@/components/Join/JoinSummary';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useGetSearchList } from '@/hooks/query/list/useGetSearchList';
+
+import dayjs from 'dayjs';
+import 'dayjs/locale/ko';
+import { useTimer } from '@/hooks/useTimer';
+import { userState } from '@/atoms/user/userState';
+dayjs.locale('ko');
 
 const SearchWrapper = styled.div`
   display: flex;
@@ -27,6 +34,7 @@ const InputUnderBlock = styled.div`
   width: 90%;
   margin: 0 auto;
   margin-top: 1rem;
+  margin-bottom: 1rem;
 `;
 
 const InputUnderText = styled.span`
@@ -79,10 +87,12 @@ const SearchText = styled.button`
 
 function SearchPage() {
   const [inputValue, setInputValue] = useState('');
+  const [keyword, setKeyword] = useState('');
   const [recentSearchValue, setRecentSearchValue] = useRecoilState(searchState);
   const [isFocus, setFocus] = useState(false);
   const { searchValue } = useParams();
   const navigate = useNavigate();
+  const time = useTimer();
 
   useEffect(() => {
     if (searchValue) {
@@ -93,6 +103,9 @@ function SearchPage() {
     setFocus(true);
   }, [searchValue]);
 
+  const { accessToken } = useRecoilValue(userState);
+  const searchList = useGetSearchList({ keyword, accessToken });
+
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const isExist = (value: string) => recentSearchValue.find(item => item.searchValue === value);
@@ -101,7 +114,7 @@ function SearchPage() {
     }
     inputValue ? navigate(`/search/${inputValue}`) : navigate(`/search/${searchValue}`);
     setFocus(false);
-
+    setKeyword(inputValue);
     const input = document.querySelector('#search-input') as HTMLInputElement;
     input.blur();
   };
@@ -163,12 +176,30 @@ function SearchPage() {
         <>
           <InputUnderBlock>
             <InputUnderText>검색 결과</InputUnderText>
-            <InputUnderTextRight>개수 : 30개</InputUnderTextRight>
+            <InputUnderTextRight>개수 : {searchList.data?.dtoList.length}</InputUnderTextRight>
           </InputUnderBlock>
-          <JoinSummary title="hi" time={{ left: '1', post: '1' }} people={{ current: 1, total: 3 }} />
-          <JoinSummary title="hi" time={{ left: '1', post: '1' }} people={{ current: 1, total: 3 }} />
-          <JoinSummary title="hi" time={{ left: '1', post: '1' }} people={{ current: 1, total: 3 }} />
-          <JoinSummary title="hi" time={{ left: '1', post: '1' }} people={{ current: 1, total: 3 }} />
+          {searchList.data?.dtoList.map(list => (
+            <JoinSummary
+              item={list}
+              key={list.id}
+              title={list.title}
+              left={
+                Math.floor(dayjs(list.deadline).diff(time, 'minute') / 60) +
+                '시간 ' +
+                (dayjs(list.deadline).diff(time, 'minute') % 60) +
+                '분'
+              }
+              time={{
+                left:
+                  Math.floor(dayjs(list.deadline).diff(time, 'minute') / 60) +
+                  '시간 ' +
+                  (dayjs(list.deadline).diff(time, 'minute') % 60) +
+                  '분',
+                post: dayjs(list.deadline).format('A hh:mm'),
+              }}
+              people={{ current: 1, total: list.peopleNum }}
+            />
+          ))}
         </>
       )}
       <BottomNavigation />
