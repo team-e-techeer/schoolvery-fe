@@ -15,5 +15,5 @@ export default defineConfig({
       },
     }),
   ],
-  base: 'https://team-e-techeer.github.io/team-e-techeer/schoolvery-fe/',
+  base: 'https://ww8007.github.io/team-e-techeer/schoolvery-fe/',
 });
