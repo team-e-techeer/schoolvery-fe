@@ -36,7 +36,7 @@ export default function Header({ title, Left, Right, secondRight }: Props) {
           <h1
             css={css`
               color: #fff;
-              font-size: 2rem;
+              font-size: 1.5rem;
             `}
           >
             {title}
