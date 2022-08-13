@@ -3,7 +3,7 @@ import { Router } from 'react-router-dom';
 import Category from './Category';
 import type { ImgInfo } from './Category';
 import Ch from '../../assets/img/ch.png';
-import Chicken from '../../assets/img/Chicken.png';
+import chicken from '../../assets/img/chicken.png';
 import Jp from '../../assets/img/jp.png';
 import Ko from '../../assets/img/ko.png';
 import { createMemoryHistory, MemoryHistory } from 'history';
@@ -23,7 +23,7 @@ describe('로그인 페이지 테스트', () => {
       { path: '/category/korea', src: Ko, name: '한식' },
       { path: '/category/china', src: Ch, name: '중식' },
       { path: '/category/japan', src: Jp, name: '일식' },
-      { path: '/category/chicken', src: Chicken, name: '치킨' },
+      { path: '/category/chicken', src: chicken, name: '치킨' },
     ];
 
     const { container } = render(
