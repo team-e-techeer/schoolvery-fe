@@ -1,8 +1,10 @@
+import { userState } from '@/atoms/user/userState';
 import colors from '@/constants/colors';
 import { css } from '@emotion/react';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
 import { Link } from 'react-router-dom';
+import { useRecoilValue } from 'recoil';
 
 dayjs.locale('ko');
 interface Props {
@@ -16,6 +18,7 @@ interface Props {
 }
 
 export default function ChatList({ imgPath, storeName, lastMessage, newMessageCount, time, chatURL, roomId }: Props) {
+  const userInfo = useRecoilValue(userState);
   return (
     <>
       <Link
@@ -25,8 +28,8 @@ export default function ChatList({ imgPath, storeName, lastMessage, newMessageCo
           margin: 0 auto;
           padding: 1rem;
         `}
-        to={`/chat/${chatURL}`}
-        state={{ roomId }}
+        to={`/chat/?room=${roomId}`}
+        state={{ roomId, storeName }}
       >
         <div
           css={css`
@@ -36,11 +39,11 @@ export default function ChatList({ imgPath, storeName, lastMessage, newMessageCo
         >
           <img
             css={css`
-              width: 7rem;
-              height: 7rem;
+              width: 5rem;
+              height: 5rem;
               border-radius: 50%;
             `}
-            src={imgPath}
+            src={userInfo.profileImageUrl}
           />
         </div>
         <div
@@ -60,7 +63,8 @@ export default function ChatList({ imgPath, storeName, lastMessage, newMessageCo
               css={css`
                 display: flex;
                 flex: 1;
-                font-size: 1.7rem;
+                margin-left: 1rem;
+                font-size: 1.3rem;
                 align-self: center;
               `}
             >
@@ -93,6 +97,7 @@ export default function ChatList({ imgPath, storeName, lastMessage, newMessageCo
             >
               <h3
                 css={css`
+                  margin-left: 1rem;
                   font-size: 1.1rem;
                   align-self: center;
                   text-overflow: ellipsis;
