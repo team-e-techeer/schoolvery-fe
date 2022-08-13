@@ -26,3 +26,7 @@ yarn-error.log*
 .eslintcache
 
 scripts/tmp
+.vercel
+
+# Local Netlify folder
+.netlify
