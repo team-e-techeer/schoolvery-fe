@@ -25,7 +25,12 @@ export const ProfileBlock = styled.div`
   width: 90%;
   margin: 0 auto;
   margin-top: 3rem;
-  /* padding: 5rem; */
+  @media (min-width: 500px) {
+    width: 90%;
+  }
+  @media (min-width: 1024px) {
+    width: 50%;
+  }
 `;
 
 export const ImgBlock = styled.div`
@@ -63,8 +68,14 @@ export const GreyLine = styled.div`
 
 export const BoardBlock = styled.div`
   display: flex;
-  width: 100%;
+
   margin: 0 auto;
+  @media (min-width: 500px) {
+    width: 90%;
+  }
+  @media (min-width: 1024px) {
+    width: 50%;
+  }
 `;
 
 export const BoardBtn = styled(Link)`

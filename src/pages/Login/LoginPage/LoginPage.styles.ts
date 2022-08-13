@@ -44,13 +44,18 @@ export const Title = styled.h2`
 export const InputBlock = styled.form`
   width: 80%;
   margin: auto;
+  @media (min-width: 768px) {
+    width: 100%;
+  }
+  @media (min-width: 1024px) {
+    width: 40%;
+  }
 `;
 
 export const Input = styled.input`
   display: flex;
   background-color: #e7f0fe;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+
   border-radius: 0.7rem;
   width: 100%;
   padding: 1.5rem;
@@ -72,7 +77,7 @@ export const LinkText = styled(Link)`
   flex-direction: row-reverse;
   text-decoration: none;
   margin-top: 1.5rem;
-  margin-right: 10%;
+
   color: #646363;
   font-size: 1.2rem;
   z-index: 999;
@@ -84,4 +89,63 @@ export const AlertText = styled.span`
   font-size: 1.3rem;
   margin-top: -1.5rem;
   margin-bottom: 1rem;
+`;
+
+export const InputForm = styled.div`
+  display: flex;
+  position: relative;
+  flex: 1;
+  padding: 2.5rem;
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  & input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid ${colors.mainColor};
+    border-radius: 0.7rem;
+    color: ${colors.black};
+
+    outline: none;
+    /* padding: 1.25rem; */
+    padding: 1.3rem;
+    background: none;
+
+    &:hover {
+      border-color: ${colors.subColor};
+    }
+
+    &:focus {
+      border-color: ${colors.mainColor};
+    }
+  }
+
+  & label {
+    position: absolute;
+    left: 1rem;
+    top: 1.3rem;
+    padding: 0.4rem;
+    border-radius: 0.7rem;
+    color: ${colors.grey100};
+    cursor: text;
+    transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+    background-color: ${colors.subColor};
+  }
+  input:focus ~ label,
+  input:not(:placeholder-shown) ~ label,
+  input:-webkit-autofill ~ label {
+    top: -1rem;
+    font-size: 1rem;
+    left: 0.8rem;
+  }
 `;
