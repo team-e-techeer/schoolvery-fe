@@ -16,7 +16,7 @@ import {
   GreyLine,
   BlankView,
 } from './MyInfoPage.styles';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { userState } from '@/atoms/user/userState';
 import Dog from '../../assets/img/dog.png';
@@ -25,21 +25,20 @@ import colors from '@/constants/colors';
 function PersonalPage() {
   const user = useRecoilValue(userState);
   const [userInfo, setUserInfo] = useRecoilState(userState);
+  const navigate = useNavigate();
   return (
     <>
       <Header
         title="마이 페이지"
         Left={() => (
-          <IconWrapper>
-            <Link to="/">
-              <LeftIcon size={30} color="#fff" />
-            </Link>
+          <IconWrapper onClick={() => navigate('/')}>
+            <LeftIcon size={30} color="#fff" />
           </IconWrapper>
         )}
       />
       <ProfileBlock>
         <ImgBlock>
-          <img src={Dog}></img>
+          <img src={userInfo.profileImageUrl}></img>
         </ImgBlock>
         <ProfileInfo>
           <p style={{ fontWeight: 'bold' }}>{userInfo.nickname}</p>
@@ -55,7 +54,7 @@ function PersonalPage() {
       </ProfileBlock>
       <GreyLine />
       <BoardBlock>
-        <BlankView />
+        {/* <BlankView /> */}
         <BoardBtn to="/chat">
           <EnterIcon size={33} color={colors.grey100} />
           <p>참여 이력</p>
@@ -70,7 +69,7 @@ function PersonalPage() {
           <NotificationIcon size={33} color={colors.grey100} />
           <p>공지사항</p>
         </BoardBtn>
-        <BlankView />
+        {/* <BlankView /> */}
       </BoardBlock>
       <BottomNavigation />
     </>
