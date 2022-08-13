@@ -9,6 +9,11 @@ import { watchingPostState } from '@/atoms/user/watchingPostState';
 import { useTimer } from '@/hooks/useTimer';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
+import { useGetChatInfoWithPostId } from '@/hooks/query/chat/GET/useGetChatInfoWithPostId';
+import { userState } from '@/atoms/user/userState';
+import { useCallback, useEffect } from 'react';
+import { usePostParticipateChat } from '@/hooks/query/chat/POST/usePostParticipateChat';
+import { useNavigate } from 'react-router-dom';
 dayjs.locale('ko');
 
 const spanStyle = css`
@@ -56,12 +61,30 @@ interface Props {
 }
 
 export default function JoinDetail({ shopName, schoolName, categoryName, people, time, payment }: Props) {
-  const currentTime = useTimer();
+  const { accessToken, id } = useRecoilValue(userState);
   const watchingPost = useRecoilValue(watchingPostState);
+  const chatPageInfo = useGetChatInfoWithPostId({ accessToken, postId: watchingPost.id });
+
+  const enterChatMutate = usePostParticipateChat();
+  const onClickEnter = useCallback(() => {
+    chatPageInfo.data &&
+      enterChatMutate.mutate({
+        accessToken,
+        postData: { room_id: chatPageInfo.data?.id, user_id: id, name: watchingPost.title },
+      });
+  }, [chatPageInfo.data, userState]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (enterChatMutate.isSuccess && enterChatMutate.data?.room_id) {
+      navigate(`/chat/${enterChatMutate.data?.room_id}`, { state: { roomId: enterChatMutate.data.room_id } });
+    }
+  }, [enterChatMutate.isSuccess, enterChatMutate.data?.room_id]);
 
   return (
     <>
       <div
+        onClick={onClickEnter}
         css={css`
           display: flex;
           flex-direction: column;
@@ -82,8 +105,14 @@ export default function JoinDetail({ shopName, schoolName, categoryName, people,
       >
         <h1
           css={css`
+            display: inline-block;
+            width: max-content;
             font-size: 2rem;
             margin-bottom: 1rem;
+            background-color: ${colors.subColor};
+            padding: 1rem;
+            border-radius: 0.7rem;
+            color: ${colors.white};
           `}
         >
           {watchingPost.store}
@@ -101,35 +130,36 @@ export default function JoinDetail({ shopName, schoolName, categoryName, people,
         <ul css={ulStyle}>
           <Time css={iconStyle} />
           <span css={eachSpanStyle}>{dayjs(watchingPost.deadline).format('A hh : mm')}</span>
-          <span css={eachSpanStyle}>
-            {dayjs(dayjs(currentTime).diff(watchingPost.deadline)).format('h시간 mm분')} 남음
-          </span>
+          <span css={eachSpanStyle}>{watchingPost.left} 남음</span>
         </ul>
         <ul css={ulStyle}>
           <CardIcon css={iconStyle} />
           <span css={eachSpanStyle}>총 {watchingPost.deliveryFee}원</span>
           <span css={eachSpanStyle}>인당 {Math.round(watchingPost.deliveryFee / watchingPost.peopleNum)}원 예상</span>
         </ul>
-        <div
-          css={css`
-            width: 100%;
-            background-color: ${colors.subColor};
-            margin-top: 2rem;
-            border-radius: 0.7rem;
-            padding: 2rem;
-          `}
-        >
-          <p
+        {watchingPost.content && (
+          <div
             css={css`
-              font-size: 1.3rem;
-              color: ${colors.white};
+              width: 100%;
+              background-color: #eae9f8;
+              margin-top: 2rem;
+              border-radius: 0.7rem;
+              padding: 2rem;
             `}
           >
-            {watchingPost.content}
-          </p>
-        </div>
+            <p
+              css={css`
+                font-size: 1.3rem;
+                color: ${colors.black};
+              `}
+            >
+              {watchingPost.content}
+            </p>
+          </div>
+        )}
 
         <Button
+          onClick={onClickEnter}
           css={css`
             display: flex;
             align-self: flex-end;
