@@ -158,6 +158,23 @@ const GlobalStyle = () => (
         font-weight: 400;
         font-style: normal;
       }
+      @media (min-width: 768px) {
+        font-size: 62.5%;
+      }
+      @media (min-width: 1024px) {
+        width: 40%;
+      }
+      @media screen and (min-width: 768px) {
+        html {
+          /* font-size: 62.5%; */
+          font-size: 62.5%;
+        }
+      }
+      @media screen and (min-width: 1024px) {
+        html {
+          font-size: 75%;
+        }
+      }
     `}
   />
 );
