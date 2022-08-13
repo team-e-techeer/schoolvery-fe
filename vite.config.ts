@@ -16,5 +16,5 @@ export default defineConfig({
     }),
     splitVendorChunkPlugin(),
   ],
-  base: '/schoolvery-fe/',
+  base: './',
 });
