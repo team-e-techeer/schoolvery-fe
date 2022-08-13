@@ -1,7 +1,7 @@
 import BottomNavigation from '@/components/BottomNavigation';
 import ChatList from '@/components/Chat/ChatList';
 import Header from '@/components/Header/Header';
-import Korean from '../../assets/img/ko.png';
+import Chicken from '../../assets/img/chicken.png';
 import { userState } from '@/atoms/user/userState';
 import { useRecoilValue } from 'recoil';
 import { useGetMyAllChatList } from '@/hooks/query/chat/GET/useGetMyAllChatList';
@@ -17,9 +17,9 @@ export default function ChatPage() {
         chatList.data.map(chat => (
           <ChatList
             key={chat.id}
-            imgPath={Korean}
+            imgPath={Chicken}
             storeName={chat.name}
-            lastMessage="h"
+            lastMessage="ww8007 님이 참여 하셨습니다"
             time={Date.now()}
             newMessageCount={1}
             chatURL="BBQ"
