@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-
+import { splitVendorChunkPlugin } from 'vite';
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
@@ -14,6 +14,7 @@ export default defineConfig({
         plugins: ['@emotion/babel-plugin'],
       },
     }),
+    splitVendorChunkPlugin(),
   ],
-  base: 'https://team-e-techeer.github.io/team-e-techeer/schoolvery-fe/',
+  base: '/schoolvery-fe/',
 });
