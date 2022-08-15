@@ -14,8 +14,18 @@ import ChatRoomPage from './pages/Chat/ChatRoomPage';
 import AlarmPage from './pages/Alarm/AlarmPage';
 import SchoolSearchPage from './pages/Login/SearchSchool/SchoolSearchPage';
 import { ReactQueryDevtools } from 'react-query/devtools';
+import { useEffect } from 'react';
+import { setMetaTags } from './util/setMetatag';
 // import './app.css';
 export default function App() {
+  // useEffect(() => {
+  //   setMetaTags({
+  //     title: '스쿨버리',
+  //     description: '배달비를 공유해보세요',
+  //     imageUrl: 'https://user-images.githubusercontent.com/54137044/184621844-276e4d47-d03d-40e7-afae-2ac1348ce1a4.png',
+  //   });
+  // }, []);
+
   return (
     <BrowserRouter>
       <Routes>

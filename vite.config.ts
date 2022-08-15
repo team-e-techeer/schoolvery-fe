@@ -31,7 +31,12 @@ export default defineConfig({
         plugins: ['@emotion/babel-plugin'],
       },
     }),
-    ViteFaviconsPlugin('src/assets/img/favicon.png'),
+    ViteFaviconsPlugin({
+      logo: 'public/assets/logo.png',
+      favicons: {
+        path: 'assets/',
+      },
+    }),
     VitePluginFonts({
       custom: {
         families: [

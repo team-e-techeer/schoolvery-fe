@@ -7,7 +7,7 @@
 /src/stories
 # testing
 /coverage
-
+/dist
 # production
 # misc
 .env
