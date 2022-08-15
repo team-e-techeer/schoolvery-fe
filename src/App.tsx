@@ -16,7 +16,7 @@ import SchoolSearchPage from './pages/Login/SearchSchool/SchoolSearchPage';
 import { ReactQueryDevtools } from 'react-query/devtools';
 export default function App() {
   return (
-    <BrowserRouter basename={import.meta.env.VITE_BASE_PATH}>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/login" element={<LoginPage />} />
