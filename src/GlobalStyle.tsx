@@ -143,7 +143,7 @@ const GlobalStyle = () => (
       input[type='password']::placeholder {
         font-family: 'Nanum';
       }
-      @font-face {
+      /* @font-face {
         font-family: 'Nanum';
         src: url('./src/assets/fonts/Nanum.ttf') format('truetype'), url('./src/assets/fonts/Nanum.woff') format('woff'),
           url('./src/assets/fonts/Nanum.eot?iefix') format('embedded-opentype');
@@ -157,7 +157,7 @@ const GlobalStyle = () => (
           url('./src/assets/fonts/Jalnan.eot?iefix') format('embedded-opentype');
         font-weight: 400;
         font-style: normal;
-      }
+      } */
       @media (min-width: 768px) {
         font-size: 62.5%;
       }

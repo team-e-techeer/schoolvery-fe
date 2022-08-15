@@ -7,6 +7,8 @@ import path from 'path';
 // eslint-disable-next-line import/extensions
 import { dependencies } from './package.json';
 import dynamicImport from 'vite-plugin-dynamic-import';
+import { ViteFaviconsPlugin } from 'vite-plugin-favicon';
+import { VitePluginFonts } from 'vite-plugin-fonts';
 function renderChunks(deps: Record<string, string>) {
   const chunks = {};
   Object.keys(deps).forEach(key => {
@@ -18,13 +20,36 @@ function renderChunks(deps: Record<string, string>) {
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
-    alias: [{ find: '@', replacement: '/src' }],
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
   },
   plugins: [
     react({
       jsxImportSource: '@emotion/react',
       babel: {
         plugins: ['@emotion/babel-plugin'],
+      },
+    }),
+    ViteFaviconsPlugin('src/assets/img/favicon.png'),
+    VitePluginFonts({
+      custom: {
+        families: [
+          {
+            name: 'Nanum',
+            local: 'Nanum',
+            src: './src/assets/fonts/Nanum.ttf',
+          },
+          {
+            name: 'Jalnan',
+            local: 'Jslnan',
+            src: './src/assets/fonts/Jslnan.ttf',
+          },
+        ],
+        display: 'auto',
+        preload: true,
+        prefetch: false,
+        injectTo: 'head-prepend',
       },
     }),
     splitVendorChunkPlugin(),
@@ -41,13 +66,17 @@ export default defineConfig({
       },
     },
   ],
-  base: '/schoolvery-fe/',
+  base: '/',
   build: {
     sourcemap: false,
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-router-dom', 'react-dom'],
+          lodash: ['lodash'],
+          '@emotion/react': ['@emotion/react'],
+          '@emotion/styled': ['@emotion/styled'],
+          util: ['util'],
           ...renderChunks(dependencies),
         },
       },

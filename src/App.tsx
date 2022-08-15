@@ -14,6 +14,7 @@ import ChatRoomPage from './pages/Chat/ChatRoomPage';
 import AlarmPage from './pages/Alarm/AlarmPage';
 import SchoolSearchPage from './pages/Login/SearchSchool/SchoolSearchPage';
 import { ReactQueryDevtools } from 'react-query/devtools';
+// import './app.css';
 export default function App() {
   return (
     <BrowserRouter>
