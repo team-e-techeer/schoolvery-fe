@@ -41,7 +41,7 @@ export default defineConfig({
       },
     },
   ],
-  base: '/schoolvery-fe/dist/',
+  base: '/',
   build: {
     sourcemap: false,
     rollupOptions: {
@@ -52,5 +52,8 @@ export default defineConfig({
         },
       },
     },
+  },
+  esbuild: {
+    logOverride: { 'this-is-undefined-in-esm': 'silent' },
   },
 });
