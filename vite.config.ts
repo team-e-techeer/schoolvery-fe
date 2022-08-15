@@ -41,7 +41,7 @@ export default defineConfig({
       },
     },
   ],
-  base: './',
+  base: '/schoolvery-fe/dist/',
   build: {
     sourcemap: false,
     rollupOptions: {
