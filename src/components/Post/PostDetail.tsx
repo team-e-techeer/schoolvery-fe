@@ -78,7 +78,7 @@ export default function PostDetail({ shopName, schoolName, categoryName, people,
           margin-top: 2rem;
           box-shadow: 2px 2px 2px 2px ${colors.grey200};
           -webkit-font-smoothing: antialiased;
-          transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+          transition: color 0.1s linear-out, background-color 0.1s linear-out;
           &:active {
             background-color: ${colors.grey300};
             box-shadow: 2px 2px 2px 2px ${colors.grey300};

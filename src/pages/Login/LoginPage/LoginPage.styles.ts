@@ -138,7 +138,7 @@ export const InputForm = styled.div`
     border-radius: 0.7rem;
     color: ${colors.grey100};
     cursor: text;
-    transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+    transition: top 300ms linear, left 300ms linear, font-size 300ms linear;
     background-color: ${colors.subColor};
   }
   input:focus ~ label,
