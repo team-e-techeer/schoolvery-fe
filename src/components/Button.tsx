@@ -42,7 +42,7 @@ export default function Button(props: Props) {
         white-space: nowrap;
         user-select: none;
         -webkit-font-smoothing: antialiased;
-        transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+        transition: color 0.1s linear-out, background-color 0.1s linear-out;
         &:focus {
           outline: none;
         }
