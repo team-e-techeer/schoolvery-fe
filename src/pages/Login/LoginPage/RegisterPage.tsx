@@ -28,16 +28,19 @@ import axios from 'axios';
 import colors from '@/constants/colors';
 import { useGetSchoolListQuery } from '@/hooks/query/list/useGetSchoolList';
 import { schoolListState } from '@/atoms/list/schoolList';
+import { MdPreview } from 'react-icons/md';
 
 function RegisterPage() {
   const spanRef = useRef() as React.MutableRefObject<HTMLFormElement>;
   const navigate = useNavigate();
+
   const [registerInfo, setRegisterInfo] = useRecoilState(registerState);
   const [submitOK, setSubmit] = useState(true);
   const schoolInfo = useRecoilValue(schoolSearchState);
   const { name, nickname, id, password, passwordConfirm, phoneNum, email, school, profileImageUrl } = registerInfo;
   const { mutate, data, isSuccess } = useRegisterMutation();
   const [img, setImg] = useState<FormData>(new FormData());
+  const [imgFile, setImgFile] = useState<File>();
   const schoolListQuery = useGetSchoolListQuery();
   const [schoolList, setSchoolList] = useRecoilState(schoolListState);
 
@@ -106,7 +109,7 @@ function RegisterPage() {
   }, [registerInfo.email]);
 
   const onCheckHaveSamePassword = useCallback(() => {
-    const select = spanRef.current?.querySelector<HTMLElement>('#passwordConfirm') as HTMLElement;
+    const select = spanRef.current?.querySelector<HTMLElement>('#passwordConfirm') as HTMLDivElement;
 
     if (isEqualPassword(registerInfo.password, registerInfo.passwordConfirm)) return (select.style.display = 'none');
     select.style.display = 'block';
@@ -133,15 +136,32 @@ function RegisterPage() {
     });
   }
 
+  useEffect(() => {
+    preview();
+  }, []);
+
+  const preview = () => {
+    if (!imgFile) return false;
+    const imgEL = document.querySelector('#preview-img') as HTMLImageElement;
+
+    const reader = new FileReader();
+
+    reader.onload = () => (imgEL.style.backgroundImage = `url(${reader.result})`);
+
+    reader.readAsDataURL(imgFile);
+  };
+
   const onChangeImg = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       const file = e.target.files[0];
       const formData = new FormData();
 
+      setImgFile(file);
+
       formData.append('file', file);
 
       setImg(formData);
-
+      preview();
       // encodeBase64ImageFile(file).then(data => {
       //   setImg(String(data));
       // });
@@ -276,41 +296,78 @@ function RegisterPage() {
           <AlertText id="school">입력란이 비어 있습니다</AlertText>
         </InputField>
 
-        <input
+        <div
           css={css`
             display: flex;
+            flex-direction: row;
+            margin-top: 2rem;
             align-items: center;
-            justify-content: center;
-            width: 100%;
-            margin: 0 auto;
-            margin-top: 3rem;
-            height: 3rem;
-            border: 0 solid transparent;
-            border-radius: 0.7rem;
-            background-color: ${colors.mainColor};
-            color: ${colors.white};
-            font-size: 1.7rem;
-            font-weight: 600;
-            white-space: nowrap;
-            user-select: none;
-            -webkit-font-smoothing: antialiased;
-            transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
-            &:focus {
-              outline: none;
-            }
-            &:disabled {
-              opacity: 0.26;
-              cursor: not-allowed;
-            }
-            &:active {
-              background-color: ${colors.subColor};
-            }
           `}
-          type="file"
-          accept="image/png"
-          name="profileImageUrl"
-          onChange={onChangeImg}
-        />
+        >
+          <div
+            css={css`
+              background-image: '';
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-position: center;
+              width: 80%;
+              height: 15rem;
+              border: 2px solid ${colors.mainColor};
+              border-radius: 0.7rem;
+            `}
+            id="preview-img"
+          />
+          <input
+            css={css`
+              padding: 6px 25px;
+              background-color: #ff6600;
+              border-radius: 4px;
+              color: white;
+              cursor: pointer;
+              display: none;
+            `}
+            type="file"
+            accept="image/png"
+            name="profileImageUrl"
+            id="input-file"
+            onChange={onChangeImg}
+          />
+          <label
+            htmlFor="input-file"
+            css={css`
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 100%;
+              margin: 0 auto;
+              margin-left: 2rem;
+              height: 5rem;
+              border: 0 solid transparent;
+              border-radius: 0.7rem;
+              background-color: ${colors.mainColor};
+              color: ${colors.white};
+              font-size: 1.7rem;
+              font-weight: 600;
+              white-space: nowrap;
+              user-select: none;
+              -webkit-font-smoothing: antialiased;
+              transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+              &:focus {
+                outline: none;
+              }
+              &:disabled {
+                opacity: 0.26;
+                cursor: not-allowed;
+              }
+              &:active {
+                background-color: ${colors.subColor};
+              }
+            `}
+          >
+            이미지 업로드
+          </label>
+        </div>
+
         <Button
           css={css`
             margin-top: 3rem;

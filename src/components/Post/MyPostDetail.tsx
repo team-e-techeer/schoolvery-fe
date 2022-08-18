@@ -84,7 +84,7 @@ export default function MyPostDetail({ shopName, id, categoryId, people, time, p
           margin-top: 2rem;
           box-shadow: 2px 2px 2px 2px ${colors.grey200};
           -webkit-font-smoothing: antialiased;
-          transition: color 0.1s linear-out, background-color 0.1s linear-out;
+          transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
           &:active {
             background-color: ${colors.grey200};
             box-shadow: 2px 2px 2px 2px ${colors.grey200};

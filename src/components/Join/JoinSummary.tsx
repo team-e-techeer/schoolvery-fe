@@ -51,7 +51,7 @@ export default function JoinSummary({ title, people, time, item, left }: Props) 
         cursor: pointer;
         padding: 1rem;
         border-bottom: 1px solid ${colors.mainColor};
-        transition: color 0.1s linear-out, background-color 0.1s linear-out;
+        transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
         :hover {
           background-color: ${colors.grey100};
         }

@@ -99,7 +99,7 @@ export default function JoinDetail({ shopName, schoolName, categoryName, people,
           margin-top: 10rem;
           box-shadow: 2px 2px 2px 2px ${colors.grey300};
           -webkit-font-smoothing: antialiased;
-          transition: color 0.1s linear-out, background-color 0.1s linear-out;
+          transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
           &:active {
             background-color: ${colors.grey300};
             box-shadow: 2px 2px 2px 2px ${colors.grey200};
