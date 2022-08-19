@@ -23,6 +23,8 @@ import { useLoginMutation } from '@/hooks/query/user/useLogin';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { loginState } from '@/atoms/Login/loginState';
 import { userState } from '@/atoms/user/userState';
+import { css } from '@emotion/react';
+import colors from '@/constants/colors';
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -104,7 +106,7 @@ function LoginPage() {
         <InputForm>
           <input
             autoComplete="current-password"
-            placeholder="비밀번호"
+            placeholder=" "
             type="password"
             onChange={onChange}
             id="input-pw"
@@ -120,8 +122,15 @@ function LoginPage() {
         <Button buttonId="login-button" data-testid="login-button">
           로그인
         </Button>
-        <LinkText to="">아이디/비밀번호 찾기</LinkText>
-        <LinkText to="/register">아직 회원이 아니신가요? 회원가입 하기</LinkText>
+        {/* <LinkText to="">아이디/비밀번호 찾기</LinkText> */}
+        <LinkText
+          css={css`
+            color: ${colors.orange900};
+          `}
+          to="/register"
+        >
+          아직 회원이 아니신가요? 회원가입 하기
+        </LinkText>
       </InputBlock>
 
       <UnderLogo src={LogoText} alt="스쿨버리 로고 이미지" />
