@@ -95,6 +95,7 @@ const GlobalStyle = () => (
         font-family: 'Nanum';
         vertical-align: baseline;
         box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
       }
       html {
         font-size: 62.5%;
@@ -118,6 +119,7 @@ const GlobalStyle = () => (
           color: inherit;
           outline: 0;
         }
+        -webkit-tap-highlight-color: transparent;
       }
       button {
         display: flex;
@@ -133,6 +135,7 @@ const GlobalStyle = () => (
         letter-spacing: inherit;
         font: inherit;
         color: inherit;
+        -webkit-tap-highlight-color: transparent;
       }
       input {
         outline: none;
