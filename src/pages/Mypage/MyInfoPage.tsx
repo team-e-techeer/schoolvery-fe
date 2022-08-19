@@ -55,7 +55,7 @@ function PersonalPage() {
       <GreyLine />
       <BoardBlock>
         {/* <BlankView /> */}
-        <BoardBtn to="/chat">
+        <BoardBtn to="/chat/rooms">
           <EnterIcon size={33} color={colors.grey100} />
           <p>참여 이력</p>
         </BoardBtn>
