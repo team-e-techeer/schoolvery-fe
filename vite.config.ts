@@ -9,6 +9,10 @@ import { dependencies } from './package.json';
 import dynamicImport from 'vite-plugin-dynamic-import';
 import { ViteFaviconsPlugin } from 'vite-plugin-favicon';
 import { VitePluginFonts } from 'vite-plugin-fonts';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import commonjs from '@rollup/plugin-commonjs';
+import { terser } from 'rollup-plugin-terser';
 function renderChunks(deps: Record<string, string>) {
   const chunks = {};
   Object.keys(deps).forEach(key => {
@@ -19,6 +23,7 @@ function renderChunks(deps: Record<string, string>) {
 }
 // https://vitejs.dev/config/
 export default defineConfig({
+  mode: 'production',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
@@ -73,15 +78,29 @@ export default defineConfig({
   ],
   base: '/',
   build: {
+    chunkSizeWarningLimit: 500,
     sourcemap: false,
     rollupOptions: {
+      plugins: [nodeResolve, peerDepsExternal, commonjs, terser],
       output: {
+        dir: 'dist',
+        format: 'es',
+        minifyInternalExports: true,
+        preserveModules: false,
+        sourcemapExcludeSources: true,
+        preserveModulesRoot: 'src',
+        // inlineDynamicImports: true,
+
         manualChunks: {
           vendor: ['react', 'react-router-dom', 'react-dom'],
           lodash: ['lodash'],
           '@emotion/react': ['@emotion/react'],
           '@emotion/styled': ['@emotion/styled'],
           util: ['util'],
+          recoil: ['recoil'],
+          axios: ['axios'],
+          'react-select': ['react-select'],
+          'recoil-persist': ['recoil-persist'],
           ...renderChunks(dependencies),
         },
       },
