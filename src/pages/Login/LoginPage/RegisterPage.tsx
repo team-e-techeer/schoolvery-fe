@@ -40,7 +40,7 @@ function RegisterPage() {
   const { name, nickname, id, password, passwordConfirm, phoneNum, email, school, profileImageUrl } = registerInfo;
   const { mutate, data, isSuccess } = useRegisterMutation();
   const [img, setImg] = useState<FormData>(new FormData());
-  const [imgFile, setImgFile] = useState<File>();
+
   const schoolListQuery = useGetSchoolListQuery();
   const [schoolList, setSchoolList] = useRecoilState(schoolListState);
 
@@ -91,9 +91,9 @@ function RegisterPage() {
 
   const onCheckBlank = useCallback(
     (e: React.FocusEvent<HTMLFormElement, Element>) => {
-      // !registerInfo.schoolName && useCheckBlank({ e, ref: spanRef, state: registerInfo });
-      // onCheckHaveSamePassword();
-      // onCheckEmail();
+      !registerInfo.schoolName && useCheckBlank({ e, ref: spanRef, state: registerInfo });
+      onCheckHaveSamePassword();
+      onCheckEmail();
     },
     [registerInfo, spanRef]
   );
@@ -120,55 +120,25 @@ function RegisterPage() {
     []
   );
 
-  function encodeBase64ImageFile(image: File) {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      // convert the file to base64 text
-      reader.readAsDataURL(image);
-      // on reader load somthing...
-      reader.onload = event => {
-        resolve(event.target?.result) as unknown as string;
-        console.log(event.target?.result);
-      };
-      reader.onerror = error => {
-        reject(error);
-      };
-    });
-  }
-
-  useEffect(() => {
-    preview();
-  }, []);
-
-  const preview = () => {
+  const preview = useCallback((imgFile: File) => {
     if (!imgFile) return false;
     const imgEL = document.querySelector('#preview-img') as HTMLImageElement;
 
     const reader = new FileReader();
 
     reader.onload = () => (imgEL.style.backgroundImage = `url(${reader.result})`);
-
     reader.readAsDataURL(imgFile);
-  };
+  }, []);
 
-  const onChangeImg = (e: ChangeEvent<HTMLInputElement>) => {
+  const onChangeImg = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       const file = e.target.files[0];
       const formData = new FormData();
-
-      setImgFile(file);
-
       formData.append('file', file);
-
       setImg(formData);
-      preview();
-      // encodeBase64ImageFile(file).then(data => {
-      //   setImg(String(data));
-      // });
-
-      // setImg(file);
+      preview(file);
     }
-  };
+  }, []);
 
   return (
     <>
@@ -330,7 +300,7 @@ function RegisterPage() {
             accept="image/png"
             name="profileImageUrl"
             id="input-file"
-            onChange={onChangeImg}
+            onChange={e => onChangeImg(e)}
           />
           <label
             htmlFor="input-file"
